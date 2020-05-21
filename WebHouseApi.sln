@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHouseApi", "WebHouseApi\WebHouseApi.csproj", "{108A8EB9-6811-4CB1-9414-5E8E1A60E98A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebHouseApi", "WebHouseApi\WebHouseApi.csproj", "{108A8EB9-6811-4CB1-9414-5E8E1A60E98A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicClass", "PublicClass\PublicClass.csproj", "{640930D9-F71F-4B41-87BB-CE5BE572588E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{108A8EB9-6811-4CB1-9414-5E8E1A60E98A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{108A8EB9-6811-4CB1-9414-5E8E1A60E98A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{108A8EB9-6811-4CB1-9414-5E8E1A60E98A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{640930D9-F71F-4B41-87BB-CE5BE572588E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{640930D9-F71F-4B41-87BB-CE5BE572588E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{640930D9-F71F-4B41-87BB-CE5BE572588E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{640930D9-F71F-4B41-87BB-CE5BE572588E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
