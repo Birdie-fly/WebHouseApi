@@ -25,7 +25,14 @@ namespace WebHouseApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices( IServiceCollection services )
         {
+
+            // 配置跨域处理，允许所有来源
+            services.AddCors(
+                options => options.AddPolicy
+                ("cors", p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowAnyHeader()));
+
             services.AddControllers();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,11 +43,15 @@ namespace WebHouseApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
+            // 允许所有跨域，cors是在ConfigureServices方法中配置的跨域策略名称
+            app.UseCors("cors");
+
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {
