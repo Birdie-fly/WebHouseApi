@@ -17,7 +17,7 @@ namespace HouseModel
         /// <summary>
         /// 手机号
         /// </summary>
-        public long PrincipalPhone { get; set; }
+        public string PrincipalPhone { get; set; }
         /// <summary>
         /// 所属公司
         /// </summary>
@@ -25,11 +25,22 @@ namespace HouseModel
         /// <summary>
         /// 工作经验
         /// </summary>
-        public int Enter { get; set; }
+        public string Enter { get; set; }
         /// <summary>
         /// 个人照
         /// </summary>
         public string PrImage { get; set; }
-        
+        /// <summary>
+        /// 邮箱
+        /// </summary>
+        public string Email   { get; set; }
+        /// <summary>
+        /// QQ
+        /// </summary>
+        public string QQ      { get; set; }
+        /// <summary>
+        /// 解析的微信二维码链接
+        /// </summary>
+        public string WeChat  { get; set; }
     }
 }

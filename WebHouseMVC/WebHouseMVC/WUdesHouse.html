@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="wwwroot\lib\jquery\dist\jquery.js"></script>
+    <link href="wwwroot\lib\bootstrap\dist\css\bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+        </thead>
+        <tbody id="boy">
+            
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    $(function () {
+        Show();
+    })
+    function Show() {
+        $.ajax({
+            url: 'https://localhost:44335/api/WUsed/get',
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                for (var i = 0; i < d.length; i++) {
+                    var str = '<tr>'
+                        + '<td>' + d[i].houseName		+ '</td>'
+                        + '<td>' + d[i].houseSite		+ '</td>'
+                        + '<td>' + d[i].houseInfo		+ '</td>'
+                        + '<td>' + d[i].houseType		+ '</td>'
+                        + '<td>' + d[i].houseGradation	+ '</td>'
+                        + '<td>' + d[i].houseSum		+ '</td>'
+                        + '<td>' + d[i].housePrice		+ '</td>'
+                        + '<td>' + d[i].houseArea		+ '</td>'
+                        + '<td>' + d[i].houseImage		+ '</td>'
+                        + '<td>' + d[i].houseIntro	    + '</td>'
+                        + '<td>' + d[i].houseTenement+ '</td>';
+                    + '</tr>';
+                    $("#boy").append(str);
+                }
+            }
+        })
+    }
+</script>

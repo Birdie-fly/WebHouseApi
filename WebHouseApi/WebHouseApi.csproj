@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HouseBLL\HouseBLL.csproj" />
+    <ProjectReference Include="..\HouseModel\HouseModel.csproj" />
   </ItemGroup>
 
 
