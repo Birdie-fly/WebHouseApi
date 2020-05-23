@@ -20,11 +20,11 @@ namespace HouseDAL
         /// <summary>
         /// 添加经纪人信息
         /// </summary>
-        /// <param name="p"></param>
+        /// <param name="principalModel"></param>
         /// <returns></returns>
-        public int AddPrincipal(PrincipalModel p)
+        public int AddPrincipal(PrincipalModel principalModel)
         {
-            return DapperHelper<PrincipalModel>.Execute($"insert into Principal values('{p.PrincipalName}','{p.PrincipalPhone}',{p.CommodityId},'{p.Enter}','{p.PrImage}','{p.Email}','{p.QQ}','{p.WeChat}')", null);
+            return DapperHelper<PrincipalModel>.Execute($"insert into Principal values('{principalModel.PrincipalName}','{principalModel.PrincipalPhone}',{principalModel.CommodityId},'{principalModel.Enter}','{principalModel.PrImage}','{principalModel.Email}','{principalModel.QQ}','{principalModel.WeChat}')", null);
         }
     }
 }

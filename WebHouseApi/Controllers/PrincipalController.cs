@@ -24,9 +24,9 @@ namespace WebHouseApi.Controllers
         }
 
         [HttpPost]
-        public int AddPrincipal(PrincipalModel p)
+        public int AddPrincipal(PrincipalModel principalModel)
         {
-            return bll.AddPrincipal(p);
+            return bll.AddPrincipal(principalModel);
         }
 
 

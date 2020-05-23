@@ -22,11 +22,11 @@ namespace HouseBLL
         /// <summary>
         /// 添加经纪人信息
         /// </summary>
-        /// <param name="p"></param>
+        /// <param name="principalModel"></param>
         /// <returns></returns>
-        public int AddPrincipal(PrincipalModel p)
+        public int AddPrincipal(PrincipalModel principalModel)
         {
-            return dal.AddPrincipal(p);
+            return dal.AddPrincipal(principalModel);
         }
     }
 }
