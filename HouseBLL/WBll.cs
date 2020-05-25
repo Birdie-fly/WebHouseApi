@@ -17,5 +17,10 @@ namespace HouseBLL
         {
                 return dal.GetUsedHouse();
         }
+
+        public IEnumerable<HouseTypeModel> GetHT()
+        {
+            return dal.GetHT();
+        }
 }
 }

@@ -18,11 +18,16 @@ namespace WebHouseApi.Controllers
         WBll bll = new WBll();
         // GET: api/WUsed
         [HttpGet]
+        //显示房屋列表
         public IEnumerable<HouseCollectModel> Get()
         {
             return bll.GetUsedHouse();
         }
-
+        //显示查询列表
+        public IEnumerable<HouseCollectModel> GetHT()
+        {
+            return bll.GetHT();
+        }
         // GET: api/WUsed/5
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
