@@ -22,5 +22,14 @@ namespace WebHouseApi.Controllers
         {
             return secondHouseBll.GetSecondHouse();
         }
+        /// <summary>
+        /// 通过Id查询单条信息，详情显示
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public HouseCollectModel GetSecondHouseById(int id)
+        {
+            return secondHouseBll.GetSecondHouseById(id);
+        }
     }
 }

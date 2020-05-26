@@ -17,5 +17,15 @@ namespace HouseBLL
         {
             return secondHouseDal.GetSecondHouse();
         }
+
+        /// <summary>
+        /// 通过Id查询单条信息，详情显示
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public HouseCollectModel GetSecondHouseById(int id)
+        {
+            return secondHouseDal.GetSecondHouseById(id);
+        }
     }
 }
