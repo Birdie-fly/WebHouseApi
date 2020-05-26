@@ -22,6 +22,17 @@ namespace HouseDAL
             string sql = "select * from HouseCollect";
             return DapperHelper<HouseCollectModel>.Query(sql, null);
         }
+        
+        /// <summary>
+        /// 显示房屋类型
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<HouseTypeModel> GetHT()
+        {
+            string sql = "select * from GetHT";
+            return DapperHelper<HouseTypeModel>.Query(sql, null);
+        }
+
     }
 
 }
