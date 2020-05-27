@@ -82,7 +82,7 @@
         $.ajax({
             url: 'https://localhost:44335/api/WUsed/get',
             type: 'get',
-            dataType: 'json',
+            dataType: 'json', 
             success: function (d) {
                 for (var i = 0; i < d.length; i++) {
                     var str = '< a href = "JavaScript" > ' + d[0].hType+'</a>';

@@ -17,7 +17,7 @@ namespace HouseDAL
        // private static readonly string connectionString = @"Data Source=47.92.51.7;Initial Catalog=House;Persist Security Info=True;User ID=sa;Pwd=qwer123456@;";
 
         //登陆
-         public int  LandingModel(string Name,string Pwd)
+         public int  Landing(string Name,string Pwd)
         {
             string sql = $"select count(1) from LandingModel where Name='{Name}' and Pwd='{Pwd}'";
             return Convert.ToInt32(DapperHelper<LandingModel>.ExecuteScalar(sql,null));

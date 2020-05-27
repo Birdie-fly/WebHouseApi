@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HouseBLL;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -10,7 +11,7 @@ namespace WebHouseApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Landing : ControllerBase
+    public class LandingController : ControllerBase
     {
         // GET: api/<Landing>
         [HttpGet]
@@ -43,5 +44,16 @@ namespace WebHouseApi.Controllers
         public void Delete(int id)
         {
         }
+
+        //实例化
+        LandingBll landingBll = new LandingBll(); 
+
+
+        //登陆
+        public int Landing(string Name, string Pwd)
+        {
+            return landingBll.Landing(Name,Pwd);
+        }
+
     }
 }
