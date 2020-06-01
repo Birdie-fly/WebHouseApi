@@ -1,0 +1,244 @@
+﻿
+@{
+    ViewData["Title"] = "Landing";
+}
+
+
+<script src="C:\Users\夜来非\Desktop\516安居天下\WebHouseMVC\WebHouseMVC\imgVer\img_ver.js"></script>
+<script src="C:\Users\夜来非\Desktop\516安居天下\WebHouseMVC\WebHouseMVC\imgVer\jquery.min.js"></script>
+<link href="C:\Users\夜来非\Desktop\516安居天下\WebHouseMVC\WebHouseMVC\imgVer\style.css" rel="stylesheet" />
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>dragverify_demo</title>
+    <link rel="stylesheet" type="text/css" href="css/dragverify.css"/>
+</head>
+<body>
+    <style>
+        #dragverify {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 200px;
+        }
+    </style>
+</body>
+<body>
+    <div id="dragverify"></div>  
+    <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/dragverify.js"></script>
+</body>
+<script>
+    function login() {
+        alert(aa);
+    }
+</script>
+
+
+@*<head>
+
+        <link href="Content/bootstrap.css" rel="stylesheet" />
+        <script src="Scripts/bootstrap.min.js"></script>
+        <script src="Scripts/jquery-3.4.1.min.js"></script>
+
+
+
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/tx1.css" />
+    </head>
+    <body>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+                /*background: url('../Images/QQ图片20200423193957.jpg') no-repeat center 0px;*/
+                background: url('..\imgVer\images\ver-1.png') no-repeat center 0px;
+                background-size: cover;
+                background-position: center 0;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                /*-webkit-background-size: cover;
+                -o-background-size: cover;
+                -moz-background-size: cover;
+                -ms-background-size: cover;*/
+            }
+
+            .login-box {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 400px;
+                padding: 40px;
+                background: rgba(0,0,0,.8);
+                box-sizing: border-box;
+                box-shadow: 0 15px 25px rgba(0,0,0,.5);
+                border-radius: 10px;
+            }
+
+                .login-box h2 {
+                    margin: 0 0 30px;
+                    padding: 0;
+                    text-align: center;
+                    color: #fff;
+                }
+
+                .login-box .login-field {
+                    position: relative;
+                }
+
+                    .login-box .login-field input {
+                        width: 100%;
+                        padding: 10px 0;
+                        font-size: 16px;
+                        color: #fff;
+                        margin-bottom: 30px;
+                        border: none;
+                        border-bottom: 1px solid #fff;
+                        outline: none;
+                        background: transparent;
+                    }
+
+                    .login-box .login-field label {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        letter-spacing: 1px;
+                        padding: 10px 0;
+                        font-size: 16px;
+                        color: #fff;
+                        pointer-events: none;
+                        transition: .5s;
+                    }
+
+                    .login-box .login-field input:focus ~ label,
+                    .login-box .login-field input:valid ~ label {
+                        top: -23px;
+                        left: 0;
+                        color: aqua;
+                        font-size: 12px;
+                    }
+
+                .login-box button {
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                    color: #fff;
+                    background: #03a9f4;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                }
+
+
+
+            /*盒子布局*/
+            .verBox {
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                left: 420px;
+                top: 0;
+                opacity: 1;
+                transition: all 0.8s;
+                padding-top: 300px;
+                margin-left: 380px;
+            }
+
+
+
+        </style>
+        <div class="login-box">
+            <form>
+                <div class="login-field">
+                    <input type="text" name="" id="name" required="" />
+                    <label>Username</label>''
+                </div>
+                <div class="login-field">
+                    <input type="password" name="" id="pwd" required="" />
+                    <label>Password</label>
+                </div>
+                盒子
+                <div class="verBox" id="yzImg">
+                  <div id="imgVer" style="display:inline-block;"></div>
+                </div>
+                <div>
+                    <button type="button" id="submit" onclick="login()">Submit</button>
+                    <button type="button" id="submit" onclick="Reister()">Submit</button>
+                    <a class="cd-signin" href="#0" onclick="Reister()">登录</a>
+                </div>
+
+            </form>
+        </div>
+    </body>
+    </html>
+    <script>
+
+        //跳转 注册
+        function Reister() {
+            alert('aaaa')
+            location.href = '/Landing/Reister';
+        }
+
+
+
+        //function login() {
+
+        //    var name = $("#name").val();
+        //    var pwd = $("#pwd").val();
+        //    $.ajax({
+        //        url: 'https://localhost:44319/api/Landing/Landing',
+        //        type: 'get',
+        //        data: { Name: name, PassWord: pwd },
+        //        success: function (data) {
+        //            if (data > 0) {
+        //                alert("登录成功");
+        //            }
+        //            else {
+        //                alert("登录失败");
+        //            }
+        //        }
+        //    })
+
+        //}
+
+            $(".verBox").css({
+                "left": "0",
+                "opacity": "1"
+            });
+            imgVer({
+                el: '$("#imgVer")',
+                width: '260',
+                height: '116',
+                img: [
+                    '../imgVer/images/ver-4.png',
+                    '../imgVer/images/ver-5.png',
+                    '../imgVer/images/ver-6.png',
+                    '../imgVer/images/ver-7.png',
+                    '../imgVer/images/ver-8.png'
+                ],
+            },
+
+
+                    var name = $("#name").val();
+                    var pwd = $("#pwd").val();
+                success: function () {
+                    $.ajax({
+                        url: 'https://localhost:44319/api/Landing/Landing',
+                        type: 'get',
+                        data: { Name: name, PassWord: pwd },
+                        json: function (data) {
+                            if (data > 0) {
+                                alert("登录成功");
+                            }
+                            else {
+                                alert("登录失败");
+                            }
+                        }
+                    })
+            }
+
+
+    </script>*@
