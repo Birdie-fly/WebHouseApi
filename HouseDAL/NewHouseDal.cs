@@ -10,9 +10,9 @@ namespace HouseDAL
         /// 显示新房源
         /// </summary>
         /// <returns></returns>
-        public List<HouseCollectModel> houseCollects()
+        public IEnumerable<HouseCollectModel> houseCollects()
         {
-            string sql = " select * from HouseCollect C JOIN HouseModel M on c.HouseModel=m.Id join HouseType t on c.HouseType=t.Id";
+            string sql = " select * from HouseCollect where HouseModel=1";
             return DapperHelper<HouseCollectModel>.Query(sql, null);
         }
         /// <summary>
@@ -42,9 +42,9 @@ namespace HouseDAL
         /// <param name="HouseModel"></param>
         /// <param name="HouseType"></param>
         /// <returns></returns>
-        public List<HouseCollectModel> collectModels(string HouseModel,string HouseType)
+        public IEnumerable<HouseCollectModel> collectModels(string HouseModel,string HouseType)
         {
-            string sql = " select * from HouseCollect C JOIN HouseModel M on c.HouseModel=m.Id join HouseType t on c.HouseType=t.Id where 1=1";
+            string sql = " select * from HouseCollect  where 1=1";
             if(!string.IsNullOrEmpty(HouseModel))
             {
                 sql += $"where HouseModel={HouseModel}";

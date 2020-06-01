@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <link href="C:\Users\来者何人\source\repos\webHouse2\WebHouseMVC\WebHouseMVC\Content\bootstrap.css" rel="stylesheet" />
+    <script src="C:\Users\来者何人\source\repos\webHouse2\WebHouseMVC\WebHouseMVC\Scripts\jquery-3.4.1.min.js"></script>
+    <title></title>
+    <script>
+        $(function () {
+            $.ajax({
+                url: "https://localhost:44335/api/NewHouse/houseCollects",
+                type: 'get',
+                dataType: 'json',
+                success: function (d) {
+                    $("#body").empty();
+                    $(d).each(function () {
+                        var line = '<tr>'
+                            +
+                            +'</tr>'
+
+                        $("#body").append(line);
+                    })
+
+                }
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>
+
+    </div>
+   <table>
+       <thead>
+           <tr>
+               <td>编号</td>
+               <td>图片</td>
+               <td>价格</td>
+           </tr>
+       </thead>
+      <tbody id="body">
+
+      </tbody>
+   </table>
+</body>
+</html>

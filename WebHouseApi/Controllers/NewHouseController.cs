@@ -6,10 +6,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using HouseBLL;
 using HouseModel;
+using Microsoft.AspNetCore.Cors;
+
 namespace WebHouseApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
+    [EnableCors("cors")]
     [ApiController]
+
     public class NewHouseController : ControllerBase
     {
         NewHouseBll bll = new NewHouseBll();
@@ -18,7 +22,7 @@ namespace WebHouseApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public List<HouseCollectModel> houseCollects()
+        public IEnumerable<HouseCollectModel> houseCollects()
         {
             return bll.houseCollects();
         }
@@ -49,7 +53,7 @@ namespace WebHouseApi.Controllers
         /// <param name="HouseType"></param>
         /// <returns></returns>
         [HttpGet]
-        public List<HouseCollectModel> collectModels(string HouseModel, string HouseType)
+        public IEnumerable<HouseCollectModel> collectModels(string HouseModel, string HouseType)
         {
 
             return bll.collectModels(HouseModel, HouseType);
