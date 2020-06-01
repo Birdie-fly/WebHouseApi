@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\jquery-3.3.1.js"></script>
+    <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\bootstrap.js"></script>
+
+    <title></title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>客户姓名</td>
+                <td>客户电话</td>
+                <td>客户性别</td>
+            </tr>
+        </thead>
+        <tbody id="body"></tbody>
+    </table>
+</body>
+</html>
+<script>
+    //页面第一次加载
+    $(function () {
+        prishow();
+    })
+    function prishow() {
+        $.ajax({
+            url: "https://localhost:44335/api/Principal/GetPrincipal",
+            type: "get",
+            dataType: "json",
+            success: function (d) {
+                //清空
+                $("#body").empty();
+
+                //拼接数据表
+                $(d).each(function () {
+                    var line = '<tr>'
+                        + '<td>' + this.PrincipalName + '</td>'
+                        + '<td>' + this.PrincipalPhone + '</td>'
+                        + '<td>' + this.CommodityId + '</td>'
+                        + '<td>' + this.Enter + '</td>'
+                        + '<td>' + this.PrImage + '</td>'
+                        + '<td>' + this.Email + '</td>'
+                        + '<td>' + this.QQ + '</td>'
+                        + '<td>' + this.WeChat + '</td>'
+                        + '</tr>'
+                    //将数据放入表格
+                    $("#body").append(line);
+                });
+            }
+        })
+    }
+</script>
