@@ -14,7 +14,7 @@ namespace HouseBLL
         /// 获取经纪人信息
         /// </summary>
         /// <returns></returns>
-        public List<PrincipalModel> GetPrincipals()
+        public IEnumerable<PrincipalModel> GetPrincipals()
         {
             return dal.GetPrincipals();
         }
@@ -27,6 +27,15 @@ namespace HouseBLL
         public int AddPrincipal(PrincipalModel principalModel)
         {
             return dal.AddPrincipal(principalModel);
+        }
+
+        /// <summary>
+        /// 获取商家信息
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<CommodityModel> GetCommodities()
+        {
+            return dal.GetCommodities();
         }
     }
 }

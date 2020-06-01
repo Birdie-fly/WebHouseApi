@@ -11,7 +11,7 @@ namespace HouseDAL
         /// 获取经纪人信息
         /// </summary>
         /// <returns></returns>
-        public List<PrincipalModel> GetPrincipals()
+        public IEnumerable<PrincipalModel> GetPrincipals()
         {
             string sql = "select * from GetPrincipals";
             return DapperHelper<PrincipalModel>.Query(sql, null);
@@ -25,6 +25,14 @@ namespace HouseDAL
         public int AddPrincipal(PrincipalModel principalModel)
         {
             return DapperHelper<PrincipalModel>.Execute($"insert into Principal values('{principalModel.PrincipalName}','{principalModel.PrincipalPhone}',{principalModel.CommodityId},'{principalModel.Enter}','{principalModel.PrImage}','{principalModel.Email}','{principalModel.QQ}','{principalModel.WeChat}')", null);
+        }
+        /// <summary>
+        /// 获取商家信息
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<CommodityModel> GetCommodities()
+        {
+            return DapperHelper<CommodityModel>.Query("select * from Commodity", null);
         }
     }
 }
