@@ -12,7 +12,7 @@ namespace HouseBLL
         /// 显示新房源
         /// </summary>
         /// <returns></returns>
-        public List<HouseCollectModel> houseCollects()
+        public IEnumerable<HouseCollectModel> houseCollects()
         {
             return dal.houseCollects();
         }
@@ -40,7 +40,7 @@ namespace HouseBLL
         /// <param name="HouseModel"></param>
         /// <param name="HouseType"></param>
         /// <returns></returns>
-        public List<HouseCollectModel> collectModels(string HouseModel, string HouseType)
+        public IEnumerable<HouseCollectModel> collectModels(string HouseModel, string HouseType)
         {
 
             return dal.collectModels(HouseModel, HouseType);

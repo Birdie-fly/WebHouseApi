@@ -2,33 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using HouseBLL;
 using HouseModel;
-using Microsoft.AspNetCore.Cors;
-using System.ComponentModel.Design;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace WebHouseApi.Controllers
 {
     [Route("api/[controller]/[action]")]
     [EnableCors("cors")]
     [ApiController]
-    public class PrincipalController : ControllerBase
+    public class ClientInfoController : ControllerBase
     {
-        PrincipalBll bll = new PrincipalBll();
-        // GET: api/<Principal>
-        public PageInfo GetPrincipals(int CurrentPage = 1, int PageSize = 2, string PriName = "",int ComId=0)
+        ClientInfoBll bll = new ClientInfoBll();
+        //获取客户信息显示
+        [HttpGet]
+        public PageInfo GetClientInfo(int CurrentPage = 1, int PageSize = 2,string ClientName="")
         {
-            var list = bll.GetPrincipals();
-            if (!string.IsNullOrEmpty(PriName))
+            var list = bll.GetClientInfo();
+            if (!string.IsNullOrEmpty(ClientName))
             {
-                list = list.Where(s => s.PrincipalName.Contains(PriName)).ToList();
-            }
-            if (ComId != 0)
-            {
-                list = list.Where(s => s.CommodityId == ComId).ToList(); ;
+                list = list.Where(s => s.ClientName.Contains(ClientName)).ToList();
             }
             //实例化分页类
             var p = new PageInfo();
@@ -56,16 +50,10 @@ namespace WebHouseApi.Controllers
             {
                 CurrentPage = p.TotalPage;
             }
-            p.principalModels = list.Skip(CurrentPage * (CurrentPage - 1)).Take(PageSize).ToList();
+            p.clientInfoModels = list.Skip(CurrentPage * (CurrentPage - 1)).Take(PageSize).ToList();
 
             p.CurrentPage = CurrentPage;
             return p;
-        }
-
-        [HttpPost]
-        public int AddPrincipal(PrincipalModel principalModel)
-        {
-            return bll.AddPrincipal(principalModel);
         }
     }
 }
