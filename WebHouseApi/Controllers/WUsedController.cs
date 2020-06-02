@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using HouseBLL;
 using HouseModel;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,9 +38,14 @@ namespace WebHouseApi.Controllers
 
         // POST: api/WUsed
         [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        //public void Post(List<HouseCollectModel> models,HttpContext context)
+        //{
+        //    context.Response.ContentType = "text/plain";
+        //    //获取传来的文件
+        //    HttpPostedFile file = context.Request.Files[0];
+        //    //保存到相应的文件夹  物理路径
+        //    file.SaveAs(context.Server.MapPath("/images/" + file.FileName));
+        //}
 
         // PUT: api/WUsed/5
         [HttpPut("{id}")]
@@ -52,5 +58,6 @@ namespace WebHouseApi.Controllers
         public void Delete(int id)
         {
         }
+
     }
 }

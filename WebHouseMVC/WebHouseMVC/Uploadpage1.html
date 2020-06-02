@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input id="File1" type="file" name="battlePlans"/>
+</body>
+</html>
+<script>
+    var formData = new FormData();
+    for (var file in files) {
+        formData.append("battlePlans", file, file.name);
+    }
+</script>

@@ -29,7 +29,7 @@ namespace HouseDAL
         /// <returns></returns>
         public IEnumerable<HouseTypeModel> GetHT()
         {
-            string sql = "select * from GetHT";
+            string sql = "select * from HouseType";
             return DapperHelper<HouseTypeModel>.Query(sql, null);
         }
 
