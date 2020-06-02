@@ -18,6 +18,17 @@ namespace HouseDAL
         }
 
         /// <summary>
+        /// 获取经纪人信息
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<PrincipalModel> GetPrincipalById(int id)
+        {
+            string sql = $"select * from GetPrincipals where Id= {id}";
+            return DapperHelper<PrincipalModel>.Query(sql, null);
+        }
+
+
+        /// <summary>
         /// 添加经纪人信息
         /// </summary>
         /// <param name="principalModel"></param>

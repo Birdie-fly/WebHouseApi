@@ -20,6 +20,15 @@ namespace HouseBLL
         }
 
         /// <summary>
+        /// 获取经纪人信息
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<PrincipalModel> GetPrincipalById(int id)
+        {
+            return dal.GetPrincipalById(id);
+        }
+
+        /// <summary>
         /// 添加经纪人信息
         /// </summary>
         /// <param name="principalModel"></param>

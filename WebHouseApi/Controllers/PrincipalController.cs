@@ -55,10 +55,22 @@ namespace WebHouseApi.Controllers
     {
         PrincipalBll bll = new PrincipalBll();
         // GET: api/<Principal>
+        [HttpGet]
         public IEnumerable<PrincipalModel> GetPrincipals()
         {
             return bll.GetPrincipals();
         }
+
+        /// <summary>
+        /// 获取经纪人信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IEnumerable<PrincipalModel> GetPrincipalById(int id)
+        {
+            return bll.GetPrincipalById(id);
+        }
+
 
         [HttpPost]
         public int AddPrincipal(PrincipalModel principalModel)

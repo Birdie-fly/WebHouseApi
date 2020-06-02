@@ -2,9 +2,23 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
     <script src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\jquery-3.3.1.js"></script>
+    <script src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\Js\qrcode.js"></script>
     <style>
+        #qrcode {
+            width: 30px;
+            height: 30px;
+            margin-top: 15px;
+        }
+
+        #text {
+            height: 23px;
+        }
+
+
         #box {
             width: 1000px;
             height: 600px;
@@ -96,8 +110,8 @@
             position: absolute;
             top: 25%;
             left: 35%;
-            width: 35%;
-            height: 35%;
+            width: 40%;
+            height: 40%;
             padding: 20px;
             border: 10px solid orange;
             background-color: white;
@@ -110,21 +124,10 @@
     <div id="tb" class="">
     </div>
     <div id="light" class="white_content">
-        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='block'">点这里关闭本窗口</a>
-        <ol>
-            <li>
-                <img src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\images\电话.png" style="width:50px;height:50px;"/>
-            </li>
-            <li>
-                <img src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\images\QQ.png" style="width:50px;height:50px;"/>
-            </li>
-            <li>
-                <img src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\images\微信.png" style="width:50px;height:50px;"/>
-            </li>
-            <li>
-                <img src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\images\联系人.png" style="width:50px;height:50px;"/>
-            </li>
-        </ol>
+        <span style="margin-right:0px;"></span><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='block'">点这里关闭本窗口</a>
+        <div id="type">
+
+        </div>
     </div>
 </body>
 </html>
@@ -140,7 +143,9 @@
             dataType: 'json',
             success: function (d) {
                 $(d).each(function () {
-                    var str = '<div style="width:800px; float:left; height:110px;">'
+
+                    console.log(d);
+                    var str = '<div style="width:800px; float:left; height:110px;margin-top:60px;">'
                         + '<div style="float:left;width:500px ">'
                         + '<img src="' + this.prImage + '" alt="" width="140" height="160" style="float:left;margin:12px" />'
                         + '<p>' + this.principalName + '</p><br>'
@@ -151,19 +156,6 @@
                         + '<button id="alert" onclick=" showType(' + this.id + ')">联系方式</button>'
                         + '</div >'
                         + '</div >';
-                    //var str = '<tr>'
-                    //    + '<th>' + this.id	 + '</th>'
-                    //    + '<th>' + this.principalName + '</th>'
-                    //    + '<th>' + this.principalPhone + '</th>'
-                    //    + '<th>' + this.enter + '</th>'
-                    //    + '<th>' + this.prImage	+ '</th>'
-                    //    + '<th>' + this.email   + '</th>'
-                    //    + '<th>' + this.qq    + '</th>'
-                    //    + '<th>' + this.weChat  + '</th>'
-                    //    + '<th>' + this.sex + '</th>'
-                    //    + '<th>' + this.age + '</th>'
-                    //    + '<th>' + this.commodityName + '</th>';
-                    //+ '</tr>';
                     $("#tb").append(str);
                 })
             }
@@ -172,25 +164,92 @@
 
     function showType(id) {
         document.getElementById('light').style.display = 'block';
+        $.ajax({
+            url: 'https://localhost:44335/api/Principal/GetPrincipalById?id=' + id,
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                $("#type").empty();
+                $(d).each(function () {
+                    var str = '<ul style="list-style:none;">' +
+                        '<li style="float:left;margin-left:10%">' +
+                        '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\电话.png" style="width:100px;height:100px;" onclick="toTel(' + this.principalPhone + ')"/>' +
+                        '</li>' +
+                        '<li style="float:left;margin-left:5%">' +
+                        '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\QQ.png" style="width:100px;height:100px;" onclick="toQQ(' + this.qq + ')" />' +
+                        '</li>' +
+                        '<li style="float:left;margin-left:5%">' +
+                        '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\微信.png" style="width:100px;height:100px;" onclick="toWeChat()"/>' +
+                        '<input id="url" type="hidden" value="' + this.weChat + '"/>' +
+                        '<div id="qrcode"></div>' +
+                        ' </li>' +
+                        '<li style="float:left;margin-left:5%">' +
+                        '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\联系人.png" style="width:100px;height:100px;" onclick="totxLu(' + this.id + ')"/>' +
+                        '<div id="qrcodes" margin-top:5px;></div>' +
+                        '</li>' +
+                        '</ul>';
+                    $("#type").append(str);
+                })
+            }
+        })
+
     }
-    function txLu() {
-        var name, company, title, address, mobile, email, web, desc;
-        $(".btn").click(function () {
-            name = "FN:" + $("#name").val() + "\n";
-            company = "ORG:" + $("#company").val() + "\n";
-            title = "TITLE:" + $("#title").val() + "\n";
-            address = "WORK:" + $("#address").val() + "\n";
-            mobile = "TEL:" + $("#mobile").val() + "\n";
-            email = "EMAIL:" + $("#email").val() + "\n";
-            web = "URL:" + $("#web").val() + "\n";
-            desc = "NOTE:" + $("#desc").val() + "\n";
 
-            var info = "BEGIN:VCARD\n" + name + company + title + address + mobile + email + web + desc + "END:VCARD";
-            //console.log(info);
-            //生成二维码
-            var qrcode = new QRCode("qrcode");
-            qrcode.makeCode(info);
+    function toTel(tel) {
+        location.href = "tel:" + tel + "";
+    }
 
+    function toQQ(qq) {
+        location.href = "tencent://message/?uin=" + qq + "amp;Site=sc.chinaz.com&amp;Menu=yes";
+    }
+
+
+    // 生成微信二维码的方法
+    function toWeChat() {
+        $("#qrcode").empty();
+        $("#qrcodes").empty();
+        var u = $("#url").val();
+        var qrcode = new QRCode("qrcode");
+        qrcode.makeCode(u);
+    }
+
+    function totxLu(id) {
+        $("#qrcode").empty();
+        $("#qrcodes").empty();
+        var name = "";
+        var company = "";
+        var title = "";
+        var address = "";
+        var mobile = "";
+        var email = "";
+        var web = "";
+        var desc = "";
+        var info = "";
+        $.ajax({
+            url: 'https://localhost:44335/api/Principal/GetPrincipalById?id=' + id,
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                $(d).each(function () {
+                    name = "FN:" + this.principalName + "\n";
+                    company = "ORG:" + this.commodityName + "\n";
+                    title = "TITLE:" + "经纪人" + "\n";
+                    address = "WORK:" + "" + "\n";
+                    mobile = "TEL:" + this.principalPhone + "\n";
+                    email = "EMAIL:" + this.email + "\n";
+                    web = "URL:" + "" + "\n";
+                    desc = "NOTE:" + "" + "\n";
+
+                    info = "BEGIN:VCARD\n" + name + company + title + address + mobile + email + web + desc + "END:VCARD";
+                    console.log(info);
+                    //生成二维码
+                    var qrcodes = new QRCode("qrcodes");
+                    qrcodes.makeCode(info);
+                })
+            }
         })
     }
+
+
+
 </script>
