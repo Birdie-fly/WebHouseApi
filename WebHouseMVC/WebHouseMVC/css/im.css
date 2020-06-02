@@ -1,0 +1,1169 @@
+@charset "UTF-8";
+/*!
+* @name im
+* @author author
+* @date 
+*/
+/**
+ * @method 清除浮动 %clearfix 
+ * @description 清除浮动
+ * @example 调用
+ * 
+ * ```scss
+ * div {
+ *    @ extend %clearfix;
+ * }
+ * ```
+ * 
+ * ```css
+ * 	div {
+	    *zoom: 1;
+	}
+	div:after {
+	    display: block;
+	    clear: both;
+
+	    height: 0;
+
+	    content: '\20';
+	}
+ * ```
+ */
+/**
+ * @method 去掉虚线框 %outline 
+ * @description 去掉虚线框
+ * @example 调用
+ * 
+ * ```scss
+ * div {
+ *    @ extend %outline;
+ * }
+ * ```
+ * 
+ * ```css
+	div {
+		outline: thin dotted;
+		outline: 5px auto -webkit-focus-ring-color;
+		outline-offset: -2px;
+	}
+ * ```
+ */
+/**
+ * @method 文字不换行后面加省略号 %text-overflow 
+ * @description 文字不换行后面加省略号
+ * @example 调用
+ * 
+ * ```scss
+ * div {
+ *    @ extend %text-overflow;
+ * }
+ * ```
+ * 
+ * ```css
+	div {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+ * ```
+ */
+/**
+ * @method 内容换行 %word-wrap 
+ * @description 内容换行
+ * @example 调用
+ * 
+ * ```scss
+ * div {
+ *    @extend %word-wrap;
+ * }
+ * ```
+ * 
+ * ```css
+	div {
+	    word-wrap: break-word;
+	    white-space: pre-wrap;
+	    word-break: break-all;
+	}
+ * ```
+ */
+/**
+ * @method 透明层opacity 
+ * @description 透明层 内容也透明
+ * @param {number} $opacity - 透明度 0 ~ 1之间
+ * @example 调用
+ * 
+ * ```scss
+ * div {
+ *    @ include opacity(.5);
+ * }
+ * ```
+ * 
+ * ```css
+ * div {
+	  opacity: .5;
+	  filter: alpha(opacity=50);
+ * }
+ * ```
+ */
+/**
+ * @method 背景透明层transparent 
+ * @description 透明层只处理背景透明
+ * @param {string} $color - 背景透明层的颜色
+ * @param {number} $alpha - 透明度 0 ~ 1之间
+ * @example 调用
+ * 
+ * ```scss
+ * div {
+ *    @ include transparent(#000, .5);
+ * }
+ * ```
+ * 
+ * ```css
+ * div {
+ *    	background-color: transparent;
+		background-color: (0,0,0,.5);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff, endColorstr=#7fffffff,);
+		zoom: 1;
+ * }
+ * ```
+ */
+/**
+ * @method triangle 
+ * @description 生成一个三角形图标
+ * @param {string} $size - 三角的大小
+ * @param {string} $color - 三角颜色
+ * @param {string} $direction - 三角的方向 up, down, left, right
+ * @example 调用
+ * 
+ * ```scss
+ * i {
+ *    @ include triangle(5px, #bbb, up); 
+ * }
+ * ```
+ * 
+ * ```css
+ * i {
+ *    width: 0;
+      height: 0;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent;
+      border-bottom-color: #bbb;
+ * }
+ * ```
+ */
+/**
+ * @method 水平线hr nav-divider 
+ * @description 透明层 内容也透明
+ * @param {string} $color=#e5e5e5 - 线的颜色
+ * @param {string} $line-height-computed - 线的高度，空间
+ * @example 调用
+ * 
+ * ```scss
+ * div {
+ *    @ include nav-divider(#e5e5e5, 24px);
+ * }
+ * ```
+ * 
+ * ```css
+ * div {
+	  height: 1px;
+	  margin: 11px 0;
+	  overflow: hidden;
+	  background-color: #e5e5e5;
+ * }
+ * ```
+ */
+@font-face {
+    font-family: "ico";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/ico_1.eot");
+    src: url("../fonts/ico_1.eot#iefix") format("embedded-opentype"), url("../images/ico.svg#ico") format("svg"), url("../fonts/ico_1.woff") format("woff");
+}
+
+[class^="font-ico-"],
+[class*=" font-ico-"] {
+    font-family: "ico";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: inherit;
+    float: none;
+    margin: 0;
+    vertical-align: -0.25em;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.font-ico-1:before {
+    content: "\EA01";
+}
+
+.font-ico-10:before {
+    content: "\EA02";
+}
+
+.font-ico-11:before {
+    content: "\EA03";
+}
+
+.font-ico-12:before {
+    content: "\EA04";
+}
+
+.font-ico-13:before {
+    content: "\EA05";
+}
+
+.font-ico-14:before {
+    content: "\EA06";
+}
+
+.font-ico-15:before {
+    content: "\EA07";
+}
+
+.font-ico-16:before {
+    content: "\EA08";
+}
+
+.font-ico-17:before {
+    content: "\EA09";
+}
+
+.font-ico-18:before {
+    content: "\EA0A";
+}
+
+.font-ico-19:before {
+    content: "\EA0B";
+}
+
+.font-ico-2:before {
+    content: "\EA0C";
+}
+
+.font-ico-20:before {
+    content: "\EA0D";
+}
+
+.font-ico-21:before {
+    content: "\EA0E";
+}
+
+.font-ico-22:before {
+    content: "\EA0F";
+}
+
+.font-ico-23:before {
+    content: "\EA10";
+}
+
+.font-ico-24:before {
+    content: "\EA11";
+}
+
+.font-ico-25:before {
+    content: "\EA12";
+}
+
+.font-ico-26:before {
+    content: "\EA13";
+}
+
+.font-ico-27:before {
+    content: "\EA14";
+}
+
+.font-ico-28:before {
+    content: "\EA15";
+}
+
+.font-ico-29:before {
+    content: "\EA16";
+}
+
+.font-ico-3:before {
+    content: "\EA17";
+}
+
+.font-ico-30:before {
+    content: "\EA18";
+}
+
+.font-ico-31:before {
+    content: "\EA19";
+}
+
+.font-ico-32:before {
+    content: "\EA1A";
+}
+
+.font-ico-33:before {
+    content: "\EA1B";
+}
+
+.font-ico-34:before {
+    content: "\EA1C";
+}
+
+.font-ico-35:before {
+    content: "\EA1D";
+}
+
+.font-ico-36:before {
+    content: "\EA1E";
+}
+
+.font-ico-37:before {
+    content: "\EA1F";
+}
+
+.font-ico-38:before {
+    content: "\EA20";
+}
+
+.font-ico-39:before {
+    content: "\EA21";
+}
+
+.font-ico-4:before {
+    content: "\EA22";
+}
+
+.font-ico-40:before {
+    content: "\EA23";
+}
+
+.font-ico-41:before {
+    content: "\EA24";
+}
+
+.font-ico-43:before {
+    content: "\EA25";
+}
+
+.font-ico-44:before {
+    content: "\EA26";
+}
+
+.font-ico-45:before {
+    content: "\EA27";
+}
+
+.font-ico-47:before {
+    content: "\EA28";
+}
+
+.font-ico-49:before {
+    content: "\EA29";
+}
+
+.font-ico-5:before {
+    content: "\EA2A";
+}
+
+.font-ico-50:before {
+    content: "\EA2B";
+}
+
+.font-ico-51:before {
+    content: "\EA2C";
+}
+
+.font-ico-53:before {
+    content: "\EA2D";
+}
+
+.font-ico-54:before {
+    content: "\EA2E";
+}
+
+.font-ico-55:before {
+    content: "\EA2F";
+}
+
+.font-ico-56:before {
+    content: "\EA30";
+}
+
+.font-ico-6:before {
+    content: "\EA31";
+}
+
+.font-ico-61:before {
+    content: "\EA32";
+}
+
+.font-ico-62:before {
+    content: "\EA33";
+}
+
+.font-ico-64:before {
+    content: "\EA34";
+}
+
+.font-ico-65:before {
+    content: "\EA35";
+}
+
+.font-ico-66:before {
+    content: "\EA36";
+}
+
+.font-ico-67:before {
+    content: "\EA37";
+}
+
+.font-ico-68:before {
+    content: "\EA38";
+}
+
+.font-ico-7:before {
+    content: "\EA39";
+}
+
+.font-ico-8:before {
+    content: "\EA3A";
+}
+
+.font-ico-9:before {
+    content: "\EA3B";
+}
+
+.font-ico-ad:before {
+    content: "\EA3C";
+}
+
+.font-ico-arrow-down:before {
+    content: "\EA3D";
+}
+
+.font-ico-arwl:before {
+    content: "\EA3E";
+}
+
+.font-ico-arwr:before {
+    content: "\EA3F";
+}
+
+.font-ico-bj:before {
+    content: "\EA40";
+}
+
+.font-ico-carlevel:before {
+    content: "\EA41";
+}
+
+.font-ico-chk:before {
+    content: "\EA42";
+}
+
+.font-ico-chked:before {
+    content: "\EA43";
+}
+
+.font-ico-close:before {
+    content: "\EA44";
+}
+
+.font-ico-copy:before {
+    content: "\EA45";
+}
+
+.font-ico-del:before {
+    content: "\EA46";
+}
+
+.font-ico-detail:before {
+    content: "\EA47";
+}
+
+.font-ico-down:before {
+    content: "\EA48";
+}
+
+.font-ico-edit:before {
+    content: "\EA49";
+}
+
+.font-ico-exit:before {
+    content: "\EA4A";
+}
+
+.font-ico-file:before {
+    content: "\EA4B";
+}
+
+.font-ico-fj:before {
+    content: "\EA4C";
+}
+
+.font-ico-ind:before {
+    content: "\EA4D";
+}
+
+.font-ico-jg:before {
+    content: "\EA4E";
+}
+
+.font-ico-local:before {
+    content: "\EA4F";
+}
+
+.font-ico-man:before {
+    content: "\EA50";
+}
+
+.font-ico-man1:before {
+    content: "\EA51";
+}
+
+.font-ico-man2:before {
+    content: "\EA52";
+}
+
+.font-ico-mb:before {
+    content: "\EA53";
+}
+
+.font-ico-menu:before {
+    content: "\EA54";
+}
+
+.font-ico-menu1:before {
+    content: "\EA55";
+}
+
+.font-ico-nr:before {
+    content: "\EA56";
+}
+
+.font-ico-pf:before {
+    content: "\EA57";
+}
+
+.font-ico-plus:before {
+    content: "\EA58";
+}
+
+.font-ico-plus0:before {
+    content: "\EA59";
+}
+
+.font-ico-plus1:before {
+    content: "\EA5A";
+}
+
+.font-ico-plus11:before {
+    content: "\EA5B";
+}
+
+.font-ico-plus12:before {
+    content: "\EA5C";
+}
+
+.font-ico-plus1e:before {
+    content: "\EA5D";
+}
+
+.font-ico-search:before {
+    content: "\EA5E";
+}
+
+.font-ico-set:before {
+    content: "\EA5F";
+}
+
+.font-ico-sort:before {
+    content: "\EA60";
+}
+
+.font-ico-sortdown:before {
+    content: "\EA61";
+}
+
+.font-ico-sortup:before {
+    content: "\EA62";
+}
+
+.font-ico-tp:before {
+    content: "\EA63";
+}
+
+.font-ico-up:before {
+    content: "\EA64";
+}
+
+.font-ico-weixin:before {
+    content: "\EA65";
+}
+
+.font-ico-z1:before {
+    content: "\EA66";
+}
+
+.font-ico-z2:before {
+    content: "\EA67";
+}
+
+.font-ico-z3:before {
+    content: "\EA68";
+}
+
+.font-ico-z4:before {
+    content: "\EA69";
+}
+
+.im-window {
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    z-index: 999;
+}
+
+.im-window .im-window-container {
+    display: flex;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.45);
+    background: #fff;
+}
+
+.im-window .im-window-container .im-friend-list {
+    width: 260px;
+}
+
+.im-window .im-window-container .im-friend-list .im-list-no-data {
+    width: 100%;
+    margin-top: 20%;
+    color: #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: -10px;
+    font-size: 14px;
+}
+
+.im-window .im-window-container .im-friend-list .im-list-no-data .no-data-img {
+    width: 200px;
+    height: 100px;
+    margin-bottom: 20px;
+    background-image: url("../images/nodata.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-btn {
+    height: 40px;
+    line-height: 40px;
+    width: 260px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap {
+    height: 390px;
+    overflow-y: auto;
+    display: none;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item {
+    width: 100%;
+    height: 66px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    border-bottom: 1px solid rgba(220, 220, 220, 0.5);
+    background: #fff;
+    position: relative;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item .im-list-item-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 12px;
+    display: none;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item:hover .im-list-item-close {
+    display: block;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item .im-list-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-self: center;
+    border-radius: 100%;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item .im-list-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-around;
+    width: 160px;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item .im-list-info .info-top {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 22px;
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item .im-list-info .info-top .info-top-name {
+    overflow: hidden;
+    max-width: 130px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item .im-list-info .info-top .info-top-time {
+    font-size: 12px;
+    color: #9b9b9b;
+    overflow: hidden;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item .im-list-info .info-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #9b9b9b;
+    height: 22px;
+    line-height: 22px;
+    align-items: center;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item .im-list-info .info-bottom .info-bottom-content {
+    display: flex;
+    align-items: center;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item .im-list-info .info-bottom .info-bottom-content .info-bottom-desc {
+    max-width: 90px;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 5px;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item .im-list-info .info-bottom .info-bottom-unread {
+    background: #f43530;
+    border-radius: 9px;
+    width: 26px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+
+.im-window .im-window-container .im-friend-list .im-friend-list-wrap .im-list-item .im-list-info .info-bottom .info-bottom-unread.none-0 {
+    display: none;
+}
+
+.im-window .im-window-container .im-message-chat {
+    width: 500px;
+    height: 430px;
+    position: relative;
+    background: #f3f4f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #ccc;
+    display: none;
+}
+
+.im-window .im-window-container .im-message-chat .im-header-wrap {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+    background: #fff;
+}
+
+.im-window .im-window-container .im-message-chat .im-header-wrap .im-header-close {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap {
+    width: 100%;
+    height: 40%;
+    box-sizing: border-box;
+    flex-grow: 3;
+    padding-top: 5px;
+    overflow-y: auto;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item-time-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item-time-wrap .im-message-item-time {
+    padding: 2px 5px;
+    background: #d6d6d6;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item.out {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: #fff;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item.in {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: #222;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item.in .im-message-item-text,
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item.in .im-custom-item,
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item.in .im-message-item-audio {
+    background-color: #fff;
+    color: #222;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item.in .im-message-item-audio-image {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .im-message-item-audio {
+    max-width: 70%;
+    border-radius: 4px;
+    background-color: #3387ff;
+    padding: 8px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .im-message-item-audio .im-message-item-audio-image {
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .im-message-item-audio .im-message-item-audio-time {
+    line-height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .im-message-item-tip {
+    padding: 2px 5px;
+    background: #d6d6d6;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .right-triangle {
+    height: 0px;
+    width: 0px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #3387ff;
+    margin-top: 10px;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .left-triangle {
+    height: 0px;
+    width: 0px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent;
+    margin-top: 10px;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .im-message-item-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .im-message-item-text {
+    max-width: 70%;
+    border-radius: 4px;
+    background-color: #3387ff;
+    padding: 8px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .im-custom-item {
+    width: 50%;
+    border-radius: 4px;
+    background-color: #3387ff;
+    padding: 8px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow: hidden;
+    color: #fff;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .im-custom-item .im-custom-item-image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .im-custom-item .im-custom-item-image img {
+    width: 100%;
+    height: inherit;
+    display: block;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .im-custom-item .im-custom-item-name {
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.im-window .im-window-container .im-message-chat .im-record-wrap .im-message-item .im-custom-item .im-custom-item-price {
+    font-size: 14px;
+    color: #e40;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap {
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-fast-content {
+    position: absolute;
+    right: 5px;
+    top: -250px;
+    border-radius: 5px;
+    display: none;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-fast-content.active {
+    display: block;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-fast-content .fast-item {
+    cursor: pointer;
+    background: #fff;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    border-top: 1px solid rgba(220, 220, 220, 0.5);
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-fast-content .fast-item:first-child {
+    border-top: 0;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-fast-content .arrow {
+    height: 0px;
+    width: 0px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    float: right;
+    margin-right: 12px;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-input {
+    width: 300px;
+    min-height: 36px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-button {
+    width: 300px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-size: 15px;
+    text-align: center;
+    color: #333336;
+    background-color: #fff;
+    flex-grow: 1;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-button.im-button-hover {
+    background-color: #cecece;
+    color: #333336;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-chat-audio {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-chat-add {
+    margin-right: 10px;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: top;
+    flex-shrink: 0;
+    text-align: center;
+    line-height: 28px;
+    position: relative;
+    cursor: pointer;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-icon i {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-icon .im-icon-input {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-content .im-send-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: top;
+    flex-shrink: 0;
+    text-align: center;
+    line-height: 32px;
+    background: #da0000;
+    color: #fff;
+    font-size: 12px;
+    margin-right: 10px;
+    display: none;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-subcontent {
+    height: 200px;
+    border-top: 1px solid #ccc;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    top: -200px;
+    width: 100%;
+    background: #fff;
+    display: none;
+    overflow: hidden;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-subcontent .swiper-emoji .swiper-emoji-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-subcontent .swiper-emoji .swiper-emoji-list .swiper-emoji-item {
+    width: 12.5%;
+    height: 50px;
+    padding: 0 7px;
+    box-sizing: border-box;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-subcontent .swiper-emoji .swiper-emoji-list .swiper-emoji-item img {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-subcontent .swiper-emoji .swiper-pagination {
+    text-align: center;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-subcontent .swiper-emoji .swiper-pagination i {
+    overflow: hidden;
+    text-indent: -999px;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.im-window .im-window-container .im-message-chat .im-input-wrap .im-input-subcontent .swiper-emoji .swiper-pagination i.act {
+    background: #e40;
+}
+
+.im-window .im-window-container .im-message-chat .no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*# sourceMappingURL=http://localhost:8888/css/im.css.map */

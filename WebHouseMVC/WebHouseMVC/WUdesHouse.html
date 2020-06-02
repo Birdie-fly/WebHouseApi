@@ -3,30 +3,101 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <script src="wwwroot\lib\jquery\dist\jquery.js"></script>
-    <link href="wwwroot\lib\bootstrap\dist\css\bootstrap.css" rel="stylesheet" />
+    <script src="C:\Users\Administrator\Desktop\二月项目\WebHouseApi\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\jquery-3.3.1.js"></script>
+
+    <script src="C:\Users\Administrator\Desktop\二月项目\WebHouseApi\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\bootstrap.js"></script>
+    <!--<script src="wwwroot\lib\jquery\dist\jquery.js"></script>
+    <link href="wwwroot\lib\bootstrap\dist\css\bootstrap.css" rel="stylesheet" />-->
+    <link rel="stylesheet" type="text/css" href="~/IM/iconfont.css">
     <style>
         p {
             font-size: 1px;
-            color:#808080;
-            margin-bottom:0;
-            margin-top:14px;
+            color: #808080;
+            margin-bottom: 0;
+            margin-top: 14px;
         }
-        div:hover{
-            color:#ff0000;
-            background:#d8cfcf;
+
+        .Show:hover {
+            background: #d8cfcf;
+            color: #ff0000;
+            /*border: 1px solid #808080;*/
+        }
+
+        .Show {
+            border-top: 1px solid #808080;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 15px;
+            margin-left: 5px;
+            color: #000000;
+        }
+
+            a:hover {
+                color: #ff6a00;
+            }
+
+        .tou:hover {
+            background: #ff6644;
         }
     </style>
 </head>
 <body>
-    <span id="">房型:</span>
-    <div id="boy"></div>
+    <div style="background:#d8cfcf">
+        <div style="margin-left:155px;float:left;">
+            <img src="Wimages/logo1.png" alt="" style="width:400px; height:100px;" />
+            <input id="Text1" type="text" style=" margin: 7px;margin-right:-7px; height: 40px; width: 440px;" placeholder="请输入小区名称/学校/区域" />
+            <!--<input id="Button1" type="button" style="background:#ff0000;color:#ffffff" width="50" height="50" value="搜索" />-->
+        </div>
+
+        <div style="background:#ff7759; float:left; width:60px;height:40px;margin-top:27px; cursor:pointer;">
+            <span style="color:#ffffff; line-height:38px;margin-left:14px;">搜索</span>
+        </div>
+    </div>
+    <div style="width:inherit; height:40px;background:#ff7759; clear:both;">
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;margin-left:95px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">搜索</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">新房</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">二手房</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">商铺</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">搜索</span></div>
+    </div>
+    <div style="clear: both;">
+        <p>
+            <span id="HT" style="margin-left:95px; font-size:15px;font-weight:700;color:#808080; display:inline-block;float:left;">房型:</span>
+            <div style="display:inline-block;width:200px;"><a href="#">一室一厅一卫</a></div>
+            <div style="display:inline-block;width:200px;"><a href="#">二室一厅一卫</a></div>
+            <div style="display:inline-block;width:200px;"><a href="#">三室一厅一卫</a></div>
+            <div style="display:inline-block;width:200px;"><a href="#">三室一厅二卫</a></div>
+            <div style="display:inline-block;width:200px;"><a href="#">三室二厅二卫</a></div>
+        </p>
+        <p>
+            <span style="margin-left:95px;font-size: 15px; font-weight:700;color:#808080; display:inline-block;float:left;">面积:</span>
+            <div style="display:inline-block;width:200px;"><a href="#">50平以下</a></div>
+            <div style="display:inline-block;width:200px;"><a href="#">50-70平</a></div>
+            <div style="display:inline-block;width:200px;"><a href="#">70-90平</a></div>
+            <div style="display:inline-block;width:200px;"><a href="#">90-110平</a></div>
+            <div style="display:inline-block;width:200px;"><a href="#">110以上</a></div>
+        </p>
+        <p>
+            <span style="margin-left:95px;font-size: 15px; font-weight:700; color:#808080;display:inline-block;float:left;">价格:</span>
+            <div style="display:inline-block;width:200px;"><a href="#">1000-2000</a></div>
+            <div style="display:inline-block;width:200px;"><a href="#">2000-3000</a></div>
+            <div style="display:inline-block;width:200px;"><a href="#">3000-4000</a></div>
+            <div style="display:inline-block;width:200px;"><a href="#">4000-5000</a></div>
+            <div style="display:inline-block;width:200px;"><a href="#">5000以上</a></div>
+        </p>
+    </div>
+    <div style="width:1300px;margin-left:95px; height:50px;background:#ff7759;clear:both;">
+
+    </div>
+    <div id="boy" style="margin-left:95px;"></div>
 </body>
 </html>
 <script>
     $(function () {
        // Show();
-        BandHT();
+       //BandHT();
         Show1();
     })
     function Show() {
@@ -60,11 +131,11 @@
             dataType: 'json',
             success: function (d) {
                 for (var i = 0; i < d.length; i++) {
-                    var str = '<div style="width:1300px; float:left; height:110px;">'
+                    var str = '<div class="Show" style="width:1300px; float:left; height:120px;">'
                         + '<div style="float:left;width:350px ">'
                         + '<img src="Wimages/1.jpg" alt="" width="130" height="90" style="float:left;margin:12px" />'
                         + '<span>' + d[i].houseName + '</span>'
-                        + '<p>' + d[i].hTyp +'   '+ d[i].houseArea + '</p>'
+                        + '<p>' + d[i].hType +'   '+ d[i].houseArea + '</p>'
                         + '<p>' + d[i].houseInfo + '</p>'
                         + '<p>临界 可餐饮 上水 下水</p>'
                         +'</div >'
@@ -78,6 +149,19 @@
         })
     }
     //房型
+    //function BandHT() {
+    //    $.ajax({
+    //        url: 'https://localhost:44335/api/WUsed/GetHT',
+    //        type: 'get',
+    //        dataType: 'json',
+    //        success: function (d) {
+    //            for (var i = 0; i < d.length; i++) {
+    //                var str = '<a href="#">' + d[i].hType + '</a>';
+    //                $("#HT").append(str);
+    //            }
+    //        }
+    //    })
+    //}
     function BandHT() {
         $.ajax({
             url: 'https://localhost:44335/api/WUsed/get',
