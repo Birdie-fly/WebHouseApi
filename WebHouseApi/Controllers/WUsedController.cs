@@ -24,7 +24,7 @@ namespace WebHouseApi.Controllers
             return bll.GetUsedHouse();
         }
         //显示查询列表
-        public IEnumerable<HouseCollectModel> GetHT()
+        public IEnumerable<HouseTypeModel> GetHT()
         {
             return bll.GetHT();
         }
