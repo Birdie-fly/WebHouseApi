@@ -41,7 +41,7 @@ namespace HouseModel
         /// <summary>
         /// 解析的微信二维码链接
         /// </summary>
-        public int Age { get; set; }
+        public string WeChat { get; set; }
         /// <summary>
         /// 所属公司名称
         /// </summary>

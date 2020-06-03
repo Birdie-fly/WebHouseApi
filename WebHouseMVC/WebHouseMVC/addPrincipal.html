@@ -23,54 +23,82 @@
     </style>
 </head>
 <body>
-    <table class="tab table-bordered">
-        <tr>
-            <th>负责人姓名:</th>
-            <th><input id="txtName" type="text" /></th>
-        </tr>
-        <tr>
-            <th>联系电话:</th>
-            <th><input id="txtPhone" type="text" /></th>
-        </tr>
-        <tr>
-            <th>所属公司:</th>
-            <th>
-                <select id="Select1">
-                </select>
-            </th>
-        </tr>
-        <tr>
-            <th>工作经验:</th>
-            <th><textarea id="txtEnter" rows="2" cols="20"></textarea></th>
-        </tr>
-        <tr>
-            <th>本人照片:</th>
-            <th>
-                <img id="pic" style="width:100px;height:100px;border-radius:50%;" src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\images\用户.png" onclick="xuanImage()">
-                <input id="upload" name="file" accept="image/*" type="file" style="display: none">
-            </th>
-        </tr>
-        <tr>
-            <th>性别:</th>
-            <th></th>
-        </tr>
-        <tr>
-            <th>年龄:</th>
-            <th></th>
-        </tr>
-        <tr>
-            <th>邮箱:</th>
-            <th><input id="txtEmail" type="text" /></th>
-        </tr>
-        <tr>
-            <th>QQ:</th>
-            <th><input id="txtQQ" type="text" /></th>
-        </tr>
-        <tr>
-            <th>微信:</th>
-            <th><input type="file" id="newfile" onchange="changepic(this)">二维码地址:<span id="spantitle"></span></th>
-        </tr>
-    </table>
+    <div>
+        <table class="tab table-bordered">
+            <tr>
+                <th>负责人姓名:</th>
+                <th><input id="txtName" type="text" /></th>
+            </tr>
+            <tr>
+                <th>联系电话:</th>
+                <th><input id="txtPhone" type="text" /></th>
+            </tr>
+            <tr>
+                <th>所属公司:</th>
+                <th>
+                    <select id="Select1">
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <th>工作经验:</th>
+                <th><textarea id="txtEnter" rows="2" cols="20"></textarea></th>
+            </tr>
+            <tr>
+                <th>本人照片:</th>
+                <th>
+                    <form enctype="multipart/form-data" id="formData">
+                        <img id="pic" style="width:100px;height:100px;border-radius:50%;" src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\images\用户.png" onclick="xuanImage()">
+                        <input id="filesp" name="file" accept="image/*" type="file" style="display: none">
+                    </form>
+                </th>
+            </tr>
+            <tr>
+                <th>邮箱:</th>
+                <th><input id="txtEmail" type="text" /></th>
+            </tr>
+            <tr>
+                <th>QQ:</th>
+                <th><input id="txtQQ" type="text" /></th>
+            </tr>
+            <tr>
+                <th>微信:</th>
+                <th><input type="file" id="newfile" onchange="changepic(this)"><input id="Hidden1" type="hidden" /></th>
+            </tr>
+            <tr>
+                <th><input id="btnSave" type="button" value="添加" /></th>
+            </tr>
+        </table>
+    </div>
+
+
+    <script src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\Js\jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnSave").click(function () {
+                var data = new FormData(document.getElementById("formData"));
+                var parame = JSON.stringify({ Name: $("#fileName").val(), Remark: $("#txtRemake").val(), Type: $("#selType").val(), RelationId: $("#txtRelationId").val() });
+                data.append("ImageModelInfo", parame);
+                //参数
+                $.ajax({
+                    type: "post",
+                    url: "https://localhost:44335/api/Principal/FileUp",
+                    dataType: "json",
+                    data: {},
+                    async: true,
+                    contentType: false,//实体头部用于指示资源的MIME类型 media type 。这里要为false
+                    processData: false,//processData 默认为true，当设置为true的时候,jquery ajax 提交的时候不会序列化 data，而是直接使用data
+                    success: function (data) {
+                        console.log(data);
+                    },
+                    error: function (data) {
+                        console.log("错误" + data);
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
 
@@ -82,14 +110,17 @@
 
     //选择照片
     function xuanImage() {
-        $("#upload").click(); //隐藏了input:file样式后，点击头像就可以本地上传
-        $("#upload").on("change", function () {
+        $("#filesp").click(); //隐藏了input:file样式后，点击头像就可以本地上传
+        $("#filesp").on("change", function () {
             var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
             if (objUrl) {
                 $("#pic").attr("src", objUrl); //将图片路径存入src中，显示出图片
             }
         });
+
+
     }
+
 
     //绑定所属公司下拉
     function bangSel() {
@@ -131,9 +162,9 @@
         console.log(getObjectURL(this.files[0]));// newfile[0]是通过input file上传的二维码图片文件
         qrcode.decode(getObjectURL(this.files[0]));
         qrcode.callback = function (imgMsg) {
-            // 获取地址传给span
-            var divA = document.getElementById("spantitle");
-            divA.innerHTML = divA.innerHTML + imgMsg;
+            // 获取地址传给Hidden1
+            $("#Hidden1").empty();
+            document.getElementById("Hidden1").value = imgMsg;
         }
     }
 
