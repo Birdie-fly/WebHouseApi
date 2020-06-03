@@ -50,10 +50,20 @@ namespace WebHouseApi.Controllers
             {
                 CurrentPage = p.TotalPage;
             }
-            p.clientInfoModels = list.Skip(CurrentPage * (CurrentPage - 1)).Take(PageSize).ToList();
+            p.ClientInfoModels = list.Skip(CurrentPage * (CurrentPage - 1)).Take(PageSize).ToList();
 
             p.CurrentPage = CurrentPage;
             return p;
+        }
+        //删除客户信息
+        public int DelClientInfo(int id)
+        {
+            return bll.DelClientInfo(id);
+        }
+        //修改客户信息
+        public int UptClientInfo(ClientInfoModel cm)
+        {
+            return bll.UptClientInfo(cm);
         }
     }
 }

@@ -2,54 +2,160 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <title>售卖人信息</title>
+    <link rel="stylesheet" href="boot/bootstrap.min.css" />
+    <link rel="stylesheet" href="boot/bootstrap-table.min.css">
+    <link rel="stylesheet" href="boot/bootstrap-table-pagejump.css" />
+    <link rel="stylesheet" href="commonUnit/layui/css/layui.css" />
+    <link rel="stylesheet" href="commonUnit/laydate/need/laydate.css" />
+    <link rel="stylesheet" href="commonUnit/laydate/skins/yahui/laydate.css" />
+    <link rel="stylesheet" href="css/sys.css" />
+    <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="boot/bootstrap.min.js"></script>
+    <script src="boot/bootstrap-table.min.js"></script>
+    <script src="boot/bootstrap-table-zh-CN.min.js"></script>
+    <script src="boot/bootstrap-table-pagejump.js" type="text/javascript" charset="utf-8"></script>
+    <script src="commonUnit/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+    <script src="commonUnit/laydate/laydate.dev.js" type="text/javascript" charset="utf-8"></script>
     <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\jquery-3.3.1.js"></script>
     <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\bootstrap.js"></script>
-
-    <title></title>
+    <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\jquery-3.3.1.js"></script>
+    <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\bootstrap.js"></script>
+    <script>
+        var PageSize = 2;
+        var CurrentPage = 1;
+        var TotalPage = 1;
+        //页面第一次加载
+        $(function () {
+            Bandla();
+            prishow(1);
+        })
+        function prishow(page) {
+            var obj = {};
+            obj.CurrentPage = page;
+            obj.PageSize = PageSize;
+            $.ajax({
+                url: "https://localhost:44335/api/Principal/GetPrincipals",
+                type: "get",
+                data: { CurrentPage: obj.CurrentPage, PageSize: obj.PageSize, PriName: $("#priName").val(), ComId: $("#comId").val() },
+                dataType: "json",
+                async: true,
+                crossDomain: true,
+                success: function (d) {
+                    console.log(d.principalModels);
+                    $("#TotalCount").text(d.totalCount)
+                    $("#TotalPage").text(d.totalPage)
+                    $("#CurrentPage").text(d.currentPage)
+                    //最大页
+                    TotalPage = d.totalPage;
+                    //当前页
+                    CurrentPage = d.currentPage;
+                    //清空
+                    $("#body").empty();
+                    //拼接数据表
+                    $(d.principalModels).each(function () {
+                        console.log(this);
+                        var line = '<tr>'
+                            + '<td>' + this.id + '</td>'
+                            + '<td>' + this.principalName + '</td>'
+                            + '<td>' + this.principalPhone + '</td>'
+                            + '<td>' + this.commodityName + '</td>'
+                            + '<td>' + this.enter + '</td>'
+                            + '<td><img src="' + this.prImage + '" alt="" width="100"/></td>'
+                            + '<td>' + this.email + '</td>'
+                            + '<td>' + this.qq + '</td>'
+                            + '<td>' + this.weChat + '</td>'
+                            + '<td>' + '<a href=javascript:; onclick=Del(' + this.id + ')>删除</a>' + '</td>'
+                            + '</tr>'
+                        //将数据放入表格
+                        $("#body").append(line);
+                    });
+                }
+            })
+        }
+        //绑定公司下拉
+        function Bandla() {
+            $.ajax({
+                url: "https://localhost:44335/api/BandCommodity/GetBandCommoidity",
+                type: "get",
+                dataType: "json",
+                success: function (d) {
+                    console.log(d.commodityModels);
+                    //清空表格
+                    $("#comId").empty();
+                    $("#comId").append("<option value=0>==请选择==</option>");
+                    $(d).each(function () {
+                        console.log(this);
+                        //拼接一个下拉选项
+                        var opt = "<option value='" + this.id + "'>" + this.commodityName + "</option>";
+                        //将数据放入表格
+                        $("#comId").append(opt);
+                    });
+                }
+            });
+        }
+        //删除
+        function Del(id) {
+            if (!confirm("确认删除吗？")) {
+                return;
+            }
+            $.ajax({
+                url: "https://localhost:44335/api/Principal/DelPrincipal?id=" + id,
+                type: "delete",
+                dataType: "json",
+                success: function (d) {
+                    if (d > 0) {
+                        alert("删除成功");
+                        location.href = '/PrincipalShow.html';
+                    } else {
+                        alert("删除失败");
+                    }
+                }
+            })
+        }
+    </script>
 </head>
 <body>
     <table>
+        <tr>
+            <td>姓名：</td>
+            <td><input id="priName" type="text" class="fenlei-chaxun-input" placeholder="请输入经纪人名称"/></td>&nbsp;&nbsp;
+            <td>公司：</td>
+            <td><select id="comId"></select></td>&nbsp;&nbsp;
+            <td align="center">
+                <input id="Button1" type="button" value="搜索" onclick="prishow(1)" style="padding:2px 8px ;border-radius:5px " class="btn-info" />
+
+            </td>
+        </tr>
+    </table>
+    <table class="table table-hover  gysz-table-head table-bordered" style="width: 1535px;" align="center">
         <thead>
             <tr>
-                <td>客户姓名</td>
-                <td>客户电话</td>
-                <td>客户性别</td>
+                <th style="width: 40px;" data-field="Id"><div class="th-inner">序号</div><div class="fht-cell"></div></th>
+                <th style="width: 60px; " data-field="PrincipalName"><div class="th-inner">姓名</div><div class="fht-cell"></div></th>
+                <th style="width: 100px; " data-field="PrincipalPhone"><div class="th-inner">联系电话</div><div class="fht-cell"></div></th>
+                <th style="width: 170px; " data-field="CommodityId"><div class="th-inner">所属公司</div><div class="fht-cell"></div></th>
+                <th style="width: 100px; " data-field="Enter"><div class="th-inner">工作经验</div><div class="fht-cell"></div></th>
+                <th style="width: 100px; " data-field="PrImage"><div class="th-inner">本人照片</div><div class="fht-cell"></div></th>
+                <th style="width: 130px; " data-field="Email"><div class="th-inner ">邮箱</div><div class="fht-cell"></div></th>
+                <th style="width: 80px; " data-field="QQ"><div class="th-inner ">QQ号</div><div class="fht-cell"></div></th>
+                <th style="width: 150px; " data-field="WeChat"><div class="th-inner ">微信二维码链接</div><div class="fht-cell"></div></th>
+                <th style="text-align: center; vertical-align: middle; width:35px; "><div class="th-inner ">操作</div><div class="fht-cell"></div></th>
             </tr>
+
         </thead>
         <tbody id="body"></tbody>
     </table>
+    <table class=" table-bordered table">
+        <tr>
+            <td>总记录数<span id="TotalCount"></span>条</td>
+            <td>总共<span id="TotalPage"></span>页</td>
+            <td>当前第<span id="CurrentPage"></span>页</td>
+            <td><a href="javascript:;" onclick="prishow(1)">首页</a></td>
+            <td><a href="javascript:;" onclick="prishow(CurrentPage-1)">上一页</a></td>
+            <td><a href="javascript:;" onclick="prishow(CurrentPage+1)">下一页</a></td>
+            <td><a href="javascript:;" onclick="prishow(TotalPage)">尾页</a></td>
+        </tr>
+    </table>
 </body>
 </html>
-<script>
-    //页面第一次加载
-    $(function () {
-        prishow();
-    })
-    function prishow() {
-        $.ajax({
-            url: "https://localhost:44335/api/Principal/GetPrincipal",
-            type: "get",
-            dataType: "json",
-            success: function (d) {
-                //清空
-                $("#body").empty();
-
-                //拼接数据表
-                $(d).each(function () {
-                    var line = '<tr>'
-                        + '<td>' + this.PrincipalName + '</td>'
-                        + '<td>' + this.PrincipalPhone + '</td>'
-                        + '<td>' + this.CommodityId + '</td>'
-                        + '<td>' + this.Enter + '</td>'
-                        + '<td>' + this.PrImage + '</td>'
-                        + '<td>' + this.Email + '</td>'
-                        + '<td>' + this.QQ + '</td>'
-                        + '<td>' + this.WeChat + '</td>'
-                        + '</tr>'
-                    //将数据放入表格
-                    $("#body").append(line);
-                });
-            }
-        })
-    }
-</script>

@@ -2,51 +2,132 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <title>商家信息</title>
+    <link rel="stylesheet" href="boot/bootstrap.min.css" />
+    <link rel="stylesheet" href="boot/bootstrap-table.min.css">
+    <link rel="stylesheet" href="boot/bootstrap-table-pagejump.css" />
+    <link rel="stylesheet" href="commonUnit/layui/css/layui.css" />
+    <link rel="stylesheet" href="commonUnit/laydate/need/laydate.css" />
+    <link rel="stylesheet" href="commonUnit/laydate/skins/yahui/laydate.css" />
+    <link rel="stylesheet" href="css/sys.css" />
+    <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="boot/bootstrap.min.js"></script>
+    <script src="boot/bootstrap-table.min.js"></script>
+    <script src="boot/bootstrap-table-zh-CN.min.js"></script>
+    <script src="boot/bootstrap-table-pagejump.js" type="text/javascript" charset="utf-8"></script>
+    <script src="commonUnit/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+    <script src="commonUnit/laydate/laydate.dev.js" type="text/javascript" charset="utf-8"></script>
     <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\jquery-3.3.1.js"></script>
     <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\bootstrap.js"></script>
 
-    <title></title>
+    <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\jquery-3.3.1.js"></script>
+    <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\bootstrap.js"></script>
+    <script>
+        var PageSize = 2;
+        var CurrentPage = 1;
+        var TotalPage = 1;
+        //页面第一次加载
+        $(function () {
+            commoidshow(1);
+        })
+        function commoidshow(page) {
+            var obj = {};
+            obj.CurrentPage = page;
+            obj.PageSize = PageSize;
+            $.ajax({
+                url: "https://localhost:44335/api/Commodity/GetCommodity",
+                type: "get",
+                data: { CurrentPage: obj.CurrentPage, PageSize: obj.PageSize, ComName: $("#comName").val() },
+                dataType: "json",
+                success: function (d) {
+                    console.log(d.commodityModels);
+                    $("#TotalCount").text(d.totalCount)
+                    $("#TotalPage").text(d.totalPage)
+                    $("#CurrentPage").text(d.currentPage)
+                    //最大页
+                    TotalPage = d.totalPage;
+                    //当前页
+                    CurrentPage = d.currentPage;
+                    //清空
+                    $("#body").empty();
+
+                    //拼接数据表
+                    $(d.commodityModels).each(function () {
+                        console.log(this);
+                        var line = '<tr>'
+                            + '<td>' + this.id + '</td>'
+                            + '<td>' + this.commodityName + '</td>'
+                            + '<td>' + this.commodityPhone + '</td>'
+                            + '<td>' + this.commoditySite + '</td>'
+                            + '<td>' + this.commodityArgot + '</td>'
+                            + '<td>' + (this.commodityState == 1 ? "上线显示中" : "申请中") + '</td>'
+                            + '<td>' + '<a href=javascript:; onclick=Del(' + this.id + ')>删除</a>' + '</td>'
+                            + '</tr>'
+                        //将数据放入表格
+                        $("#body").append(line);
+                    });
+                }
+            })
+        }
+        //删除
+        function Del(id) {
+            if (!confirm("确认删除吗？")) {
+                return;
+            }
+            $.ajax({
+                url: "https://localhost:44335/api/Commodity/DelCommodity?id=" + id,
+                type: "delete",
+                dataType: "json",
+                success: function (d) {
+                    if (d > 0) {
+                        alert("删除成功");
+                        location.href = '/CommoidityShow.html';
+                    } else {
+                        alert("删除失败");
+                    }
+                }
+            })
+        }
+    </script>
 </head>
 <body>
     <table>
-        <thead>
+        <tr>
+            <td>商家名称：</td>
+            <td><input id="comName" type="text" class="fenlei-chaxun-input" placeholder="请输入商家名称"/></td>&nbsp;&nbsp;
+            <td align="center">
+                <input id="Button1" type="button" value="搜索" onclick="commoidshow(1)" style="padding:2px 8px ;border-radius:5px " class="btn-info" />
+            </td>
+            <td align="center">
+                <input id="Button2" type="button" value="进入售卖人信息" onclick="location.href='PrincipalShow.html'" style="padding:2px 10px ;border-radius:5px " class="btn-info" />
+            </td>
+        </tr>
+    </table>
+    <table class="table table-hover  gysz-table-head table-bordered" style="width: 1535px;" align="center">
+        <thead >
             <tr>
-                <td>客户姓名</td>
-                <td>客户电话</td>
-                <td>客户性别</td>
+                <th style="width: 100px;" data-field="Id"><div class="th-inner">序号</div><div class="fht-cell"></div></th>
+                <th style="width: 200px; " data-field="CommodityName"><div class="th-inner">商家姓名</div><div class="fht-cell"></div></th>
+                <th style="width: 200px; " data-field="CommodityPhone"><div class="th-inner">商家电话</div><div class="fht-cell"></div></th>
+                <th style="width: 200px; " data-field="CommoditySite"><div class="th-inner">商家地址</div><div class="fht-cell"></div></th>
+                <th style="width: 200px; " data-field="CommodityArgot"><div class="th-inner ">公司标志</div><div class="fht-cell"></div></th>
+                <th style="width: 100px; " data-field="CommodityState"><div class="th-inner ">状态</div><div class="fht-cell"></div></th>
+                <th style="text-align: center; vertical-align: middle; width: 10px; "><div class="th-inner ">操作</div><div class="fht-cell"></div></th>
             </tr>
+
         </thead>
         <tbody id="body"></tbody>
     </table>
+    <table class=" table-bordered table">
+        <tr>
+            <td>总记录<span id="TotalCount"></span>条</td>
+            <td>共有<span id="TotalPage"></span>页</td>
+            <td>当前<span id="CurrentPage"></span>页</td>
+            <td><a href="javascript:;" onclick="commoidshow(1);">首页</a></td>
+            <td><a href="javascript:;" onclick="commoidshow(CurrentPage - 1);">上一页</a></td>
+            <td><a href="javascript:;" onclick="commoidshow(CurrentPage + 1);">下一页</a></td>
+            <td><a href="javascript:;" onclick="commoidshow(TotalPage);">尾页</a></td>
+        </tr>
+    </table>
 </body>
 </html>
-<script>
-    //页面第一次加载
-    $(function () {
-        commoidshow();
-    })
-    function commoidshow() {
-        $.ajax({
-            url: "https://localhost:44335/api/Commodity/GetCommodity",
-            type: "get",
-            dataType: "json",
-            success: function (d) {
-                //清空
-                $("#body").empty();
-
-                //拼接数据表
-                $(d).each(function () {
-                    var line = '<tr>'
-                        + '<td>' + this.CommodityName + '</td>'
-                        + '<td>' + this.CommodityPhone + '</td>'
-                        + '<td>' + this.CommoditySite + '</td>'
-                        + '<td>' + this.CommodityArgot + '</td>'
-                        + '<td>' + this.CommodityState + '</td>'
-                        + '</tr>'
-                    //将数据放入表格
-                    $("#body").append(line);
-                });
-            }
-        })
-    }
-</script>

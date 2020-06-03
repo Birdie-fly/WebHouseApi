@@ -19,16 +19,16 @@ namespace WebHouseApi.Controllers
     {
         PrincipalBll bll = new PrincipalBll();
         // GET: api/<Principal>
-        public PageInfo GetPrincipals(int CurrentPage = 1, int PageSize = 2, string PriName = "",int ComId=0)
+        public PageInfo GetPrincipals(int CurrentPage = 1, int PageSize = 2, string PriName = "",Nullable<int> ComId=0)
         {
             var list = bll.GetPrincipals();
             if (!string.IsNullOrEmpty(PriName))
             {
                 list = list.Where(s => s.PrincipalName.Contains(PriName)).ToList();
             }
-            if (ComId != 0)
+            if (ComId != null&& ComId != 0)
             {
-                list = list.Where(s => s.CommodityId == ComId).ToList(); ;
+                list = list.Where(s => s.CommodityId == ComId).ToList();
             }
             //实例化分页类
             var p = new PageInfo();
@@ -56,7 +56,7 @@ namespace WebHouseApi.Controllers
             {
                 CurrentPage = p.TotalPage;
             }
-            p.principalModels = list.Skip(CurrentPage * (CurrentPage - 1)).Take(PageSize).ToList();
+            p.PrincipalModels = list.Skip(CurrentPage * (CurrentPage - 1)).Take(PageSize).ToList();
 
             p.CurrentPage = CurrentPage;
             return p;
@@ -66,6 +66,11 @@ namespace WebHouseApi.Controllers
         public int AddPrincipal(PrincipalModel principalModel)
         {
             return bll.AddPrincipal(principalModel);
+        }
+        //删除售卖人信息
+        public int DelPrincipal(int id)
+        {
+            return bll.DelPrincipal(id);
         }
     }
 }
