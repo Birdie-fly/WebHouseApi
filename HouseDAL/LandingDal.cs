@@ -22,6 +22,12 @@ namespace HouseDAL
             string sql = $"select count(1) from LandingModel where Name='{Name}' and Pwd='{Pwd}'";
             return Convert.ToInt32(DapperHelper<LandingModel>.ExecuteScalar(sql,null));
         }
+        // 注册
+        public int Reister(ReisterModel reister)
+        {
+            string sql = $"insert into ReisterModel values({reister.Rname},'{reister.Rphone}','{reister.Rpwd}') ";
+            return DapperHelper<ReisterModel>.Execute(sql, null);
+        }
 
 
     }
