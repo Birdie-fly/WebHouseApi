@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using HouseBLL;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using HouseBLL;
+using HouseModel;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -47,12 +49,19 @@ namespace WebHouseApi.Controllers
 
         //实例化
         LandingBll landingBll = new LandingBll(); 
-
-
+      
         //登陆
-        public int Landing(string Name, string Pwd)
+        [HttpGet]
+        public int Landing(string name, string pwd)
         {
-            return landingBll.Landing(Name,Pwd);
+            return landingBll.Landing(name,pwd);
+        }
+
+
+        // 注册
+        public int Reister(ReisterModel reister)
+        {
+            return landingBll.Reister(reister);
         }
 
     }
