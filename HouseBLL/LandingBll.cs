@@ -15,9 +15,9 @@ namespace HouseBLL
         LandingDal dal = new LandingDal();
 
         //登陆
-        public int Landing(string Name, string Pwd)
+        public int Landing(string name, string pwd)
         {
-            return dal.Landing(Name,Pwd);
+            return dal.Landing(name,pwd);
         }
 
         // 注册

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="../../commonUnit/layui/css/layui.css" />
+	<link rel="stylesheet" href="../../commonUnit/laydate/need/laydate.css" />
+	<link rel="stylesheet" href="../../commonUnit/laydate/skins/yahui/laydate.css" />
+	<link rel="stylesheet" href="../../css/sys.css" />
+	<script src="../../commonUnit/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../commonUnit/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../commonUnit/laydate/laydate.dev.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		.layui-form-item .layui-input-inline {
+			width: 230px;
+		}
+		
+		.layui-form-radio {
+			margin: 2px 10px 0 0;
+		}
+		
+		#edit {
+			padding-left: 15px;
+		}
+		
+	</style>
+
+	<body>
+		<!--查看-->
+		<div id="edit">
+			<form class="layui-form lay-select" action="">
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label" style="margin-right: 5px;">编号:</label>
+						<div class="layui-input-inline">
+							<input type="text" name="" autocomplete="off" class="layui-input" id="bh">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label" style="margin-right: 5px;">是否成功:</label>
+						<div class="layui-input-inline">
+							<input type="radio" name="sex" value="是" title="是">
+							<input type="radio" name="sex" value="否" title="否" checked>
+						</div>
+					</div>
+
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label" style="margin-right: 5px;">用户姓名:</label>
+						<div class="layui-input-inline">
+							<input type="text" name="" autocomplete="off" class="layui-input" id="name1">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label" style="margin-right: 5px;">用户类型:</label>
+						<div class="layui-input-inline">
+							<select name="mmlx" lay-verify="required">
+								<option value=""></option>
+								<option value="0">游客</option>
+								<option value="1">普通vip</option>
+								<option value="2">黄金vip</option>
+								<option value="3">钻石vip</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label" style="margin-right: 5px;">卖方店铺:</label>
+						<div class="layui-input-inline">
+							<input type="text" name="" autocomplete="off" class="layui-input" id="name2">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label" style="margin-right: 5px;">创建日期:</label>
+						<div class="layui-input-inline">
+							<input type="text" name="" autocomplete="off" class="layui-input" id="test1">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label" style="margin-right: 5px;">备注:</label>
+						<div class="layui-input-inline">
+							<textarea placeholder="请输入内容" class="layui-textarea" style="width: 630px;border-radius: 5px;"></textarea>
+						</div>
+					</div>
+
+				</div>
+			</form>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		layui.use('form', function() {
+			var form = layui.form;
+
+		});
+		laydate({
+			elem: '#test1'
+		});
+	</script>
+
+</html>
