@@ -2,6 +2,9 @@
 
 
 
+
+use  House
+
 create table Landing
 (
 	Id		int primary key identity,

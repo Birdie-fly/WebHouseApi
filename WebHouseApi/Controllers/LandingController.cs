@@ -52,9 +52,9 @@ namespace WebHouseApi.Controllers
       
         //登陆
         [HttpGet]
-        public int Landing(string Name, string Pwd)
+        public int Landing(string name, string pwd)
         {
-            return landingBll.Landing(Name,Pwd);
+            return landingBll.Landing(name,pwd);
         }
 
 
