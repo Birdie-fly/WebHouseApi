@@ -19,7 +19,7 @@ namespace HouseDAL
         /// <returns></returns>
         public  IEnumerable<HouseCollectModel>  GetUsedHouse()
         {
-            string sql = "select * from HouseCollect";
+            string sql = "select * from HouseCollect join HouseType on HouseCollect.HouseType=HouseType.Id join HousePrice on HousePrice.Id=HouseCollect.Id";
             return DapperHelper<HouseCollectModel>.Query(sql, null);
         }
         
@@ -32,7 +32,16 @@ namespace HouseDAL
             string sql = "select * from HouseType";
             return DapperHelper<HouseTypeModel>.Query(sql, null);
         }
-
+        /// <summary>
+        /// 添加房源
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public int AddHouse(HouseCollectModel model)
+        {
+            string sql = $"insert into HouseCollect values('{model.HouseName}','{model.HouseSite}','{model.HouseInfo}',{model.HouseType},{model.HouseGradation},{model.HouseSum},{model.HousePrice},{model.HouseArea},'Wybimages/{model.HouseImage}','{model.HouseIntro}',{model.HouseModel},'{model.HouseTenement}/m²',{model.HouseNumber})";
+            return DapperHelper<HouseCollectModel>.Execute(sql, null);
+        }
     }
 
 }

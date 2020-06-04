@@ -5,7 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\WybImages\logo1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\WUdesHouse.html" />
+    <None Include="wwwroot\WybImages\logo1.png" />
   </ItemGroup>
 
   <ItemGroup>

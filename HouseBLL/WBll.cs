@@ -22,5 +22,10 @@ namespace HouseBLL
         {
             return dal.GetHT();
         }
-}
+        //添加房源
+        public int AddHouse(HouseCollectModel model)
+        {
+            return dal.AddHouse(model);
+        }
+    }
 }
