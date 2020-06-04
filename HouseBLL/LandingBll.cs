@@ -1,4 +1,5 @@
 ﻿using HouseDAL;
+using HouseModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,6 +20,11 @@ namespace HouseBLL
             return dal.Landing(Name,Pwd);
         }
 
+        // 注册
+        public int Reister(ReisterModel reister)
+        {
+            return dal.Reister(reister);
+        }
 
     }
 }

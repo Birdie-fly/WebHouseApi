@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Reister";
+}
+
+<h1>注册</h1>
+
+<script src="wwwroot\lib\jquery\dist\jquery.js"></script>
+<link href="wwwroot\lib\bootstrap\dist\css\bootstrap.css" rel="stylesheet" />
+
+
+<table class="table-bordered table">
+    <tr>
+        <td>账号名:</td>
+        <td><input id="Rname" type="text" /></td>
+    </tr>
+    <tr>
+        <td>密码:</td>
+        <td><input id="Rpwd" type="password" /></td>
+    </tr>
+    <tr>
+        <td>手机号:</td>
+        <td><input id="Rphone" type="text" /></td>
+    </tr>
+    <tr>
+        <td><input id="Button1" type="button" value="注册" onclick="Reister()" /></td>
+        <td><input id="Button1" type="button" value="取消" onclick="Exit()" /></td>
+    </tr>
+</table>
+
+<script>
+    //取消
+    function Exit() {
+        location.href = '/Landing/Reister';
+    }
+
+    //注册
+    function Reister() {
+        //集合获取文本框的值
+        var res =
+        {
+            Rname: $("#Rname").val(),
+            Rpwd: $("#Rpwd").val(),
+            Rphone: $("#Rphone").val(),
+        };
+
+        ///验证
+        if (res.val == "") {
+            alert("信息不完整！！！")
+        }
+
+        $.ajax({
+            url: "https://localhost:44335/api/Landing/Reister",
+            type: "post",
+            data: res,
+            datatype: "Json",
+            success: function (d) {
+                if (d > 0) {
+                    alert("注册成功");
+                    location.href = "/Landing/Reister";
+                }
+                else {
+                    alert("注册失败");
+                    return;
+                }
+            }
+        })
+
+
+    }
+</script>
