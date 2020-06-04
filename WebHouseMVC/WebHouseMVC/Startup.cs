@@ -76,6 +76,7 @@ namespace WebHouseMVC
 
 
             app.UseStaticFiles();
+
             app.UseRouting();
             app.UseAuthorization();
 
