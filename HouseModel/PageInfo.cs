@@ -5,9 +5,9 @@ namespace HouseModel
 {
     public class PageInfo
     {
-        public List<ClientInfoModel> clientInfoModels { get; set; }
-        public List<CommodityModel> commodityModels { get; set; }
-        public List<PrincipalModel> principalModels { get; set; }
+        public IEnumerable<ClientInfoModel> ClientInfoModels { get; set; }
+        public IEnumerable<CommodityModel> CommodityModels { get; set; }
+        public IEnumerable<PrincipalModel> PrincipalModels { get; set; }
         //当前页
         public int CurrentPage { get; set; }
         //总记录数

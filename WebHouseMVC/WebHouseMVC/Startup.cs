@@ -56,15 +56,18 @@ namespace WebHouseMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession();
             services.AddBootstrapPagerGenerator(option => {
                 option.ConfigureDefault();
             });
             services.AddControllersWithViews();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSession();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -90,6 +93,7 @@ namespace WebHouseMVC
                     name: "default", 
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            
         }
 
 

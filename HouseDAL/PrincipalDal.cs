@@ -13,10 +13,14 @@ namespace HouseDAL
         /// <returns></returns>
         public List<PrincipalModel> GetPrincipals()
         {
-            string sql = "select * from GetPrincipals";
+            string sql = "select * from Principal INNER JOIN Commodity ON Principal.CommodityId = Commodity.Id";
             return DapperHelper<PrincipalModel>.Query(sql, null);
         }
-
+        //删除经纪人信息
+        public int DelPrincipal(int id)
+        {
+            return DapperHelper<CommodityModel>.Execute("delete from Principal where Id=" + id, null);
+        }
         /// <summary>
         /// 添加经纪人信息
         /// </summary>
