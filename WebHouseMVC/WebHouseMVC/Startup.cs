@@ -68,6 +68,14 @@ namespace WebHouseMVC
                 app.UseDeveloperExceptionPage();
             }
 
+
+            DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+            defaultFilesOptions.DefaultFileNames.Clear();
+            defaultFilesOptions.DefaultFileNames.Add("WUdesHouse.html");
+            app.UseDefaultFiles(defaultFilesOptions);
+
+
+            app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
 
@@ -76,7 +84,7 @@ namespace WebHouseMVC
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
+                    name: "default", 
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
             

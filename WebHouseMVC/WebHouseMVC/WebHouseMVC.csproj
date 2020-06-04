@@ -1,8 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\WybImages\logo1.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="images\" />
@@ -17,6 +21,11 @@
     <PackageReference Include="MySql.Data" Version="8.0.20" />
     <PackageReference Include="Sakura.AspNetCore.Mvc.PagedList" Version="3.0.2" />
     <PackageReference Include="Sakura.AspNetCore.PagedList" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\WUdesHouse.html" />
+    <None Include="wwwroot\WybImages\logo1.png" />
   </ItemGroup>
 
   <ItemGroup>
