@@ -18,7 +18,7 @@ namespace WebHouseApi.Controllers
          CommodityBll bll = new CommodityBll();
         //获取商家信息
         [HttpGet]
-        public PageInfo GetCommodity(int CurrentPage = 1, int PageSize = 2, string ComName = "")
+        public PageInfo GetCommodity(int CurrentPage = 1, int PageSize = 4, string ComName = "")
         {
             var list = bll.GetCommodity();
             if (!string.IsNullOrEmpty(ComName))

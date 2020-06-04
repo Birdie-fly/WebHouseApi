@@ -16,10 +16,10 @@ namespace HouseDAL
         {
             return DapperHelper<ClientInfoModel>.Execute("delete from ClientInfo where Id="+id,null);
         }
-        //修改客户信息
-        public int UptClientInfo(ClientInfoModel cm) 
+        //添加客户信息
+        public int AddClientInfo(ClientInfoModel cm) 
         {
-            return DapperHelper<ClientInfoModel>.Execute(string.Format("update ClientInfo set ClientName={0},ClientPhone={1},ClientSex={2}",cm.ClientName,cm.ClientPhone,cm.ClientSex), null);
+            return DapperHelper<ClientInfoModel>.Execute($"insert into ClientInfo values('{cm.ClientName}','{cm.ClientPhone}',{cm.ClientSex})", null);
         }
 
     }

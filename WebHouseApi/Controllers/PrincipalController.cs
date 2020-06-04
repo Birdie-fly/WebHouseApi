@@ -19,7 +19,7 @@ namespace WebHouseApi.Controllers
     {
         PrincipalBll bll = new PrincipalBll();
         // GET: api/<Principal>
-        public PageInfo GetPrincipals(int CurrentPage = 1, int PageSize = 2, string PriName = "",Nullable<int> ComId=0)
+        public PageInfo GetPrincipals(int CurrentPage = 1, int PageSize = 4, string PriName = "",Nullable<int> ComId=0)
         {
             var list = bll.GetPrincipals();
             if (!string.IsNullOrEmpty(PriName))

@@ -17,10 +17,10 @@ namespace HouseBLL
         {
             return dal.DelClientInfo(id);
         }
-        //修改客户信息
-        public int UptClientInfo(ClientInfoModel cm)
+        //添加客户信息
+        public int AddClientInfo(ClientInfoModel cm)
         {
-            return dal.UptClientInfo(cm);
+            return dal.AddClientInfo(cm);
         }
     }
 }
