@@ -30,16 +30,21 @@
                 color: #ff6644;
             }
         .tou:hover {
-            background: #ff6644;
+            background: #d8cfcf;
         }
         #type p span{
             color:#000000;
         }
     </style>
 
-    <div style="width:inherit;height:30px; background:#d8cfcf">
-
+    <div style="width:inherit; height:40px;background:#808080; clear:both;">
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;margin-left:95px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">租房</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">新房</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">二手房</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">商铺</span></div>
+        <div class="tou" style="width:102px; display:inline-block; cursor:pointer; line-height:38px; float:right;"><span style="color:#ffffff; line-height:38px;margin-right:38px;" onclick="Add()">发布房源</span></div>
     </div>
+    
     <div style="background:#d8cfcf">
         <div style="margin-left:155px;float:left; height:100px;">
             <img src="Wybimages/logo1.png" alt="" style="width:400px; height:100px;" />
@@ -51,13 +56,9 @@
             <span style="color:#ffffff; line-height:38px;margin-left:14px;" onclick="Show1()">搜索</span>
         </div>
     </div>
-    <div style="width:inherit; height:40px;background:#ff7759; clear:both;">
-        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;margin-left:95px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">租房</span></div>
-        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">新房</span></div>
-        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">二手房</span></div>
-        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">商铺</span></div>
-        <div class="tou" style="width:102px; display:inline-block; cursor:pointer; line-height:38px; float:right;"><span style="color:#ffffff; line-height:38px;margin-right:38px;">发布房源</span></div>
-    </div>
+    <!--<div style="width:inherit;height:30px; background:#d8cfcf">
+
+    </div>-->
     <div style="clear: both;" id="type">
         <p>
             <span id="HT" style="margin-left:95px; font-size:15px;font-weight:700; display:inline-block;float:left;">房型:</span>
@@ -84,7 +85,8 @@
             <div style="display:inline-block;width:200px;"><a href="#">5000以上</a></div>
         </p>
     </div>
-    <div style="width:1300px;margin-left:95px; height:50px;background:#ff7759;clear:both;">
+    <div style="width:1300px;margin-left:95px; height:30px;background:#f3f4f8;clear:both;">
+        <p style="font-size:15px;color:#000000;margin-left: 50px;line-height: 2">上海 <span style="margin-left: 470px;">参考均价3500/月</span> <span style="margin-left: 460px;">在售房源量:23套</span> </p>
     </div>
     <div id="boy" style="margin-left:95px;" onclick="Seel()"></div>
 
@@ -95,6 +97,10 @@
        //BandHT();
         Show1();
     })
+    function Add() {
+        location.href ="http://localhost:49946/WAddHouse.html"
+        //location.href = "/CommoidityShow.html";
+    }
     function Show1() {
         $.ajax({
             url: 'https://localhost:44335/api/WUsed/get?Nams=' + $("#txtnams").val(),
