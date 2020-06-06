@@ -24,9 +24,10 @@ select * from Landing
  create table Reister
 (
 	Rid			int primary key identity,
-	Rname 		varchar(100),  --姓名
-	Rphone		varchar(13),  --手机号
+	Rname 		varchar(100),  --用户名
 	Rpwd		varchar(30)		--密码
  )
+
+
 
  select *  from Reister
