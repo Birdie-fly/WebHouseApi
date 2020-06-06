@@ -33,5 +33,9 @@ namespace HouseBLL
         {
             return dal.DelPrincipal(id);
         }
+        public string GetUrl(int id)
+        {
+            return dal.GetUrl(id);
+        }
     }
 }
