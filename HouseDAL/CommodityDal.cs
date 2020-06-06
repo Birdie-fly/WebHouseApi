@@ -13,5 +13,10 @@ namespace HouseDAL
             string str = "select *from Commodity";
             return DapperHelper<CommodityModel>.Query(str, null);
         }
+        //删除商家信息
+        public int DelCommodity(int id)
+        {
+            return DapperHelper<CommodityModel>.Execute("delete from Commodity where Id=" + id, null);
+        }
     }
 }

@@ -28,5 +28,10 @@ namespace HouseBLL
         {
             return dal.AddPrincipal(principalModel);
         }
+        //删除经纪人信息
+        public int DelPrincipal(int id)
+        {
+            return dal.DelPrincipal(id);
+        }
     }
 }

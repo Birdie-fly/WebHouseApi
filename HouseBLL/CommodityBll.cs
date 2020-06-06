@@ -13,5 +13,10 @@ namespace HouseBLL
             {
                 return dal.CommodityShow();
             }
+            //删除商家信息
+            public int DelCommodity(int id)
+            {
+                return dal.DelCommodity(id);
+            }
     }
 }
