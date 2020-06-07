@@ -18,5 +18,10 @@ namespace HouseBLL
             {
                 return dal.DelCommodity(id);
             }
+            //添加商家信息
+            public int AddCommodity(CommodityModel cdm)
+            {
+                return dal.AddCommodity(cdm);
+            }
     }
 }

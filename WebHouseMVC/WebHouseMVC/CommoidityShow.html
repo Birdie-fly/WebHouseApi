@@ -19,9 +19,6 @@
     <script src="commonUnit/laydate/laydate.dev.js" type="text/javascript" charset="utf-8"></script>
     <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\jquery-3.3.1.js"></script>
     <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\bootstrap.js"></script>
-
-    <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\jquery-3.3.1.js"></script>
-    <script src="D:\项目\实训二\项目技能\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\bootstrap.js"></script>
     <script>
         var PageSize = 4;
         var CurrentPage = 1;
@@ -81,7 +78,7 @@
                 success: function (d) {
                     if (d > 0) {
                         alert("删除成功");
-                        location.href = '/CommoidityShow.html';
+                        location.href = 'CommoidityShow.html';
                     } else {
                         alert("删除失败");
                     }
@@ -93,8 +90,8 @@
 <body>
     <table>
         <tr>
-            <td>房产名称：</td>
-            <td><input id="comName" type="text" class="fenlei-chaxun-input" placeholder="请输入商家名称"/></td>&nbsp;&nbsp;
+            <td>公司名称：</td>
+            <td><input id="comName" type="text" class="fenlei-chaxun-input" placeholder="请输入公司名称"/></td>&nbsp;&nbsp;
             <td align="center">
                 <input id="Button1" type="button" value="搜索" onclick="commoidshow(1)" style="padding:2px 8px ;border-radius:5px " class="btn-info" />
             </td>
@@ -107,7 +104,7 @@
         <thead >
             <tr>
                 <th style="width: 100px;" data-field="Id"><div class="th-inner">序号</div><div class="fht-cell"></div></th>
-                <th style="width: 200px; " data-field="CommodityName"><div class="th-inner">商家姓名</div><div class="fht-cell"></div></th>
+                <th style="width: 200px; " data-field="CommodityName"><div class="th-inner">公司名称</div><div class="fht-cell"></div></th>
                 <th style="width: 200px; " data-field="CommodityPhone"><div class="th-inner">商家电话</div><div class="fht-cell"></div></th>
                 <th style="width: 200px; " data-field="CommoditySite"><div class="th-inner">商家地址</div><div class="fht-cell"></div></th>
                 <th style="width: 200px; " data-field="CommodityArgot"><div class="th-inner ">公司标志</div><div class="fht-cell"></div></th>
