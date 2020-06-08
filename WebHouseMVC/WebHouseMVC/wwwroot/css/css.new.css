@@ -1,0 +1,3642 @@
+html,body{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+html{
+	font-size:100px;
+}
+dd, dl, dt, form, h1, h2, h3, h4, h5, h6, img, input, li, p, span, ul, ol {
+	padding: 0;
+	margin: 0;
+}
+img{ border:none;}
+body{
+	font-size:12px;
+	font-size:0.12rem;
+}
+.noscroll,.noscroll body {
+    overflow: hidden;
+}
+.noscroll body {
+    position: relative;
+}
+#loading{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	position:relative;
+}
+.noscroll body #loading{
+	z-index:1;
+}
+
+#loadingImg{
+	display:none;
+}
+
+#loadingImg img{
+	max-width:360px;
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+	z-index:1;
+}
+
+video{
+	pointer-events: auto !important;
+}
+
+.phoneBox #loading{
+	background-size:200px 62px !important;
+}
+
+.phoneBox:before{
+    color: #fff;
+    font-size: 12px;
+    font-family: arial;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    margin-top: 25px;
+}
+
+#pano{
+	width:100%; 
+	height:100%;
+	box-sizing:border-box;
+	filter:alpha(opacity=0);
+	opacity: 0;
+}
+
+#pano img{
+	max-width:100%;
+}
+
+#iframeBox{
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+/*说一说*/
+.commentBox{
+	font-size:14px;
+	color:#fff;
+	font-weight:bold;
+	background-color:rgba(0,0,0,0.5);
+	padding:0 15px;
+	user-select: none;
+	-webkit-user-select: none;
+	pointer-events: none;
+}
+
+.commentBox h4{
+	margin:0;
+	padding:0 0 0 27px;
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	background:url(//s.expoon.com/test/krpano/images/comm-title-icon.png) no-repeat left center transparent;
+}
+
+.commentBox textarea{
+	width:368px;
+	padding:5px;
+	height:70px;
+	font-size:14px;
+	resize: none;
+	background-color:#fff;
+	border:none;
+	pointer-events:auto;
+	*float:left;
+	*margin-left:15px;
+}
+
+.commentBox .commentbtn{
+	height:33px;
+	line-height:33px;
+	overflow:hidden;
+	padding:10px 0;
+	clear:both;
+}
+
+.commentBox .commentbtn i{
+	display:inline-block;
+	height:33px;
+	line-height:33px;
+	font-style:normal;
+	cursor:pointer;
+	padding:0 0 0 30px;
+	background:url(//s.expoon.com/test/krpano/images/comm-hide-icon.png) no-repeat 5px center transparent;
+	pointer-events:auto;
+}
+
+.commentBox .commentbtn i.changeComment{
+	background:url(//s.expoon.com/test/krpano/images/comm-change-icon.png) no-repeat 5px center transparent;
+	margin:0 0 0 40px;
+}
+
+.commentBox .commentbtn i.off{
+	cursor:default;
+	color:#7d7d7d;
+	background:url(//s.expoon.com/test/krpano/images/comm-changegray-wapicon.png) no-repeat 5px center transparent;
+}
+
+.commentBox .commentbtn span{
+	display:inline-block;
+	height:33px;
+	line-height:33px;
+	background-color:#106cab;
+	padding:0 18px;
+	float:right;
+	margin-left:10px;
+	cursor:pointer;
+	pointer-events:auto;
+} 
+
+/*移动端*/
+.commentWapBox{
+    width: 100%;
+    height: 120px;
+    background-color: #f1f1f1;
+    padding: 15px 15px 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow: hidden;
+	position:absolute;
+	left:0;
+	bottom:0;
+	z-index:9999;
+}
+
+.commentWapBox textarea{
+	width: 100%;
+    height: 50px;
+    padding: 5px;
+    color: #333;
+    font-size: 16px;
+    outline: none;
+    resize: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: "Microsoft YaHei","微软雅黑";	
+	background-color:#fff;
+}
+
+.commentWapBox .commentbtn{
+	height: 40px;
+    padding: 10px 0 0;
+    overflow: hidden;
+}
+
+.commentWapBox .commentbtn i{
+	font-style:normal;
+	height: 30px;
+    line-height: 30px;
+	display:inline-block;
+	padding:0 0 0 30px;
+	background:url(//s.expoon.com/test/krpano/images/comm-hide-wapicon.png) no-repeat 5px center transparent;
+}
+
+.commentWapBox .commentbtn i.changeComment{
+	background:url(//s.expoon.com/test/krpano/images/comm-change-wapicon.png) no-repeat 5px center transparent;
+	margin:0 0 0 10px;
+}
+
+.commentWapBox .commentbtn i.off{
+	cursor:default;
+	color:#7d7d7d;
+	background:url(//s.expoon.com/test/krpano/images/comm-changegray-wapicon.png) no-repeat 5px center transparent;
+}
+
+.commentWapBox .commentbtn span{
+	height: 30px;
+    line-height: 30px;
+    width: 80px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #106cab;
+    color: #fff;
+    float: right;
+    font-family: "Microsoft YaHei","微软雅黑";
+	margin-left: 10px;
+}
+
+/*企业二维码*/
+/*
+#weixinLayer{
+	width:300px;
+	overflow:hidden;
+	text-align:center;
+	position:absolute;
+	left:50%;
+	top:50%;
+	z-index:999999;
+	margin-left:-150px;
+}
+
+#weixinLayer p{
+	height:70px;
+	line-height:70px;
+	color:#fff;
+	font-size:14px;
+	font-family: "Microsoft YaHei","微软雅黑";
+	margin:0;
+	padding:0;
+}*/
+
+#weixinLayer{
+	width:75%;
+	height:75%;
+	position:absolute;
+	z-index:999999;
+	top:12.5%;
+	left:12.5%;
+	padding:0 0 70px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	text-align:center;
+}
+
+.weixinLayer{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	line-height:100%;
+}
+
+.weixinLayer span{
+	display:inline-block;
+	width:1px;
+	height:100%;
+	margin-left:-1px;
+	vertical-align:middle; 
+}
+
+.weixinLayer img{
+	max-width:100%;
+	max-height:100%;
+	vertical-align:middle;
+}
+
+#weixinLayer p{
+	height:70px;
+	line-height:70px;
+	color:#fff;
+	font-size:14px;
+	font-family: "Microsoft YaHei","微软雅黑";
+	margin:0;
+	padding:0;
+	position:absolute;
+	width:100%;
+	left:0;
+	bottom:0;
+}
+
+/*新移动端注释点*/
+#infoWapPopup{
+	position:absolute;
+	left:0;
+	top:50px;
+	right:0;
+	bottom:0;
+	z-index:9999;
+    overflow: hidden;
+    overflow-y:auto;
+	font-size: 14px;
+    font-family: arial,宋体;
+	color:#fff;
+	padding:0 15px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+#infoWapPopup h4{
+    margin: 0 20px;
+    padding: 0;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    font-size: 14px;
+    text-align: center;
+}
+
+#infoWapPopupContent{
+    padding: 0 20px;
+	margin: 20px 0 0;
+}
+
+#infoWapPopupContent img {
+    float:none !important;
+    max-width: 90%;
+    height: auto !important;
+	user-select:none;
+	-webkit-user-select:none;
+}
+
+#infoWapPopupContent p {
+    margin: 0 0 12px;
+    line-height: 27px;
+	background-color:transparent !important;
+	color:#fff !important;
+    clear:both;
+}
+
+#infoWapPopupContent.white p {
+    margin: 0 0 12px;
+    line-height: 27px;
+	background-color:transparent !important;
+	color:#000 !important;
+}
+
+.newsList{line-height:60px;font-size:18px;width:100%;overflow:hidden;padding:0;}
+.newsList li{border-bottom:2px solid #fff;list-style:none;font-family: "Microsoft YaHei","微软雅黑";text-align:center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;width:100%;}
+
+#passWordWarp{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	position:relative;
+	background:#000;
+	z-index:2;
+	display:none;
+}
+.passWord{
+	width:775px;
+	height:98px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-49px 0 0 -387px;
+}
+.passWordCon{
+	width:100%;
+	height:42px;
+}
+.passTit{
+	width:242px;
+	font-size:20px;
+	color:#fff;
+	line-height:42px;
+	float:left;
+	font-family:"Microsoft YaHei","微软雅黑";
+	letter-spacing:2px;
+	margin-right:6px;
+}
+.passInp{
+	width:380px;
+	height:40px;
+	line-height:40px;
+	padding:0 10px;
+	border:1px solid #7d7d7d;
+	background:#313131;
+	float:left;
+	margin-right:15px;
+	color:#fff;
+	font-size:20px;
+	outline:none;
+}
+.passWordSubmit{
+	width:110px;
+	height:42px;
+	line-height:42px;
+	font-size:16px;
+	color:#fff;
+	background:#ff5b02;
+	float:right;
+	text-align:center;
+	text-decoration:none;
+	font-family:"Microsoft YaHei","微软雅黑";
+}
+.passWordTip{
+	height:56px;
+	width:400px;
+	margin-left:250px;
+	letter-spacing:2px;
+	font-size:16px;
+	line-height:56px;
+}
+.passWordTip .error{
+	background:url(//s.expoon.com/image/z/krpano/images/err_tip.gif) no-repeat left center;
+	font-family:"Microsoft YaHei","微软雅黑";
+	padding-left:28px;
+	float:left;
+	color:#fff;
+	display:none;
+}
+.passWordTip .jump{
+	float:right;
+	color:#ff5b02;
+	text-decoration:none;
+	font-family:"Microsoft YaHei","微软雅黑";
+}
+#passWordWarp.mobile{
+	padding-top:50%;
+}
+.mobile .passWordCon,.mobile .passWordTip,.mobile .passWordBtn{
+	width:88%;
+	margin:0 auto;
+}
+.mobile .passWordCon{
+	height:auto;
+	overflow:hidden;
+	padding-bottom:15px;
+}
+.mobile .passWordCon .passTit{
+	padding:15px 0;
+	font-size:20px;
+	line-height:normal;
+	display:block;
+}
+.mobile .passWordCon .passInp{
+	width:calc(100% - 24px);
+	border:2px solid #7d7d7d;
+	border-radius:12px;
+	margin-right:0;
+}
+.mobile .passWordTip{
+	height:auto;
+    margin:0 auto;
+    letter-spacing:2px;
+    font-size:16px;
+    line-height:normal;
+    height:21px;
+    padding-bottom:15px;
+}
+.mobile .passWordTip .error{
+    float:none;
+}
+.mobile .passWordBtn a{
+	display:block;
+	width:calc(50% - 20px);
+	border-radius:12px;
+}
+.mobile .passWordBtn a.passWordSubmit{
+	float:left;
+}
+.mobile .passWordBtn a.jump{
+	float:right;
+	height:42px;
+    line-height:42px;
+    font-size:16px;
+    color:#362e2b;
+    background:#a0a0a0;
+    float:right;
+    text-align:center;
+    text-decoration:none;
+    font-family:"Microsoft YaHei","微软雅黑";
+}
+
+/*活动*/
+#wapExpoonActivity{
+    position: fixed;
+    left: 25px;
+    top: 50px;
+    right: 25px;
+    bottom: 50px;
+    z-index: 9999;
+    overflow: hidden;
+    overflow-y: auto;
+    font-size: 0.14rem;
+    font-family: arial,宋体;
+    color: #333;
+    padding: 15px 8px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	background-color:#fff;
+	z-index:9;
+}
+.wapExpoonActivity{
+	overflow:hidden;
+	overflow-y:auto;
+   -webkit-overflow-scrolling:touch;
+}
+.wapExpoonActivity .activity_title{
+	font-size:0.14rem;
+	text-align:center;
+	line-height:0.28rem;
+	padding:0 0 0.1rem;
+}
+.wapExpoonActivity .activity_title span{
+	color:#ff0000;
+	font-size:0.18rem;
+	margin:0.1rem 0;
+	display:block;
+}
+.wapExpoonActivity .activity_title font{
+	font-style:normal;
+	display:inline-block;
+}
+.wapExpoonActivity .activity_title em{
+	font-style:normal;
+	display:inline-block;
+}
+.wapExpoonActivity ul{
+	padding:0;
+	margin:0 0.15rem;
+	list-style:none;
+	border-top:2px solid #c8c8c8;
+}
+.wapExpoonActivity ul li{
+	font-size:0.16rem;
+	color:#000;
+}
+.wapExpoonActivity ul li div{
+	line-height:0.4rem;
+	font-size:0.16rem;
+}
+.wapExpoonActivity ul li div font{
+	line-height:0.4rem;
+	font-size:0.16rem;
+	margin:0;
+	display:inline-block;
+}
+.wapExpoonActivity ul li div font font{
+	color:#ff0000;
+	display:inline;
+}
+.wapExpoonActivity ul li div font span{
+	color:#ff0000;
+	margin:0 0 0 5px;
+	display:inline;
+}
+.wapExpoonActivity ul li input,.wapExpoonActivity ul li textarea{
+	display:block;
+	border:2px solid #bfbfbf;
+	height:0.4rem;
+	line-height:0.4rem;
+	border-radius:6px;
+	font-size:0.16rem;
+	margin:0;
+	padding:0 0.15rem;
+	width:100%;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+.wapExpoonActivity ul li p{
+	color:#666;
+	font-size:0.15rem;
+	margin:0.1rem 0 0;
+}
+.wapExpoonActivity ul li textarea{
+	resize:none;
+	height:0.8rem;
+	padding:0.15rem;
+	line-height:0.24rem;
+}
+#okActivity{
+	height:0.4rem;
+	line-height:0.4rem;
+	background-color:#106cab;
+	color:#fff;
+	text-align:center;
+	font-size:0.17rem;
+	border-radius:6px;
+	margin:0.15rem;
+}
+/*pc*/
+#expoonActivity{
+	width:820px;
+	height:540px;
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+	overflow:hidden;
+	background-color:#fff;
+	font-family: "Microsoft YaHei","微软雅黑";
+	*margin:-270px 0 0 -410px;
+	*left:50%;
+	*top:50%;
+	z-index:9;
+}
+.expoonActivity{
+	padding:10px 0 10px 50px;
+}
+.expoonActivity .activity_title{
+	color:#333;
+	font-size:25px;
+	text-align:center;
+	line-height:40px;
+	padding:30px 0 10px;
+	margin-right:50px;
+	border-bottom:1px solid #cacaca;
+}
+.expoonActivity .activity_title span{
+	color:red;
+	display:block;
+}
+.expoonActivity .activity_title em{
+	font-style:normal;
+	display:inline-block;
+	font-size:20px;
+}
+.expoonActivity ul{
+	list-style:none;
+	margin:0;
+	padding:30px 0 0;
+}
+.expoonActivity ul li{
+	font-size:0;
+	line-height:40px;
+	margin:0 0 15px;
+	position:relative;
+}
+.expoonActivity ul li div{
+	width:154px;
+	display:inline-block;
+	font-size:16px;
+	color:#666;
+	text-align:right;
+	vertical-align: middle;
+	*float:left;
+}
+.expoonActivity ul li div font span{
+	font-size:14px;
+	color:red;
+	position:absolute;
+	left:625px;
+	top:0;
+}
+.expoonActivity ul li div font font{
+	color:red;
+}
+.expoonActivity ul li input{
+	border:1px solid #d8d8d8;
+	width:440px;
+	height:38px;
+	line-height:38px;
+	padding:0 9px;
+	display:inline-block;
+	vertical-align: middle;
+	font-size:16px;
+}
+.expoonActivity ul li textarea{
+	border:1px solid #d8d8d8;
+	height:54px;
+	padding:9px;
+	width:440px;
+	line-height:27px;
+	vertical-align: middle;
+	font-size:16px;
+	font-family: "Microsoft YaHei","微软雅黑";
+	resize:none;
+}
+.expoonActivity ul li p{
+	margin:5px 0 0 154px;
+	font-size:14px;
+	color:#666;
+	line-height:24px;
+}
+.expoonActivity #okActivity{
+	margin:0 0 0 154px;
+	border-radius:0;
+	width:460px;
+	height:33px;
+	line-height:33px;
+	font-size:16px;
+	cursor:pointer;
+}
+.submitActivityLoading{
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	background:url(//s.expoon.com/test/krpano/images/transparent.png) repeat left center transparent;
+	text-align:center;
+	line-height:100%;
+	display:none;
+}
+.submitActivityLoading img{
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+	*left:50%;
+	*top:50%;
+	*margin:-5px 0 0 -8px;
+}
+.expoonActivity .activity_tip{
+	text-align:center;
+	height:240px;
+	text-align:center;
+	padding:140px 50px 0 0;
+}
+.expoonActivity .activity_tip p{
+	color:#333;
+	font-size:30px;
+	line-height:130px;
+	margin:0;
+}
+.expoonActivity .activity_tip p img{
+	vertical-align: middle;
+	margin:0 18px 0 0;
+}
+.expoonActivity .activity_tip div span{
+	width:330px;
+	height:60px;
+	line-height:60px;
+	text-align:center;
+	color:#fff;
+	font-size:25px;
+	background-color:#ff5b02;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+}
+.expoonActivity .activity_tmall{
+	font-size:25px;
+	color:#333;
+	text-align:center;
+	padding:110px 50px 0 0;
+}
+.expoonActivity .activity_tmall span{
+	display:block;
+	color:red;
+	font-size:35px;
+	margin:20px 0;
+}
+.expoonActivity .tmallLink{
+	text-align:center;
+	font-size:16px;
+	color:#333;
+	line-height:54px;
+	padding:0 50px 0 0;
+}
+.expoonActivity .tmallLink a{
+	text-transform:Uppercase;
+	color:#0068b7;
+	font-size:16px;
+}
+.expoonActivity .closeActivity {
+	text-align:center;
+	padding:60px 50px 0 0;
+}
+.expoonActivity .closeActivity span{
+	width:330px;
+	height:60px;
+	line-height:60px;
+	text-align:center;
+	color:#fff;
+	font-size:25px;
+	background-color:#ff5b02;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+}
+.wapExpoonActivity .activity_tip{
+	padding:0;
+	text-align:center;
+	font-size:0.2rem;
+	color:#333;
+	height:200px;
+	position:absolute;
+	right:0;
+	top:0;
+	bottom:0;
+	left:0;
+	margin:auto;
+}
+.wapExpoonActivity .activity_tip p{
+	margin:0.2rem 0.1rem;
+	line-height:0.4rem;
+}
+.wapExpoonActivity .activity_tip p img{
+	vertical-align: middle;
+	width:0.27rem;
+	height:0.27rem;
+	margin:0 10px 0 0;
+}
+.wapExpoonActivity .activity_tip div{
+	text-align:center;
+}
+.wapExpoonActivity .activity_tip div span{
+	display:inline-block;
+	height:0.4rem;
+	line-height:0.4rem;
+	padding:0 0.15rem;
+	background-color:#ff5b02;
+	border-radius:8px;
+	color:#fff;
+	font-size:0.16rem;
+}
+.wapExpoonActivity .activity_tip p em,.expoonActivity .activity_tip p em{
+	font-style:normal;
+	display:inline-block;
+}
+
+.wapExpoonActivity .activity_tmall{
+	font-size:0.14rem;
+	text-align:center;
+	line-height:0.28rem;
+	padding:0 0 0.1rem;
+}
+.wapExpoonActivity .activity_tmall span{
+	color:#ff0000;
+	font-size:0.18rem;
+	margin:0.1rem 0;
+	display:block;
+}
+.wapExpoonActivity .activity_tmall font{
+	font-style:normal;
+	display:inline-block;
+}
+.wapExpoonActivity .tmallLink{
+	text-align:center;
+	font-size:0.14rem;
+	color:#333;
+	line-height:0.28rem;
+}
+.wapExpoonActivity .tmallLink font{
+	font-style:normal;
+	display:inline-block;
+}
+.wapExpoonActivity .tmallLink a{
+	text-transform:Uppercase;
+	color:#0068b7;
+	font-size:0.14rem;
+	display:inline-block;
+}
+.wapExpoonActivity .closeActivity {
+	text-align:center;
+	padding:0.2rem 0;
+}
+.wapExpoonActivity .closeActivity span{
+	display:inline-block;
+	height:0.4rem;
+	line-height:0.4rem;
+	padding:0 0.15rem;
+	background-color:#ff5b02;
+	border-radius:8px;
+	color:#fff;
+	font-size:0.16rem;
+}
+.xkyAppShareBox{width:100%;height:auto;position:fixed;left:0;bottom:0;background:#fff;color:#000;}
+.xkyAppShareBox .xkyAppShareIcon{width:90%;overflow:hidden;margin:0 auto;list-style:none;padding:0 0 15px 0;}
+.xkyAppShareBox .xkyAppShareIcon li{width:25%;float:left;font-size:14px;text-align:center;margin-top:20px;}
+.xkyAppShareBox .xkyAppShareIcon li img{width:55%;display:block;margin:0 auto;}
+.xkyAppShareBox .xkyAppShareIcon li span{padding-top:5px;display:block;}
+.xkyAppShareBox .cancel{width:100%;border-top:2px solid #ededed;font-size:16px;padding:15px 0;text-align:center;}
+/*20180306 wenwen zhoubianStart*/
+ul li{list-style:none;}
+.ambitusReturnIcon{
+        width:127px;
+        height:45px;
+        overflow:hidden;
+        position:absolute;
+        z-index:3002;
+        top:40px;
+        left:21px;
+        z-index:9999;
+}
+.ambitusReturnIcon a{
+        display:block;
+        width:127px;
+        height:45px;
+        overflow:hidden;
+        text-indent:-9999px;
+}
+.ambitusReturnIcon a img{
+      display:block;
+        width:127px;
+        height:45px;  
+}
+.ambitusReturnIconWap{
+        width:82px;
+        height:27px;
+        overflow:hidden;
+        position:absolute;
+        z-index:3002;
+        top:34px;
+        left:10px;
+}
+.ambitusReturnIconWap a{
+        display:block;
+        width:82px;
+        height:27px;
+        overflow:hidden;
+        text-indent:-9999px;
+}
+.ambitusReturnIconWap a img{
+        display:block;
+        width:82px;
+        height:27px;
+}
+#zhoubian{  
+        width:100%;
+        height:132px;
+        overflow:hidden;
+        position:fixed;
+        z-index:3002;
+        bottom:-187px;
+        left:0px;
+        visibility:hidden;
+}
+#ambitusBox{
+        width:100%;
+        height:132px;
+        overflow:hidden;
+}
+.ambitusBox{
+        width:100%;
+        height:132px;
+        position:relative;
+        top:0px;
+        left:0px;
+}
+#ambitusImgList{
+        width:100%;
+        height:74px;
+        padding:8px 0px;
+        background:url(//s.expoon.com/test/krpano/images/ambitus-img-bg.png);
+        margin-bottom:1px;
+}
+#ambitusImgList .ambitusImgList{
+        overflow:hidden;
+}
+#ambitusImgList .ambitusImgScrollleft{
+        position: absolute; 
+        z-index: 3003; 
+        overflow: visible; 
+        opacity: 1; 
+        cursor: pointer; 
+        pointer-events: auto; 
+        left:6px; top: 41px;
+        display: none;
+}
+#ambitusImgList .ambitusImgScrollright{
+    position: absolute; 
+    z-index: 3003; 
+    overflow: visible; 
+    opacity: 1; 
+    cursor: pointer; 
+    pointer-events: auto; 
+    right:6px; top: 41px;
+
+}
+#ambitusImgList .ambitusImgList ul{
+    position: absolute;
+        padding: 0  6px;
+}
+#ambitusImgList .ambitusImgList ul li{
+        width:104px;
+        height:74px;
+        overflow:hidden;
+        float:left;
+        box-sizing:border-box;
+        margin-right:8px;
+}
+#ambitusImgList .ambitusImgList ul li a{
+        display:block;
+        width:102px;
+        height:72px;
+        overflow:hidden;
+        border:#71b236 1px solid;
+        overflow:hidden;
+        position:relative;
+        top:0px;
+        left:0px;
+}
+#ambitusImgList .ambitusImgList ul li a img{
+        width:100%;
+        height:100%;
+}
+#ambitusImgList .ambitusImgList ul li a span{
+        display:block;
+        width:100px;
+        line-height:18px;
+        max-height:70px;
+        overflow:hidden;
+        position:absolute;
+        left:0px;
+        bottom:0px;
+        font-size:12px;
+        font-weight:600;
+        font-family:Arial, "宋体";
+        color:#ffffff;
+        text-align:center;
+        text-shadow:rgb(0, 0, 0) 1px 0px 1.6px;
+}
+#ambitusImgList .ambitusImgList ul li.on a{
+        width:100px;
+        height:70px;
+        border:#f5a623 2px solid;
+}
+#ambitusNameList{
+        width:100%;
+        height:40px;
+        background:url(//s.expoon.com/test/krpano/images/ambitus-img-bg.png);
+        position:relative;
+        top:0px;
+        left:0px;
+}
+#ambitusNameList .ambitusNameList{
+        width:100%;
+        height:24px;
+        padding:8px 0px;
+        position:absolute;
+        top:0px;
+        left:0px;
+}
+#ambitusNameList .ambitusNameList ul{position: absolute; padding: 0  6px;}
+#ambitusNameList .ambitusNameList ul li{
+        width:120px;
+        height:24px;
+        cursor: pointer;
+        float:left;
+         margin-right:10px;
+}
+#ambitusNameList .ambitusNameList ul li span{
+        display:block;
+        width:120px;
+        height:24px;
+        line-height:24px;
+        text-align:center;
+        overflow:hidden;
+        background:#eeeeee;
+        border-radius:12px;
+        font-family: arial,宋体;
+        font-size:14px;
+        color:#535353;
+}
+#ambitusNameList .ambitusNameList ul li.on span{
+        background:#71b236;
+        color:#ffffff;
+}
+#ambitusNameList .ambitusGroupScrollleft{
+    position: absolute; z-index: 3003; overflow: visible; 
+    opacity: 1; cursor: pointer; pointer-events: auto; 
+    left:6px; top: 11px; display: none;
+}
+#ambitusNameList .ambitusGroupScrollright{
+    position: absolute; z-index: 3003; overflow: visible; 
+    opacity: 1; cursor: pointer; pointer-events: auto; 
+    right:6px; top: 11px;
+}
+.tips{
+        padding: 4px; 
+        color: #fff;
+        border-radius:5px; 
+        background:url(//s.expoon.com/test/krpano/images/ambitus-img-bg.png);
+        display: block;
+        position: absolute; 
+        white-space:nowrap; 
+        overflow:hidden;
+        text-overflow:ellipsis;
+        z-index: 3003;  
+}
+
+
+/*截图分享相关样式2018-3-20*/
+/*随图二期 修改 2018-7-9*/
+.screenshotBtn{position:fixed;top:0;left:0;bottom:0;right:0;background:#fff;background-size:100%;opacity:0;z-index:200}
+.screenshotBtn_show{opacity:1;animation:screenshot_captureAnimation .5s}
+#screenshotMask{width:100%;height:100%;left:0;top:0;position:absolute;z-index:300;background-color:rgba(0,0,0,.7)}
+#screenshotMask .cvsPanel{width:80%;height:80%;top: 57px;left:10%;background:url(//s.expoon.com/image/z/krpano/images/fbloader.gif?t=201805091800) center no-repeat;position:absolute;animation:screenshot_CVSPanelAnimation .5s}
+#screenshotMask .cvsPanelH{width:100%;left:0;top:40%}
+#screenshotMask .cvsPanelH.postcardMode{width:80%;left:10%}
+#screenshotMask .cvsPanel #cvsPanoV{width:100%;display:block}
+#screenshotMask .cvsPanel #cvsPanoH{width:100%;display:none}
+#screenshotMask .cvsPanel .infoBox{display:none}
+#screenshotMask .cvsPanel.postcardMode{padding:16px;background:#fff;padding-bottom:0;-webkit-box-sizing:border-box;box-sizing:border-box}
+#screenshotMask .cvsPanel.postcardMode .imgBox{width:100%;overflow:hidden}
+#screenshotMask .cvsPanel.postcardMode .infoBox{display:block;position:absolute;left:0;bottom:0;width:100%;height:65px;padding:7px 16px;background:#fff;box-sizing:border-box}
+#screenshotMask .cvsPanel.postcardMode .infoBox canvas{width:100%}
+#screenshotMask .cvsPanel.postcardMode .infoBox #infoText{max-height:50px}
+#screenshotMask .cvsPanel.postcardMode .infoAvatar,#screenshotMask .cvsPanel.postcardMode .infoQrcode{float:left;width:50px;height:50px}
+#screenshotMask .cvsPanel.postcardMode .infoText{margin-left:57px;vertical-align:middle;height:50px}
+#screenshotMask .cvsPanel.postcardMode .infoQrcode.transition{transition:top .5s linear,left .5s linear}
+#screenshotMask .cvsPanel.postcardMode .infoQrcode.fixed{position:relative;position:fixed;top:0;left:0;width:50px;height:50px}
+#screenshotMask .cvsPanel.postcardMode #infoText{vertical-align:middle;border-radius:5px;border:1px solid #d9dade}
+#screenshotMask .touchPanel{width:64px;position:absolute;animation:screenshot_touchPanelAnimation 1s;cursor:pointer}
+#screenshotMask .touchPanel.postcardMode{display:none}
+#screenshotMask .infoQrcode.fixed::after,#screenshotMask .touchPanel::after{width:11px;height:11px;position:absolute;right:-14px;top:0;content:"";background:url(//s.expoon.com/image/z/krpano/images/ewmtouchmove.png?t=201805091800) center no-repeat;background-size:100%}
+#screenshotMask .touchPanelH{width:60px}
+#screenshotMask .touchPanel canvas{width:100%;float:left}
+#panoImg{width:100%;height:100%;position:absolute;left:0;bottom:0;background:rgba(0,0,0,.7);z-index:300;animation:screenshot_showImageSharePanelAnimation .5s}
+#panoImg img{width:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+#panoImg .savetips{height:24px;padding:4px;border-radius:3px;position:absolute;left:50%;top:10%;transform:translateX(-50%);line-height:24px;animation:screenshot_TipsAnimation 4s;animation-fill-mode:forwards;background:rgba(0,0,0,.8);color:#fff}
+#panoImg .savetips .icon{width:24px;height:24px;background:url(//s.expoon.com/image/z/krpano/images/hand.png?t=201805091800) no-repeat center;background-size:80%;display:block;float:left}
+#panoImg .savetips .txt{float:left}
+#panoImg.postcardImg img{width:auto;height:100%}
+#screenshotMask{font-family:'微软雅黑'}
+#screenshotMask .btnpanel{width:80%;position:absolute;left:10%;bottom:10px;z-index:200;animation:screenshot_btnPanelAnimation 1s}
+#screenshotMask .rdopanel{display:-webkit-flex;display:flex;position:absolute;top:25px;left:10%;width:80%;height:30px}
+#screenshotMask .rdopanel .rdoItem{-webkit-flex:1;flex:1;height:17px;padding:7px 0 6px 0;font-size:12px;color:#fff;text-align:center;float:left}
+#screenshotMask .rdopanel .rdoItem:first-child{text-align:left}
+#screenshotMask .rdopanel .rdoItem:last-child{text-align:right}
+#screenshotMask .sprite,#screenshotMaskImage .sprite{background:url(//s.expoon.com/image/z/krpano/images/share_rdo.png?t=201807051544) no-repeat;background-size:22px 109px}
+#screenshotMask .rdopanel .rdoItem .inner{height:17px;padding-left:24px;line-height:17px;background-position:2px 0;display:inline-block}
+#screenshotMask .rdopanel .rdoItem .on{background-position:2px -17px}
+#screenshotMask .rdopanel .rdoItem .inner.switchIcon{background-position:-1px -34px}
+#screenshotMask .btnpanel{display:-webkit-flex;display:flex;margin-right:-10px}
+#screenshotMask .btnBox .btn,#screenshotMask .btnpanel .btn,#screenshotMask .btnpanel .sharebtn,#screenshotMaskImage .btnBox .btn{-webkit-flex:1;flex:1;height:36px;font-size:17px;margin-top:5px;margin-right:10px;border-radius:5px;line-height:36px;background:#0080c6;text-align:center;color:#fff;float:left}
+#screenshotMask .btnBox .btn.noMarginRight,#screenshotMask .btnpanel .btn.noMarginRight,#screenshotMask .btnpanel .sharebtn.noMarginRight,#screenshotMaskImage .btnBox .btn.noMarginRight{margin-right:0}
+#screenshotMask .btnBox .btn.gray,#screenshotMask .btnpanel .btn.gray,#screenshotMask .btnpanel .sharebtn.gray,#screenshotMaskImage .btnBox .btn.gray{color:#fff;background:#b5b5b5}
+#screenshotMask .txtPostcard,#screenshotMask .txtpanel{height:32px;padding:7px 0 7px 10px;border-top:1px solid #d7d7d8;position:absolute;background:#f5f4f6;top:0;left:0;right:0;z-index:999;display:none}
+#screenshotMask .txtPostcard{height:auto}
+#screenshotMask .txtPostcard .txtbox,#screenshotMask .txtpanel .txtbox{flex:1}
+#screenshotMask .txtPostcard .txtbox{display:-webkit-flex;display:flex;height:50px;margin:0;padding:5px 0 0 13px;border-radius:3px;border:1px solid #ddd;background:#fcfcfc;box-sizing:border-box}
+#screenshotMask .txtPostcard textarea{flex:1;padding:0;border:0;outline:0;vertical-align:middle;resize:none;background:0 0;line-height:20px;font-size:15px;color:#8e8e93}
+#screenshotMask .txtPostcard .changeOne{display:none;width:21px;height:14px;background-position:-1px -54px;border:5px solid #fff;border-width:12px 5px;border-left-width: 20px;vertical-align:middle}
+#screenshotMask .txtPostcard .changeOne.show{display:inline-block}
+#screenshotMask .txtPostcard.horizontal .changeOne{border-width:3px 5px;border-left-width: 20px;}
+#screenshotMask .txtPostcard.horizontal .txtbox{height:30px}
+#screenshotMask .txtpanel input{width:100%;height:22px;margin:0;padding:4px 3px 2px 3px;line-height:22px;font-size:15px;outline:0;border-radius:3px;border:1px solid #ddd;background:#fcfcfc;float:left}
+#screenshotMask .txtPostcard #btnSetTitlePostcard,#screenshotMask .txtpanel #btnSetTitle{width:54px;font-size:16px;padding-left:4px;line-height:32px;text-align:center;color:#808388}
+#screenshotMask .txtPostcard #btnSetTitlePostcard{line-height:50px}
+#screenshotMask .txtPostcard.horizontal #btnSetTitlePostcard{line-height:32px}
+.scMskclose{width:25px;height:25px;right:.1rem;top:.1rem;z-index:201;position:absolute;background-image:url(//s.expoon.com/image/z/krpano/images/pano-icon.png?time=201804270920);background-position:-100px -599px;background-size:800px 1400px;cursor:pointer}
+.scMskclose.postcard{background-position:-74px -599px}
+.blackTips{width:100%;position:fixed;bottom:80px;z-index:300;text-align:center;animation:screenshot_blackTipsAnimation 4s;animation-fill-mode:forwards}
+.blackTips span{display:inline-block;padding:3px;border-radius:3px;background:rgba(0,0,0,.7);color:#fff}
+.blackTips.wxNoLoginTips{top:50%;left:50%;bottom:auto;right:auto;width:205px;height:110px;color:#fff;background:rgba(0,0,0,.5);border-radius:10px;transform:translate3d(-50%,-50%,0);animation:none}
+.blackTips.wxNoLoginTips img{width:38px;margin-top:25px;margin-bottom:18px}
+#screenshotMask.horizontal .rdopanel{top:5px;left:15%;width:70%}
+#screenshotMask.horizontal .touchPanel{width:56px;position:absolute}
+#screenshotMask.horizontal .cvsPanel{width:70%;height:70%;top: auto;left:15%;animation:screenshot_CVSPanelHAnimation .5s}
+#screenshotMask.horizontal .cvsPanel.postcardMode{height:75%}
+#screenshotMask.horizontal .cvsPanelH{top:auto;bottom:58px;overflow:hidden}
+#screenshotMask.horizontal .cvsPanelH.postcardMode{top:9%}
+#screenshotMask.horizontal .btnpanel{width:70%;left:15%}
+#screenshotMaskImage{display:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:999}
+#screenshotMaskImage .imageBox{position:absolute;left:0;right:0;bottom:0;background:#fff;border:10px solid #fff;border-radius:9px 9px 0 0;z-index:1}
+#screenshotMaskImage .maskBox{position:absolute;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.7)}
+#screenshotMaskImage .imageBox h3{display:inline-block;color:#535353;font-size:15px;font-weight:400;line-height:2}
+#screenshotMaskImage .imageBox .titleBox i{float:right;display:inline-block;margin:0;width:21px;height:20px;border:7px solid #fff}
+#screenshotMaskImage .imageBox .titleBox i.addRotate90{background-position:0 -70px}
+#screenshotMaskImage .imageBox .titleBox i.minusRotate90{background-position:0 -90px}
+#screenshotMaskImage .container{position:relative;width:100%;height:100%;overflow:hidden}
+#screenshotMaskImage .container .promptBox{display:none;position:absolute;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.5) url(//s.expoon.com/image/z/krpano/images/cropperPrompt.png) center/135px 105px no-repeat}
+#screenshotMask .btnBox,#screenshotMaskImage .btnBox{display:-webkit-flex;display:flex}
+#screenshotMask .btnBox .btn,#screenshotMaskImage .btnBox .btn{text-decoration:none}
+#screenshotMaskImage.horizontal .imageBox{top:0;right:auto;left:50%;transform:translate3d(-50%,0,0)}
+#switchOrientationBox{position:fixed;top:0;left:0;bottom:0;right:0;color:#fff;text-align:center;font-size:14px;background:#000;z-index:1000}
+#switchOrientationBox:before{content:'';display:inline-block;height:100%;vertical-align:middle}
+#screenshotMask.pcpanel .touchPanel{width:100px;position:absolute}
+#screenshotMask.pcpanel .cvsPanel{width:62%;height:62%;left:19%;bottom:190px;animation:none}
+#screenshotMask.pcpanel .cvsPanel>canvas{position:static}
+#screenshotMask.pcpanel .pcbtnpanel{width:62%;position:absolute;left:19%;bottom:65px;z-index:200}
+#screenshotMask.pcpanel .pcbtnpanel .checkpanel{width:100%;height:30px;display:flex}
+#screenshotMask.pcpanel .pcbtnpanel .checkpanel .ckpleft{flex:1;margin-right:1px;padding-right:20px;text-align:right;background:rgba(255,255,255,.8)}
+#screenshotMask.pcpanel .pcbtnpanel .checkpanel .ckpright{flex:1;margin-left:1px;padding-left:20px;text-align:left;background:rgba(255,255,255,.8)}
+#screenshotMask.pcpanel .pcbtnpanel .checkpanel span{height:17px;display:inline-block;margin-top:6px;padding-left:20px;font-size:16px;line-height:17px;background:url(//s.expoon.com/image/z/krpano/images/share_rdo_pc.png?t=201805091800) no-repeat;background-size:18px 34px;background-position:0 0;cursor:pointer}
+#screenshotMask.pcpanel .pcbtnpanel .checkpanel span.on{background-position:0 -17px}
+#screenshotMask.pcpanel .pcbtnpanel .shareBtn{width:100%;height:40px;font-size:18px;line-height:40px;margin-top:10px;background:#0080c7;color:#fff;text-align:center;cursor:pointer}
+#screenshotMask.pcpanel .pcbtnpanel .inputPanel{width:100%;height:35px;margin-top:10px;display:flex}
+#screenshotMask.pcpanel .pcbtnpanel .inputPanel input{flex:1;border:1px solid #b8b8b6;font-size:14px;outline:0}
+#screenshotMask.pcpanel .pcbtnpanel .inputPanel .btncancel{width:100px;line-height:35px;font-size:14px;text-align:center;color:#fff;background:#959595;cursor:pointer}
+#screenshotMask.pcpanel .pcbtnpanel .inputPanel .btnconfirm{width:100px;line-height:35px;font-size:14px;text-align:center;color:#fff;background:#70b036;cursor:pointer}
+#screenshotMask.pcpanel .pcbtnpanel .errmsgpanel{width:100%;height:20px;margin-top:10px;line-height:20px;background:url(//s.expoon.com/image/z/krpano/images/screencapture_err_icon.png?t=201805091800) no-repeat;background-size:16px 16px;background-position:2px 2px;color:#ff0;visibility:hidden}
+#screenshotMask.pcpanel .pcbtnpanel .errmsgpanel span{padding-left:20px}
+#panoImg .savetipsPC{height:40px;padding:4px 16px;border-radius:3px;position:absolute;left:50%;top:10%;transform:translateX(-50%);line-height:24px;animation:screenshot_TipsAnimation 4s;animation-fill-mode:forwards;background:#4e5159;color:#fff}
+#panoImg .savetipsPC .icon{width:20px;height:40px;background:url(//s.expoon.com/image/z/krpano/images/screenCapture_tips_pc.png?t=201805091800) no-repeat center;background-size:20px 31px;background-position:0 4px;display:block;float:left}
+#panoImg .savetipsPC .txt{height:40px;padding-left:20px;line-height:40px;float:left}
+#panoImg.pcMode{animation:none}
+@keyframes screenshot_TipsAnimation{
+	0%{opacity:1}
+	75%{opacity:1}
+	100%{opacity:0}
+}
+@keyframes screenshot_blackTipsAnimation{
+	0%{opacity:1}
+	75%{opacity:1}
+	100%{opacity:0}
+}
+@keyframes screenshot_CVSPanelAnimation{
+	from{width:100%;height:100%;bottom:0;left:0;opacity:0}
+	to{width:80%;height:80%;left:10%;bottom:58px;opacity:1}
+}
+@keyframes screenshot_CVSPanelHAnimation{
+	from{width:100%;height:100%;bottom:0;left:0;opacity:0}
+	to{width:70%;height:75%;left:15%;bottom:58px;opacity:1}
+}
+@keyframes screenshot_showImageSharePanelAnimation{
+	from{width:80%;height:80%;left:10%;bottom:88px}
+	to{width:100%;height:100%;bottom:0;left:0}
+}
+@keyframes screenshot_touchPanelAnimation{
+	0%{opacity:0}
+	40%{opacity:0}
+	100%{opacity:1}
+}
+@keyframes screenshot_btnPanelAnimation{
+	0%{opacity:0}
+	40%{opacity:0;bottom:30px}
+	100%{opacity:1;bottom:10px}
+}
+@keyframes screenshot_captureAnimation{
+	from{opacity:0}
+	to{opacity:1}
+}
+
+
+/* 付费功能 author:liwenjie start*/
+	.payPageBox {
+		position   : fixed;
+		top        : 50%;
+		left       : 50%;
+		width      : 820px;
+		height     : 590px;
+		background : white;
+		margin     : -295px 0 0 -410px;
+		z-index    : 14000;
+		font-family: '微软雅黑';
+	}
+	.payPageBox h1,
+	.payPageBox h2,
+	.payPageBox h3,
+	.payPageBox h4,
+	.payPageBox h5,
+	.payPageBox h6 {
+	  font-weight: normal;
+	}
+	.payPageBox button {
+	  background: transparent;
+	  border: 0;
+	  outline: 0;
+	}
+	/*移除火狐的获得焦点边框*/
+	.payPageBox button::-moz-focus-inner {
+		border: 0;
+	}
+	.payPageBox a {
+	  text-decoration: none;
+	}
+	.payPageBox {
+	  color: #333;
+	  background: white;
+	  font-family: '微软雅黑';
+	}
+	.payPageBox .returnPayBox{
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	    width: 25px;
+	    height: 25px;
+	    cursor: pointer;
+	    background-image: url(http://s.expoon.com/cache/1526884213/test/krpano/images/pano-icon.png);
+	    background-position: -74px -599px;
+	    background-size: 800px 1400px;
+	}
+	.payPageBox .loginBox .imgBox {
+	  width: 290px;
+	  height: 290px;
+	  margin: 100px auto 0;
+	}
+	.payPageBox .payBox h3 {
+	  margin-top: 50px;
+	  font-size: 20px;
+	  text-align: center;
+	}
+	.payPageBox .payBox ul {
+	  margin-top: 30px;
+	}
+	.payPageBox .payBox li {
+	  margin-bottom: 10px;
+	  overflow: hidden;
+	}
+	.payPageBox .payBox .titleTxt {
+	  float: left;
+	  display: inline-block;
+	  width: 180px;
+	  height: 60px;
+	  font-size: 18px;
+	  text-align: right;
+	  line-height: 60px;
+	}
+	.payPageBox .payBox .contBox {
+	  display: block;
+	  margin-left: 190px;
+	}
+	.payPageBox .payBox .priceTxt {
+	  height: 60px;
+	  color: #f00;
+	  font-size: 24px;
+	  line-height: 60px;
+	}
+	.payPageBox .payBox .payModeBtn {
+	  display: inline-block;
+	  width: 202px;
+	  height: 62px;
+	  margin-right: 30px;
+	  cursor: pointer;
+	  background: url('./images/payIconBtn.png') no-repeat 0px 0px;
+	  background-size: 202px 254px;
+	}
+	.payPageBox .payBox .payModeBtn.WeChatChoiceBtn {
+	  background-position: 0 -128px;
+	}
+	.payPageBox .payBox .payModeBtn.WeChatChoiceBtn.active {
+	  background-position: 0 -192px;
+	}
+	.payPageBox .payBox .payModeBtn.AlipayChoiceBtn {
+	  background-position: 0 0;
+	}
+	.payPageBox .payBox .payModeBtn.AlipayChoiceBtn.active {
+	  background-position: 0 -64px;
+	}
+	.payPageBox .payBox .payModeInfo {
+	  display: none;
+	}
+	.payPageBox .payBox .payModeInfo img {
+	  display: block;
+	  width: 200px;
+	  height: 200px;
+	}
+	.payPageBox .payBox .payModeInfo .AlipayIframe  {
+		margin: 20px 0 0 20px;
+	    width: 170px;
+	    height: 170px;
+    	border: none;
+    	visibility: hidden;
+	}
+
+	.payPageBox .payBox .payModeInfo .payTxt {
+	    font-size: 18px;
+	    line-height: 60px;
+	}
+
+	.payPageBox .payBox .payModeInfo .payTxt span {
+	    color: #f00;
+	}
+	.payPageBox .payBox .AlipayBtn {
+	  display: block;
+	  width: 200px;
+	  height: 40px;
+	  margin-top: 25px;
+	  color: white;
+	  font-size: 18px;
+	  line-height: 40px;
+	  text-align: center;
+	  background: #0080c6;
+	  cursor: pointer;
+	}
+	.payPageBox .paySuccessbox h3 {
+	  margin-top: 60px;
+	  font-size: 30px;
+	  text-align: center;
+	}
+	.payPageBox .paySuccessbox .tipTxt {
+	  margin-top: 30px;
+	  font-size: 20px;
+	  text-align: center;
+	}
+	.payPageBox .paySuccessbox .imgBox {
+	  width: 230px;
+	  height: 230px;
+	  margin: 35px auto 0;
+	  border: 1px solid #dedede;
+	}
+	.payPageBox .paySuccessbox .tipTitle {
+	  margin-top: 18px;
+	  font-size: 18px;
+	  text-align: center;
+	}
+	.payPageBox .paySuccessbox .paySuccessBtn {
+	  display: block;
+	  width: 200px;
+	  height: 40px;
+	  margin: 20px auto 0;
+	  color: white;
+	  font-size: 18px;
+	  line-height: 40px;
+	  text-align: center;
+	  background: #0080c6;
+	  cursor: pointer;
+	}
+	.payPageBox .paySuccessbox .paySuccessBtn img {
+	  width: 100%;
+	}
+
+
+/* 付费功能 author:liwenjie end*/
+
+
+
+
+/*高校录取通知书活动功能 author:liwenjie start*/
+    #admission {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        font-family: '微软雅黑';
+        z-index: 10000;
+    }
+
+    #admission .closeBtn {
+        position: absolute;
+        width: 25px;
+        top: 10px;
+        height: 25px;
+        background-position: -100px -599px;
+        background-size: 800px 1400px;
+        background-color: transparent;
+        cursor: pointer;
+        right: 10px;
+        border: 0;
+        z-index: 3;
+    }
+
+    #admission button,
+    #admission input {
+        font-family: '微软雅黑';
+    }
+
+    #admission .guideBox {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 600px;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    #admission .guideBox .left {
+        float: left;
+    }
+
+    #admission .guideBox .right {
+        float: right;
+    }
+
+    #admission .guideBox img {
+        display: block;
+        width: 65px;
+        height: 80px;
+        -webkit-transform: translateY( -13px);
+        -ms-transform: translateY( -13px);
+        transform: translateY( -13px);
+    }
+
+    #admission .guideBox p {
+        color: white;
+        font-family: '黑体';
+    }
+
+    #admission .guideBox p:first-child {
+        font-size: 22px;
+        padding-bottom: 10px;
+    }
+
+    #admission .guideBox p:last-child {
+        font-size: 28px;
+    }
+
+    #admission .mailerBox {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 410px;
+        height: 495px;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    #admission .mailerBox .mailerBg {
+        position: absolute;
+        left: -5px;
+        bottom: 4px;
+        width: 421px;
+        height: 288px;
+    }
+
+    #admission .mailerBox .mailerBottom {
+        position: absolute;
+        bottom: 0;
+        width: 410px;
+        height: 287px;
+    }
+
+    #admission .mailerBox .mailerCloseTop {
+        position: absolute;
+        top: 207px;
+        width: 410px;
+        height: 210px;
+    }
+
+    #admission .mailerBox .mailerDismantle {
+        position: absolute;
+        left: 50%;
+        bottom: 58px;
+        width: 78px;
+        height: 80px;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    #admission .mailerBox .mailerOpenTop {
+        position: absolute;
+        bottom: 288px;
+        width: 410px;
+        height: 0;
+    }
+
+    #admission .mailerBox.startAnimation .mailerDismantle {
+        -webkit-animation: dismantleAnim 0.2s linear 0s forwards;
+        animation: dismantleAnim 0.2s linear 0s forwards;
+    }
+
+    #admission .mailerBox.startAnimation .mailerCloseTop {
+        -webkit-animation: closeTopAnim 0.3s linear 0.2s forwards;
+        animation: closeTopAnim 0.3s linear 0.2s forwards;
+    }
+
+    #admission .mailerBox.startAnimation .mailerOpenTop {
+        -webkit-animation: openTopAnim 0.3s linear 0.5s forwards;
+        animation: openTopAnim 0.3s linear 0.5s forwards;
+    }
+
+    #admission .noticePack {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        /*bottom: 6.7188rem;*/
+        overflow: hidden;
+    }
+
+    #admission .noticeBox {
+        position: absolute;
+        left: 50%;
+        /*bottom: 3.5000rem;*/
+        width: 645px;
+        height: 560px;
+        -webkit-transform: translate(-50%, 0) scale(0.63);
+        -ms-transform: translate(-50%, 0) scale(0.63);
+        transform: translate(-50%, 0) scale(0.63);
+        -webkit-transform-origin: top;
+        -ms-transform-origin: top;
+        transform-origin: top;
+    }
+
+    #admission .noticeBox.startAnimation {
+        -webkit-animation: noticeBoxAnim 0.5s linear 0.7s forwards;
+        animation: noticeBoxAnim 0.5s linear 0.7s forwards;
+    }
+
+    #admission .noticeBox .noticeContent {
+        width: 645px;
+        height: 485px;
+        padding-top: 75px;
+        color: black;
+        background-size: cover;
+        background-color: white;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    #admission .noticeBox .noticeContent h1 {
+        width: 80%;
+        margin: 0 auto 6px;
+        font-size: 26px;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    #admission .noticeBox .noticeContent img {
+        display: block;
+        width: 175px;
+        margin: 0 auto 17px;
+    }
+
+    #admission .noticeBox .noticeContent .inputInfoBox {
+        width: 410px;
+        min-height: 40px;
+        margin: 0 auto;
+        color: #565656;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    #admission .noticeBox .noticeContent .inputInfoBox.indent {
+        width: 353px;
+        padding-left: 47px;
+    }
+
+    #admission .noticeBox .noticeContent .inputInfoBox span,
+    #admission .noticeBox .noticeContent .inputInfoBox input {
+        margin: 0 5px;
+        padding: 0 10px;
+        display: inline-block;
+        color: black;
+        font-size: 20px;
+        border: 0;
+        border-bottom: 1px solid black;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transform: translateY( -0px);
+        -ms-transform: translateY( -0px);
+        transform: translateY( -0px);
+        background: transparent;
+    }
+
+    #admission .noticeBox .noticeContent .inputInfoBox input {
+        width: 140px;
+        padding: 0.3px 0.5px;
+        outline: none;
+    }
+
+    #admission .noticeBox .noticeContent .inputInfoBox input::-webkit-input-placeholder {
+        font-size: 16px;
+    }
+
+    #admission .noticeBox .noticeContent .inputInfoBox input:-ms-input-placeholder {
+        font-size: 16px;
+    }
+
+    #admission .noticeBox .noticeContent .inputInfoBox input::-ms-input-placeholder {
+        font-size: 16px;
+    }
+
+    #admission .noticeBox .noticeContent .inputInfoBox input::placeholder {
+        font-size: 16px;
+    }
+
+    #admission .noticeBox .noticeContent .inputInfoBox input.error::-webkit-input-placeholder {
+        color: #f00;
+    }
+
+    #admission .noticeBox .noticeContent .inputInfoBox input.error:-ms-input-placeholder {
+        color: #f00;
+    }
+
+    #admission .noticeBox .noticeContent .inputInfoBox input.error::-ms-input-placeholder {
+        color: #f00;
+    }
+
+    #admission .noticeBox .noticeContent .inputInfoBox input.error::placeholder {
+        color: #f00;
+    }
+
+    #admission .noticeBox .noticeContent .userNameBox span {
+        display: none;
+    }
+
+    #admission .noticeBox .noticeContent .autographBox {
+        float: right;
+        margin-right: 130px;
+    }
+
+    #admission .noticeBox .noticeContent .autographBox:after {
+        display: block;
+        clear: both;
+        content: '';
+    }
+
+    #admission .noticeBox .noticeContent .autographBox .autographLeft {
+        float: left;
+        margin-right: 13px;
+        padding-top: 25px;
+        text-align: center;
+        color: #565656;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    #admission .noticeBox .noticeContent .autographBox .autographRight {
+        float: right;
+        width: 100px;
+        height: 100px;
+    }
+
+    #admission .noticeBox .noticeContent .autographBox canvas {
+        width: 100%;
+    }
+
+    #admission .noticeBox .btnBox {
+        display: none;
+        margin: 30px auto 0;
+        width: 310px;
+    }
+
+    #admission .noticeBox .btnBox:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    #admission .noticeBox .btnBox button {
+        display: inline-block;
+        padding: 10px 20px;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        background-color: #0073e8;
+        border-radius: 5px;
+        border: 0;
+        outline: 0;
+    }
+
+    #admission .noticeBox .btnBox button:first-child {
+        float: left;
+    }
+
+    #admission .noticeBox .btnBox button:last-child {
+        float: right;
+    }
+
+    #admission .noticeBox.generate .noticeContent .inputInfoBox {
+        min-height: auto;
+        line-height: 1.85;
+    }
+
+    #admission .noticeBox.generate .noticeContent .inputInfoBox span {
+        margin: 0;
+        /*padding: 0  0.3125rem 0 0;*/
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        border: 0;
+    }
+
+    #admission .noticeBox.generate .noticeContent .inputInfoBox span.collegeTxt {
+        padding: 0 5px;
+    }
+
+    #admission .noticeBox.generate .noticeContent .userNameBox input {
+        display: none;
+    }
+
+    #admission .noticeBox.generate .noticeContent .userNameBox span {
+        display: inline-block;
+    }
+
+    #admission .noticeBox.generate .noticeContent .autographBox {
+        margin-top: 10px;
+    }
+    #admission .noticeBox .errorTips {
+    	display: none;
+    	position: fixed;
+    	top: 50%;
+    	left: 50%;
+    	padding: 14px 40px;
+    	color: white;
+    	font-size: 18px;
+    	border-radius: 5px;
+    	background: black;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    #admission .noticeOfGenerationBox {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 608px;
+        height: 807px;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    #admission .noticeOfGenerationBox .bannerBox {
+        position: absolute;
+        width: 100%;
+        height: 732px;
+        background-size: cover;
+    }
+
+    #admission .noticeOfGenerationBox .bannerBox.banner01 .bannerMainImg {
+        width: 457px;
+        height: 342px;
+        margin: 227px 0 0 107px;
+        background: white;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    #admission .noticeOfGenerationBox .bannerBox.banner01 .bannerMask {
+        position: absolute;
+        top: 227px;
+        left: 241px;
+        width: 181px;
+        height: 342px;
+    }
+
+    #admission .noticeOfGenerationBox .bannerBox.banner02 .bannerMainImg {
+        width: 457px;
+        height: 342px;
+        margin: 220px 0 0 95px;
+    }
+
+    #admission .noticeOfGenerationBox .bannerBox.banner02 .bannerMask {
+        top: 220px;
+        left: 94px;
+        width: 350px;
+        height: 342px;
+    }
+
+    #admission .noticeOfGenerationBox .bannerBox.banner03 .bannerMainImg {
+        width: 457px;
+        height: 342px;
+        margin: 233px 0 0 77px;
+        -webkit-transform: rotate(-31deg);
+        -ms-transform: rotate(-31deg);
+        transform: rotate(-31deg);
+    }
+
+    #admission .noticeOfGenerationBox .bannerBox.banner03 .bannerMask {
+        right: 0;
+        bottom: 0;
+        width: 525px;
+        height: 235px;
+    }
+
+    #admission .noticeOfGenerationBox .bannerMask {
+        position: absolute;
+    }
+
+    #admission .noticeOfGenerationBox .generationImg {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 732px;
+    }
+    #admission .noticeOfGenerationBox .generationImg:hover .zommIconBtn{
+    	display: block;
+    }
+    #admission .noticeOfGenerationBox .generationImg img {
+        width: 100%;
+    }
+    #admission .noticeOfGenerationBox .zommIconBtn {
+    	display: none;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	right: 0;
+    	bottom: 0;
+    	background: rgba(0,0,0,.5);
+    	cursor: pointer;
+    }
+    #admission .noticeOfGenerationBox .zommIconBtn img {
+    	position: absolute;
+    	top: 50%;
+    	left: 50%;
+    	width: 64px;
+    	height: 64px;
+    	transform: translate(-50%, -50%);
+    }
+
+    #admission .noticeOfGenerationBox .btnBox {
+    	position: absolute;
+    	top: 759px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #admission .noticeOfGenerationBox .btnBox p {
+        display: inline-block;
+        padding-right : 30px;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    #admission .noticeOfGenerationBox .btnBox a {
+        display: inline-block;
+        padding: 10px 20px;
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        background: #0073e8;
+        border-radius: 5px;
+    }
+    #admission .bigPicture {
+    	display: none;
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	bottom: 0;
+    	right: 0;
+    	background: rgba(181, 181, 181, .6);
+    }
+
+    #admission .bigPicture img {
+    	position: fixed;
+    	width: auto;
+    	height: 100%;
+    	top: 50%;
+    	left: 50%;
+    	transform: translate(-50%, -50%);
+    }
+
+    @-webkit-keyframes dismantleAnim {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes dismantleAnim {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @-webkit-keyframes closeTopAnim {
+        0% {
+            height: 207px;
+        }
+        100% {
+            height: 0;
+        }
+    }
+
+    @keyframes closeTopAnim {
+        0% {
+            height: 207px;
+        }
+        100% {
+            height: 0;
+        }
+    }
+
+    @-webkit-keyframes mailerAnim {
+        0% {
+            margin-top: 0;
+        }
+        100% {
+            /*margin-top: 3.6563rem;*/
+        }
+    }
+
+    @keyframes mailerAnim {
+        0% {
+            margin-top: 0;
+        }
+        100% {
+            /*margin-top: 3.6563rem;*/
+        }
+    }
+
+    @-webkit-keyframes openTopAnim {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 210px;
+        }
+    }
+
+    @keyframes openTopAnim {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 210px;
+        }
+    }
+
+    @-webkit-keyframes noticeBoxAnim {
+        0% {
+            -webkit-transform: translate(-50%, 0) scale(0.63);
+            transform: translate(-50%, 0) scale(0.63);
+        }
+        100% {
+            -webkit-transform: translate(-50%, 0) scale(1);
+            transform: translate(-50%, 0) scale(1);
+        }
+    }
+
+    @keyframes noticeBoxAnim {
+        0% {
+            -webkit-transform: translate(-50%, 0) scale(0.63);
+            transform: translate(-50%, 0) scale(0.63);
+        }
+        100% {
+            -webkit-transform: translate(-50%, 0) scale(1);
+            transform: translate(-50%, 0) scale(1);
+        }
+    }
+
+
+    /*移动端*/
+    @media screen and (max-device-width: 750px) {
+        
+        #admission .guideBox {
+            width: 2.6rem;
+        }
+
+        #admission .guideBox img {
+            width: 0.31rem;
+            height: 0.37rem;
+            -webkit-transform: translateY(-0.14rem);
+            -ms-transform: translateY(-0.14rem);
+            transform: translateY(-0.14rem);
+        }
+
+        #admission .guideBox p:first-child {
+            font-size: 0.17rem;
+            padding-bottom: 0.1rem;
+        }
+
+        #admission .guideBox p:last-child {
+            font-size: 0.25rem;
+        }
+
+        #admission .mailerBox {
+            width: 2.23rem;
+            height: 2.7rem;
+        }
+
+        #admission .mailerBox .mailerBg {
+            left: 0;
+            bottom: 0;
+            width: 2.23rem;
+            height: 1.57rem;
+        }
+
+        #admission .mailerBox .mailerBottom {
+            width: 2.23rem;
+            height: 1.57rem;
+        }
+
+        #admission .mailerBox .mailerCloseTop {
+            top: 1.13rem;
+            width: 2.23rem;
+            height: 1.17rem;
+        }
+
+        #admission .mailerBox .mailerDismantle {
+            bottom: 0.33rem;
+            width: 0.425008rem;
+            height: 0.435008rem;
+        }
+
+        #admission .mailerBox .mailerOpenTop {
+            bottom: 1.54rem;
+            width: 2.23rem;
+        }
+
+        #admission .noticePack {
+            bottom: 1.075008rem;
+        }
+
+        #admission .noticeBox {
+            bottom: 0.56rem;
+            width: 3.35rem;
+            height: 5.1rem;
+        }
+
+        #admission .noticeBox .noticeContent {
+            width: 3.35rem;
+            height: 4.56rem;
+            padding-top: 0.75rem;
+        }
+
+        #admission .noticeBox .noticeContent h1 {
+            margin: 0 auto 0.15rem;
+            font-size: 0.25rem;
+        }
+
+        #admission .noticeBox .noticeContent img {
+            width: 1.585008rem;
+            margin: 0 auto 0.2rem auto;
+        }
+
+        #admission .noticeBox .noticeContent .inputInfoBox {
+            width: 2.475008rem;
+            min-height: 0.3rem;
+            font-size: 0.14rem;
+        }
+
+        #admission .noticeBox .noticeContent .inputInfoBox span,
+        #admission .noticeBox .noticeContent .inputInfoBox input {
+            margin: 0 0.05rem;
+            padding: 0 0.05rem;
+            font-size: 0.15rem;
+            -webkit-transform: translateY(-0.035008rem);
+            -ms-transform: translateY(-0.035008rem);
+            transform: translateY(-0.035008rem);
+        }
+
+        #admission .noticeBox .noticeContent .inputInfoBox input {
+            width: 1.1rem;
+            padding: 0.015008rem 0.05rem;
+        }
+
+        #admission .noticeBox .noticeContent .inputInfoBox input::-webkit-input-placeholder {
+            font-size: 0.12rem;
+        }
+
+        #admission .noticeBox .noticeContent .inputInfoBox input:-ms-input-placeholder {
+            font-size: 0.12rem;
+        }
+
+        #admission .noticeBox .noticeContent .inputInfoBox input::-ms-input-placeholder {
+            font-size: 0.12rem;
+        }
+
+        #admission .noticeBox .noticeContent .inputInfoBox input::placeholder {
+            font-size: 0.12rem;
+        }
+
+        #admission .noticeBox .noticeContent .autographBox {
+            margin-right: 0.435008rem;
+            margin-top: 0.128rem;
+        }
+
+        #admission .noticeBox .noticeContent .autographBox .autographLeft {
+            margin-right: 0.134992rem;
+            padding-top: 0.16rem;
+            font-size: 0.1rem;
+        }
+
+        #admission .noticeBox .noticeContent .autographBox .autographRight {
+            width: 0.72rem;
+            height: 0.72rem;
+        }
+
+        #admission .noticeBox .btnBox {
+            margin-top: 0.14rem;
+            width: auto;
+        }
+
+        #admission .noticeBox .btnBox button {
+            width: 1.65rem;
+            height: 0.38rem;
+            padding: 0;
+            font-size: 0.175008rem;
+            line-height: 0.38rem;
+            border-radius: 0.05rem;
+        }
+
+        #admission .noticeBox.generate .noticeContent .inputInfoBox span {
+            padding: 0 0.05rem 0 0;
+        }
+
+        #admission .noticeBox.generate .noticeContent .inputInfoBox span.collegeTxt {
+            padding: 0 0.05rem;
+        }
+
+        #admission .noticeBox.generate .noticeContent .autographBox {
+            margin-top: 0.128rem;
+        }
+
+        #admission .noticeOfGenerationBox {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: auto;
+            height: auto;
+            -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+        }
+
+        #admission .noticeOfGenerationBox .bannerBox {
+            height: 4.914992rem;
+        }
+
+        #admission .noticeOfGenerationBox .bannerBox.banner01 .bannerMask {
+            display: none;
+        }
+
+        #admission .noticeOfGenerationBox .bannerBox.banner01 .bannerMainImg {
+            width: 2.63rem;
+            height: 3.49rem;
+            margin: 0.525008rem 0 0 0.76rem;
+            padding: 0.134992rem;
+        }
+
+        #admission .noticeOfGenerationBox .bannerBox.banner02 .bannerMainImg {
+            width: 2.22rem;
+            height: 3.03rem;
+            margin: 0.935008rem 0 0 1.055008rem;
+        }
+
+        #admission .noticeOfGenerationBox .bannerBox.banner02 .bannerMask {
+            top: 1.365008rem;
+            left: 1.055008rem;
+            width: 0.325008rem;
+            height: 0.45rem;
+        }
+
+        #admission .noticeOfGenerationBox .bannerBox.banner03 .bannerMainImg {
+            width: 2.475008rem;
+            height: 3.355008rem;
+            margin: 0.64rem 0 0 0.68rem;
+            -webkit-transform: rotate(15deg);
+            -ms-transform: rotate(15deg);
+            transform: rotate(15deg);
+        }
+
+        #admission .noticeOfGenerationBox .bannerBox.banner03 .bannerMask {
+            width: 3.59rem;
+            height: 4.024992rem;
+        }
+
+        #admission .noticeOfGenerationBox .generationImg {
+            height: 4.914992rem;
+        }
+
+        #admission .noticeOfGenerationBox .generationImg:hover .zommIconBtn {
+            display: none;
+        }
+
+        #admission .noticeOfGenerationBox .btnBox {
+            display: block;
+            top: auto;
+            bottom: 0;
+            width: 100%;
+            min-height: 0.8rem;
+            background-size: cover;
+        }
+
+        #admission .noticeOfGenerationBox .btnBox p {
+            padding-top: 0.112rem;
+            padding-right: 0;
+            font-size: 0.16rem;
+            color: black;
+            text-align: center;
+        }
+
+        #admission .noticeOfGenerationBox .btnBox a {
+            display: block;
+            padding: 0;
+            width: 0.85rem;
+            margin: 0.16rem auto 0;
+            color: #0087cb;
+            font-size: 0.16rem;
+            background: transparent;
+        }
+
+        @-webkit-keyframes closeTopAnim {
+            0% {
+                height: 1.17rem;
+            }
+            100% {
+                height: 0;
+            }
+        }
+
+        @keyframes closeTopAnim {
+            0% {
+                height: 1.17rem;
+            }
+            100% {
+                height: 0;
+            }
+        }
+
+        @-webkit-keyframes mailerAnim {
+            0% {
+                margin-top: 0;
+            }
+            100% {
+                margin-top: 0.585008rem;
+            }
+        }
+
+        @keyframes mailerAnim {
+            0% {
+                margin-top: 0;
+            }
+            100% {
+                margin-top: 0.585008rem;
+            }
+        }
+
+        @-webkit-keyframes openTopAnim {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 1.13rem;
+            }
+        }
+
+        @keyframes openTopAnim {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 1.13rem;
+            }
+        }
+    }
+
+/*高校录取通知书活动功能 author:liwenjie end*/
+
+
+/*红包功能 author:liwenjie start*/
+
+    #hbBox {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 320px;
+        height: 420px;
+        margin: -210px 0 0 -160px;
+        color: #fce2b2;
+        font-family: '微软雅黑';
+        background: #db5443;
+        border-radius: 8px;
+        z-index: 14000;
+    }
+    #hbBox.veins {
+        background-image: url('//s.expoon.com/test/krpano/images/hb/veins.jpg');
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+    #hbBox.receiveHbRain {
+        width: 376px;
+        height: 480px;
+        margin: -240px 0 0 -188px;
+        background: transparent;
+    }
+    #hbBox .sprite {
+        background : url('//s.expoon.com/test/krpano/images/hb/hbSprite.png') no-repeat; 
+        background-size : 285px 264px;
+    }
+    #hbBox h3 {
+        color: #ff0;
+        font-size: 20px;  
+        line-height: 1.7;
+        text-align: center;
+        font-weight: normal;
+    }
+    #hbBox .closeBtn {
+        display: none;
+        position: absolute;
+        cursor: pointer;
+    }
+    #hbBox .hbIcon {
+        display: block;
+        width  : 29px;
+        height : 36px;
+        margin : 0 auto;
+        background-position: -193px -93px
+    }
+    #hbBox .WXIcon {
+        position : absolute;
+        top      : 50%;
+        left     : 50%;
+        display  : block;
+        width    : 39px;
+        height   : 39px;
+        margin   : -20px 0 0 -20px;
+        background-position: -96px -173px
+    }
+    #hbBox .template1 {
+        padding: 40px 38px 0;
+    }
+    #hbBox .template1>h4 {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    #hbBox input::-webkit-input-placeholder {
+        color: #939393;
+    }
+    #hbBox input::-moz-placeholder {
+        color: #F8D3A6;
+    }
+    #hbBox input:-moz-input-placeholder {
+        color: #F8D3A6;
+    }
+    #hbBox input:-ms-input-placeholder {
+        color: #F8D3A6;
+    }
+    #hbBox .template1>p {
+        text-align: center;
+        font-size: 16px;
+    }
+    #hbBox .template1>p.twoLevelTitle {
+        padding: 51px 0 35px 0;
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    #hbBox .template1>div {
+        margin-top: 30px;
+        height: 60px;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+    }
+    #hbBox .template1>div p {
+        display: inline-block;
+        text-align: left;
+    }
+    #hbBox .template1>button {
+        display: block;
+        width   : 92px;
+        height  : 91px;
+        margin  : 26px auto 0;
+        outline : 0;
+        border  : 0;
+    }
+    #hbBox .template1.homePageBox>button {
+        background-position: 0px -173px;
+        cursor: pointer;
+    }
+    #hbBox .template1.failureHbBox>button {
+        background-position: -193px 0px;
+    }
+    #hbBox .template1.failureHbBox>div {
+        font-size: 18px;
+    }
+
+    #hbBox .template2 {
+        padding-top: 52px;
+    }
+    #hbBox .template2.noHbBox {
+        padding-top: 70px;
+    }
+    #hbBox .template2>.QRCodeBox {
+        position: relative;
+        display: block;
+        width: 165px;
+        height: 165px;
+        margin: 20px auto 0;
+        background: #fff;
+    }
+    #hbBox .template2>.QRCodeBox canvas {
+        width: 100%;
+    }
+    #hbBox .template2.receiveHbBox>.QRCodeBox canvas {
+        display: none;
+    }
+    #hbBox .template2>.QRCodeBox img {
+        width: 100%;
+    }
+    #hbBox .template2>.hbTips {
+        margin-top: 28px;
+        font-size: 16px;
+        text-align: center;
+    }
+    #hbBox .template2>.hbIcon {
+        display: none;
+        width  : 191px;
+        height : 171px;
+        margin : 28px auto 0;
+        background-position: 0px 0px;
+    }
+    #hbBox .template2.noHbBox>.hbIcon {
+        display: block;
+    }
+    /*有输入框的红包窗口*/
+    #hbBox .template3 h2{
+        margin: 100px 0 40px;
+        color: #fce2b2;
+        font-size: 32px;
+        text-align: center;
+        font-weight: normal;
+    }
+    #hbBox .template3 h2.mt80 {
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+    #hbBox .template3 .twoLevelTitle {
+        width: 80%;
+        margin: 0 auto 17px;
+        color: #fff;
+        font-size: 20px;
+        text-align: center;
+    }
+    #hbBox .template3 input,
+    #hbBox .template3 button {
+        display: block;
+        width: 80%;
+        height: 48px;
+        margin: 0 auto;
+        line-height: 48px;
+        border: 0;
+        border-radius: 24px;
+        outline: 0;
+    }
+    #hbBox .template3 input{
+        color: #333;
+        font-size: 18px;
+        text-align: center;
+        background: #fff;
+    }
+    #hbBox .template3 button{
+        margin-top: 30px;
+        color: #db5443;
+        font-size: 22px;
+        background: #ffea00;
+        cursor: pointer;
+    }
+    /*领取红包（红包雨）*/
+    #hbBox .receiveHbRainBox h3{
+        color: #fff;
+        font-size: 25px;
+        line-height: 2;
+        text-align: center;
+        font-weight: normal;
+    }
+    #hbBox .receiveHbRainBox .QRCodeBox {
+        position: relative;
+        width: 304px;
+        height: 363px;
+        background: url('//s.expoon.com/image/z/krpano/images/hb/hbPeople.png') no-repeat;
+    }
+    #hbBox .receiveHbRainBox .QRCodeBox canvas {
+        position: absolute;
+        top: 178px;
+        left: 139px;
+        width: 88px;
+        height: 88px;
+        transform: rotate(-18deg);
+    }
+    /*红包雨未中奖页面*/
+    #hbBox.noHbWinBox {
+        background: none;
+    }
+    #hbBox.noHbWinBox h3 {
+        color: #fff;
+        font-size: 26px;
+        padding-bottom: 30px;
+        line-height: 1.7;
+    }
+    #hbBox.noHbWinBox .nohbWinBox {
+        position: relative;
+        width: 208px;
+        height: 278px;
+        margin: 0 auto;
+        background: url('//s.expoon.com/image/z/krpano/images/hb/noHbWin.png') no-repeat;
+    }
+    /*红包雨动画*/
+    .worldofwarBox {
+        position: fixed;
+        top: 0;
+        left: 0;   
+        width: 100%;
+        height: 100%;
+        filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#B2000000', endColorstr='#B2000000');
+        background:rgba(0,0,0,0.7);
+    }
+    :root .worldofwarBox{
+        filter:none;
+    }/*for IE9*/
+    .worldofwarBox .contentBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 575px;
+        height: 524px;
+        margin: -262px 0 0 -288px;
+        background: url('//s.expoon.com/image/z/krpano/images/hb/startHb.png') no-repeat;
+    }
+    .worldofwarBox .contentBox .countDown {
+        position: absolute;
+        top: 306px;
+        left: 113px;
+        width: 367px;
+        color: #ffe50c;
+        font-size: 28px;
+        text-align: center;
+        font-family: '微软雅黑';
+    }
+    .worldofwarBox .exitHbRain {
+        position: absolute;
+        left: 255px;
+        bottom: 16px;
+        color: #ffeca9;
+        font-size: 18px;
+        text-align: center;
+        line-height: 30px;
+        text-decoration: underline;
+        background: transparent;
+        border: 0; 
+        cursor: pointer;
+    }
+    .worldofwarBox .startHbRain {
+        position: absolute;
+        left: 136px;
+        bottom: 60px;
+        display: block;
+        width: 323px;
+        height: 60px;
+        background: url('//s.expoon.com/image/z/krpano/images/hb/startHbRainBtn.png') no-repeat;
+        border: 0;
+        cursor: pointer;
+    }
+    .rainAnimateBox {
+        position   : fixed;
+        top        : 0px;
+        left       : 0;
+        width      : 100%;
+        height     : 100%;
+        z-index    : 14000;
+        filter     : progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7F000000', endColorstr='#7F000000');
+        background : rgba(0,0,0,0.5);
+    }
+    .rainAnimateBox .contentBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .rainAnimateBox .hbBox {
+        position: absolute;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    .rainAnimateBox .hbBox img{
+        width: 100%;
+    }
+    .iframeHbRainBox {
+         position            : fixed;
+         left                : 0;
+         top                 : 0;
+         opacity             : 1;
+         width               : 100%;
+         height              : 100%;
+         background-color    : #000;
+         -webkit-user-select : none;
+         pointer-events      : none;
+         /*opacity             : 0.1;*/
+         /*filter              : alpha(opacity=10);*/
+         z-index             : 13999;
+         visibility          : visible;
+    }
+    .rainAnimateBox .closeRainAnimate {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 100px;
+        height: 30px;
+        padding-left: 22px;
+        color: #fff;
+        font-size: 18px;
+        font-family: '微软雅黑';
+        text-align: center;
+        line-height: 30px;
+        z-index: 1;
+        cursor: pointer;
+        background: url(//s.expoon.com/test/krpano/images/closelayer.png) no-repeat 3px;
+    }
+    /*移动端*/
+    @media screen and (max-device-width: 750px) {
+        #hbBox {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: auto;
+            height: auto;
+            margin: 0;
+            background: #f44d3b;
+            border-radius: 0;
+        }
+
+        #hbBox.veins {
+            background-image: url('//s.expoon.com/test/krpano/images/hb/mobileVeins.jpg');
+            background-size: contain;
+        }
+
+        #hbBox.mobileBg01 {
+            background-image: url('//s.expoon.com/test/krpano/images/hb/mobileBg01.jpg');
+            background-size: cover;
+        }
+
+        #hbBox.mobileBg02 {
+            background-image: url('//s.expoon.com/test/krpano/images/hb/mobileBg02.jpg');
+            background-size: cover;
+        }
+        #hbBox.mobileBg03 {
+            background-image: url('//s.expoon.com/test/krpano/images/hb/mobileBg03.jpg');
+            background-size: cover;
+        }
+
+        #hbBox .sprite {
+            background: url('//s.expoon.com/test/krpano/images/hb/hbMobileSprite.png') no-repeat;
+            background-size: 5.605008rem 4.98rem;
+        }
+        #hbBox .WXIcon {
+            width    : 0.4rem;
+            height   : 0.4rem;
+            margin   : -0.2rem 0 0 -0.2rem;
+            background-position: -2.7rem -3.72rem;
+        }
+
+        #hbBox h3 {
+            color: #fcf1b1;
+            font-size: 0.225008rem;
+        }
+
+        #hbBox .closeBtn {
+            display: block;
+            top: 0.125008rem;
+            left: auto;
+            right: 0.125008rem;
+            width: 0.21rem;
+            height: 0.2rem;
+            background-position: -5.2rem -2.55rem;
+        }
+
+        #hbBox .hbIcon {
+            width: 0.45rem;
+            height: 0.565008rem;
+            background-position: -4.74rem -2.55rem;
+        }
+
+        #hbBox .template1 {
+            padding: 0.51rem 0.5rem 0;
+        }
+
+        #hbBox .template1>h4 {
+            margin-top: 0.275008rem;
+            font-size: 0.18rem;
+        }
+
+        #hbBox .template1>p {
+            font-size: 0.18rem;
+        }
+
+        #hbBox .template1>div {
+            margin-top: 0.3rem;
+            height: 0.85rem;
+            font-size: 0.21rem;
+        }
+
+        #hbBox .template1>button {
+            position: absolute;
+            left: 50%;
+            bottom: 1.4rem;
+            -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
+            width: 1.05rem;
+            height: 1.05rem;
+            margin: 0;
+        }
+
+        #hbBox .template1.homePageBox>button {
+            background-position: -2.62rem -2.55rem;
+        }
+
+        #hbBox .template1.failureHbBox>button {
+            background-position: -3.68rem -2.55rem;
+        }
+
+        #hbBox .template1.failureHbBox>div {
+            font-size: 0.21rem;
+        }
+
+        #hbBox .template2 {
+            padding-top: 0.95rem;
+        }
+
+        #hbBox .template2.noHbBox {
+            padding-top: 0.85rem;
+        }
+
+        #hbBox .template2.receiveHbBox,
+        #hbBox .template2.receiveHbSuccessBox {
+            padding-top: 0.775008rem;
+        }
+
+        #hbBox .template2.receivedHbBox>.hbIcon #hbBox .template2.receiveHbBox h3 {
+            font-size: 0.25rem;
+        }
+
+        #hbBox .template2.receiveHbSuccessBox h3 span {
+            font-size: 0.3rem;
+        }
+
+        #hbBox .template2.receivedHbBox h3 {
+            font-size: 0.25rem;
+        }
+
+        #hbBox .template2>.QRCodeBox {
+            display: none;
+            width: 1.7rem;
+            height: 1.7rem;
+            margin: 0.32rem auto 0;
+        }
+
+        #hbBox .template2>.hbTips {
+            display: none;
+            margin-top: 0.59rem;
+            font-size: 0.2rem;
+        }
+
+        #hbBox .template2.receiveHbBox>.QRCodeBox,
+        #hbBox .template2.receiveHbBox>.hbTips {
+            display: block;
+        }
+
+        #hbBox .template2.receiveHbBox>.hbTips {
+            color: #fff;
+        }
+
+        #hbBox .template2.noHbBox>.hbIcon {
+            display: block;
+            margin: 0.68rem auto 0;
+            width: 2.61rem;
+            height: 2.43rem;
+            background-position: 0px -2.55rem;
+        }
+
+        #hbBox .template2.receiveHbSuccessBox>.hbIcon {
+            display: block;
+            width: 2.8rem;
+            height: 2.54rem;
+            margin: 0.5rem auto 0;
+            background-position: 0px 0px;
+        }
+
+        #hbBox .template2.receivedHbBox>.hbIcon {
+            display: block;
+            width: 2.795008rem;
+            height: 2.355008rem;
+            margin: 0.65rem auto 0;
+            background-position: -2.81rem 0px;
+        }
+        #hbBox .template3 h2.mt80 {
+            border-bottom: 25px;
+        }
+        #hbBox .template3 button {
+            margin-top: 20px;
+        }
+        #hbBox.noHbWinBox {
+            top: 50%;
+            width: 100%;
+            height: 400px;
+            transform: translateY( -50%);
+            background: none;
+        }
+
+        .worldofwarBox .contentBox {
+            width: 100%;
+            height: calc(100vw * 0.91);
+            margin: 0;
+            background-size: contain;
+            transform: translate(-50%, -50%);
+        }
+        .worldofwarBox .contentBox .countDown {
+            top: 57%;
+            left: 52%;
+            transform: translateX(-50%);
+            font-size: 18px;
+        }
+        .worldofwarBox .exitHbRain {
+            left: 51%;
+            bottom: 3%;
+            transform: translateX(-50%);
+            font-size: 14px;
+        }
+        .worldofwarBox .startHbRain {
+            left: 50%;
+            bottom: 13%;
+            width: 50%;
+            height: calc(50vw*0.18);
+            margin-left: 2%;
+            background-size: contain;
+            transform: translateX(-50%);
+        }
+        .rainAnimateBox .closeRainAnimate {
+            top: 10px;
+            right: 10px;
+            font-size: 14px;
+            background-size: 18px;
+            width: 70px;
+            padding-left: 18px;
+        }
+    }
+
+/*红包功能 author:liwenjie end*/
+
+/*微信弹窗 author:liwenjie start*/
+.maskBox{position:absolute;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.7)}
+.noWXTipsBox{position:fixed;top:0;right:0;bottom:0;left:0;width:2rem;height:1.4rem;margin:auto;color:#333;font-size:.14rem;font-family:'微软雅黑';text-align:center;background:#fff;border-radius:10px}
+.noWXTipsBox img{display:inline-block;width:.6rem;margin:.2rem auto 0}
+.noWXTipsBox:before{content:'';background:rgba(0,0,0,.5)}
+.noWXTipsBox p {height: 0.55rem;}
+.noWXTipsBox p:after {content: '';display: inline-block;vertical-align: middle;height: 100%;}
+.noWXTipsBox p span {display: inline-block;vertical-align: middle;}
+/*微信弹窗 author:liwenjie end*/
+
+/*flash pass*/
+.iframeColorMask{
+	background:#000000;
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	z-index:1;
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+	-khtml-opacity: 0;
+	opacity: 0;
+}
+.passBoxMaskFlash .passBoxFlash{
+	width:780px;
+	height:98px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-49px 0 0 -390px;
+	color:#fff;
+	font-size:20px;
+    font-family: "Microsoft YaHei","微软雅黑";
+	z-index:2;
+}
+.passBoxFlash .passConFlash{
+	height:42px;
+	line-height:42px;
+}
+.passConFlash span,.passConFlash input{
+	display:inline-block;
+	vertical-align: middle;
+	height:42px;
+	line-height:42px;
+}
+.passTitFlash{
+	width:250px;
+	letter-spacing: 2px;
+}
+.passConFlash .passInpFlash{
+	width: 380px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border: 1px solid #7d7d7d;
+    background: #313131;
+    margin-right: 15px;
+    color: #fff;
+    outline: none;
+}
+.passConFlash .passWordSubmitFlash{
+    width: 110px;
+    font-size: 16px;
+    color: #fff;
+    background: #ff5b02;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Microsoft YaHei","微软雅黑";
+	cursor:pointer;
+}
+
+.passTipBoxFlash{
+	height: 56px;
+    width: 400px;
+    margin-left: 250px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    line-height: 56px;
+}
+.passTipBoxFlash .passJumpFlash{
+	float: right;
+    color: #ff5b02;
+    font-family: "Microsoft YaHei","微软雅黑";
+	cursor:pointer;
+}
+.passTipBoxFlash .passErrorBoxFlash{
+    background: url(//s.expoon.com/image/z/krpano/images/err_tip.gif) no-repeat left center;
+    font-family: "Microsoft YaHei","微软雅黑";
+    padding-left: 28px;
+    float: left;
+    color: #fff;
+    display: none;
+}
+
+
+
+/* 同屏功能 - start */
+.panoListBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 76%;
+    height: 264px;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    transform: translate(-50%, -50%);
+}
+.panoListBox .closeBtn {
+    display: none;
+}
+.panoListBox li {
+    clear: both;
+    padding: 16px 56px 16px 80px;
+    overflow: hidden;
+}
+.panoListBox li .avator {
+    position: relative;
+    left: -64px;
+    float: left;
+    width: 52px;
+    margin-left: -100%;
+
+}
+.panoListBox li .avator img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+}
+.panoListBox li .titleBox {
+    float: left;
+    width: 100%;
+}
+.panoListBox li .titleBox h3 {
+    font-size: 14px;
+}
+.panoListBox li .titleBox p {
+    margin-top: 7px;
+    color: #ddd;
+    font-size: 12px;
+    line-height: 16px;
+}
+.panoListBox li .btn {
+    float: left;
+    width: 50px;
+    margin-right: -150px;
+    font-size: 12px;
+    text-align: center;
+}
+.panoListBox li .btn i {
+    display: block;
+    width: 23px;
+    height: 18px;
+    margin: 10px auto;
+    background-image: url("//s.expoon.com/cache/1546677748/test/krpano/images/socket/socket-icon.png");
+    background-position: 0px 0px;
+    background-size: 80.5px 87px;
+}
+.sameScreenIngBox {
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    transition: width .5s linear, border-radius .5s linear, transform .4s linear;
+}
+.sameScreenIngBox.rise {
+    transform: translateY(-150px);
+}
+.sameScreenIngBox i {
+    display: block;
+    margin: 0 auto 5px;
+    background-image: url("//s.expoon.com/cache/1546677748/test/krpano/images/socket/socket-icon.png");
+    background-size: 80.5px 87px;
+}
+.sameScreenIngBox .avator {
+    float: left;
+    width: 44px;
+    padding-top: 10px;
+    padding-left: 16px;
+}
+.sameScreenIngBox .avator img {
+    width: 100%;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+.sameScreenIngBox .main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity 0s linear 0.5s, left 0s linear 0.5s;
+}
+.sameScreenIngBox .main li {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+}
+.sameScreenIngBox .main li i.messageIcon {
+    width: 20px;
+    height: 17px;
+    background-position: -44px -21px;
+}
+.sameScreenIngBox .main li i.phoneIcon {
+    width: 18px;
+    height: 18px;
+    background-position: -23px -21px;
+}
+.sameScreenIngBox .main li i.outloginIcon {
+    width: 16px;
+    height: 16px;
+    background-position: -64px 0px;
+}
+.sameScreenIngBox .main li i.onlineUserIcon {
+    width: 18.5px;
+    height: 20px;
+    background-position: -41px -38.5px;
+}
+.sameScreenIngBox .main li i.InTakeLookIcon {
+    width: 20.5px;
+    height: 21px;
+    background-position: -60px -38.5px;
+}
+.sameScreenIngBox .main li.cancel i.InTakeLookIcon {
+    background-position: 0 -61px;
+}
+.sameScreenIngBox .statusBtn {
+    float: right;
+    width: 50px;
+    height: 100%;
+    text-align: center;
+    transition: width 0.5s linear;
+}
+.sameScreenIngBox .statusBtn i {
+    width: 5px;
+    height: 10px;
+    margin: 27px auto 0;
+    background-image: url("//s.expoon.com/cache/1546677748/test/krpano/images/socket/socket-icon.png");
+    background-position: -64px -16px;
+    transition: transform .3s linear;
+}
+.sameScreenIngBox.retract {
+    width: 94px;
+    border-radius: 0 32px 32px 0;
+}
+.sameScreenIngBox.retract .main {
+    left: -400px;
+    opacity: 0;
+    transition: opacity 0s linear;
+}
+.sameScreenIngBox.retract .statusBtn {
+    width: 30px;
+}
+.sameScreenIngBox.retract .statusBtn i {
+    transform: rotate(180deg);
+}
+.socketMessageBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 76%;
+    height: 250px;
+    background: rgba(0,0,0,.7);
+    transform: translate(-50%, -50%);
+}
+.socketMessageBox .logoBox {
+    padding-top: 32px;
+    padding-bottom: 29px;
+}
+.socketMessageBox .logoBox img {
+    width: 120px;
+    display: block;
+    margin: 0 auto;
+}
+.socketMessageBox .avatorBox {
+    float: left;
+    margin-left: 24px;
+}
+.socketMessageBox .avatorBox img {
+    display: block;
+    margin-bottom: 3px;
+    width: 75px;
+    border: 2px solid #fff;
+    border-radius: 3px;
+}
+.socketMessageBox .avatorBox span {
+    display: block;
+    color: rgba(255,255,255,.6);
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}
+.socketMessageBox .infoBox {
+    float: right;
+    margin-right: 15px;
+    margin-top: 10px;
+    width: 55%;
+    font-size: 13px;
+    line-height: 16px;
+}
+.socketMessageBox .infoBox li {
+    margin-bottom: 15px;
+    color: #fff;
+}
+.socketMessageBox .infoBox .title{
+    float: left;
+    color: rgba(255,255,255,.6);
+}
+.socketTipsBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 14px;
+    white-space: nowrap;
+    background: rgba(0,0,0,.7);
+    transform: translate(-50%, -50%);
+}
+.onlineUsersBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 76%;
+    height: 350px;
+    padding: 0 16px;
+    color: #fff;
+    font-size: 13px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.7);
+    box-sizing: border-box;
+}
+.onlineUsersBox ::-webkit-scrollbar {
+    width: 6px;
+    background: rgba(0,0,0,.7);
+    border-radius: 3px;
+}
+.onlineUsersBox ::-webkit-scrollbar-button {
+    display: none;
+}
+.onlineUsersBox ::-webkit-scrollbar-thumb {
+    background: rgb(121, 121, 121);
+    border-radius: 3px;
+}
+.onlineUsersBox h3{
+    display: none;
+}
+.onlineUsersBox h4 {
+    padding: 31px 0 24px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+.onlineUsersBox table {
+    width: 100%;
+    text-align: center;
+    border-collapse : collapse;
+    border-spacing : 0;
+}
+.onlineUsersBox .scrollBox {
+    height: 240px;
+    overflow-x: auto;
+}
+
+.onlineUsersBox td:first-child {
+    width: 27%;
+}
+.onlineUsersBox td:last-child {
+    width: 36%;
+}
+.onlineUsersBox td {
+    padding: 7px 0;
+}
+.onlineUsersBox thead td {
+    padding: 5px 0;
+    color: rgba(255,255,255,.5);
+    font-size: 12px;
+}
+.onlineUsersBox tbody tr {
+    border-bottom: 1px solid rgba(216,216,216,0.3);
+
+}
+.onlineUsersBox td img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+@media ( min-width: 800px ) {
+    .panoListBox {
+        width: 640px;
+    }
+    .panoListBox .closeBtn {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-image: url("//s.expoon.com/cache/1546677748/test/krpano/images/socket/socket-icon.png");
+        width: 14px;
+        height: 14px;
+        background-position: -262px -132px;
+        opacity: .7;
+        cursor: pointer;
+    }
+    .panoListBox .closeBtn:hover {
+        opacity: 1;
+    }
+    .panoListBox ul {
+        padding-top: 32px;
+    }
+    .panoListBox li {
+        margin: 0 12px;
+        padding: 13px 110px 13px 80px;
+        opacity: 0.6;
+        transition: opacity .3s linear;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(255,255,255,.5);
+    }
+    .panoListBox li:last-child {
+        border-bottom: 0;
+    }
+    .panoListBox li .avator img {
+        width: 46px;
+        height: 46px;
+        border-width: 1px;
+    }
+    .panoListBox li .titleBox {
+        line-height: 46px;
+    }
+    .panoListBox li .titleBox h3 {
+        display: inline-block;
+        width: 80px;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    .panoListBox li .titleBox p {
+        display: inline-block;
+        width: 310px;
+        margin-top: 0;
+        padding-left: 10px;
+        font-size: 16px;
+
+    }
+    .panoListBox li .btn {
+        width: 80px;
+    }
+    .panoListBox li .btn i {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+    .panoListBox li .btn span {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 46px;
+    }
+    .panoListBox li:hover {
+        opacity: 1;
+    }
+    .sameScreenIngBox {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        width: 580px;
+        height: 61px;
+        padding-top: 27px;
+        color: #b0b0b0;
+        background: rgba(0,0,0,.4);
+        transform: translateX(-50%);
+        transition: bottom .5s linear;
+        border-radius: 5px;
+    }
+    .sameScreenIngBox i {
+        vertical-align: middle;
+    }
+    .sameScreenIngBox .avator {
+        width: 145px;
+        font-size: 16px;
+        padding-top: 0;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+    .sameScreenIngBox .avator img {
+        width: 46px;
+        border-width: 1px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .sameScreenIngBox .main {
+        position: static;
+        transform: translate(0, 0);
+    }
+    .sameScreenIngBox .main li {
+        position: relative;
+        width: 145px;
+        font-size: 16px;
+        box-sizing: border-box;
+        line-height: 50px;
+        transition: color .3s linear;
+        cursor: pointer;
+    }
+    .sameScreenIngBox .main li:before {
+        position: absolute;
+        left: 0;
+        top: 11px;
+        content: '';
+        height: 24px;
+        border-left: 1px solid rgba(255,255,255,.4);
+    }
+    .sameScreenIngBox .main li i {
+        display: inline-block;
+        margin: 0 10px 0 0;
+        transform: scale(1.3);
+        opacity: 0.7;
+        transition: opacity .3s linear;
+    }
+    .sameScreenIngBox .main li p {
+        display: inline-block;
+    }
+
+    .sameScreenIngBox .main li:hover {
+        color: #fff;
+    }
+    .sameScreenIngBox .main li:hover i {
+        opacity: 1;
+    }
+    .sameScreenIngBox .statusBtn {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 30px;
+        transform: translateX(-50%);
+        transition: all .5s linear;
+        cursor: pointer;
+    }
+    .sameScreenIngBox .statusBtn i {
+        margin-top: 8px;
+        background-position : -302px -81px; 
+        background-size     : 322px 328px;
+        width               : 18px;
+        height              : 18px;
+        transition: all .5s linear;
+        opacity: 0.7;
+    }
+    .sameScreenIngBox .statusBtn:hover i {
+        opacity: 1;
+    }
+    .sameScreenIngBox.retract {
+        bottom: -200px;
+        width: 580px;
+        border-radius: 0;
+    }
+    .sameScreenIngBox.retract .main {
+        left: 0;
+        opacity: 1;
+    }
+    .sameScreenIngBox.retract .statusBtn {
+        top: -150px;
+        width: 24px;
+        height: 20px;
+        background: rgba(0,0,0,.4);
+    }
+    .sameScreenIngBox.retract .statusBtn i {
+        margin-top: 1px;
+        transform: rotate(180deg);
+    }
+
+    .sameScreenIngBox.bTerminal,
+    .sameScreenIngBox.bTerminal.retract {
+        width: 450px;
+    }
+    .socketMessageBox {
+        width: 346px;
+        height: 300px;
+    }
+    .socketMessageBox .logoBox {
+        padding-top: 41px;
+        padding-bottom: 37px;
+    }
+    .socketMessageBox .logoBox img {
+        width: 146px;
+    }
+    .socketMessageBox .avatorBox img {
+        width: 91px;
+    }
+    .socketMessageBox .infoBox {
+        padding-top: 10px;
+        margin-right: 20px;
+        line-height: 18px;
+    }
+    .onlineUsersBox {
+        width: 455px;
+        height: 460px;
+        font-size: 14px;
+    }
+    .onlineUsersBox .scrollBox {
+        height: 300px;
+    }
+    .onlineUsersBox h3 {
+        display: block;
+        margin-top: 27px;
+        font-size: 16px;
+        text-align: center;
+        font-weight: normal;
+    }
+    .onlineUsersBox h4 {
+        padding-top: 8px;
+        font-size: 12px;
+    }
+    .onlineUsersBox td {
+        padding: 13px 0;
+    }
+    .onlineUsersBox thead td {
+        padding: 17px 0;
+        border-bottom: 1px solid rgba(216,216,216,0.3);
+    }
+}
+/* 同屏功能 - end */
+
+
+/* 到期样式 - start */
+.pano-expire-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    font-size: 18px;
+    font-family: '微软雅黑';
+    background: #000;
+    background: rgba(0,0,0,.7);
+    overflow: hidden;
+    z-index: 14000;
+}
+.pano-expire-box .scroll-box {
+    position: relative;
+    margin-right: 230px;
+    height: 60px;
+    overflow: hidden;
+}
+.pano-expire-box .scroll-box p {
+    position: absolute;
+    left: 0;
+    width: 1060px;
+}
+.pano-expire-box .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 21px;
+    height: 21px;
+    background: url('//s.expoon.com/cache/1563680170/test/krpano/images/pano-icon3.png') no-repeat center;
+    background-position: -480px -499px;
+    cursor: pointer;
+}
+.pano-expire-box .jump-btn {
+    position: absolute;
+    top: 10px;
+    right: 120px;
+    width: 100px;
+    height: 38px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 38px;
+    text-decoration: none;
+    text-align: center;
+    border-radius:4px;
+    background: #409EFA;
+}
+.pano-expire-box .jump-btn:hover {
+    background: #6bb6ff;
+}
+
+@media ( max-width: 800px )  {
+    .pano-expire-box {
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+    }
+    .pano-expire-box .scroll-box {
+        line-height: 30px;
+        margin-right: 120px;
+    }
+    .pano-expire-box .close-btn {
+        top: 7px;
+        right: 8px;
+        width: 16px;
+        height: 16px;
+        background-position: -360px -375px;
+        background-size: 600px 1050px;
+    }
+    .pano-expire-box .jump-btn {
+        top: 3px;
+        right: 33px;
+        font-size: 12px;
+        width: 76px;
+        height: 24px;
+        line-height: 24px;
+    }
+}
+/* 到期样式 - end */
