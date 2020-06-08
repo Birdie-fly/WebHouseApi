@@ -13,6 +13,8 @@
     <None Include="wwwroot\images\8bda255e37814d1fad70e54a1df2d192_erweima.png" />
     <None Include="wwwroot\images\t011c2153df45254adc.jpg" />
     <None Include="wwwroot\images\特色三.jpg" />
+    <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\qrcodes.js" />
     <None Include="wwwroot\NewHouse.html" />
     <None Include="wwwroot\ShowHouse.html" />
     <Content Remove="wwwroot\boot\bootstrap-datetimepicker.min.css" />
@@ -54,9 +56,11 @@
     <Content Remove="wwwroot\imgVer\style.css" />
     <Content Remove="wwwroot\js\dragverify.js" />
     <Content Remove="wwwroot\js\jquery.min.js" />
+    <Content Remove="wwwroot\js\qrcodes.js" />
     <Content Remove="wwwroot\js\seajs.cfg.js" />
     <Content Remove="wwwroot\js\seajs.js" />
 	 <Content Remove="wwwroot\favicon.ico" />
+	 <Content Remove="wwwroot\showPrincipals.html" />
     <Content Remove="wwwroot\WybImages\logo1.png" />
   </ItemGroup>
 
@@ -319,6 +323,7 @@
     <None Include="wwwroot\js\seajs.cfg.js" />
     <None Include="wwwroot\js\seajs.js" />
     <None Include="wwwroot\SHouse.html" />
+    <None Include="wwwroot\showPrincipals.html" />
     <None Include="wwwroot\WUdesHouse.html" />
     <None Include="wwwroot\WybImages\logo1.png" />
   </ItemGroup>
