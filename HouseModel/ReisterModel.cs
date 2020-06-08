@@ -14,13 +14,10 @@ namespace HouseModel
         /// </summary>
         public int Rid		 { get; set; }
         /// <summary>
-        /// 注册名
+        /// 注册用户名
         /// </summary>
         public string Rname 	 { get; set; }
-        /// <summary>
-        /// 手机号
-        /// </summary>
-        public string Rphone	 { get; set; }
+
         /// <summary>
         ///注册密码 
         /// </summary>

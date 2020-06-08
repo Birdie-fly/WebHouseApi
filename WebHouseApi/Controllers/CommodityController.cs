@@ -51,7 +51,7 @@ namespace WebHouseApi.Controllers
             {
                 CurrentPage = p.TotalPage;
             }
-            p.CommodityModels = list.Skip(CurrentPage * (CurrentPage - 1)).Take(PageSize).ToList();
+            p.CommodityModels = list.Skip(PageSize * (CurrentPage - 1)).Take(PageSize).ToList();
 
             p.CurrentPage = CurrentPage;
             return p;
@@ -60,6 +60,11 @@ namespace WebHouseApi.Controllers
         public int DelCommodity(int id)
         {
             return bll.DelCommodity(id);
+        }
+        //添加商家信息
+        public int AddCommodity([FromBody]CommodityModel cdm)
+        {
+            return bll.AddCommodity(cdm);
         }
     }
 }

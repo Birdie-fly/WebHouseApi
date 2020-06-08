@@ -56,7 +56,7 @@ namespace WebHouseApi.Controllers
             {
                 CurrentPage = p.TotalPage;
             }
-            p.PrincipalModels = list.Skip(CurrentPage * (CurrentPage - 1)).Take(PageSize).ToList();
+            p.PrincipalModels = list.Skip(PageSize * (CurrentPage - 1)).Take(PageSize).ToList();
 
             p.CurrentPage = CurrentPage;
             return p;
@@ -67,10 +67,16 @@ namespace WebHouseApi.Controllers
         {
             return bll.AddPrincipal(principalModel);
         }
-        //删除售卖人信息
+        //删除经纪人信息
         public int DelPrincipal(int id)
         {
             return bll.DelPrincipal(id);
+        }
+        [HttpGet]
+        public string GetUrl(int id)
+        {
+            string u = bll.GetUrl(id);
+            return u;
         }
     }
 }

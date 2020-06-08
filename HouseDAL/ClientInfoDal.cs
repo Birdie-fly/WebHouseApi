@@ -21,6 +21,5 @@ namespace HouseDAL
         {
             return DapperHelper<ClientInfoModel>.Execute($"insert into ClientInfo values('{cm.ClientName}','{cm.ClientPhone}',{cm.ClientSex})", null);
         }
-
     }
 }
