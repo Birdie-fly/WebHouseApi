@@ -26,8 +26,11 @@ namespace HouseDAL
             string sql = $"select * from Principal p join Commodity c on c.Id =p.CommodityId where p.Id={id}";
             return DapperHelper<PrincipalModel>.Query(sql, null);
         }
-
-
+        //删除经纪人信息
+        public int DelPrincipal(int id)
+        {
+            return DapperHelper<PrincipalModel>.Execute("delete from Principal where Id=" + id, null);
+        }
         /// <summary>
         /// 添加经纪人信息
         /// </summary>
@@ -36,6 +39,25 @@ namespace HouseDAL
         public int AddPrincipal(PrincipalModel principalModel)
         {
             return DapperHelper<PrincipalModel>.Execute($"insert into Principal values('{principalModel.PrincipalName}','{principalModel.PrincipalPhone}',{principalModel.CommodityId},'{principalModel.Enter}','{principalModel.PrImage}','{principalModel.Email}','{principalModel.QQ}','{principalModel.WeChat}')", null);
+        }
+
+        //删除经纪人信息
+        public int DelPrincipal(int id)
+        {
+            return DapperHelper<PrincipalModel>.Execute("delete from Principal where Id=" + id, null);
+        }
+
+        //根据id查询二维码
+        public string GetUrl(int id)
+        {
+            string str = "select WeChat from Principal where Id=" + id;
+            return DapperHelper<string>.ExecuteScalarForT(str, null);
+        }
+        //根据id查询二维码
+        public string GetUrl(int id)
+        {
+            string str = "select WeChat from Principal where Id=" + id;
+            return DapperHelper<string>.ExecuteScalarForT(str,null); 
         }
         /// <summary>
         /// 获取商家信息

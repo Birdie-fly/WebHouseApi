@@ -15,6 +15,7 @@ namespace WebHouseApi
 {
     public class Startup
     {
+        //readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup( IConfiguration configuration )
         {
             Configuration = configuration;
@@ -32,6 +33,9 @@ namespace WebHouseApi
                 ("cors", p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowAnyHeader()));
 
             services.AddControllers();
+
+
+
 
         }
 

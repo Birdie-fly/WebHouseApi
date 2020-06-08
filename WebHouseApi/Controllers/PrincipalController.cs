@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using HouseBLL;
 using HouseModel;
 using Microsoft.AspNetCore.Cors;
+using System.ComponentModel.Design;
 using Microsoft.AspNetCore.Hosting;
 
 namespace WebHouseApi.Controllers
@@ -87,6 +88,11 @@ namespace WebHouseApi.Controllers
             principalModel.PrImage = img;
             return bll.AddPrincipal(principalModel);
         }
+        [HttpPost]
+        public int AddPrincipal(PrincipalModel principalModel)
+        {
+            return bll.AddPrincipal(principalModel);
+        }
 
 
         /// <summary>
@@ -140,6 +146,17 @@ namespace WebHouseApi.Controllers
                 ret = new OutPut { Code = 500, Msg = $"异常：{ex.Message}", Success = false };
             }
             return ret;
+        }
+        //删除经纪人信息
+        public int DelPrincipal(int id)
+        {
+            return bll.DelPrincipal(id);
+        }
+        [HttpGet]
+        public string GetUrl(int id)
+        {
+            string u = bll.GetUrl(id);
+            return u;
         }
     }
 }
