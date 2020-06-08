@@ -1,6 +1,4 @@
-﻿
-    
-    <script src="lib/jquery/dist/jquery.js"></script>
+﻿<script src="lib/jquery/dist/jquery.js"></script>
     <style>
         p {
             font-size: 1px;
@@ -11,6 +9,7 @@
 
         .Show:hover {
             background: #d8cfcf;
+            
             color: #ff0000;
             /*border: 1px solid #808080;*/
         }
@@ -28,9 +27,11 @@
 
             a:hover {
                 color: #ff6644;
+                cursor: pointer;
             }
         .tou:hover {
-            background: #d8cfcf;
+            /*background: #d8cfcf;*/
+            cursor: pointer;
         }
         #type p span{
             color:#000000;
@@ -62,7 +63,7 @@
     <div style="clear: both;" id="type">
         <p>
             <span id="HT" style="margin-left:95px; font-size:15px;font-weight:700; display:inline-block;float:left;">房型:</span>
-            <div style="display:inline-block;width:200px;"><a href="#">一室一厅一卫</a></div>
+            <div style="display:inline-block;width:200px;"><a href="Javascript:;">一室一厅一卫</a></div>
             <div style="display:inline-block;width:200px;"><a href="#">二室一厅一卫</a></div>
             <div style="display:inline-block;width:200px;"><a href="#">三室一厅一卫</a></div>
             <div style="display:inline-block;width:200px;"><a href="#">三室一厅二卫</a></div>
@@ -86,7 +87,7 @@
         </p>
     </div>
     <div style="width:1300px;margin-left:95px; height:30px;background:#f3f4f8;clear:both;">
-        <p style="font-size:15px;color:#000000;margin-left: 50px;line-height: 2">上海 <span style="margin-left: 470px;">参考均价3500/月</span> <span style="margin-left: 460px;">在售房源量:23套</span> </p>
+        <p style="font-size:15px;color:#000000;margin-left: 50px;line-height: 2">上海 <span style="margin-left: 470px;">参考均价<span id="Mean"></span>/月</span> <span style="margin-left: 460px;">在售房源量:<span id="HouseSum"></span>套</span> </p>
     </div>
     <div id="boy" style="margin-left:95px;" onclick="Seel()"></div>
 
@@ -102,6 +103,7 @@
         //location.href = "/CommoidityShow.html";
     }
     function Show1() {
+        var Mean=0;
         $.ajax({
             url: 'https://localhost:44335/api/WUsed/get?Nams=' + $("#txtnams").val(),
             type: 'get',
@@ -123,7 +125,10 @@
                         +'</div >'
                     +'</div >';
                     $("#boy").append(str);
+                    Mean = Mean+d[i].hprice;
                 }
+                $("#Mean").html(Mean / d.length);
+                $("#HouseSum").html(d.length);
             }
         })
     }
