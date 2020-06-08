@@ -1,10 +1,20 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\Hxlimage\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\AddNewHouse.html" />
+    <None Include="wwwroot\images\8bda255e37814d1fad70e54a1df2d192_erweima.png" />
+    <None Include="wwwroot\images\t011c2153df45254adc.jpg" />
+    <None Include="wwwroot\images\特色三.jpg" />
+    <None Include="wwwroot\NewHouse.html" />
+    <None Include="wwwroot\ShowHouse.html" />
     <Content Remove="wwwroot\boot\bootstrap-datetimepicker.min.css" />
     <Content Remove="wwwroot\boot\bootstrap-datetimepicker.min.js" />
     <Content Remove="wwwroot\boot\bootstrap-table-pagejump.css" />
@@ -55,6 +65,9 @@
     <Folder Include="Images\" />
 	  <Folder Include="wwwroot\images\" />
 	  <Content Include="Images\微信.png" />
+    <Folder Include="wwwroot\images\" />
+    <Content Include="Images\批注 2020-05-08 211017.png" />
+    <Content Include="Models\LandingModel.cs" />
   </ItemGroup>
 
   <ItemGroup>

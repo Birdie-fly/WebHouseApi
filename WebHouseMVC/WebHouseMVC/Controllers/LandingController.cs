@@ -10,13 +10,14 @@ using Social_security.MVC;
 using Abp.Authorization.Users;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
+using WebHouseMVC.Models;
 
 namespace WebHouseMVC.Controllers
 {
     public class LandingController : Controller
     {
 
-        readonly HttpClientHelper client = new HttpClientHelper("http://localhost:44335/");
+        readonly HttpClientHelper client = new HttpClientHelper("https://localhost:44335/");
 
 
 
@@ -25,7 +26,7 @@ namespace WebHouseMVC.Controllers
             return View();
         }
 
-
+        
 
         public IActionResult Landing()
         {
@@ -66,46 +67,51 @@ namespace WebHouseMVC.Controllers
             return View();
         }
         [HttpPost]
-        public void Reister(string name, string pwd, string pwd2, string validCode)
+        public int Reister(string name, string pwd, string pwd2, string validCode)
         {
 
             if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(pwd) && !string.IsNullOrEmpty(validCode))
             {
-                var sessionValidCode = ViewData["validCode"].ToString();
+                var sessionValidCode = HttpContext.Session.GetString("validCode");
                 if (sessionValidCode.Equals(validCode.Trim(), StringComparison.CurrentCultureIgnoreCase))
                 {
                     if (pwd != pwd2)
                     {
-                        //Response.Write("<script>alert('两次密码不一致！');location.href='/Login/Register'</script>");
-                        return;
+                      
+                        return 1;
                     }
-                    int i = int.Parse(client.Get("api/Social/Login?name=" + name + "&pwd=" + pwd));
+                    //登陆表
+                    LandingModel user = new LandingModel
+                    {
+                        Name = name,
+                        Pwd = pwd,
+                    };
+
+                    int i = int.Parse(client.Post("api/Landing/Reister", JsonConvert.SerializeObject(user)));
                     if (i > 0)
                     {
-                       // Response.Write("<script>alert('该用户已存在！');location.href='/Login/Register'</script>");
+                     
+                        return 2;
                     }
                     else
                     {
-                        //UserLogin user = new UserLogin();
-                       // int r = int.Parse(client.Post("api/Social/Adduser", JsonConvert.SerializeObject(user)));
-                        //if (r > 0)
-                        //{
-                        //   // Response.Write("<script>alert('注册成功！');location.href='/Login/Login'</script>");
-                        //}
-                        //else
-                        //{
-                        //   // Response.Write("<script>alert('注册失败！');location.href='/Login/Register'</script>");
-                        //}
+
+
+                        return 3;
+                       
+            
                     }
                 }
                 else
                 {
-                   // Response.Write("<script>alert('验证码错误！');location.href='/Login/Register'</script>");
+               
+                    return 4;
                 }
             }
             else
             {
-               // Response.Write("<script>alert('账号、密码、验证码不能为空！');location.href='/Login/Register'</script>");
+              
+                return 5;
             }
         }
         public ActionResult CreateValidCodeImage()

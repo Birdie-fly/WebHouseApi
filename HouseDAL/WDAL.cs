@@ -19,8 +19,10 @@ namespace HouseDAL
         /// <returns></returns>
         public  IEnumerable<HouseCollectModel>  GetUsedHouse()
         {
-            string sql = "select * from HouseCollect join HouseType on HouseCollect.HouseType=HouseType.Id join HousePrice on HousePrice.Id=HouseCollect.Id";
-            return DapperHelper<HouseCollectModel>.Query(sql, null);
+            string sql = "select * from HouseCollect join HouseType on HouseCollect.HouseType=HouseType.Id join HousePrice on HousePrice.Hid=HouseCollect.Id";
+            var list= DapperHelper<HouseCollectModel>.Query(sql, null);
+
+            return list;
         }
         
         /// <summary>

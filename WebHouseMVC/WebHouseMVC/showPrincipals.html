@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\wwwroot\Scripts\jquery-3.3.1.js"></script>
+    <script src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\Js\qrcode.js"></script>
+    <style>
+        #qrcode {
+            width: 30px;
+            height: 30px;
+            margin-top: 15px;
+        }
+
+        #text {
+            height: 23px;
+        }
+
+
+        #box {
+            width: 1000px;
+            height: 600px;
+            margin: 200px auto;
+        }
+
+            #box .qrcode {
+                width: 400px;
+                height: 400px;
+                float: left;
+                margin: 40px 40px;
+            }
+
+            #box .introduce {
+                width: 500px;
+                height: 600px;
+                float: left;
+            }
+
+        .introduce p {
+            width: 200px;
+            height: 40px;
+            background: #333;
+            float: left;
+            margin: 10px 20px;
+            color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+            .introduce p span {
+                float: left;
+                width: 50px;
+                height: 40px;
+                color: #fff;
+                text-align: center;
+                line-height: 40px;
+            }
+
+            .introduce p input {
+                width: 150px;
+                height: 40px;
+                float: left;
+                border: 0;
+                color: #fff;
+                background: #000;
+                text-indent: 10px;
+                outline: none;
+            }
+
+        .introduce .btn {
+            width: 440px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background: #6c0;
+        }
+
+        .qrcode > img {
+            display: block;
+            border: 5px solid white;
+        }
+
+        dl {
+            padding: 0;
+            padding: 10vw;
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .black_overlay {
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            /*-moz-opacity: 0.8;*/
+            opacity: .80;
+            filter: alpha(opacity=88);
+        }
+
+        .white_content {
+            display: none;
+            position: absolute;
+            top: 25%;
+            left: 35%;
+            width: 35%;
+            height: 35%;
+            padding: 20px;
+            border: 5px solid black;
+            background-color: white;
+            z-index: 1002;
+            overflow: auto;
+        }
+
+        p {
+            font-size: 15px;
+            color: #808080;
+            margin-bottom: 0;
+            margin-top: 20px;
+        }
+
+        .Show:hover {
+            background: #d8cfcf;
+            color: #ff0000;
+            border: 1px solid #808080;
+        }
+
+        .Show {
+            border-top: 1px solid #808080;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 15px;
+            margin-left: 5px;
+            color: #000000;
+        }
+
+            a:hover {
+                color: #ff6644;
+            }
+
+        .tou:hover {
+            background: #d8cfcf;
+        }
+
+        #type p span {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:inherit; height:40px;background:#808080; clear:both;">
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;margin-left:95px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">租房</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">新房</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">二手房</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">商铺</span></div>
+        <div class="tou" style="width:102px; display:inline-block; cursor:pointer; line-height:38px; float:right;"><span style="color:#ffffff; line-height:38px;margin-right:38px;" onclick="Add()">发布房源</span></div>
+    </div>
+
+
+    <div id="tb">
+    </div>
+    <table style="margin-top:43%;margin-left:25%;">
+        <tr>
+            <td>总记录<span id="TotalCount"></span>条</td>
+            <td>共有<span id="TotalPage"></span>页</td>
+            <td>当前<span id="CurrentPage"></span>页</td>
+            <td><input id="Button1" type="button" value="首页" onclick="show(1);"/></td>
+            <td><input id="Button1" type="button" value="上一页" onclick="show(CurrentPage - 1);"/></td>
+            <td><input id="Button1" type="button" value="下一页" onclick="show(CurrentPage + 1);"/></td>
+            <td><input id="Button1" type="button" value="尾页" onclick="show(TotalPage);"/></td>
+        </tr>
+    </table>
+    <div id="light" class="white_content" style="float:left;">
+        <!--<span style="margin-right:0px;"></span><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='block'">点这里关闭本窗口</a>-->
+        <span style="float:right;"><input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\叉号.png" onclick="closeTypes()" style="height:30px;width:30px;" /></span>
+        <div id="types">
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+<script>
+    var PageSize = 3;
+    var CurrentPage = 1;
+    var TotalPage = 1;
+    $(function () {
+        show(1);
+    })
+    function closeTypes() {
+        document.getElementById('light').style.display = 'none';
+        document.getElementById('lights').style.display = 'none';
+        document.getElementById('fade').style.display = 'block';
+    }
+
+    function show(page) {
+        var obj = {};
+        obj.CurrentPage = page;
+        obj.PageSize = PageSize;
+
+        $.ajax({
+            url: 'https://localhost:44335/api/Principal/GetPrincipals',
+            type: 'get',
+            dataType: 'json',
+            data: { CurrentPage: obj.CurrentPage, PageSize: obj.PageSize},
+            success: function (d) {
+                //最大页
+                TotalPage = d.totalPage;
+                //当前页
+                CurrentPage = d.currentPage;
+
+                $("#TotalCount").text(d.totalCount)
+                $("#TotalPage").text(d.totalPage)
+                $("#CurrentPage").text(d.currentPage)
+                $("#tb").empty();
+                $(d.principalModels).each(function () {
+                    console.log(d);
+                    var str = '<div class="Show" style="width:1450px; float:left; height:180px;margin-left:30px;margin-top:8px;">'
+                        + '<div style="float:left;width:350px ">'
+                        + '<img src="' + this.prImage  + '" alt="" width="130" height="160" style="float:left;margin:5px" />'
+                        + '<p id="name">' + this.principalName + '</p>'
+                        + '<p>' + this.commodityName + ' &nbsp; &nbsp;&nbsp;&nbsp;</p>'
+                        + '<p>' + this.enter + '</p>'
+                        + '<p>房源可靠 服务周到</p>'
+                        + '</div >'
+                        + '<div style = "float:right;line-height:108px;" >'
+                        + '<span>' + '<input id="alert" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\联系方式.png" style="width:35px;height:35px;" onclick="showType(' + this.id + ')"/>' + '</span>'
+                        + '</div >'
+                        + '</div >'; 
+                    $("#tb").append(str);
+                })
+            }
+        })
+    }
+
+    function showType(id) {
+        $("#qrcode").empty();
+        $("#qrcodes").empty();
+        document.getElementById('light').style.display = 'block';
+        $.ajax({
+            url: 'https://localhost:44335/api/Principal/GetPrincipalById?id=' + id,
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                $("#types").empty();
+
+                $(d).each(function () {
+                    var str = '<ul style="list-style:none;">' +
+                        '<li style="float:left;margin-left:5%">' +
+                        '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\电话.png" style="width:100px;height:100px;" onclick="toTel(' + this.principalPhone + ')"/>' +
+                        '</li>' +
+                        '<li style="float:left;margin-left:2%">' +
+                        '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\QQ.png" style="width:100px;height:100px;" onclick="toQQ(' + this.qq + ')" />' +
+                        '</li>' +
+                        '<li style="float:left;margin-left:2%">' +
+                        '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\微信.png" style="width:100px;height:100px;" onclick="toWeChat()"/>' +
+                        '<input id="url" type="hidden" value="' + this.weChat + '"/>' +
+                        '<div id="qrcode"></div>' +
+                        ' </li>' +
+                        '<li style="float:left;margin-left:2%">' +
+                        '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\联系人.png" style="width:100px;height:100px;margin-" onclick="totxLu(' + id + ')"/>' +
+                        '<div id="qrcodes" style="margin-top:15px;"></div>' +
+                        '</li>' +
+                        '</ul>';
+                    $("#types").append(str);
+                })
+            }
+        })
+
+    }
+
+    function toTel(tel) {
+        $("#qrcode").empty();
+        $("#qrcodes").empty();
+        location.href = "tel:" + tel + "";
+    }
+
+    function toQQ(qq) {
+        $("#qrcode").empty();
+        $("#qrcodes").empty();
+        location.href = "tencent://message/?uin=" + qq + "amp;Site=sc.chinaz.com&amp;Menu=yes";
+    }
+
+
+    // 生成微信二维码的方法
+    function toWeChat() {
+        $("#qrcode").empty();
+        $("#qrcodes").empty();
+        var u = $("#url").val();
+        var qrcode = new QRCode("qrcode");
+        qrcode.makeCode(u);
+    }
+
+    function totxLu(id) {
+        $("#qrcode").empty();
+        $("#qrcodes").empty();
+        var name = "";
+        var company = "";
+        var title = "";
+        var address = "";
+        var mobile = "";
+        var email = "";
+        var web = "";
+        var desc = "";
+        var info = "";
+        $.ajax({
+            url: 'https://localhost:44335/api/Principal/GetPrincipalById?id=' + id,
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                $(d).each(function () {
+                    name = "FN:" + this.principalName + "\n";
+                    company = "ORG:" + this.commodityName + "\n";
+                    title = "TITLE:" + "经纪人" + "\n";
+                    address = "WORK:" + "" + "\n";
+                    mobile = "TEL:" + this.principalPhone + "\n";
+                    email = "EMAIL:" + this.email + "\n";
+                    web = "URL:" + "" + "\n";
+                    desc = "NOTE:" + "" + "\n";
+
+                    info = "BEGIN:VCARD\n" + name + company + title + address + mobile + email + web + desc + "END:VCARD";
+                    console.log(info);
+                    //生成二维码
+                    var qrcodes = new QRCode("qrcodes");
+                    qrcodes.makeCode(info);
+                })
+            }
+        })
+    }
+
+
+
+</script>

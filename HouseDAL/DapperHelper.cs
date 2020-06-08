@@ -200,7 +200,7 @@ namespace HouseDAL
                         return result;
 
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         transaction.Rollback();
 
@@ -246,7 +246,7 @@ namespace HouseDAL
 
                         return result;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         transaction.Rollback();
 

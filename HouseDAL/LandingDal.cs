@@ -14,7 +14,7 @@ namespace HouseDAL
         /// <summary>
         /// 数据库连接字符串
         /// </summary>
-       //private static readonly string connectionString = @"Data Source=47.92.51.7;Initial Catalog=House;Persist Security Info=True;User ID=sa;Pwd=qwer123456@;";
+       //private static readonly string connectionString = 11@"Data Source=47.92.51.7;Initial Catalog=House;Persist Security Info=True;User ID=sa;Pwd=qwer123456@;";
 
         //登陆
          public int  Landing(string name,string pwd)
@@ -23,9 +23,9 @@ namespace HouseDAL
             return Convert.ToInt32(DapperHelper<LandingModel>.ExecuteScalar(sql,null));
         }
         // 注册
-        public int Reister(ReisterModel reister)
+        public int Reister(LandingModel reister)
         {
-            string sql = $"insert into Reister values({reister.Rname},'{reister.Rphone}','{reister.Rpwd}') ";
+            string sql = $"insert into Landing values({reister.Name},'{reister.Pwd}') ";
             return DapperHelper<ReisterModel>.Execute(sql, null);
         }
 

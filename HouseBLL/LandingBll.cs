@@ -21,7 +21,7 @@ namespace HouseBLL
         }
 
         // 注册
-        public int Reister(ReisterModel reister)
+        public int Reister(LandingModel reister)
         {
             return dal.Reister(reister);
         }
