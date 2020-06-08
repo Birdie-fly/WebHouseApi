@@ -63,9 +63,7 @@
   <ItemGroup>
     <Folder Include="images\" />
     <Folder Include="Images\" />
-	  <Folder Include="wwwroot\images\" />
 	  <Content Include="Images\微信.png" />
-    <Folder Include="wwwroot\images\" />
     <Content Include="Images\批注 2020-05-08 211017.png" />
     <Content Include="Models\LandingModel.cs" />
   </ItemGroup>
