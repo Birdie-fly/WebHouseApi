@@ -131,24 +131,8 @@ seajs.use([
                             </a>
                                                         
                                                     </li>
-                                            
-                                            <li>                        
-                            <a target="_self" href="javascript:;" class="hoverslider" data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
-                                更多
-                            </a> 
-                                                    </li>
                                                 </ul>
-                        <div class="xcx-image">
-                <div data-hover="hoverslider" data-obj=".xcx-image-content" class="xcx-image-txt">
-                    小程序&amp;&amp;公众号
-                </div>
-                <div class="xcx-image-content">
-                                                                            <img width="150" height="150" src="images/acd453df1436cc08f4dba7ca68e6e7e0.jpg">
-    
-                                            <img src="https://open.weixin.qq.com/qr/code?username=house08cms" alt="house08cms" style="height: 150px; width: 150px; display: inline-block;">
-                    <img src="images/ddbdxcx.png" style="width:150px; height:150px;" alt> 
-                </div>
-            </div>
+                        
                         
 
 <div id="login" class="loginbar" data-login="1" data-config="{
@@ -162,107 +146,18 @@ seajs.use([
             <div class="login-out">
             <div class="login-out-btn">
                 <a href="https://house.08cms.com/login" data-modal=".winlogin" title="登录">
-                    <i class="font-icons-2"></i>登录
+                    登录
                 </a>
                 <a href="https://house.08cms.com/register" title="注册" target="_blank">
-                    <i class="font-icons-30"></i>注册
+                    注册
                 </a>
             </div>
-                        <ul class="login-quick login-btn">
-                                <li>
-                    <a href="https://house.08cms.com/connect/qq">
-                        <i class="font-icons-38 qq"></i>
-                        QQ登录
-                    </a>
-                </li>
-                                                            </ul>
+                       
                     </div>
     </div>
 
-<script>
-    seajs.use(['jqhoverS'], function ( jqhoverS){
-        $('#login').on('backfn', function() {
-            $('.login-info').hoverSlider({
-                offsetx:0,
-                obj:'.login-operate',
-                delay: 10
-            }); 
-            $('.login-out-btn').hoverSlider({
-                offsetx:0,
-                offsety: 60,
-                obj:'.login-quick',
-                delay: 10
-            })
-        });
-    });
-</script>
 
-<script id="logintpl" type="text/html">
-    <% if (data.loginstate == 1) { %>
-        <div class="login-in">
-            <div class="login-info" > 
-                <a href="https://house.08cms.com/main" target="_blank">
-                    <i class="font-icons-2"></i> <span><%= data.name %></span> <i class="font-icons-1"></i>
-                </a>
-            </div>
-            <ul class="login-operate login-btn">
-                <% if(data.type == 'MemberBundle') { %>
-                <li>
-                    <a href="https://house.08cms.com/main#/guanzhufangyuan" title="我的收藏" target="_blank">
-                        <i class="font-icons-3"></i>
-                        我的收藏
-                    </a>
-                </li>
-                <li>
-                    <a href="https://house.08cms.com/main#/usersale" title="我要发布" target="_blank">
-                        <i class="font-icons-5"></i>
-                        我要发布
-                    </a>
-                </li>
-                <li>
-                    <a href="https://house.08cms.com/member_main" title="会员中心" target="_blank"> <i class="font-icons-6"></i>
-                        会员中心
-                    </a>
-                </li>
-                <% } else { %>
-                    <li>
-                        <a href="https://house.08cms.com/main" title="后台管理" target="_blank">
-                            <i class="font-icons-6"></i>
-                            
-                            后台管理
-                        </a>
-                    </li>
-                <% } %>
-                <li>
-                    <a data-logout="1" href="javascript:;" title="安全退出"> 
-                        <i class="font-icons-7"></i>
-                        安全退出
-                    </a>
-                </li>
-            </ul>
-        </div>
-    <% } else { %>
-                <div class="login-out">
-            <div class="login-out-btn">
-                <a href="https://house.08cms.com/login"  data-modal=".winlogin"  title="登录">
-                    <i class="font-icons-2"></i>登录
-                </a>
-                <a href="https://house.08cms.com/register" title="注册" target="_blank">
-                    <i class="font-icons-30"></i>注册
-                </a>
-            </div>
-                        <ul class="login-quick login-btn">
-                                <li>
-                    <a href="https://house.08cms.com/connect/qq">
-                        <i class="font-icons-38 qq"></i>
-                        QQ登录
-                    </a>
-                </li>
-                                                            </ul>
-                    </div>
-    
-    <% } %>
-</script>
+
             </div>
 </div>
 <!--/header-->
@@ -274,7 +169,7 @@ seajs.use([
         <div class="search-bar clearfix ">
                 
         
-    <input type="text" name="name" class="search-input fl" placeholder="请输入二手房名称/拼音" data-autocomplete="1">
+    <input type="text" name="name" class="search-input fl" placeholder="请输入二手房名称" data-autocomplete="1">
 
 
             <button type="submit" class="search-btn fl"><i class="font-icons-17"></i></button>
@@ -302,7 +197,7 @@ seajs.use([
 
                 <div class="container">
             <div class="current-location">
-                                    <i class="font-icons-20"></i>
+                                    
 <a href="https://house.08cms.com/">首页</a>
 <span>&gt;</span>
 
@@ -322,7 +217,7 @@ seajs.use([
                     更新时间:
                     <span>    2019-11-27</span></div><div class="fl c-888 ml30">
                     点击: <i data-counts="{models: 'sale', field: 'clicks', id: '243'}"></i>次
-                </div></div><div class="info3"><a href="https://house.08cms.com/agency/loan" target="_blank" class="ico-word info3-btn"><i class="font-lp-57"></i>
+                </div></div><!--<div class="info3"><a href="https://house.08cms.com/agency/loan" target="_blank" class="ico-word info3-btn"><i class="font-lp-57"></i>
                             服务代办
                         </a><a href="https://house.08cms.com/tools/index" target="_blank" class="ico-word info3-btn"><i class="font-lp-24"></i>
                             房贷计算器
@@ -355,13 +250,13 @@ seajs.use([
         },
         type: 'click',
         ajax: {'data':{'formflag':'view_sale_report','aid':243,'models':'sale','cate_pushs':'sreport','type':'sale','formcls':'common-form-lg common-form-control'}}
-    }"></div></div><script type="text/javascript">
+    }"></div></div>--><script type="text/javascript">
                     seajs.use(['share'], function (share) {})
                 </script></div>
 
         <div class="blank20"></div>
 
-                                            <div class="preview fl jqDuang" data-trigger="click" data-obj=".item" data-cell=".s-item ul" data-prevbtn=".b-left" data-nextbtn=".b-right" data-autoplay="0" data-lazyload="src"><div class="look-phone"><div class="look-close"><i class="font-modal-close"></i></div><div data-qrcode="1" data-logo="https://house.08cms.com/bundles\house\images\defaultlog\6.png" data-text="https://house.08cms.com/esf/detail/243.html?_area=247" data-size="100"></div><em>扫描到手机</em></div><div class="preview-big"><div class="item show-big" data-index="0"><img width="690" height="440" src="images/96e548c25d4172ef196caf8540a89003.jpg"><div class="play"></div><div class="videobox"><iframe frameborder="0" src="player.html" allowFullScreen="true" width="100%"></iframe></div></div><div class="item show-big" style="display: none;" data-index="1"><img width="690" height="440" data-src="images/1a78fc0e76537593a0fe6f1bc2b1313c.jpg" src="images/nopic.gif"></div><div class="item show-big" style="display: none;" data-index="2"><img width="690" height="440" data-src="images/7bf3f0570e85287326d88427a5992b58.jpg" src="images/nopic.gif"></div><div class="item show-big" style="display: none;" data-index="3"><img width="690" height="440" data-src="images/6115e7e3e9c06f790a798cc02fdc9df7.jpg" src="images/nopic.gif"></div><div class="item show-big" style="display: none;" data-index="4"><img width="690" height="440" data-src="images/d4285cd60942986df44bf8f911b38dd9.jpg" src="images/nopic.gif"></div><div class="item show-big" style="display: none;" data-index="5"><img width="690" height="440" data-src="images/66462d706990ae2bb91a69054d005882.jpg" src="images/nopic.gif"></div></div><div class="preview-s jqDuang" data-obj="li" data-prevbtn=".s-left" data-nextbtn=".s-right" data-autoplay="0" data-visible="5" data-steps="5" data-effect="left"><div class="s-left"><i class="font-icons-11"></i></div><div class="s-item"><ul><li><div class="img"><img width="106" height="74" src="images/f0131ca5db0c9060ead8c71a3ca5dd10.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/3c48cf908af40d6c3178993780047972.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/c4105b7fd38bc47d9bd84074041ab064.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/37391921ab2d4bf08f4b9e11727aaa6e.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/43522e92266d3b14e8ed27ee64e318d0.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/15ed072f9b44594cafa36520a04b77af.jpg"></div></li></ul></div><div class="s-right"><i class="font-icons-12"></i></div></div><div class="b-left"><i class="font-icons-11"></i></div><div class="b-right"><i class="font-icons-12"></i></div></div><div class="showbig-container"><div class="showbig-swiper"><div class="lg"><div class="item show-big"><div class="item-img"><img src="images/660fe5de34d0d3854b94f15f73e237b2f71908b3.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/eceb6eac623021f8808ab8dc6719d8319c6024f1.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/c491236348890e1fb1b7fe54189d18c087681e98.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/17fed9e4ca4bef84115dee07a87cf4c28fadf53e.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/b9d7c561272775b50a73355311f7dd84af9fb54b.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/a39eed458d9ebdd57211e63e4800335b71292b24.jpg"></div></div></div><div class="b-left showbig-btn"><i class="font-icons-11"></i></div><div class="b-right showbig-btn"><i class="font-icons-12"></i></div></div></div><script type="text/javascript">
+                                            <div class="preview fl jqDuang" data-trigger="click" data-obj=".item" data-cell=".s-item ul" data-prevbtn=".b-left" data-nextbtn=".b-right" data-autoplay="0" data-lazyload="src"><!--<div class="look-phone"><div class="look-close"><i class="font-modal-close"></i></div><div data-qrcode="1" data-logo="https://house.08cms.com/bundles\house\images\defaultlog\6.png" data-text="https://house.08cms.com/esf/detail/243.html?_area=247" data-size="100"></div><em>扫描到手机</em></div>--><div class="preview-big"><div class="item show-big" data-index="0"><img width="690" height="440" src="images/96e548c25d4172ef196caf8540a89003.jpg"><div class="play"></div><div class="videobox"><iframe frameborder="0" src="player.html" allowFullScreen="true" width="100%"></iframe></div></div><div class="item show-big" style="display: none;" data-index="1"><img width="690" height="440" data-src="images/1a78fc0e76537593a0fe6f1bc2b1313c.jpg" src="images/nopic.gif"></div><div class="item show-big" style="display: none;" data-index="2"><img width="690" height="440" data-src="images/7bf3f0570e85287326d88427a5992b58.jpg" src="images/nopic.gif"></div><div class="item show-big" style="display: none;" data-index="3"><img width="690" height="440" data-src="images/6115e7e3e9c06f790a798cc02fdc9df7.jpg" src="images/nopic.gif"></div><div class="item show-big" style="display: none;" data-index="4"><img width="690" height="440" data-src="images/d4285cd60942986df44bf8f911b38dd9.jpg" src="images/nopic.gif"></div><div class="item show-big" style="display: none;" data-index="5"><img width="690" height="440" data-src="images/66462d706990ae2bb91a69054d005882.jpg" src="images/nopic.gif"></div></div><!--<div class="preview-s jqDuang" data-obj="li" data-prevbtn=".s-left" data-nextbtn=".s-right" data-autoplay="0" data-visible="5" data-steps="5" data-effect="left"><div class="s-item"><ul><li><div class="img"><img width="106" height="74" src="images/f0131ca5db0c9060ead8c71a3ca5dd10.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/3c48cf908af40d6c3178993780047972.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/c4105b7fd38bc47d9bd84074041ab064.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/37391921ab2d4bf08f4b9e11727aaa6e.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/43522e92266d3b14e8ed27ee64e318d0.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/15ed072f9b44594cafa36520a04b77af.jpg"></div></li></ul></div></div>--><div class="b-left"></div><div class="b-right"></div></div><div class="showbig-container"><div class="showbig-swiper"><div class="lg"><div class="item show-big"><div class="item-img"><img src="images/660fe5de34d0d3854b94f15f73e237b2f71908b3.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/eceb6eac623021f8808ab8dc6719d8319c6024f1.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/c491236348890e1fb1b7fe54189d18c087681e98.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/17fed9e4ca4bef84115dee07a87cf4c28fadf53e.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/b9d7c561272775b50a73355311f7dd84af9fb54b.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/a39eed458d9ebdd57211e63e4800335b71292b24.jpg"></div></div></div><div class="b-left showbig-btn"></div><div class="b-right showbig-btn"></div></div></div><script type="text/javascript">
             seajs.use(['jqduang', 'jqmodal'], function (jqduang, jqmodal) {
                 $('.preview-big .show-big').click(function () {
                     var index = $(this).data('index')
@@ -415,19 +310,19 @@ seajs.use([
             })
         </script>
 
-        <div class="detail-info fr">
-            
-            <div class="info-price">
-                <span class="price">245</span>万
-                <span class="tips">
-                    首付预算约<span id="cksf">-</span>万元&nbsp;&nbsp;月供<span id="ckyg">-</span>元
-                </span>
-            </div>
+                 <div class="detail-info fr">
 
-            <div class="line-dj clearfix">
+                     <div class="info-price">
+                         <span class="price">245</span>万
+                         <span class="tips">
+                             首付预算约<span id="cksf">-</span>万元&nbsp;&nbsp;月供<span id="ckyg">-</span>元
+                         </span>
+                     </div>
+
+                     <!--<div class="line-dj clearfix">
                 <span>一键咨询最低报价、首付及税费等优惠！</span>
                 <a href="#lprice" class="btn-dj btn-jqModal-ex">询底价</a>
-                        
+
     <div id="lprice" style="display: none;" class data-form-config="{
         modal: {
             head: '<i class=\' mr5 fz18 c-e43\'></i><span class=\'jqmodal-title\'>询底价</span>',
@@ -441,113 +336,113 @@ seajs.use([
         ajax: {'data':{'formflag':'view_sale_lprice','aid':243,'models':'sale','formcls':'common-form-lg common-form-control'}}
     }">
     </div>
-            </div>
+            </div>-->
 
-            <div class="info-line clearfix">
-                <div class="info-line-item">
-                    <div class="item-value">5室3厅3卫</div>
-                    <div class="item-title">
-                        户型
-                    </div>
-                </div>
-                <div class="info-line-item">
-                    <div class="item-value">
-                        <span class>213</span>m&sup2;
-                    </div>
-                    <div class="item-title">
-                        建筑面积
-                    </div>
-                </div>
-                <div class="info-line-item">
-                    <div class="item-value">
-                                            11502元/m&sup2;
-                    </div>
-                    <div class="item-title">
-                        单价
-                    </div>
-                </div>
-            </div>
-            <div class="info-line clearfix">
-                <div class="info-line-item">
-                    <div class="item-value">
-                        南北通透
-                    </div>
-                    <div class="item-title">
-                        朝向
-                    </div>
-                </div>
-                <div class="info-line-item">
-                    <div class="item-value">    小高层</div>
-                    <div class="item-title">
-                        楼层(共46层)
-                    </div>
-                </div>
-                <div class="info-line-item">
-                    <div class="item-value">
-                        毛坯
-                    </div>
-                    <div class="item-title">
-                        装修
-                    </div>
-                </div>
-            </div>
-            <div class="info-line">
-                <div class="info-line-item2">
-                    <span class="item2-title">
-                        小区
-                    </span>
-                    <span class="item2-value">
-                        <a href="https://house.08cms.com/xiaoqu/qdetail/60.html">富盈公馆</a>
-                        (厚街镇)
-                    </span>
-                </div>
-                <div class="info-line-item2">
-                    <span class="item2-title">
-                        地址
-                    </span>
-                    <span class="item2-value">
-                        石碣镇政文路与石单路交汇处
-                    </span>
-                </div>
-            </div>
-            
+                     <div class="info-line clearfix">
+                         <div class="info-line-item">
+                             <div class="item-value">5室3厅3卫</div>
+                             <div class="item-title">
+                                 户型
+                             </div>
+                         </div>
+                         <div class="info-line-item">
+                             <div class="item-value">
+                                 <span>213</span>m&sup2;
+                             </div>
+                             <div class="item-title">
+                                 建筑面积
+                             </div>
+                         </div>
+                         <div class="info-line-item">
+                             <div class="item-value">
+                                 11502元/m&sup2;
+                             </div>
+                             <div class="item-title">
+                                 单价
+                             </div>
+                         </div>
+                     </div>
+                     <div class="info-line clearfix">
+                         <div class="info-line-item">
+                             <div class="item-value">
+                                 南北通透
+                             </div>
+                             <div class="item-title">
+                                 朝向
+                             </div>
+                         </div>
+                         <div class="info-line-item">
+                             <div class="item-value">    小高层</div>
+                             <div class="item-title">
+                                 楼层(共46层)
+                             </div>
+                         </div>
+                         <div class="info-line-item">
+                             <div class="item-value">
+                                 毛坯
+                             </div>
+                             <div class="item-title">
+                                 装修
+                             </div>
+                         </div>
+                     </div>
+                     <div class="info-line">
+                         <div class="info-line-item2">
+                             <span class="item2-title">
+                                 小区
+                             </span>
+                             <span class="item2-value">
+                                 <a href="https://house.08cms.com/xiaoqu/qdetail/60.html">富盈公馆</a>
+                                 (厚街镇)
+                             </span>
+                         </div>
+                         <div class="info-line-item2">
+                             <span class="item2-title">
+                                 地址
+                             </span>
+                             <span class="item2-value">
+                                 石碣镇政文路与石单路交汇处
+                             </span>
+                         </div>
+                     </div>
 
-    <div class="info-jjr clearfix">
-        <div class="jjr-img fl">
-                        <img alt="王琴" width="66" height="85" src="images/c9b9e9e6f416b853da18fb8dd0c3da55.jpg">
-    
-        </div>
-        <div class="jjr-info fl">
-            <div class="jjr-name">
-                王琴
-                                <span>
-                    烟花三月下扬州有限公司
-                </span>
-            </div>
-            <div class="jjr-renzheng">
 
-                                                                    <img src="images/ico_5.gif" title="五级">
-                
-                                                                        <img src="images/phone.gif" style="height: 20px; width: 40px;" title="手机认证">
-                
-                                                                                        <img src="images/idcard.gif" style="height: 20px; width: 40px;" title="身份证认证">
-                
-                                                                                        <img src="images/license.gif" style="height: 20px; width: 40px;" title="营业执照认证">
-                
-            </div>
-            <div class="jjr-dec clearfix">
-                <span class="jjr-tel">13532585698</span>
-                                        <div class="jjr-im-btn" data-im="addfriend" data-opt="{ accid: 'f04951b2d236d5e02498d009ee1a5e0e', ps: { nick: '08cmsbroker' } }" data-fy="{"models":"sale","url":"https:\/\/house.08cms.com\/esf\/detail\/243.html","name":"\u5bcc\u58eb\u5eb7\u5c06\u5165\u4f4f\u589e\u57ce\uff0c\u76c8\u7fe0\u96c5\u7b51\u5355\u4ef7\u624d1\u4e07\u8d77\u4e70\u65c5\u6e38\u666f\u533a\u522b\u5885\uff0c\u4f60\u61c2\u7684","thumb":"https:\/\/house.08cms.com\/uploads\/house\/2020\/02\/24\/9bcff0d392ede1996667ea98bf4f843e03e335d6.png","mj":"213m&sup2;","zj":"245\u4e07","huxing":"5\u5ba43\u53853\u536b","cx":"\u5357\u5317\u901a\u900f"}"><i class="font-icons-42"></i>在线咨询</div>
-                            </div>
-                            <div class="people-weixin">
-                                <img width="76" height="76" src="images/d6aca38ff428fa016608536257f51fcc.jpg">
-    
-                    <em>经纪人微信</em>
-                </div>
-                    </div>
-    </div>
+                     <div class="info-jjr clearfix">
+                         <div class="jjr-img fl">
+                             <img alt="王琴" width="66" height="85" src="images/c9b9e9e6f416b853da18fb8dd0c3da55.jpg">
 
-        </div>
+                         </div>
+                         <div class="jjr-info fl">
+                             <div class="jjr-name">
+                                 王琴
+                                 <span>
+                                     烟花三月下扬州有限公司
+                                 </span>
+                             </div>
+                             <div class="jjr-renzheng">
+
+                                 <img src="images/ico_5.gif" title="五级">
+
+                                 <img src="images/phone.gif" style="height: 20px; width: 40px;" title="手机认证">
+
+                                 <img src="images/idcard.gif" style="height: 20px; width: 40px;" title="身份证认证">
+
+                                 <img src="images/license.gif" style="height: 20px; width: 40px;" title="营业执照认证">
+
+                             </div>
+                             <div class="jjr-dec clearfix">
+                                 <span class="jjr-tel">13532585698</span>
+                                 <div class="jjr-im-btn" data-im="addfriend" data-opt="{ accid: 'f04951b2d236d5e02498d009ee1a5e0e', ps: { nick: '08cmsbroker' } }" data-fy="{" models":"sale","url":"https:\ /\/house.08cms.com\/esf\/detail\/243.html","name":"\u5bcc\u58eb\u5eb7\u5c06\u5165\u4f4f\u589e\u57ce\uff0c\u76c8\u7fe0\u96c5\u7b51\u5355\u4ef7\u624d1\u4e07\u8d77\u4e70\u65c5\u6e38\u666f\u533a\u522b\u5885\uff0c\u4f60\u61c2\u7684","thumb":"https:\/\/house.08cms.com\/uploads\/house\/2020\/02\/24\/9bcff0d392ede1996667ea98bf4f843e03e335d6.png","mj":"213m&sup2;","zj":"245\u4e07","huxing":"5\u5ba43\u53853\u536b","cx":"\u5357\u5317\u901a\u900f"}"><i class="font-icons-42"></i>在线咨询</div>
+                             </div>
+                             <div class="people-weixin">
+                                 <img width="76" height="76" src="images/d6aca38ff428fa016608536257f51fcc.jpg">
+
+                                 <em>经纪人微信</em>
+                             </div>
+                         </div>
+                     </div>
+
+                 </div>
 
         <div class="blank20"></div>
 
