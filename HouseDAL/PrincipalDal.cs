@@ -13,7 +13,7 @@ namespace HouseDAL
         /// <returns></returns>
         public IEnumerable<PrincipalModel> GetPrincipals()
         {
-            string sql = "select * from GetPrincipals";
+            string sql = "SELECT Principal.Id,PrincipalName,PrincipalPhone,CommodityName,Enter,PrImage,Email,QQ,WeChat,CommodityPhone,CommoditySite,CommodityState,CommodityArgot FROM Principal INNER JOIN Commodity ON Principal.CommodityId = Commodity.Id";
             return DapperHelper<PrincipalModel>.Query(sql, null);
         }
 
@@ -23,7 +23,7 @@ namespace HouseDAL
         /// <returns></returns>
         public IEnumerable<PrincipalModel> GetPrincipalById(int id)
         {
-            string sql = $"select * from GetPrincipals where Id= {id}";
+            string sql = $"select * from Principal p join Commodity c on c.Id =p.CommodityId where p.Id={id}";
             return DapperHelper<PrincipalModel>.Query(sql, null);
         }
 

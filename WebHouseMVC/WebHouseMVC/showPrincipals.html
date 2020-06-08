@@ -110,52 +110,133 @@
             position: absolute;
             top: 25%;
             left: 35%;
-            width: 40%;
-            height: 40%;
+            width: 35%;
+            height: 35%;
             padding: 20px;
-            border: 10px solid orange;
+            border: 5px solid black;
             background-color: white;
             z-index: 1002;
             overflow: auto;
         }
+
+        p {
+            font-size: 15px;
+            color: #808080;
+            margin-bottom: 0;
+            margin-top: 20px;
+        }
+
+        .Show:hover {
+            background: #d8cfcf;
+            color: #ff0000;
+            border: 1px solid #808080;
+        }
+
+        .Show {
+            border-top: 1px solid #808080;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 15px;
+            margin-left: 5px;
+            color: #000000;
+        }
+
+            a:hover {
+                color: #ff6644;
+            }
+
+        .tou:hover {
+            background: #d8cfcf;
+        }
+
+        #type p span {
+            color: #000000;
+        }
     </style>
 </head>
 <body>
-    <div id="tb" class="">
+    <div style="width:inherit; height:40px;background:#808080; clear:both;">
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;margin-left:95px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">租房</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">新房</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">二手房</span></div>
+        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">商铺</span></div>
+        <div class="tou" style="width:102px; display:inline-block; cursor:pointer; line-height:38px; float:right;"><span style="color:#ffffff; line-height:38px;margin-right:38px;" onclick="Add()">发布房源</span></div>
     </div>
-    <div id="light" class="white_content">
-        <span style="margin-right:0px;"></span><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='block'">点这里关闭本窗口</a>
-        <div id="type">
+
+
+    <div id="tb">
+    </div>
+    <table style="margin-top:43%;margin-left:25%;">
+        <tr>
+            <td>总记录<span id="TotalCount"></span>条</td>
+            <td>共有<span id="TotalPage"></span>页</td>
+            <td>当前<span id="CurrentPage"></span>页</td>
+            <td><input id="Button1" type="button" value="首页" onclick="show(1);"/></td>
+            <td><input id="Button1" type="button" value="上一页" onclick="show(CurrentPage - 1);"/></td>
+            <td><input id="Button1" type="button" value="下一页" onclick="show(CurrentPage + 1);"/></td>
+            <td><input id="Button1" type="button" value="尾页" onclick="show(TotalPage);"/></td>
+        </tr>
+    </table>
+    <div id="light" class="white_content" style="float:left;">
+        <!--<span style="margin-right:0px;"></span><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='block'">点这里关闭本窗口</a>-->
+        <span style="float:right;"><input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\叉号.png" onclick="closeTypes()" style="height:30px;width:30px;" /></span>
+        <div id="types">
 
         </div>
+
     </div>
+
 </body>
 </html>
 <script>
+    var PageSize = 3;
+    var CurrentPage = 1;
+    var TotalPage = 1;
     $(function () {
-        show();
+        show(1);
     })
+    function closeTypes() {
+        document.getElementById('light').style.display = 'none';
+        document.getElementById('lights').style.display = 'none';
+        document.getElementById('fade').style.display = 'block';
+    }
 
-    function show() {
+    function show(page) {
+        var obj = {};
+        obj.CurrentPage = page;
+        obj.PageSize = PageSize;
+
         $.ajax({
             url: 'https://localhost:44335/api/Principal/GetPrincipals',
             type: 'get',
             dataType: 'json',
+            data: { CurrentPage: obj.CurrentPage, PageSize: obj.PageSize},
             success: function (d) {
-                $(d).each(function () {
+                //最大页
+                TotalPage = d.totalPage;
+                //当前页
+                CurrentPage = d.currentPage;
 
+                $("#TotalCount").text(d.totalCount)
+                $("#TotalPage").text(d.totalPage)
+                $("#CurrentPage").text(d.currentPage)
+                $("#tb").empty();
+                $(d.principalModels).each(function () {
                     console.log(d);
-                    var str = '<div style="width:800px; float:left; height:110px;margin-top:60px;">'
-                        + '<div style="float:left;width:500px ">'
-                        + '<img src="' + this.prImage + '" alt="" width="140" height="160" style="float:left;margin:12px" />'
-                        + '<p>' + this.principalName + '</p><br>'
-                        + '<p>' + this.commodityName + '</p>'
+                    var str = '<div class="Show" style="width:1450px; float:left; height:180px;margin-left:30px;margin-top:8px;">'
+                        + '<div style="float:left;width:350px ">'
+                        + '<img src="' + this.prImage  + '" alt="" width="130" height="160" style="float:left;margin:5px" />'
+                        + '<p id="name">' + this.principalName + '</p>'
+                        + '<p>' + this.commodityName + ' &nbsp; &nbsp;&nbsp;&nbsp;</p>'
                         + '<p>' + this.enter + '</p>'
+                        + '<p>房源可靠 服务周到</p>'
                         + '</div >'
-                        + '<div style = "float:right;line-height:58px;" >'
-                        + '<button id="alert" onclick=" showType(' + this.id + ')">联系方式</button>'
+                        + '<div style = "float:right;line-height:108px;" >'
+                        + '<span>' + '<input id="alert" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\联系方式.png" style="width:35px;height:35px;" onclick="showType(' + this.id + ')"/>' + '</span>'
                         + '</div >'
-                        + '</div >';
+                        + '</div >'; 
                     $("#tb").append(str);
                 })
             }
@@ -163,32 +244,35 @@
     }
 
     function showType(id) {
+        $("#qrcode").empty();
+        $("#qrcodes").empty();
         document.getElementById('light').style.display = 'block';
         $.ajax({
             url: 'https://localhost:44335/api/Principal/GetPrincipalById?id=' + id,
             type: 'get',
             dataType: 'json',
             success: function (d) {
-                $("#type").empty();
+                $("#types").empty();
+
                 $(d).each(function () {
                     var str = '<ul style="list-style:none;">' +
-                        '<li style="float:left;margin-left:10%">' +
+                        '<li style="float:left;margin-left:5%">' +
                         '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\电话.png" style="width:100px;height:100px;" onclick="toTel(' + this.principalPhone + ')"/>' +
                         '</li>' +
-                        '<li style="float:left;margin-left:5%">' +
+                        '<li style="float:left;margin-left:2%">' +
                         '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\QQ.png" style="width:100px;height:100px;" onclick="toQQ(' + this.qq + ')" />' +
                         '</li>' +
-                        '<li style="float:left;margin-left:5%">' +
+                        '<li style="float:left;margin-left:2%">' +
                         '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\微信.png" style="width:100px;height:100px;" onclick="toWeChat()"/>' +
                         '<input id="url" type="hidden" value="' + this.weChat + '"/>' +
                         '<div id="qrcode"></div>' +
                         ' </li>' +
-                        '<li style="float:left;margin-left:5%">' +
-                        '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\联系人.png" style="width:100px;height:100px;" onclick="totxLu(' + this.id + ')"/>' +
-                        '<div id="qrcodes" margin-top:5px;></div>' +
+                        '<li style="float:left;margin-left:2%">' +
+                        '<input id="Button1" type="image" src="C:\\Users\\王勇彪\\Desktop\\HouseAPI\\WebHouseMVC\\WebHouseMVC\\images\\联系人.png" style="width:100px;height:100px;margin-" onclick="totxLu(' + id + ')"/>' +
+                        '<div id="qrcodes" style="margin-top:15px;"></div>' +
                         '</li>' +
                         '</ul>';
-                    $("#type").append(str);
+                    $("#types").append(str);
                 })
             }
         })
@@ -196,10 +280,14 @@
     }
 
     function toTel(tel) {
+        $("#qrcode").empty();
+        $("#qrcodes").empty();
         location.href = "tel:" + tel + "";
     }
 
     function toQQ(qq) {
+        $("#qrcode").empty();
+        $("#qrcodes").empty();
         location.href = "tencent://message/?uin=" + qq + "amp;Site=sc.chinaz.com&amp;Menu=yes";
     }
 
