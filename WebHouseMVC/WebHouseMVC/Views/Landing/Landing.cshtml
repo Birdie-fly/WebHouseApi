@@ -24,7 +24,7 @@
             margin: 0;
             padding: 0;
             font-family: sans-serif;
-            /*background: url('../Images/批注 2020-05-08 211017.png') no-repeat center 0px;*/
+            background: url('../images/批注 2020-05-08 211017.png') no-repeat center 0px;
             background-size: cover;
             background-position: center 0;
             background-repeat: no-repeat;
@@ -139,6 +139,7 @@
             success: function (d) {
                 if (d == 1) {
                     alert('登陆成功！');
+                    location.href = "";
                 }
                 else if (d == 2) {
                     alert('登陆失败！');
