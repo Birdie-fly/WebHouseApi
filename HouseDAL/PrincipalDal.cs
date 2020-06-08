@@ -41,23 +41,12 @@ namespace HouseDAL
             return DapperHelper<PrincipalModel>.Execute($"insert into Principal values('{principalModel.PrincipalName}','{principalModel.PrincipalPhone}',{principalModel.CommodityId},'{principalModel.Enter}','{principalModel.PrImage}','{principalModel.Email}','{principalModel.QQ}','{principalModel.WeChat}')", null);
         }
 
-        //删除经纪人信息
-        public int DelPrincipal(int id)
-        {
-            return DapperHelper<PrincipalModel>.Execute("delete from Principal where Id=" + id, null);
-        }
 
         //根据id查询二维码
         public string GetUrl(int id)
         {
             string str = "select WeChat from Principal where Id=" + id;
             return DapperHelper<string>.ExecuteScalarForT(str, null);
-        }
-        //根据id查询二维码
-        public string GetUrl(int id)
-        {
-            string str = "select WeChat from Principal where Id=" + id;
-            return DapperHelper<string>.ExecuteScalarForT(str,null); 
         }
         /// <summary>
         /// 获取商家信息

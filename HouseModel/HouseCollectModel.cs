@@ -62,7 +62,6 @@ namespace HouseModel
         /// 浏览次数
         /// </summary>
         public int HouseNumber { get; set; }
-        public string HType { get; set; }
 
         /// <summary>
         /// 房型
