@@ -16,15 +16,7 @@ namespace HouseBLL
         {
             return dal.houseCollects();
         }
-        /// <summary>
-        /// 添加新房源
-        /// </summary>
-        /// <param name="house"></param>
-        /// <returns></returns>
-        public int AddHouse(HouseCollectModel house)
-        {
-            return dal.AddHouse(house);
-        }
+      
         /// <summary>
         /// 删除新房源
         /// </summary>
@@ -40,10 +32,80 @@ namespace HouseBLL
         /// <param name="HouseModel"></param>
         /// <param name="HouseType"></param>
         /// <returns></returns>
-        public IEnumerable<HouseCollectModel> collectModels(string HouseModel, string HouseType)
+        public IEnumerable<HouseCollectModel> collectModels(string name)
         {
 
-            return dal.collectModels(HouseModel, HouseType);
+            return dal.collectModels(name);
+        }
+        /// <summary>
+        /// 查询房屋类型
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<HouseTypeModel> houseTypes()
+        {
+            return dal.houseTypes();
+        }
+        /// <summary>
+        /// 获取房屋状态
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<RoomTypeModel> roomTypes()
+        {
+            return dal.roomTypes();
+        }
+        /// <summary>
+        /// 添加新房源
+        /// </summary>
+        /// <param name="house"></param>
+        /// <returns></returns>
+        public int AddNewH(HouseCollectModel house)
+        {
+            return dal.AddNewH(house);
+        }
+        /// <summary>
+        /// 根据id显示房子具体信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IEnumerable<HouseCollectModel> houses(int id)
+        {
+            return dal.houses(id);
+        }
+        /// <summary>
+        /// 根据户型选房子
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<HouseCollectModel> GetHouseCollects()
+        {
+            return dal.GetHouseCollects();
+        }
+        public IEnumerable<HouseCollectModel> GetHouseCollect()
+        {
+            return dal.GetHouseCollect();
+        }
+        public IEnumerable<HouseCollectModel> GetHouseCollec()
+        {
+            return dal.GetHouseCollec();
+        }
+        public IEnumerable<HouseCollectModel> GetHouseColle()
+        {
+            return dal.GetHouseColle();
+        }
+        public IEnumerable<HouseCollectModel> GetHouseColl()
+        {
+            return dal.GetHouseColl();
+        }
+        /// <summary>
+        /// 根据房屋面积查找房屋
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<HouseCollectModel> GetHouses()
+        {
+            return dal.GetHouses();
+        }
+        public IEnumerable<HouseCollectModel> GetHousesd()
+        {
+            return dal.GetHousesd();
         }
     }
 }
