@@ -35,9 +35,10 @@ namespace WebHouseApi.Controllers
             
             if (!string.IsNullOrEmpty(Nams))
             {
-                return bll.GetUsedHouse().Where(n=>n.HouseName.Contains(Nams)).ToList();
+                return bll.GetUsedHouse().Where(n=>n.HouseName.Contains(Nams)&&n.HouseModel==3).ToList();
             }
-            return bll.GetUsedHouse();
+            var a = bll.GetUsedHouse().Where(n => n.HouseModel == 3).ToList();
+            return a;
         }
         //显示查询列表
         public IEnumerable<HouseTypeModel> GetHT()
@@ -50,16 +51,18 @@ namespace WebHouseApi.Controllers
         }
 
         // GET: api/WUsed/5
-        //[HttpGet("{id}", Name = "Get")]
+        //[HttpGet]
         //public HouseCollectModel Get(int id, string Nams = "")
         //{
-        //    if (id==-1)
+        //    if (id == -1)
         //    {
         //        return Get().Where(n => n.Id == ids).First();
         //    }
         //    ids = id;
         //    return Get().Where(n => n.Id == id).First();
         //}
+
+
         /// <summary>
         /// 添加
         /// </summary>
@@ -70,6 +73,7 @@ namespace WebHouseApi.Controllers
             model.HouseNumber = 0;
             model.HouseModel = 2;
             model.HouseImage = ImgUrl;
+            model.HouseModel = 3;
             return bll.AddHouse(model);
         }
         // POST: api/WUsed

@@ -11,7 +11,7 @@ using HouseModel;
 
 namespace WebHouseApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class LandingController : ControllerBase
     {
@@ -59,7 +59,7 @@ namespace WebHouseApi.Controllers
 
 
         // 注册
-        public int Reister(ReisterModel reister)
+        public int Reister(LandingModel reister)
         {
             return landingBll.Reister(reister);
         }

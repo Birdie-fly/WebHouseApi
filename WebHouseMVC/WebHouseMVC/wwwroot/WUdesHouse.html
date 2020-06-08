@@ -1,19 +1,18 @@
-﻿
+﻿<script src="lib/jquery/dist/jquery.js"></script>
+    <style>
+        p {
+            font-size: 1px;
+            color: #808080;
+            margin-bottom: 0;
+            margin-top: 14px;
+        }
 
-<script src="lib/jquery/dist/jquery.js"></script>
-<style>
-    p {
-        font-size: 1px;
-        color: #808080;
-        margin-bottom: 0;
-        margin-top: 14px;
-    }
-
-    .Show:hover {
-        background: #d8cfcf;
-        color: #ff0000;
-        /*border: 1px solid #808080;*/
-    }
+        .Show:hover {
+            background: #d8cfcf;
+            
+            color: #ff0000;
+            /*border: 1px solid #808080;*/
+        }
 
     .Show {
         border-top: 1px solid #808080;
@@ -26,18 +25,18 @@
         color: #000000;
     }
 
-        a:hover {
-            color: #ff6644;
+            a:hover {
+                color: #ff6644;
+                cursor: pointer;
+            }
+        .tou:hover {
+            /*background: #d8cfcf;*/
+            cursor: pointer;
         }
-
-    .tou:hover {
-        background: #d8cfcf;
-    }
-
-    #type p span {
-        color: #000000;
-    }
-</style>
+        #type p span{
+            color:#000000;
+        }
+    </style>
 
 <div style="width:inherit; height:40px;background:#808080; clear:both;">
     <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;margin-left:95px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">租房</span></div>
@@ -114,6 +113,7 @@
         //location.href = "/CommoidityShow.html";
     }
     function Show1() {
+        var Mean=0;
         $.ajax({
             url: 'https://localhost:44335/api/WUsed/get?Nams=' + $("#txtnams").val(),
             type: 'get',
@@ -135,7 +135,10 @@
                         + '</div >'
                         + '</div >';
                     $("#boy").append(str);
+                    Mean = Mean+d[i].hprice;
                 }
+                $("#Mean").html(Mean / d.length);
+                $("#HouseSum").html(d.length);
             }
         })
     }

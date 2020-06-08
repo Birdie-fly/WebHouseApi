@@ -50,7 +50,7 @@ namespace WebHouseApi.Controllers
             {
                 CurrentPage = p.TotalPage;
             }
-            p.ClientInfoModels = list.Skip(CurrentPage * (CurrentPage - 1)).Take(PageSize).ToList();
+            p.ClientInfoModels = list.Skip(PageSize * (CurrentPage - 1)).Take(PageSize).ToList();
 
             p.CurrentPage = CurrentPage;
             return p;
@@ -60,8 +60,9 @@ namespace WebHouseApi.Controllers
         {
             return bll.DelClientInfo(id);
         }
+        [HttpPost]
         //添加客户信息
-        public int AddClientInfo(ClientInfoModel cm)
+        public int AddClientInfo([FromBody]ClientInfoModel cm)
         {
             return bll.AddClientInfo(cm);
         }
