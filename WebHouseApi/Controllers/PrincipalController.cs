@@ -88,11 +88,6 @@ namespace WebHouseApi.Controllers
             principalModel.PrImage = img;
             return bll.AddPrincipal(principalModel);
         }
-        [HttpPost]
-        public int AddPrincipal(PrincipalModel principalModel)
-        {
-            return bll.AddPrincipal(principalModel);
-        }
 
 
         /// <summary>
