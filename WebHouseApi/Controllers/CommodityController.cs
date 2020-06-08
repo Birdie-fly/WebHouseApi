@@ -16,9 +16,9 @@ namespace WebHouseApi.Controllers
     public class CommodityController : ControllerBase
     {
          CommodityBll bll = new CommodityBll();
-        //获取客户信息
+        //获取商家信息
         [HttpGet]
-        public PageInfo GetCommodity(int CurrentPage = 1, int PageSize = 2, string ComName = "")
+        public PageInfo GetCommodity(int CurrentPage = 1, int PageSize = 4, string ComName = "")
         {
             var list = bll.GetCommodity();
             if (!string.IsNullOrEmpty(ComName))
@@ -51,10 +51,20 @@ namespace WebHouseApi.Controllers
             {
                 CurrentPage = p.TotalPage;
             }
-            p.commodityModels = list.Skip(CurrentPage * (CurrentPage - 1)).Take(PageSize).ToList();
+            p.CommodityModels = list.Skip(PageSize * (CurrentPage - 1)).Take(PageSize).ToList();
 
             p.CurrentPage = CurrentPage;
             return p;
+        }
+        //删除商家信息
+        public int DelCommodity(int id)
+        {
+            return bll.DelCommodity(id);
+        }
+        //添加商家信息
+        public int AddCommodity([FromBody]CommodityModel cdm)
+        {
+            return bll.AddCommodity(cdm);
         }
     }
 }

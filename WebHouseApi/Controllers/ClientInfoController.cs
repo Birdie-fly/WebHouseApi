@@ -17,7 +17,7 @@ namespace WebHouseApi.Controllers
         ClientInfoBll bll = new ClientInfoBll();
         //获取客户信息显示
         [HttpGet]
-        public PageInfo GetClientInfo(int CurrentPage = 1, int PageSize = 2,string ClientName="")
+        public PageInfo GetClientInfo(int CurrentPage = 1, int PageSize = 4,string ClientName="")
         {
             var list = bll.GetClientInfo();
             if (!string.IsNullOrEmpty(ClientName))
@@ -50,10 +50,21 @@ namespace WebHouseApi.Controllers
             {
                 CurrentPage = p.TotalPage;
             }
-            p.clientInfoModels = list.Skip(CurrentPage * (CurrentPage - 1)).Take(PageSize).ToList();
+            p.ClientInfoModels = list.Skip(PageSize * (CurrentPage - 1)).Take(PageSize).ToList();
 
             p.CurrentPage = CurrentPage;
             return p;
+        }
+        //删除客户信息
+        public int DelClientInfo(int id)
+        {
+            return bll.DelClientInfo(id);
+        }
+        [HttpPost]
+        //添加客户信息
+        public int AddClientInfo([FromBody]ClientInfoModel cm)
+        {
+            return bll.AddClientInfo(cm);
         }
     }
 }

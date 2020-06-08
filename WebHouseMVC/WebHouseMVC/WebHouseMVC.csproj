@@ -15,12 +15,405 @@
     <None Include="wwwroot\images\特色三.jpg" />
     <None Include="wwwroot\NewHouse.html" />
     <None Include="wwwroot\ShowHouse.html" />
+    <Content Remove="wwwroot\boot\bootstrap-datetimepicker.min.css" />
+    <Content Remove="wwwroot\boot\bootstrap-datetimepicker.min.js" />
+    <Content Remove="wwwroot\boot\bootstrap-table-pagejump.css" />
+    <Content Remove="wwwroot\boot\bootstrap-table-pagejump.js" />
+    <Content Remove="wwwroot\boot\bootstrap-table-resizable.js" />
+    <Content Remove="wwwroot\boot\bootstrap-table-zh-CN.min.js" />
+    <Content Remove="wwwroot\boot\bootstrap-table.min.css" />
+    <Content Remove="wwwroot\boot\bootstrap-table.min.js" />
+    <Content Remove="wwwroot\boot\bootstrap.min.css" />
+    <Content Remove="wwwroot\boot\bootstrap.min.js" />
+    <Content Remove="wwwroot\boot\colResizable-1.6.min.js" />
+    <Content Remove="wwwroot\boot\jquery-3.2.1.min.js" />
+    <Content Remove="wwwroot\boot\moment.js" />
+    <Content Remove="wwwroot\ClientInfoShow.html" />
+    <Content Remove="wwwroot\CommoidityShow.html" />
+    <Content Remove="wwwroot\commonUnit\laydate\index.html" />
+    <Content Remove="wwwroot\commonUnit\laydate\jquery插件库.url" />
+    <Content Remove="wwwroot\commonUnit\laydate\laydate.dev.js" />
+    <Content Remove="wwwroot\commonUnit\laydate\laydate.js" />
+    <Content Remove="wwwroot\commonUnit\laydate\need\laydate.css" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\dahong\icon.png" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\dahong\laydate.css" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\danlan\icon.png" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\danlan\laydate.css" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\default\icon.png" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\default\laydate.css" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\molv\icon.png" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\molv\laydate.css" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\qianhuang\icon.png" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\qianhuang\laydate.css" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\yahui\icon.png" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\yahui\laydate.css" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\yalan\icon.png" />
+    <Content Remove="wwwroot\commonUnit\laydate\skins\yalan\laydate.css" />
+    <Content Remove="wwwroot\commonUnit\laydate\test\demo1.html" />
+    <Content Remove="wwwroot\commonUnit\laydate\test\demo2.html" />
+    <Content Remove="wwwroot\commonUnit\laydate\test\demo2.js" />
+    <Content Remove="wwwroot\commonUnit\laydate\www.jq22.com.txt" />
+    <Content Remove="wwwroot\commonUnit\layui\css\layui.css" />
+    <Content Remove="wwwroot\commonUnit\layui\css\layui.mobile.css" />
+    <Content Remove="wwwroot\commonUnit\layui\css\modules\code.css" />
+    <Content Remove="wwwroot\commonUnit\layui\css\modules\laydate\default\laydate.css" />
+    <Content Remove="wwwroot\commonUnit\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Remove="wwwroot\commonUnit\layui\css\modules\layer\default\icon.png" />
+    <Content Remove="wwwroot\commonUnit\layui\css\modules\layer\default\layer.css" />
+    <Content Remove="wwwroot\commonUnit\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Remove="wwwroot\commonUnit\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Remove="wwwroot\commonUnit\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Remove="wwwroot\commonUnit\layui\font\iconfont.eot" />
+    <Content Remove="wwwroot\commonUnit\layui\font\iconfont.svg" />
+    <Content Remove="wwwroot\commonUnit\layui\font\iconfont.ttf" />
+    <Content Remove="wwwroot\commonUnit\layui\font\iconfont.woff" />
+    <Content Remove="wwwroot\commonUnit\layui\font\iconfont.woff2" />
+    <Content Remove="wwwroot\commonUnit\layui\layui.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\carousel.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\code.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\colorpicker.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\element.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\flow.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\form.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\jquery.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\laydate.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\layedit.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\layer.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\laypage.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\laytpl.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\mobile.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\rate.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\slider.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\table.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\transfer.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\tree.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\upload.js" />
+    <Content Remove="wwwroot\commonUnit\layui\lay\modules\util.js" />
+    <Content Remove="wwwroot\Content\bootstrap-theme.css" />
+    <Content Remove="wwwroot\Content\bootstrap-theme.css.map" />
+    <Content Remove="wwwroot\Content\bootstrap-theme.min.css" />
+    <Content Remove="wwwroot\Content\bootstrap-theme.min.css.map" />
+    <Content Remove="wwwroot\Content\bootstrap.css" />
+    <Content Remove="wwwroot\Content\bootstrap.css.map" />
+    <Content Remove="wwwroot\Content\bootstrap.min.css" />
+    <Content Remove="wwwroot\Content\bootstrap.min.css.map" />
+    <Content Remove="wwwroot\Content\Site.css" />
+    <Content Remove="wwwroot\css\ats.css" />
+    <Content Remove="wwwroot\css\dragverify.css" />
+    <Content Remove="wwwroot\css\global.css" />
+    <Content Remove="wwwroot\css\im.css" />
+    <Content Remove="wwwroot\css\index.css" />
+    <Content Remove="wwwroot\css\salecss.css" />
+    <Content Remove="wwwroot\imgVer\images\login-err.png" />
+    <Content Remove="wwwroot\imgVer\images\logo.jpg" />
+    <Content Remove="wwwroot\imgVer\images\null-password.jpg" />
+    <Content Remove="wwwroot\imgVer\images\null-username.jpg" />
+    <Content Remove="wwwroot\imgVer\images\ver-1.png" />
+    <Content Remove="wwwroot\imgVer\images\ver-2.png" />
+    <Content Remove="wwwroot\imgVer\images\ver-3.png" />
+    <Content Remove="wwwroot\imgVer\images\ver-4.png" />
+    <Content Remove="wwwroot\imgVer\images\ver-5.png" />
+    <Content Remove="wwwroot\imgVer\images\ver-6.png" />
+    <Content Remove="wwwroot\imgVer\images\ver-7.png" />
+    <Content Remove="wwwroot\imgVer\images\ver-8.png" />
+    <Content Remove="wwwroot\imgVer\images\ver-9.png" />
+    <Content Remove="wwwroot\imgVer\images\ver.png" />
+    <Content Remove="wwwroot\imgVer\img_ver.js" />
+    <Content Remove="wwwroot\imgVer\jquery.min.js" />
+    <Content Remove="wwwroot\imgVer\sprite.3.2.0.png" />
+    <Content Remove="wwwroot\imgVer\style.css" />
+    <Content Remove="wwwroot\IM\demo.css" />
+    <Content Remove="wwwroot\IM\demo_fontclass.html" />
+    <Content Remove="wwwroot\IM\iconfont.css" />
+    <Content Remove="wwwroot\IM\iconfont.eot" />
+    <Content Remove="wwwroot\IM\iconfont.js" />
+    <Content Remove="wwwroot\IM\iconfont.svg" />
+    <Content Remove="wwwroot\IM\iconfont.ttf" />
+    <Content Remove="wwwroot\IM\iconfont.woff" />
+    <Content Remove="wwwroot\IM\img\1.jpg" />
+    <Content Remove="wwwroot\IM\img\2.jpg" />
+    <Content Remove="wwwroot\IM\img\3.jpg" />
+    <Content Remove="wwwroot\IM\img\4.jpg" />
+    <Content Remove="wwwroot\IM\img\5.jpg" />
+    <Content Remove="wwwroot\IM\img\6.png" />
+    <Content Remove="wwwroot\IM\ygyxsziti2.0.ttf" />
+    <Content Remove="wwwroot\js\dragverify.js" />
+    <Content Remove="wwwroot\js\jquery.min.js" />
+    <Content Remove="wwwroot\js\seajs.cfg.js" />
+    <Content Remove="wwwroot\js\seajs.js" />
+    <Content Remove="wwwroot\nav\baseSzzz.html" />
+    <Content Remove="wwwroot\nav\base\edit.html" />
+    <Content Remove="wwwroot\nav\base\look.html" />
+    <Content Remove="wwwroot\nav\cenjiSetting\edit.html" />
+    <Content Remove="wwwroot\nav\tree\edit.html" />
+    <Content Remove="wwwroot\nav\tree\look.html" />
+    <Content Remove="wwwroot\nav\xtgk\edit.html" />
+    <Content Remove="wwwroot\PrincipalShow.html" />
+    <Content Remove="wwwroot\WImages\1.jpg" />
+    <Content Remove="wwwroot\WImages\123.jpg" />
+    <Content Remove="wwwroot\WImages\logo.png" />
+    <Content Remove="wwwroot\WImages\logo1.png" />
+    <Content Remove="wwwroot\WImages\nike.jpg" />
+    <Content Remove="wwwroot\WImages\sosuologo.png" />
+	 <Content Remove="wwwroot\favicon.ico" />
+    <Content Remove="wwwroot\WybImages\logo1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="images\" />
+    <Folder Include="Images\" />
+	  <Folder Include="wwwroot\images\" />
+	  <Content Include="Images\微信.png" />
+    <Folder Include="wwwroot\images\" />
+    <Content Include="Images\批注 2020-05-08 211017.png" />
+    <Content Include="Models\LandingModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp.Zero.Common" Version="5.8.0" />
+    <PackageReference Include="IdentityServer4.Storage" Version="3.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    <PackageReference Include="MySql.Data" Version="8.0.20" />
+    <PackageReference Include="Sakura.AspNetCore.Mvc.PagedList" Version="3.0.2" />
+    <PackageReference Include="Sakura.AspNetCore.PagedList" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\code.html" />
+    <None Include="wwwroot\css\ats.css" />
+    <None Include="wwwroot\css\global.css" />
+    <None Include="wwwroot\css\im.css" />
+    <None Include="wwwroot\css\index.css" />
+    <None Include="wwwroot\css\salecss.css" />
+    <None Include="wwwroot\etc\ico.svgz" />
+    <None Include="wwwroot\etc\icons.svgz" />
+    <None Include="wwwroot\etc\lp.svgz" />
+    <None Include="wwwroot\favicon.ico" />
+    <None Include="wwwroot\fonts\filter.eot" />
+    <None Include="wwwroot\fonts\filter.woff" />
+    <None Include="wwwroot\fonts\ico.eot" />
+    <None Include="wwwroot\fonts\ico.woff" />
+    <None Include="wwwroot\fonts\icons.eot" />
+    <None Include="wwwroot\fonts\icons.woff" />
+    <None Include="wwwroot\fonts\ico_1.eot" />
+    <None Include="wwwroot\fonts\ico_1.woff" />
+    <None Include="wwwroot\fonts\index.eot" />
+    <None Include="wwwroot\fonts\index.woff" />
+    <None Include="wwwroot\fonts\lp.eot" />
+    <None Include="wwwroot\fonts\lp.woff" />
+    <None Include="wwwroot\fonts\modal.eot" />
+    <None Include="wwwroot\fonts\modal.woff" />
+    <None Include="wwwroot\fonts\service.eot" />
+    <None Include="wwwroot\fonts\service.woff" />
+    <None Include="wwwroot\fonts\validate.eot" />
+    <None Include="wwwroot\fonts\validate.woff" />
+    <None Include="wwwroot\images\00e826fc8b217f964624614d1a17a42f.jpg" />
+    <None Include="wwwroot\images\0347ee393b8b7c249f23c1639ca3c726.jpg" />
+    <None Include="wwwroot\images\07dcc9a25af4f552d2c94b7274dfbaef.jpg" />
+    <None Include="wwwroot\images\08b08a4dbda9edede10b39bdb84bb888.png" />
+    <None Include="wwwroot\images\08e6a49532ccef31419ee0f6b3e01978.jpg" />
+    <None Include="wwwroot\images\0be34e03ecb11f8ef1bdf6301180d1a8.jpg" />
+    <None Include="wwwroot\images\0c9a86d23e958142d1871389ceb8e359.jpg" />
+    <None Include="wwwroot\images\0d4c93267c603981fd92ad4e2324fff0.jpg" />
+    <None Include="wwwroot\images\0d8c4deaae0b7efb8b4826567f1cf011.jpg" />
+    <None Include="wwwroot\images\0e4442b477beefe89f38a86ed825d1b1.jpg" />
+    <None Include="wwwroot\images\1.png" />
+    <None Include="wwwroot\images\11.jpg" />
+    <None Include="wwwroot\images\12.jpg" />
+    <None Include="wwwroot\images\15.jpg" />
+    <None Include="wwwroot\images\16.jpg" />
+    <None Include="wwwroot\images\17.jpg" />
+    <None Include="wwwroot\images\19.jpg" />
+    <None Include="wwwroot\images\1929341da3dc6ebee9c578a84a8d14bd.jpg" />
+    <None Include="wwwroot\images\1d6a29ea0a79ff6d7ceb181c6cffcd38.jpg" />
+    <None Include="wwwroot\images\1e95e221373b822a88a0f1af9302ad7e.jpg" />
+    <None Include="wwwroot\images\203b049d5c6f9dd112ec7433e058ef54.jpg" />
+    <None Include="wwwroot\images\22272615bd3af4f581649268255a862a.jpg" />
+    <None Include="wwwroot\images\2544c74791907317aac724c8e4e1dd5d.jpg" />
+    <None Include="wwwroot\images\25ec1f5f30b3951b7f31c8d991e9d302.jpg" />
+    <None Include="wwwroot\images\26db8c15e7117b2d8672173164b358c9.jpg" />
+    <None Include="wwwroot\images\2c35e79e4066e1fb33bc5b76e35eb48d.jpg" />
+    <None Include="wwwroot\images\2cd976bffc09e9e5291705ac542e7532.jpg" />
+    <None Include="wwwroot\images\2ea09c202a7154b5029811f234d71f69.jpg" />
+    <None Include="wwwroot\images\2fe50a58cb14d7450c736b9a75580b71.jpg" />
+    <None Include="wwwroot\images\3.png" />
+    <None Include="wwwroot\images\306abdbe43a57cd0bb55836b0297cee7.jpg" />
+    <None Include="wwwroot\images\35c4008de3c722906c5aff7a4ab497d4.jpg" />
+    <None Include="wwwroot\images\360wallpaper.jpg" />
+    <None Include="wwwroot\images\38eb01e2d33b19442cf9c4402e317519.jpg" />
+    <None Include="wwwroot\images\3956c540d878a26a122503f8e016b93e.jpg" />
+    <None Include="wwwroot\images\3b0dd61a4584a652ab1203a582bbd0ef.jpg" />
+    <None Include="wwwroot\images\3c5634d312fa34422255c109a053d294.jpg" />
+    <None Include="wwwroot\images\3ebf18ae97700a9e0ca610d89de4897d.jpg" />
+    <None Include="wwwroot\images\40e1b234e2dcd646b9fa5f5bf7ba0290.jpg" />
+    <None Include="wwwroot\images\40f69fd3849a139e9a6410bc4751bc9e.jpg" />
+    <None Include="wwwroot\images\41b3702579a5da102736d50314748a63.jpg" />
+    <None Include="wwwroot\images\43ab50401bd9f5a23acae1c50bd7419f.jpg" />
+    <None Include="wwwroot\images\46bfa5a10cdf68e4f5506d4da78670a0.jpg" />
+    <None Include="wwwroot\images\500f32d59937e17a1912f44896400051.jpg" />
+    <None Include="wwwroot\images\513e29fcaec68dfc927ecdf473aefd41.png" />
+    <None Include="wwwroot\images\52ff9405178cd97a8441ae4fcb6a1744.jpg" />
+    <None Include="wwwroot\images\561b23b6c77e1bd4b5a4904a0790e8cb.jpg" />
+    <None Include="wwwroot\images\5678f8884642334ef780af8c508b3878.jpg" />
+    <None Include="wwwroot\images\56c30c478b3492956852839e64ee1588.jpg" />
+    <None Include="wwwroot\images\591e8103b2b638dcb47da79c787e76dd.jpg" />
+    <None Include="wwwroot\images\5af72edefcfe6dcf32eeb3097566a13f.jpg" />
+    <None Include="wwwroot\images\5c0a06d5c1fc9664b169b9e231144105.jpg" />
+    <None Include="wwwroot\images\6.jpg" />
+    <None Include="wwwroot\images\62c957cada38c162de1aa168bac473b6.png" />
+    <None Include="wwwroot\images\6379f8dce378b765ecdfc97a09649321.jpg" />
+    <None Include="wwwroot\images\639a57cdb833356ac93d9df87e271445.png" />
+    <None Include="wwwroot\images\64618e44748278c8078e619a2019a90d.jpg" />
+    <None Include="wwwroot\images\64e6770b76c4535336135116d851ef60.jpg" />
+    <None Include="wwwroot\images\64eded4cf864ae619d8fb4c2b1d82829.jpg" />
+    <None Include="wwwroot\images\65aa0e481a3360b44eba54a641beb620.png" />
+    <None Include="wwwroot\images\65ad01a1726e84fed757f423455bea47.jpg" />
+    <None Include="wwwroot\images\65d63744166646b50c074a560ec3a755.jpg" />
+    <None Include="wwwroot\images\66300966013e2bbe13be508ecd49fafa.jpg" />
+    <None Include="wwwroot\images\6ae265670efa4aa45ca55b44b5ad58bb.jpg" />
+    <None Include="wwwroot\images\6e56bffd9ddf0631a0af5e9d49231a05.jpg" />
+    <None Include="wwwroot\images\7.jpg" />
+    <None Include="wwwroot\images\711935552876ba1c4d4c3bd8c545ae52.jpg" />
+    <None Include="wwwroot\images\73ad4a1ff3f0f8f6693c8b1aceb036d7.jpg" />
+    <None Include="wwwroot\images\79668b22e804b880768da8c5061cffb6.png" />
+    <None Include="wwwroot\images\7bc5d269ceb208382bd4e1f70a64865d.jpg" />
+    <None Include="wwwroot\images\7fbddef9cd7d66ba5a2c3297d3aeef22.jpg" />
+    <None Include="wwwroot\images\8.jpg" />
+    <None Include="wwwroot\images\8075c17de125fc9f2c39899ad8ce5c30.jpg" />
+    <None Include="wwwroot\images\842a56781a5a481ddb164d5d91a0b9f0.jpg" />
+    <None Include="wwwroot\images\8ba1b39a397069b4ffaf78214e681a27.png" />
+    <None Include="wwwroot\images\8c898c0be7784a65f625dfb0629d5ddb.jpg" />
+    <None Include="wwwroot\images\8d23a0f2fd8bbe32803a7404d9371ea6.jpg" />
+    <None Include="wwwroot\images\8db715d0d1d984f9c210308bc3f45389.jpg" />
+    <None Include="wwwroot\images\8eec1cd61ae03d26ffa14bbd075487ee.jpg" />
+    <None Include="wwwroot\images\92a27da74f19b01c01af866c5ac56976.jpg" />
+    <None Include="wwwroot\images\936c7ddd51c77b1118edfac5451e8dff.jpg" />
+    <None Include="wwwroot\images\93a52867921e1d26daea9429478d3fc4.jpg" />
+    <None Include="wwwroot\images\976dfeef641bb6b8f23ef2d614a01761.jpg" />
+    <None Include="wwwroot\images\97dbf20231ef0ed10c3a787bc1af76e2.jpg" />
+    <None Include="wwwroot\images\9906217a889f674ec31f19f5c28a8575.jpg" />
+    <None Include="wwwroot\images\9a1ed032da065633d190d19df308a3ad.jpg" />
+    <None Include="wwwroot\images\9bf7733e77638f71b7bd325cf87cd387.jpg" />
+    <None Include="wwwroot\images\9ca692e43499933561529fd24fa9ef89.jpg" />
+    <None Include="wwwroot\images\9e86873d230e7c1c3e9b1082dc56f358.jpg" />
+    <None Include="wwwroot\images\a0b848e0f5c02fa6f00630fce0bfeebd.jpg" />
+    <None Include="wwwroot\images\a40506311d60d33cec9f0093d5337a3e.jpg" />
+    <None Include="wwwroot\images\a8b5e9c5c0ceb77615d83eee4143e50c.jpg" />
+    <None Include="wwwroot\images\a901046007873456d34ec8e59de209a4.jpg" />
+    <None Include="wwwroot\images\a9a2f8de2d44f21e8879652a81154c24.jpg" />
+    <None Include="wwwroot\images\acd453df1436cc08f4dba7ca68e6e7e0.jpg" />
+    <None Include="wwwroot\images\ad-img.png" />
+    <None Include="wwwroot\images\ad1.png" />
+    <None Include="wwwroot\images\ae5a1816cb34b9d075b55299905414dd.jpg" />
+    <None Include="wwwroot\images\ae7b062bccba3998a155e13176b30a33.jpg" />
+    <None Include="wwwroot\images\aero%402x.png" />
+    <None Include="wwwroot\images\aero.png" />
+    <None Include="wwwroot\images\b1a91b3cd94e65ad871b5521034b6a55.jpg" />
+    <None Include="wwwroot\images\b32ce24d65ce254d4e0eebcae24b0057.jpg" />
+    <None Include="wwwroot\images\b35ad3068779eaa3b4ccd32305035f0f.png" />
+    <None Include="wwwroot\images\b8991ee028f6002dfe08ddf2d0b72463.jpg" />
+    <None Include="wwwroot\images\ba0633d46cb5623ad14875725465cb10.jpg" />
+    <None Include="wwwroot\images\bb595a6b26b469830059018432d740c0.png" />
+    <None Include="wwwroot\images\bbaa96322b0a4b4b2f71265160106a9c.jpg" />
+    <None Include="wwwroot\images\bf3c5667467eb711ba380bd17143cb1e.jpg" />
+    <None Include="wwwroot\images\blue%402x.png" />
+    <None Include="wwwroot\images\blue.png" />
+    <None Include="wwwroot\images\c672d3c0410bc4ab9752930cc91c4e80.png" />
+    <None Include="wwwroot\images\c76400a24a4c6e7f54bb5b87504b07f3.jpg" />
+    <None Include="wwwroot\images\cb335bf8ca92472b66223a6448eaf227.png" />
+    <None Include="wwwroot\images\cec1b59b9ef4583e5d6991e1fd42eaa9.jpg" />
+    <None Include="wwwroot\images\chosen-sprite%402x.png" />
+    <None Include="wwwroot\images\chosen-sprite.png" />
+    <None Include="wwwroot\images\d61004690cce1b915b547505f9e09648.jpg" />
+    <None Include="wwwroot\images\d676581a48a18fa9f0492197f03b9fbf.jpg" />
+    <None Include="wwwroot\images\d6ae20811e298f34a3d2473bd2d40c82.jpg" />
+    <None Include="wwwroot\images\da59cee4d70df450180deae2d075eff4.jpg" />
+    <None Include="wwwroot\images\da5ff55e0fda386b3bee99c5bf17de73.jpg" />
+    <None Include="wwwroot\images\dd8f55957361a3e837fb473e144567f6.png" />
+    <None Include="wwwroot\images\ddbdxcx.png" />
+    <None Include="wwwroot\images\diaocha.png" />
+    <None Include="wwwroot\images\e2927f4b4855d2020935caeed117c806.jpg" />
+    <None Include="wwwroot\images\e30a1ed6ce663fd83716c8f50ae2a00c.jpg" />
+    <None Include="wwwroot\images\e74481df04b8ae24202cfd5c783a5f6c.jpg" />
+    <None Include="wwwroot\images\e88255066ec295184430812a20b52fce.png" />
+    <None Include="wwwroot\images\e8c89dd2bace1f8f85c31446279732c1.jpg" />
+    <None Include="wwwroot\images\ec916baaee049c8d73a855a5ff036d67.jpg" />
+    <None Include="wwwroot\images\ed82f36606102255cc0e43ab81b312f9.jpg" />
+    <None Include="wwwroot\images\f0030af23a11c2cc0f36566d4656f325.png" />
+    <None Include="wwwroot\images\f0b34b9783333dd34ab3f6b565cfae0e.jpg" />
+    <None Include="wwwroot\images\f25a0f5623b27914ba938e6641b0e467.jpg" />
+    <None Include="wwwroot\images\f2e4b9d834fe40c7517284ee96453ec6.jpg" />
+    <None Include="wwwroot\images\f3ca438d5f640b564b05c2b2fe2dd847.jpg" />
+    <None Include="wwwroot\images\f4055903067f78f5d50b7f9333590311.jpg" />
+    <None Include="wwwroot\images\f5881aab67fe252ac54610fd16ac01aa.jpg" />
+    <None Include="wwwroot\images\f73700343e4212a5838663ca8e501aba.jpg" />
+    <None Include="wwwroot\images\fb69bed06649bb4a84949df3fa655ab8.jpg" />
+    <None Include="wwwroot\images\fced3a932c3d8ffa361e71d0e359da4a.jpg" />
+    <None Include="wwwroot\images\fe4308230010a483b9478e779513a38d.jpg" />
+    <None Include="wwwroot\images\fe763e09111503ad600282e47ecdb76b.jpg" />
+    <None Include="wwwroot\images\ff99e0b7c474bb83b9f8e13f9fd07a3f.jpg" />
+    <None Include="wwwroot\images\green%402x.png" />
+    <None Include="wwwroot\images\green.png" />
+    <None Include="wwwroot\images\grey%402x.png" />
+    <None Include="wwwroot\images\grey.png" />
+    <None Include="wwwroot\images\hongbao.png" />
+    <None Include="wwwroot\images\ico.svg" />
+    <None Include="wwwroot\images\icons.svg" />
+    <None Include="wwwroot\images\index.svg" />
+    <None Include="wwwroot\images\kanfang.jpg" />
+    <None Include="wwwroot\images\loading.gif" />
+    <None Include="wwwroot\images\loading_1.gif" />
+    <None Include="wwwroot\images\more-broker.png" />
+    <None Include="wwwroot\images\nodata.jpg" />
+    <None Include="wwwroot\images\nopic.gif" />
+    <None Include="wwwroot\images\nothumb.png" />
+    <None Include="wwwroot\images\orange%402x.png" />
+    <None Include="wwwroot\images\orange.png" />
+    <None Include="wwwroot\images\pink%402x.png" />
+    <None Include="wwwroot\images\pink.png" />
+    <None Include="wwwroot\images\purple%402x.png" />
+    <None Include="wwwroot\images\purple.png" />
+    <None Include="wwwroot\images\red%402x.png" />
+    <None Include="wwwroot\images\red.png" />
+    <None Include="wwwroot\images\square%402x.png" />
+    <None Include="wwwroot\images\square.png" />
+    <None Include="wwwroot\images\title_left.jpg" />
+    <None Include="wwwroot\images\title_right.jpg" />
+    <None Include="wwwroot\images\yellow%402x.png" />
+    <None Include="wwwroot\images\yellow.png" />
+    <None Include="wwwroot\images\yusz.png" />
+    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\js\seajs.cfg.js" />
+    <None Include="wwwroot\js\seajs.js" />
+    <None Include="wwwroot\SHouse.html" />
+    <None Include="wwwroot\WUdesHouse.html" />
+    <None Include="wwwroot\WybImages\logo1.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
     <PackageReference Include="Sakura.AspNetCore.Mvc.PagedList" Version="3.0.2" />
     <PackageReference Include="Sakura.AspNetCore.PagedList" Version="2.0.2" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\boot\cengji.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\boot\data1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\boot\data2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\boot\gaikug.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\imgVer\data.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

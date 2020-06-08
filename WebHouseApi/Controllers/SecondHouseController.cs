@@ -18,9 +18,14 @@ namespace WebHouseApi.Controllers
         /// 二手房信息
         /// </summary>
         /// <returns></returns>
-        public List<HouseCollectModel> GetSecondHouse()
+        public List<HouseCollectModel> GetSecondHouse(string name="")
         {
-            return secondHouseBll.GetSecondHouse();
+            List<HouseCollectModel> list = secondHouseBll.GetSecondHouse();
+            if (!string.IsNullOrEmpty(name))
+            {
+                list = list.Where(m => m.HouseName.Contains(name)).ToList();
+            }
+            return list;
         }
         /// <summary>
         /// 通过Id查询单条信息，详情显示

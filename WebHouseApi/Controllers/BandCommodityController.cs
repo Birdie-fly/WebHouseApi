@@ -16,7 +16,7 @@ namespace WebHouseApi.Controllers
     {
         CommodityBll bll = new CommodityBll();
         [HttpGet]
-        public IEnumerable<CommodityModel> Get()
+        public IEnumerable<CommodityModel> GetBandCommoidity()
         {
             return bll.GetCommodity();
         }

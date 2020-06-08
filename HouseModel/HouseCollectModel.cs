@@ -63,5 +63,15 @@ namespace HouseModel
         /// </summary>
         public int HouseNumber { get; set; }
         public string HType { get; set; }
+
+        /// <summary>
+        /// 房型
+        /// </summary>
+        public string HType { get; set; }
+        /// <summary>
+        /// 房屋价格
+        /// </summary>
+        public int Hprice { get; set; }
+
     }
 }

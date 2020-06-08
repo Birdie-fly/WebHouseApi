@@ -13,7 +13,7 @@ namespace HouseDAL
         /// <returns></returns>
         public List<HouseCollectModel> GetSecondHouse()
         {
-            return DapperHelper<HouseCollectModel>.Query("select * from HouseCollect where HouseModel = 2",null);
+            return DapperHelper<HouseCollectModel>.Query("select * from HouseCollect hc join HouseType ht on hc.HouseType = ht.Id  where HouseModel = 2", null);
         }
         /// <summary>
         /// 通过Id查询单条信息，详情显示

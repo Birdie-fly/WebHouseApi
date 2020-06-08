@@ -1,0 +1,156 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎登录</title>
+    <!--<link rel="stylesheet" type="text/css" href="css/tx1.css" />-->
+</head>
+<body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            /*background: url('../Images/批注 2020-05-08 211017.png') no-repeat center 0px;*/
+            background-size: cover;
+            background-position: center 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /*-webkit-background-size: cover;
+            -o-background-size: cover;
+            -moz-background-size: cover;
+            -ms-background-size: cover;*/
+        }
+
+        .login-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            padding: 40px;
+            background: rgba(0,0,0,.5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0,0,0,.0);
+            border-radius: 10px;
+        }
+
+            .login-box h2 {
+                margin: 0 0 30px;
+                padding: 0;
+                text-align: center;
+                color: #fff;
+            }
+
+            .login-box .login-field {
+                position: relative;
+            }
+
+                .login-box .login-field input {
+                    width: 100%;
+                    padding: 10px 0;
+                    font-size: 16px;
+                    color: #fff;
+                    margin-bottom: 30px;
+                    border: none;
+                    border-bottom: 1px solid #fff;
+                    outline: none;
+                    background: transparent;
+                }
+
+                .login-box .login-field label {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    letter-spacing: 1px;
+                    padding: 10px 0;
+                    font-size: 16px;
+                    color: #fff;
+                    pointer-events: none;
+                    transition: .5s;
+                }
+
+                .login-box .login-field input:focus ~ label,
+                .login-box .login-field input:valid ~ label {
+                    top: -23px;
+                    left: 0;
+                    color: aqua;
+                    font-size: 12px;
+                }
+
+            .login-box button {
+                background: transparent;
+                border: none;
+                outline: none;
+                color: #fff;
+                background: #03a9f4;
+                padding: 10px 20px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+    </style>
+    <div class="login-box">
+        <h2>用户登录</h2>
+        <form method="post">
+            <div class="login-field">
+                <input type="text" name="name" id="name" required="" />
+                <label>用户名</label>
+            </div>
+            <div class="login-field">
+                <input type="password" name="pwd" id="pwd" required="" />
+                <label>密  码</label>
+            </div>
+            <div class="login-field" style="margin-bottom:12px;">
+                <input type="text" name="validCode" id="validCode" required="" />
+                <label>验证码</label>
+                <img alt="看不清，换一张" src="/Landing/CreateValidCodeImage" id="validCodeImg" onclick="change()" />
+            </div>
+            <button type="button" id="submit" onclick="vaild()">登录</button>
+            &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp
+            <button type="button" id="submit" onclick="location.href='/Landing/Reister'">注册</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    function change() {
+        $("#validCodeImg").prop("src", "/Landing/CreateValidCodeImage?t=" + new Date().getTime());
+    }
+
+    function vaild() {
+        $.ajax({
+            url: "/Landing/Landing",
+            type: "post",
+            data: { name: $("#name").val(), pwd: $("#pwd").val(), validCode: $("#validCode").val() },
+            success: function (d) {
+                if (d == 1) {
+                    alert('登陆成功！');
+                }
+                else if (d == 2) {
+                    alert('登陆失败！');
+                    location.href = "/Landing/Landing";
+                }
+                else if (d == 3) {
+                    alert('验证码错误！');
+                }
+                else if (d == 4) {
+                    alert('账号、密码、验证码不能为空！');
+                }
+            }
+        })
+    }
+</script>

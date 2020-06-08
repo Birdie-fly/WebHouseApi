@@ -1,0 +1,174 @@
+﻿<script src="lib/jquery/dist/jquery.js"></script>
+<style>
+    #BiaoQian {
+        border: 1px solid #6ab9f9;
+        color: #6ab9f9;
+        margin-left: 40px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    input, select {
+        border-color: rgba(0, 0, 0, 0.00);
+        width: inherit;
+        height: inherit;
+    }
+
+    #info {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #808080;
+    }
+
+        #info span {
+            color: #000000;
+            margin-left: 15px;
+        }
+
+    p {
+        margin-left: 100px;
+        font-size: 20px;
+    }
+
+    #hty {
+        font-size: 20px;
+        color: #ff0000;
+    }
+
+    #boy {
+        margin-left: auto;
+    }
+</style>
+
+<div id="boy" style="width:1300px;height:650px;">
+
+    <!--<div class="Show" style="width:1300px; float:left; height:650px;">
+        <h1 id="jianjie"></h1>
+        <div style="float:left;width:673px; height:420px; " class="image">
+
+        </div>
+        <div style="float:left;width:470px;height:450px;">
+            <div style="width:inherit;height:100px; border-bottom:1px solid #808080;border-top:1px solid #808080; background:#ffffff;">
+                <span id="hty" style="margin-left:70px;margin-top:39px;display:inline-block;" class="leixing"></span>
+                <span id="hty" style="margin-left: 155px; display: inline-block; display: inline-block;" class="mianji"></span>
+            </div>
+            <div style="height:230px;border-bottom:1px solid #808080; ">
+                <div style="margin-left:10px;">
+                    <span id="BiaoQian">热门</span>
+                    <span id="BiaoQian">随时可看</span>
+                    <span id="BiaoQian">降价</span>
+                    <span id="BiaoQian">业主自荐</span>
+                </div>
+                <div style="margin-left:50px; width:40%; display:inline-block;float:left;">
+                    <div id="info">小区<span class="xiaoqu"></span></div>
+                    <div id="info">装修<span>精装</span></div>
+                    <div id="info">地址<span class="dizhi"></span></div>
+                    <div id="info">轨交<span>与地铁比较近</span></div>
+                </div>
+                <div style="display:inline-block;width:40%;float:left;">
+                    <div id="info">类型<span>其他</span></div>
+                    <div id="info">年代<span>1998</span></div>
+                    <div id="info" style="margin-top:57px;margin-left:90px;">浏览次数:<span>1998</span></div>
+                </div>
+            </div>
+            <div>
+                <input type="button" style="width: 300px; height: 45px; margin-left: 90px; margin-top:10px; background:#ff0000;" onclick="Info()" value="免费咨询" />
+            </div>
+        </div>
+    </div>;-->
+    <!-- 遮罩层 -->
+    <div id="cover" style="background:#808080; position: absolute; left: 0px; top: 0px; width: 100%; height:inherit; filter: alpha(opacity=30); opacity: 0.3; display: none; z-index: 2 ">
+
+    </div>
+    <!-- 弹窗 -->
+    <div id="showdiv" style="width: 200px;background:rgba(0, 0, 0, 0.00); margin-left:500px;margin-top:200px; height:233px; display: none; position: absolute; left: 10%; z-index: 3; background: #fff">
+        <!-- 标题 -->
+        <div style="background: rgba(0, 0, 0, 0.00); width: 100%; height: 2rem; font-size: 0.65rem; line-height: 2rem; border: 1px solid #999; text-align: center;">
+            <img src="WybImages/8bda255e37814d1fad70e54a1df2d192_erweima.png" style="width:200px;height:200px;display:block;" />
+        </div>
+        <!-- 内容 -->
+        <div style="text-indent: 50px;background:rgba(0, 0, 0, 0.00); height: 4rem; font-size: 0.5rem; padding: 0.5rem; line-height: 1rem; "></div>
+        <!-- 按钮 -->
+        <div style="background: #418BCA; width: 200px;  height: 30px; line-height: 1.5rem; text-align: center;color: #fff;margin-top: 90px; -moz-border-radius: .128rem; -webkit-border-radius: .128rem; border-radius: .128rem;font-size: .59733rem;" onclick="closeWindow()">
+            确 定
+        </div>
+    </div>
+
+</div>
+<script>
+    $(function () {
+        Show1()
+    })
+
+    // 弹窗
+    function showWindow(showmsg) {
+        $('#showdiv').show();   //显示弹窗
+        $('.content').append(showmsg);    //追加内容
+        $('#cover').css('display', 'block'); //显示遮罩层
+
+    }
+
+    // 关闭弹窗
+    function closeWindow() {
+        $('#showdiv').hide();   //隐藏弹窗
+        $('#cover').css('display', 'none');     //显示遮罩层
+        $('#showdiv .content').html("");    //清空追加的内容
+    }
+
+
+    function Info() {
+        showWindow();
+    }
+    function Show1() {
+        var url = location.href;
+        var id = ""
+        if (url.indexOf("=") > 0) {
+            id = url.substring(url.indexOf("=") + 1, url.length)
+        }
+        $.ajax({
+            url: 'https://localhost:44335/api/WUsed/SelHouse?id=' + id,
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                for (var i = 0; i < d.length; i++) {
+                    var str = '<div class="Show" style="width:1300px; float:left; height:650px;">'
+                        + '<p>' + d[0].houseInfo + '</p>'
+                        + '<div style="float:left;width:673px; height:420px; " class="image">'
+                        + '<img src="' + d[0].houseImage + '" alt="" width="660" height="420" style="float: left; margin: 12px" />'
+                        + '</div>'
+                        + '<div style="float:left;width:470px;height:450px;">'
+                        + '<div style="width:inherit;height:100px; border-bottom:1px solid #808080;border-top:1px solid #808080; background:#ffffff;">'
+                        + '<span id="hty" style="margin-left:70px;margin-top:39px;display:inline-block;" class="leixing">' + d[0].hType + '</span>'
+                        + '<span id="hty" style="margin-left: 155px; display: inline-block; display: inline-block;" class="mianji">' + d[0].houseArea + '/m²</span>'
+                        + '</div>'
+                        + '<div style="height:230px;border-bottom:1px solid #808080;">'
+                        + '<div style="margin-left:10px;">'
+                        + '<span id="BiaoQian">热门</span>'
+                        + '<span id="BiaoQian">随时可看</span>'
+                        + '<span id="BiaoQian">降价</span>'
+                        + '<span id="BiaoQian">业主自荐</span>'
+                        + '</div>'
+                        + '<div style="margin-left:50px; width:40%; display:inline-block;float:left;">'
+                        + '<div id="info">小区<span class="xiaoqu">' + d[0].houseName + '</span></div>'
+                        + '<div id="info">装修<span>精装</span></div>'
+                        + '<div id="info">地址<span class="dizhi">' + d[0].houseSite + '</span></div>'
+                        + '<div id="info">轨交<span>与地铁比较近</span></div>'
+                        + '</div>'
+                        + '<div style="display:inline-block;width:40%;float:left;">'
+                        + '<div id="info">类型<span>其他</span></div>'
+                        + '<div id="info">年代<span>1998</span></div>'
+                        + '<div id = "info" style = "margin-top:57px;margin-left:90px;" > 浏览次数:<span>' + d[0].houseNumber + '</span></div >'
+                        + '</div>'
+                        + '</div>'
+                        + '<div >'
+                        + '<input type="button" style="width: 300px; height: 45px; margin-left: 90px; margin-top:10px; background:#ff0000;" onclick="Info()" value="免费咨询" />'
+                        + '</div >'
+                        + '</div>'
+                        + '</div >;'
+                    $("#boy").append(str);
+                }
+            }
+        })
+    }
+</script>

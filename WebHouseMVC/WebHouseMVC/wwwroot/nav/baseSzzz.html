@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<button onclick="create()" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal">添加</button>
+
+		<table id="table1" cellpadding="5" cellspacing="0" border="1" style="border: 1px solid #000000;margin-left: 40px;width: 95%;margin-bottom: 20px;">
+
+			<tr class="tr_height">
+				<td colspan="2" width="40%">内容</td>
+				<td colspan="2" width="40%">金额（人民币）</td>
+				<td style="border-right: none;text-align: right;">
+					<div style="margin-left: 27px;">操作</div>
+				</td>
+				<!--<td style="border-left: none;text-align: right;">
+					<button onclick="create()" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal">添加</button>
+				</td>-->
+			</tr>
+			<tbody id="tbody1">
+				<tr class="tr_height" id="tr1">
+					<td contenteditable="true" colspan="2"></td>
+					<td contenteditable="true" colspan="2"></td>
+					<td colspan="2">
+						<button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger" onclick="del(1)">删除</button>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr class="tr_height">
+					<td style="border-right: none;">合计（大写）</td>
+					<td contenteditable="true" style="border-left: none;width: 25%;"></td>
+					<td style="border-right: none;">合计（小写）</td>
+					<td contenteditable="true" style="border-left: none;width: 25%;"></td>
+					<td colspan="2"></td>
+				</tr>
+			</tfoot>
+		</table>
+		</div>
+		</table>
+
+	</body>
+	<script src="../boot/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	var count=1;
+		function create (){
+			count+=1;	
+			var tr2 = '<tr class="tr_height"'+'id="tr'+count+'">'+
+			'<td contenteditable="true" colspan="2" ></td>'+
+			'<td contenteditable="true" colspan="2" ></td>'+
+			'<td colspan="2">'+
+				'<button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger" onclick="del('+count+')" >删除</button>'+
+			'</td>'+
+			'</tr>';
+			
+			$("#tbody1").append(tr2);
+		}
+		
+		function del(num){
+			//console.log("num"+num)
+			var trx="#tr"+num;
+			console.log(trx)
+			var tbody = document.getElementById("tbody1"); 
+			//var deltr = document.getElementById(trx);
+			$("#tbody1").find(trx).remove();
+			
+		}
+
+    </script>
+</html>

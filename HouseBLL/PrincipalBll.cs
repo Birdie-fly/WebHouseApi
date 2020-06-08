@@ -28,5 +28,14 @@ namespace HouseBLL
         {
             return dal.AddPrincipal(principalModel);
         }
+        //删除经纪人信息
+        public int DelPrincipal(int id)
+        {
+            return dal.DelPrincipal(id);
+        }
+        public string GetUrl(int id)
+        {
+            return dal.GetUrl(id);
+        }
     }
 }
