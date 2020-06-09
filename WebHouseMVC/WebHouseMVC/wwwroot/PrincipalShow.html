@@ -18,13 +18,16 @@
     <script src="boot/bootstrap-table-pagejump.js" type="text/javascript" charset="utf-8"></script>
     <script src="commonUnit/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
     <script src="commonUnit/laydate/laydate.dev.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/qrcode.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta content="telephone=no" name="format-detection">
     <script src="boot/jquery-3.2.1.min.js"></script>
     <script src="Scripts/jquery-3.3.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="js/qrcode.js"></script>
     <link href="boot/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-
+    <link href="css/common.css" rel="stylesheet" />
     <style>
         #qrcode {
             width: 30px;
@@ -132,6 +135,39 @@
             overflow: auto;
         }
     </style>
+
+    <script type="text/javascript">
+        var w, h, className;
+        function getSrceenWH() {
+            w = $(window).width();
+            h = $(window).height();
+            $('#dialogBg').width(w).height(h);
+        }
+
+        window.onresize = function () {
+            getSrceenWH();
+        }
+        $(window).resize();
+
+        $(function () {
+            getSrceenWH();
+
+            //显示弹框
+            $('.box a').click(function () {
+                className = $(this).attr('class');
+                $('#dialogBg').fadeIn(300);
+                $('#dialog').removeAttr('class').addClass('animated ' + className + '').fadeIn();
+            });
+
+            //关闭弹窗
+            $('.claseDialogBtn').click(function () {
+                $('#dialogBg').fadeOut(300, function () {
+                    $('#dialog').addClass('bounceOutUp').fadeOut();
+                });
+            });
+        });
+    </script>
+
     <script>
 
         var PageSize = 4;
@@ -245,41 +281,6 @@
     </script>
 </head>
 <body>
-    <div class="Top">
-        <div class="NavMenu">
-            <div class="SubMenu">
-                <ul>
-                    <li><a href="DaoHang.html">安居天下</a></li>
-                    <li><a href="ClientInfoShow.html">客户管理</a></li>
-                    <li><a href="CommoidityShow.html">商家管理</a></li>
-                    <li><a href="PrincipalShow.html">经纪人管理</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="Logo"></div>
-        <div class="UserInfo ShowMenu">
-            <a class="Face" href="#"><img src="images/zqz.png" alt="zhangqzh" />小豪豪</a>
-            <div class="MenuSelect">
-                <a href="#">我的班务</a>
-                <a href="#">工作数据</a>
-                <a href="#">系统设置</a>
-                <div class="Line"></div>
-                <a href="#">退出系统</a>
-            </div>
-        </div>
-        <div class="fright">
-            <input class="TopIco TopSearch" type="text" placeholder="请输入关键字搜索" />
-            <a class="TopIco icoRing" href="#"></a>
-            <a class="TopIco icoFullScreen" href="#"></a>
-            <div class="TopIco icoSkin ShowMenu">
-                <div class="MenuSelect">
-                    <a href="#">冰海深蓝</a>
-                    <a href="#">深夜模式</a>
-                    <a href="#">诞愿成真</a>
-                </div>
-            </div>
-        </div>
-    </div>
     <div id="light" class="white_content">
         <span style="margin-right:0px;"></span><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='block'">点这里关闭本窗口</a>
         <div id="qrcode">
@@ -290,16 +291,36 @@
         <tr>
             <td>&nbsp;</td>
             <td style="font-size:large">经纪人姓名：</td>
-            <td><input id="priName" type="text" class="fenlei-chaxun-input" placeholder="请输入经纪人名称" /></td>&nbsp;&nbsp;
+            <td><input id="priName" style="font-size:large" type="text" class="fenlei-chaxun-input" placeholder="请输入经纪人名称" /></td>&nbsp;&nbsp;
             <td style="font-size:large">&nbsp;公司：</td>
             <td><select id="comId" style="border-radius:5px"></select>&nbsp;</td>&nbsp;&nbsp;
             <td align="center">
                 <input id="Button1" type="button" value="搜索" onclick="prishow(1)" style="padding:2px 8px ;border-radius:5px;font-size:large" class="btn-info" />
             </td>
+            <td>
+                <div id="wrapper">
+                    <div class="box">
+                        <div class="demo"><a href="javascript:;" class="bounceIn"><input id="Button1" type="button" value="添加" style="padding:2px 8px ;border-radius:5px;font-size:large" class="btn-info" /></a></div>
+                        <div id="dialogBg"></div>
+                        <div id="dialog" class="animated">
+                            <img class="dialogIco" width="50" height="50" src="images/ico.png" alt="" />
+                            <div class="dialogTop"><a href="javascript:;" class="claseDialogBtn">关闭</a></div>
+                            <form action="" method="post" id="editForm">
+                                <ul class="editInfos">
+                                    <li><label><font color="#ff0000">* </font>经纪人姓名：<input id="txtName" type="text" class="ipt"/></label></li>
+                                    <li><label><font color="#ff0000">* </font>联系电话：<input id="txtPhone" type="text" /></label></li>
+                                    <li><label><font color="#ff0000">* </font>所属公司：<select id="Select1"></select></label></li>
+                                    <li><input type="button" value="确认提交" class="submitBtn" onclick="Addclient()" /></li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </td>
         </tr>
     </table>
     <table><tr><td>&nbsp;</td></tr></table>
-    <table class="table table-hover  gysz-table-head table-bordered" style="width: 1535px;text-align:center;background-color:cornsilk">
+    <table class="table table-hover  gysz-table-head table-bordered" style="width: 1535px;text-align:center;background-color:azure">
         <thead style="font-size:large;color:cornflowerblue">
             <tr>
                 <th style="width: 40px;text-align:center" data-field="Id"><div class="th-inner">序号</div><div class="fht-cell"></div></th>
@@ -315,10 +336,10 @@
             </tr>
 
         </thead>
-        <tbody id="body"></tbody>
+        <tbody id="body" style="font-size:large"></tbody>
     </table>
-    <table class="table-bordered table" style="text-align:center;background-color:antiquewhite">
-        <tr style="color:cadetblue">
+    <table class="table-bordered table" style="text-align:center;background-color:azure">
+        <tr style="color:cadetblue;font-size:large">
             <td>总记录数<span id="TotalCount"></span>条</td>
             <td>总共<span id="TotalPage"></span>页</td>
             <td>当前第<span id="CurrentPage"></span>页</td>
