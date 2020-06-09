@@ -154,7 +154,7 @@
                 padding: 5px 10px;
                 margin: 0px;
                 text-overflow: ellipsis;
-                //溢出时变为省略 overflow:hidden;
+                /*溢出时变为省略 overflow:hidden;*/
             }
 
         .lilight {
@@ -166,7 +166,7 @@
 
         $(function () {
             //声明所有的电子邮件变量
-            var mail = new Array("sina.com.cn", "126.com", "163.com", "gmail.com", "qq.com", "vip.qq.com", "hotmail.com", "sohu.com", "139.com", "vip.sina.com", "cuiqingcai.com");
+            var mail = new Array("sina.com.cn", /*"126.com",*/ "163.com", "gmail.com", "qq.com",/* "vip.qq.com", "hotmail.com",*/ "sohu.com", "139.com"/*, "vip.sina.com", "cuiqingcai.com"*/);
             //生成一个个li，并加入到ul中
             for (var i = 0; i < mail.length; i++) {
                 var liElement = $("<li class=\"autoli\"><span class=\"ex\"></span><span class=\"at\">@</span><span class=\"tail\">" + mail[i] + "</span></li>");
@@ -335,7 +335,7 @@
                             + '<td>' + this.principalPhone + '</td>'
                             + '<td>' + this.commodityName + '</td>'
                             + '<td>' + this.enter + '</td>'
-                            + '<td><img src="' + this.prImage + '" alt="" width="70"height="70"/></td>'
+                            + '<td><img src="' + this.prImage + '" alt="" style="width:70px;height:70px;"/></td>'
                             + '<td>' + this.email + '</td>'
                             + '<td>' + this.qq + '</td>'
                             + '<td>' + '<input id="url" type="image" src="Images/微信.png" onclick="showUrl(' + this.id + ')" style="height:40px;width:40px;"/>' + '</td>'
@@ -404,11 +404,14 @@
             })
         }
 
+        var imgHas = "";
+
         //选择照片
         function xuanImage() {
             //$("#filesp").click(); 隐藏了input:file样式后，点击头像就可以本地上传
             $("#filesp").on("change", function () {
                 var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
+                imgHas = objUrl;
                 if (objUrl) {
                     $("#pic").attr("src", objUrl); //将图片路径存入src中，显示出图片
                 }
@@ -427,6 +430,50 @@
             obj.QQ = $("#txtQQ").val();
             obj.WeChat = $("#Hidden1").val();
             data.append("ImageModelInfo", JSON.stringify(obj));
+
+            //经纪人姓名正则验证
+            var regName = /^[\u4E00-\u9FA5]{2,4}$/;
+            //手机号正则验证
+            var reTel = /^1\d{10}$/;
+            //邮箱格式验证
+            var reEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+            //QQ正则验证
+            var reQq = /^[1-9][0-9]{4,11}$/; 
+
+
+            if (imgHas == "") {
+                alert("请正确选择经纪人照片！");
+                return;
+            }
+            if (!regName.test(obj.PrincipalName)) {
+                alert("请正确输入经纪人姓名！");
+                return;
+            }
+            if (!reTel.test(obj.PrincipalPhone)) {
+                alert("请正确输入经纪人手机号！");
+                return;
+            }
+            if (obj.CommodityId == -1) {
+                alert("请正确选择经纪人所属公司！");
+                return;
+            }
+            if (obj.Enter == "") {
+                alert("请正确输入经纪人经验介绍！");
+                return;
+            }
+            if (!reEmail.test(obj.Email)) {
+                alert("请正确输入经纪人邮箱！");
+                return;
+            }
+            if (!reQq.test(obj.QQ)) {
+                alert("请正确输入经纪人QQ！");
+                return;
+            }
+            if (obj.WeChat =="error decoding QR Code"||obj.WeChat=="") {
+                alert("请正确选择微信二维码名片！");
+                return;
+            }
+
             //参数
             $.ajax({
                 type: "post",
@@ -472,7 +519,7 @@
             console.log(getObjectURL(document.getElementById('newfile').files[0]));// newfile[0]是通过input file上传的二维码图片文件
             qrcode.decode(getObjectURL(document.getElementById('newfile').files[0]));
             qrcode.callback = function (imgMsg) {
-                alert(imgMsg);
+                //alert(imgMsg);
                 // 获取地址传给Hidden1
                 $("#Hidden1").empty();
                 document.getElementById("Hidden1").value = imgMsg;
@@ -533,19 +580,19 @@
                                         </label>
                                     </form>
                                 </li>
-                                <li><label><font color="#ff0000">* </font>经纪人姓名：<input id="txtName" type="text" class="ipt" /></label></li>
-                                <li><label><font color="#ff0000">* </font>联系电话：<input id="txtPhone" type="text" class="ipt" /></label></li>
-                                <li><label><font color="#ff0000">* </font>所属公司：<select id="Select1" class="ipt"></select></label></li>
-                                <li><label><font color="#ff0000">* </font>工作经验：<input id="txtEnter" type="text" placeholder="请输入经纪人的经验介绍" class="ipt"></label></li>
+                                <li><label><font color="#ff0000">* </font><span style="font-size:12px;">经纪人姓名：</span><input id="txtName" type="text" class="ipt" /></label></li>
+                                <li><label><font color="#ff0000">* </font><span style="font-size:12px;">联系电话：</span><input id="txtPhone" type="text" class="ipt" /></label></li>
+                                <li><label><font color="#ff0000">* </font><span style="font-size:12px;">所属公司：</span><select id="Select1" class="ipt"></select></label></li>
+                                <li><label><font color="#ff0000">* </font><span style="font-size:12px;">工作经验：</span><input id="txtEnter" type="text" placeholder="请输入经纪人的经验介绍" class="ipt"></label></li>
                                 <li>
                                     <div class="content">
-                                        <input type="text" name="email" id="txtEmail" placeholder="请输入经纪人的邮箱" class="ipt"/>
+                                        <label><font color="#ff0000">* </font><span style="font-size:12px;">邮箱：</span><input type="text" name="email" id="txtEmail" placeholder="请输入经纪人的邮箱" class="ipt" style="width:130px;" /></label>
                                         <ul class="list"></ul>
                                     </div>
                                 </li>
-                                <li><label><font color="#ff0000">* </font>QQ：<input id="txtQQ" type="text" class="ipt" /></label></li>
-                                <li><font color="#ff0000">* </font>微信：<span><input type="file" id="newfile" onchange="changePic()"></span><input id="Hidden1" type="hidden" /></li>
-                                <li><input type="button" value="添加" class="submitBtn" onclick="addPrincipal()" /></li>
+                                <li><label><font color="#ff0000">* </font><span style="font-size:12px;">QQ：</span><input id="txtQQ" type="text" class="ipt" /></label></li>
+                                <li><label style="float:left;margin-left:16%;"><font color="#ff0000">* </font><span style="font-size:12px;">微信名片二维码：</span><input type="file" id="newfile" onchange="changePic()" style="float:right;width:150px;"></label></li>
+                                <li><input type="button" value="添加" class="submitBtn" onclick="addPrincipal()" /><input id="Hidden1" type="hidden" /></li>
                             </ul>
                         </div>
                     </div>
