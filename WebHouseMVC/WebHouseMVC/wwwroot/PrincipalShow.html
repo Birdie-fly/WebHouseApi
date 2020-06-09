@@ -335,7 +335,7 @@
                             + '<td>' + this.principalPhone + '</td>'
                             + '<td>' + this.commodityName + '</td>'
                             + '<td>' + this.enter + '</td>'
-                            + '<td><img src="' + this.prImage + '" alt="" style="width:70px;height:70px;"/></td>'
+                            + '<td><img src="' + this.prImage + '"style="height:60px;width:60px;"/></td>'
                             + '<td>' + this.email + '</td>'
                             + '<td>' + this.qq + '</td>'
                             + '<td>' + '<input id="url" type="image" src="Images/微信.png" onclick="showUrl(' + this.id + ')" style="height:40px;width:40px;"/>' + '</td>'
@@ -547,6 +547,41 @@
 
 </head>
 <body>
+    <div class="Top">
+        <div class="NavMenu">
+            <div class="SubMenu">
+                <ul>
+                    <li><a href="DaoHang.html">安居天下</a></li>
+                    <li><a href="ClientInfoShow.html">客户管理</a></li>
+                    <li><a href="CommoidityShow.html">商家管理</a></li>
+                    <li><a href="PrincipalShow.html">经纪人管理</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="Logo"></div>
+        <div class="UserInfo ShowMenu">
+            <a class="Face" href="#"><img src="images/zqz.png" alt="zhangqzh" />小豪豪</a>
+            <div class="MenuSelect">
+                <a href="#">我的班务</a>
+                <a href="#">工作数据</a>
+                <a href="#">系统设置</a>
+                <div class="Line"></div>
+                <a href="#">退出系统</a>
+            </div>
+        </div>
+        <div class="fright">
+            <input class="TopIco TopSearch" type="text" placeholder="请输入关键字搜索" />
+            <a class="TopIco icoRing" href="#"></a>
+            <a class="TopIco icoFullScreen" href="#"></a>
+            <div class="TopIco icoSkin ShowMenu">
+                <div class="MenuSelect">
+                    <a href="#">冰海深蓝</a>
+                    <a href="#">深夜模式</a>
+                    <a href="#">诞愿成真</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="light" class="white_content">
         <span style="margin-right:0px;"></span><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='block'">点这里关闭本窗口</a>
         <div id="qrcode" style="height:100px;width:100px;">
@@ -559,7 +594,7 @@
             <td style="font-size:large">经纪人姓名：</td>
             <td><input id="priName" style="font-size:large" type="text" class="fenlei-chaxun-input" placeholder="请输入经纪人名称" /></td>&nbsp;&nbsp;
             <td style="font-size:large">&nbsp;公司：</td>
-            <td><select id="comId" style="border-radius:5px;font-size:large;"></select>&nbsp;</td>&nbsp;&nbsp;
+            <td><select id="comId" style="border-radius:5px;height:28px;font-size:large"></select>&nbsp;</td>&nbsp;&nbsp;
             <td align="center">
                 <input id="Button1" type="button" value="搜索" onclick="prishow(1)" style="padding:2px 8px;border-radius:5px;font-size:large" class="btn-info" />
             </td>

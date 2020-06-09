@@ -32,7 +32,7 @@ namespace WebHouseApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public HouseCollectModel GetSecondHouseById(int id)
+        public List<HouseCollectModel> GetSecondHouseById(int id)
         {
             return secondHouseBll.GetSecondHouseById(id);
         }
