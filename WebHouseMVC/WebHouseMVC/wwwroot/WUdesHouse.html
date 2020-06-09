@@ -1,18 +1,22 @@
 ﻿<script src="lib/jquery/dist/jquery.js"></script>
-    <style>
-        p {
-            font-size: 1px;
-            color: #808080;
-            margin-bottom: 0;
-            margin-top: 14px;
-        }
+<link href="css/ats.css" rel="stylesheet" />
+<link href="css/global.css" rel="stylesheet" />
+<link href="css/im.css" rel="stylesheet" />
+<script src="js/seajs.js"></script>
+<script src="js/seajs.cfg.js"></script>
+<style>
+    p {
+        font-size: 1px;
+        color: #808080;
+        margin-bottom: 0;
+        margin-top: 14px;
+    }
 
-        .Show:hover {
-            background: #d8cfcf;
-            
-            color: #ff0000;
-            /*border: 1px solid #808080;*/
-        }
+    .Show:hover {
+        background: #d8cfcf;
+        color: #ff0000;
+        /*border: 1px solid #808080;*/
+    }
 
     .Show {
         border-top: 1px solid #808080;
@@ -25,25 +29,74 @@
         color: #000000;
     }
 
-            a:hover {
-                color: #ff6644;
-                cursor: pointer;
-            }
-        .tou:hover {
-            /*background: #d8cfcf;*/
+        a:hover {
+            color: #ff6644;
             cursor: pointer;
         }
-        #type p span{
-            color:#000000;
-        }
-    </style>
 
-<div style="width:inherit; height:40px;background:#808080; clear:both;">
-    <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;margin-left:95px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;"><a href="index.html">首页</a></span></div>
-    <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;"><a href="NewHouse.html">新房</a></span></div>
-    <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;"><a href="SHouse.html">二手房</a></span></div>
-    <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;"><a href="WUdesHouse.html">租房</a></span></div>
-    <div class="tou" style="width:102px; display:inline-block; cursor:pointer; line-height:38px; float:right;"><span style="color:#ffffff; line-height:38px;margin-right:38px;" onclick="Add()">发布房源</span></div>
+    .tou:hover {
+        /*background: #d8cfcf;*/
+        cursor: pointer;
+    }
+
+    #type p span {
+        color: #000000;
+    }
+</style>
+
+<div class="header scrollToFixed clearfix" data-spacer-class="header-spacer">
+    <div class="header-bg"></div>
+    <div class="container">
+        <div class="logo fl">
+            <span class="logocen">
+                <a href="index.html"><img width="140" height="40" alt="" src="WybImages/logo1.png" /></a>
+            </span>
+        </div>
+        <div class="area fl">
+            <div data-hover="hoverslider" data-obj=".more-area">
+                <div class="cur-area">上海市</div>
+            </div>
+        </div>
+        <ul class="nav fl" data-tag='zdh'>
+            <li>
+                <a target="_self" href="index.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                    首页
+                </a>
+            </li>
+            <li>
+                <a target="_self" href="NewHouse.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                    新房
+                </a>
+            </li>
+            <li>
+                <a target="_self" href="SHouse.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                    二手房
+                </a>
+            </li>
+            <li>
+                <a target="_self" href="WUdesHouse.html" class='hoverslider act' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                    出租
+                </a>
+            </li>
+            <li>
+                <a target="_self" href="showPrincipals.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                    经纪人
+                </a>
+            </li>
+        </ul>
+        <div id="login" class="loginbar" data-login="1">
+            <div class="login-out">
+                <div class="login-out-btn">
+                    <a href="/Landing/Landing" data-modal=".winlogin" title="登录">
+                        登录
+                    </a>
+                    <a href="/Landing/Reister" title="注册" target="_blank">
+                        注册
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div style="background:#d8cfcf">
@@ -113,7 +166,7 @@
         //location.href = "/CommoidityShow.html";
     }
     function Show1() {
-        var Mean=0;
+        var Mean = 0;
         $.ajax({
             url: 'https://localhost:44335/api/WUsed/get?Nams=' + $("#txtnams").val(),
             type: 'get',
@@ -135,7 +188,7 @@
                         + '</div >'
                         + '</div >';
                     $("#boy").append(str);
-                    Mean = Mean+d[i].hprice;
+                    Mean = Mean + d[i].hprice;
                 }
                 $("#Mean").html(Mean / d.length);
                 $("#HouseSum").html(d.length);

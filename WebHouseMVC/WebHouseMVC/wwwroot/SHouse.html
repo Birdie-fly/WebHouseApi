@@ -29,7 +29,7 @@
     <link href="css/salecss.css" rel="stylesheet" />
     <script src="js/seajs.js"></script>
     <script src="js/seajs.cfg.js"></script>
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         var web = "frontEnd"; //前台
         seajs.use([
             'jqhoverS',
@@ -55,7 +55,7 @@
                 })
             })
         });
-    </script>
+    </script>-->
 
 </head>
 <body>
@@ -96,16 +96,13 @@
                         出租
                     </a>
                 </li>
-
+                <li>
+                    <a target="_self" href="WUdesHouse.html" class="hoverslider" data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        经纪人
+                    </a>
+                </li>
             </ul>
-            <div id="login" class="loginbar" data-login="1" data-config="{
-        tpl: '#logintpl',
-        url: 'https://house.08cms.com/viewinter/logininfo',
-        logoutUrl : 'https://house.08cms.com/logout',
-        loginUrl: 'https://house.08cms.com/viewinter/viewlogin',
-        login: 'https://house.08cms.com/login',
-        modal: '.winlogin'
-    }">
+            <div id="login" class="loginbar" data-login="1" >
                 <div class="login-out">
                     <div class="login-out-btn">
                         <a href="https://house.08cms.com/login" data-modal=".winlogin" title="登录">
@@ -119,23 +116,7 @@
                 </div>
             </div>
 
-            <script>
-                seajs.use(['jqhoverS'], function (jqhoverS) {
-                    $('#login').on('backfn', function () {
-                        $('.login-info').hoverSlider({
-                            offsetx: 0,
-                            obj: '.login-operate',
-                            delay: 10
-                        });
-                        $('.login-out-btn').hoverSlider({
-                            offsetx: 0,
-                            offsety: 60,
-                            obj: '.login-quick',
-                            delay: 10
-                        })
-                    });
-                });
-            </script>
+            
         </div>
     </div>
     <!--/header-->
@@ -1358,24 +1339,7 @@
                 </div>
 
                 <div class="blank30"></div>
-                <script id="compBox" type="text/html">
-                    <div id="comp_box">
-                        <form action="" method="get" target="_blank">
-                            <div id="comp_top">
-                                <a class="close font-icons-28" href="javascript:;" data-role="hidden"></a>
-                                <div class="top_l">[<b id="comp_num">0</b>/5]<%= data.otit%>对比</div>
-                            </div>
-                            <ul id="comp_items"></ul>
-                            <div id="comp_boot">
-                                <input type="submit" class="prosubmit" value="二手房对比">
-                                <a class="clear" data-role="clear-all" href="javascript:;">
-                                    <i class="font-icons-29 fz16 mr5"></i>清空
-                                </a>
-                                <input id="subid_obj" name="subcatid" type="hidden" value="4">
-                            </div>
-                        </form>
-                    </div>
-                </script>
+                
 
                 <script id="compItem" type="text/html">
                     <li id="<%= data.id%>">
@@ -1391,16 +1355,7 @@
                     <a class="btnshow" data-role="show"><i class="font-icons-35"></i></a>
                 </script>
 
-                <script type="text/javascript">
-                    // 对比配置
-                    seajs.use(['contrast'], function (contrast) {
-                        contrast.onload({
-                            chid: '3',
-                            comp_boxMXY: [1, 0, 300],
-                            comp_action: 'https://house.08cms.com/houses/contrast?fid=8' + '&chid=3#/'
-                        });
-                    })
-                </script>
+                
                 <script type="text/javascript">
                     seajs.use(['jqmodal', 'utils'], function (jqmodal, utils) {
                         $('[data-yx-btn=1]').off('shown').on('shown', function () {
@@ -1458,7 +1413,6 @@
         seajs.use(['listPjax', 'utils'], function (listPjax, utils) {
             // 如果是路由不启用pjax
             listPjax.page();
-
         })
     </script>
     <div data-gotop="1" class="return-top" style="display: none;">

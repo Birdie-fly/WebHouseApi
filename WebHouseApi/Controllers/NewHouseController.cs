@@ -77,6 +77,9 @@ namespace WebHouseApi.Controllers
         [HttpPost]
         public int AddNewH(HouseCollectModel house)
         {
+            house.HouseNumber = 0;
+            house.HouseModel = 1;
+            house.HouseImage = ImgUrl;
             return bll.AddNewH(house);
         }
         /// 文件上传

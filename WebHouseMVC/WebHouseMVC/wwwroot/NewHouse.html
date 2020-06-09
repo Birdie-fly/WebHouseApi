@@ -5,6 +5,11 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/ats.css" rel="stylesheet" />
+    <link href="css/global.css" rel="stylesheet" />
+    <link href="css/im.css" rel="stylesheet" />
+    <script src="js/seajs.js"></script>
+    <script src="js/seajs.cfg.js"></script>
     <title></title>
     <script>
         $(function () {
@@ -19,77 +24,31 @@
                 dataType: 'json',
                 success: function (d) {
                     $("#body").empty();
-                        for (var i = 0; i < d.length; i++) {
-                            var str = '<a onclick="She(' + d[i].id +')">'
-                               + '<div id="show" style="width:1300px; float:left; height:110px;">'
-                                + '<div style="float:left;width:350px ">'
-                                + '<img src="'+ d[i].houseImage +'" alt="" width="130" height="90" style="float:left;margin:12px" />'
-                                + '<a>' + d[i].houseName + '</a>'
-                                + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
-                                + '<p>' + d[i].houseInfo + '</p>'
-                                + '<p>临界 可餐饮 上水 下水</p>'
-                                + '</div >'
-                                + '<div style = "float:right;line-height:108px;" >'
-                                + '<span>' + d[i].housePrice + '/平米</span>'
-                                + '<div style="float:right">'
-                                +'<span><a onclick="DelH('+d[i].id+')">删除</a></span>'
-                                +'</div>'
-                                + '</div >'
-                                + '</div >'
-                                +'</a>'
-                            $("#body").append(str);
-                        }
-                    
+                    for (var i = 0; i < d.length; i++) {
+                        var str = '<a onclick="She(' + d[i].id + ')">'
+                            + '<div id="show" style="width:1300px; float:left; height:110px;">'
+                            + '<div style="float:left;width:350px ">'
+                            + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                            + '<a>' + d[i].houseName + '</a>'
+                            + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
+                            + '<p>' + d[i].houseInfo + '</p>'
+                            + '<p>临界 可餐饮 上水 下水</p>'
+                            + '</div >'
+                            + '<div style = "float:right;line-height:108px;" >'
+                            + '<span>' + d[i].housePrice + '/平米</span>'
+                            + '<div style="float:right">'
+                            + '</div>'
+                            + '</div >'
+                            + '</div >'
+                            + '</a>'
+                        $("#body").append(str);
+                    }
+
                 }
             })
         }
-        function NewH() {
-            $.ajax({
-                url: 'https://localhost:44335/api/NewHouse/houseCollects',
-                type: 'get',
-                dataType: 'json',
-                success: function (d) {
-                    $("#body").empty();
-                        for (var i = 0; i < d.length; i++) {
-                            var str = '<a onclick="She(' + d[i].id +')">'
-                                + '<div id="show" style="width:1300px; float:left; height:110px;">'
-                                + '<div style="float:left;width:350px ">'
-                                + '<img src="'+ d[i].houseImage +'" alt="" width="130" height="90" style="float:left;margin:12px" />'
-                                + '<a>' + d[i].houseName + '</a>'
-                                + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
-                                + '<p>' + d[i].houseInfo + '</p>'
-                                + '<p>临界 可餐饮 上水 下水</p>'
-                                + '</div >'
-                                + '<div style = "float:right;line-height:108px;" >'
-                                + '<span>' + d[i].housePrice + '/平米</span>'
-                                + '<div style="float:right">'
-                                + '<span><a onclick="DelH(' + d[i].id + ')">删除</a></span>'
-                                + '</div>'
-                                + '</div >'
-                                + '</div >'
-                                + '</a>'
-                            $("#body").append(str);
-                        }
-                }
-            })
-        }
-        function DelH(id) {
-            if (!confirm('确认删除吗?')) {
-                return;
-            }
-            $.ajax({
-                url: 'https://localhost:44335/api/NewHouse/DelHouse/' + id,
-                type: 'post',
-                success: function (d) {
-                    if (d > 0) {
-                        alert('删除成功');
-                    }
-                    else {
-                        alert('删除失败');
-                    }
-                }
-            })  
-        }
+
+
         function ReHouse() {
             var Name = $("#HName").val();
             $.ajax({
@@ -100,10 +59,10 @@
                 success: function (d) {
                     $("#body").empty();
                     for (var i = 0; i < d.length; i++) {
-                        var str = '<a onclick="She(' + d[i].id+')">'
+                        var str = '<a onclick="She(' + d[i].id + ')">'
                             + '<div id="show" style="width:1300px; float:left; height:110px;">'
                             + '<div style="float:left;width:350px ">'
-                            + '<img src="' + d[i].houseImage +'" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                            + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
                             + '<a>' + d[i].houseName + '</a>'
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
@@ -112,7 +71,6 @@
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
-                            + '<span><a onclick="DelH(' + d[i].id + ')">删除</a></span>'
                             + '</div>'
                             + '</div >'
                             + '</div >'
@@ -125,66 +83,8 @@
         function She(id) {
             location.href = "http://localhost:49946/ShowHouse.html?id=" + id;
         }
-        function OldH() {
-            $.ajax({
-                url: 'https://localhost:44335/api/SecondHouse/GetSecondHouse',
-                type: 'get',
-                dataType: 'json',
-                success: function (d) {
-                    $("#body").empty();
-                    for (var i = 0; i < d.length; i++) {
-                        var str = '<a onclick="She(' + d[i].id + ')">'
-                            + '<div id="show" style="width:1300px; float:left; height:110px;">'
-                            + '<div style="float:left;width:350px ">'
-                            + '<img src="'+ d[i].houseImage +'" alt="" width="130" height="90" style="float:left;margin:12px" />'
-                            + '<a>' + d[i].houseName + '</a>'
-                            + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
-                            + '<p>' + d[i].houseInfo + '</p>'
-                            + '<p>临界 可餐饮 上水 下水</p>'
-                            + '</div >'
-                            + '<div style = "float:right;line-height:108px;" >'
-                            + '<span>' + d[i].housePrice + '/平米</span>'
-                            + '<div style="float:right">'
-                            + '<span><a onclick="DelH(' + d[i].id + ')">删除</a></span>'
-                            + '</div>'
-                            + '</div >'
-                            + '</div >'
-                            + '</a>'
-                        $("#body").append(str);
-                    }
-                }
-            })
-        }
-        function ReH() {
-            $.ajax({
-                url: 'https://localhost:44335/api/WUsed/get',
-                type: 'get',
-                dataType: 'json',
-                success: function (d) {
-                    $("#body").empty();
-                    for (var i = 0; i < d.length; i++) {
-                        var str = '<a onclick="She(' + d[i].id + ')">'
-                            + '<div id="show" style="width:1300px; float:left; height:110px;">'
-                            + '<div style="float:left;width:350px ">'
-                            + '<img src="'+ d[i].houseImage +'" alt="" width="130" height="90" style="float:left;margin:12px" />'
-                            + '<a>' + d[i].houseName + '</a>'
-                            + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
-                            + '<p>' + d[i].houseInfo + '</p>'
-                            + '<p>临界 可餐饮 上水 下水</p>'
-                            + '</div >'
-                            + '<div style = "float:right;line-height:108px;" >'
-                            + '<span>' + d[i].housePrice + '/平米</span>'
-                            + '<div style="float:right">'
-                            + '<span><a onclick="DelH(' + d[i].id + ')">删除</a></span>'
-                            + '</div>'
-                            + '</div >'
-                            + '</div >'
-                            + '</a>'
-                        $("#body").append(str);
-                    }
-                }
-            })
-        }
+
+
         function OneH() {
             $.ajax({
                 url: 'https://localhost:44335/api/NewHouse/GetHouseCollects',
@@ -196,7 +96,7 @@
                         var str = '<a onclick="She(' + d[i].id + ')">'
                             + '<div id="show" style="width:1300px; float:left; height:110px;">'
                             + '<div style="float:left;width:350px ">'
-                            + '<img src="' + d[i].houseImage +'" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                            + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
                             + '<a>' + d[i].houseName + '</a>'
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
@@ -205,7 +105,6 @@
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
-                            + '<span><a onclick="DelH(' + d[i].id + ')">删除</a></span>'
                             + '</div>'
                             + '</div >'
                             + '</div >'
@@ -226,7 +125,7 @@
                         var str = '<a onclick="She(' + d[i].id + ')">'
                             + '<div id="show" style="width:1300px; float:left; height:110px;">'
                             + '<div style="float:left;width:350px ">'
-                            + '<img src="' + d[i].houseImage +'" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                            + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
                             + '<a>' + d[i].houseName + '</a>'
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
@@ -235,7 +134,6 @@
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
-                            + '<span><a onclick="DelH(' + d[i].id + ')">删除</a></span>'
                             + '</div>'
                             + '</div >'
                             + '</div >'
@@ -256,7 +154,7 @@
                         var str = '<a onclick="She(' + d[i].id + ')">'
                             + '<div id="show" style="width:1300px; float:left; height:110px;">'
                             + '<div style="float:left;width:350px ">'
-                            + '<img src="' + d[i].houseImage +'" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                            + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
                             + '<a>' + d[i].houseName + '</a>'
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
@@ -265,7 +163,6 @@
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
-                            + '<span><a onclick="DelH(' + d[i].id + ')">删除</a></span>'
                             + '</div>'
                             + '</div >'
                             + '</div >'
@@ -286,7 +183,7 @@
                         var str = '<a onclick="She(' + d[i].id + ')">'
                             + '<div id="show" style="width:1300px; float:left; height:110px;">'
                             + '<div style="float:left;width:350px ">'
-                            + '<img src="' + d[i].houseImage +'" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                            + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
                             + '<a>' + d[i].houseName + '</a>'
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
@@ -295,7 +192,6 @@
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
-                            + '<span><a onclick="DelH(' + d[i].id + ')">删除</a></span>'
                             + '</div>'
                             + '</div >'
                             + '</div >'
@@ -316,7 +212,7 @@
                         var str = '<a onclick="She(' + d[i].id + ')">'
                             + '<div id="show" style="width:1300px; float:left; height:110px;">'
                             + '<div style="float:left;width:350px ">'
-                            + '<img src="'+ d[i].houseImage +'" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                            + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
                             + '<a>' + d[i].houseName + '</a>'
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
@@ -325,7 +221,6 @@
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
-                            + '<span><a onclick="DelH(' + d[i].id + ')">删除</a></span>'
                             + '</div>'
                             + '</div >'
                             + '</div >'
@@ -349,7 +244,7 @@
                         var str = '<a onclick="She(' + d[i].id + ')">'
                             + '<div id="show" style="width:1300px; float:left; height:110px;">'
                             + '<div style="float:left;width:350px ">'
-                            + '<img src="'+ d[i].houseImage +'" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                            + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
                             + '<a>' + d[i].houseName + '</a>'
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
@@ -358,7 +253,6 @@
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
-                            + '<span><a onclick="DelH(' + d[i].id + ')">删除</a></span>'
                             + '</div>'
                             + '</div >'
                             + '</div >'
@@ -380,7 +274,7 @@
                         var str = '<a onclick="She(' + d[i].id + ')">'
                             + '<div id="show" style="width:1300px; float:left; height:110px;">'
                             + '<div style="float:left;width:350px ">'
-                            + '<img src="'+d[i].houseImage+'" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                            + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
                             + '<a>' + d[i].houseName + '</a>'
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
@@ -389,7 +283,6 @@
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
-                            + '<span><a onclick="DelH(' + d[i].id + ')">删除</a></span>'
                             + '</div>'
                             + '</div >'
                             + '</div >'
@@ -416,124 +309,175 @@
     </script>
     <style>
         #div0 {
-            background-color:#ff6a00;
-            width:auto;
+            background-color: #ff6a00;
+            width: auto;
             height: 50px;
-           
         }
-        #div1{
-            font-weight:500;
-            color:red;
-            font-size:xx-large;
-        }
-        #div2{
-            margin-left:200px;
-            margin-top:50px;
 
+        #div1 {
+            font-weight: 500;
+            color: red;
+            font-size: xx-large;
         }
-        #div3{
-            float:right;
-            font-size:large;
-            color:black;
-            margin-top:10px;
-            margin-right:130px;
-        }
-        #ss{
 
+        #div2 {
+            margin-left: 200px;
+            margin-top: 50px;
         }
+
+        #div3 {
+            float: right;
+            font-size: large;
+            color: black;
+            margin-top: 10px;
+            margin-right: 130px;
+        }
+
+        #ss {
+        }
+
         #HouseName {
             height: 45px;
-            border-color:aliceblue;
+            border-color: aliceblue;
         }
-        #Button1{
-            height:45px;
-            width:70px;
+
+        #Button1 {
+            height: 45px;
+            width: 70px;
         }
+
         #div4 {
-            margin-top:50px;
+            margin-top: 50px;
             border: 2px solid aliceblue;
         }
-        #div5{
-            margin-left:195px;
-            margin-top:35px;
-            border:1px solid #ffffff;
-            height:auto;
-            overflow:hidden
-           
+
+        #div5 {
+            margin-left: 195px;
+            margin-top: 35px;
+            border: 1px solid #ffffff;
+            height: auto;
+            overflow: hidden
         }
+
             #div5:hover {
                 background-color: #ffffff
             }
-        #wz{
-            margin-top:70px;
-            margin-left:200px;
+
+        #wz {
+            margin-top: 70px;
+            margin-left: 200px;
         }
-        #sp1{
-            font-weight:bolder;
-            font-size:large;
-            
+
+        #sp1 {
+            font-weight: bolder;
+            font-size: large;
         }
-        #sd{
-            margin-top:20px;
+
+        #sd {
+            margin-top: 20px;
         }
+
         #a {
             text-decoration: none;
             font-size: 15px;
-           
             color: #000000;
         }
 
             #a:hover {
                 color: #ff6a00;
             }
-      
+
         #show:hover {
-          background-color:aliceblue
-           
+            background-color: aliceblue
         }
 
         #show {
             border-top: 1px solid #808080;
         }
-
     </style>
 </head>
 <body>
+    <div class="header scrollToFixed clearfix" data-spacer-class="header-spacer">
+        <div class="header-bg"></div>
+        <div class="container">
+            <div class="logo fl">
+                <span class="logocen">
+                    <a href="index.html"><img width="140" height="40" alt="" src="WybImages/logo1.png" /></a>
+                </span>
+            </div>
+            <div class="area fl">
+                <div data-hover="hoverslider" data-obj=".more-area">
+                    <div class="cur-area">上海市</div>
+                </div>
+            </div>
+            <ul class="nav fl" data-tag='zdh'>
+                <li>
+                    <a target="_self" href="index.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        首页
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="NewHouse.html" class='hoverslider act' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        新房
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="SHouse.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        二手房
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="WUdesHouse.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        出租
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="showPrincipals.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        经纪人
+                    </a>
+                </li>
+            </ul>
+            
 
-   <div id="div0">
-       <div id="div1">
-           &nbsp&nbsp&nbsp<span><img src="Wybimages/logo1.png" alt="" style="width:150px; height:40px;" /></span>
-           <div id="div3">
-               <span>
-                   <a>首页</a>&nbsp&nbsp<a onclick="NewH()">新房</a>&nbsp&nbsp<a onclick="OldH()">二手房</a>&nbsp&nbsp<a onclick="ReH()">租房</a>&nbsp&nbsp<a onclick="WriteH()">写字楼</a>&nbsp&nbsp<a onclick="Shoop()">商铺</a>&nbsp&nbsp<a onclick="AddHouse()">发布房源</a>
-               </span>
-           </div>
-       </div>
-      
-   </div>
-   <div id="div2">
-       <div id="ss"></div>
-       <input id="HName" type="text" placeholder="请输入小区名称/区域" style="width:550px" />
-       <input id="Button1" type="button" value="搜索" class="btn btn-danger" onclick="ReHouse()"  />
-   </div>
-   <div id="wz">
-       <div id="sd">
-           <span id="sp1">位置</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><a id="a">按区域查询</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">按地铁查询</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">按学校查询</a></span>
-       </div>
-       <div id="sd">
-           <span id="sp1">价格</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><a id="a">150万以下</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">150-200万</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">200-250万</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">250-300万</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">350万以上</a></span>
-       </div>
-       <div id="sd">
-           <span id="sp1">面积</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><a id="a">50平以下</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">50-70平</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="AreaHouse()">70-90平</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="AreaH()">90-110平</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">110-130平</a></span>
-       </div>
-       <div id="sd">
-           <span id="sp1">户型</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><a id="a" onclick="OneH()">一室</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="TwoH()">两室</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="ThreeH()">三室</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="FourH()">四室</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="FiveH()">五室</a></span>
-       </div> 
-   </div>
-      <div id="div5">
-          <div id="body">
 
-          </div>
-      </div>
+            <div id="login" class="loginbar" data-login="1">
+                <div class="login-out">
+                    <div class="login-out-btn">
+                        <a href="/Landing/Landing" data-modal=".winlogin" title="登录">
+                            登录
+                        </a>
+                        <a href="/Landing/Reister" title="注册" target="_blank">
+                            注册
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="div2">
+        <div id="ss"></div>
+        <input id="HName" type="text" placeholder="请输入小区名称/区域" style="width:550px" />
+        <input id="Button1" type="button" value="搜索" class="btn btn-danger" onclick="ReHouse()" />
+    </div>
+    <div id="wz">
+        <div id="sd">
+            <span id="sp1">位置</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><a id="a">按区域查询</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">按地铁查询</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">按学校查询</a></span>
+        </div>
+        <div id="sd">
+            <span id="sp1">价格</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><a id="a">150万以下</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">150-200万</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">200-250万</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">250-300万</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">350万以上</a></span>
+        </div>
+        <div id="sd">
+            <span id="sp1">面积</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><a id="a">50平以下</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">50-70平</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="AreaHouse()">70-90平</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="AreaH()">90-110平</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">110-130平</a></span>
+        </div>
+        <div id="sd">
+            <span id="sp1">户型</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><a id="a" onclick="OneH()">一室</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="TwoH()">两室</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="ThreeH()">三室</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="FourH()">四室</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="FiveH()">五室</a></span>
+        </div>
+    </div>
+    <div id="div5">
+        <div id="body">
+
+        </div>
+    </div>
 </body>
 </html>
