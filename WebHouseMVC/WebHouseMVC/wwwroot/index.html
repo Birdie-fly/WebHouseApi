@@ -68,7 +68,7 @@
             <div class="container">
                 <div class="logo fl">
                     <span class="logocen">
-                        <a href="index.html"><img width="140" height="40" alt="08CMS房产门户系统[东莞]" src="WybImages/logo1.png"></a>
+                        <a href="index.html"><img width="140" height="40" alt="" src="WybImages/logo1.png"></a>
                     </span>
                 </div>
 
@@ -99,17 +99,15 @@
                             出租
                         </a>
                     </li>
+                    <li>
+                        <a target="_self" href="showPrincipals.html" class="hoverslider" data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                            经纪人
+                        </a>
+                    </li>
                 </ul>
 
 
-                <div id="login" class="loginbar" data-login="1" data-config="{
-        tpl: '#logintpl',
-        url: 'https://house.08cms.com/viewinter/logininfo',
-        logoutUrl : 'https://house.08cms.com/logout',
-        loginUrl: 'https://house.08cms.com/viewinter/viewlogin',
-        login: 'https://house.08cms.com/login',
-        modal: '.winlogin'
-    }">
+                <div id="login" class="loginbar" data-login="1" >
                     <div class="login-out">
                         <div class="login-out-btn">
                             <a href="/Landing/Landing" data-modal=".winlogin" title="登录">
@@ -122,26 +120,6 @@
                         
                     </div>
                 </div>
-
-                <script>
-                    seajs.use(['jqhoverS'], function (jqhoverS) {
-                        $('#login').on('backfn', function () {
-                            $('.login-info').hoverSlider({
-                                offsetx: 0,
-                                obj: '.login-operate',
-                                delay: 10
-                            });
-                            $('.login-out-btn').hoverSlider({
-                                offsetx: 0,
-                                offsety: 60,
-                                obj: '.login-quick',
-                                delay: 10
-                            })
-                        });
-                    });
-                </script>
-
-                
             </div>
         </div>
         <!--/header-->
@@ -229,19 +207,6 @@
             </div>
         </div>
         
-        <script type="text/javascript">
-            seajs.use([], function () {
-                $("#yanshi dt").click(function () {
-                    var $this = $(this);
-                    $this.toggleClass('ico').next().toggle();
-                });
-                $("#yanshi dt a").click(function (e) {
-                    e.stopPropagation();
-                });
-            })
-        </script>
-
-
         
         <!--footer-->
         <div class="footer">
@@ -266,73 +231,7 @@
             seajs.use(['common'], function () { });
         </script>
 
-        <script type="text/javascript">
-            /*
-                    = jqhoverS:左侧详情筛选
-                    = jqduang：幻灯片、选项卡、slider
-                    = placeholder：兼容低版本输入框文字提示
-                    = autocomplete：搜索框自动补全提示
-                */
-            seajs.use([
-                'jqhoverS',
-                'jqduang',
-                'beitou',
-                'lazyload'
-            ], function (jqhoverS, jqduang, beitou, lazyload) {
-                //新搜索选择
-                $('.common-search').on('mouseover', '.s-cate', function (e) {
-                    e.stopPropagation();
-                    $(this).find('div').addClass('act');
-                }).on('mouseleave', '.s-cate', function (e) {
-                    e.stopPropagation();
-                    $(this).find('div').removeClass('act');
-                }).on('click', '.s-cate div span', function () {
-                    var $this = $(this);
-                    var pama = $this.data("pama");
-                    var $searchInput = $(pama.target || '.search-input');
-                    var url = $this.data('href');
-                    $this.closest('form').attr('action', url);
-                    $(this).parent('p').parent('div').removeClass('act').siblings('span').find('i').text($(this).text());
-
-                    $searchInput
-                        .val('')
-                        .attr('placeholder', pama.searchword)
-                        .autocomplete('hide')
-                    // 是否启用自动完成
-                    if (pama.autocomplete === 0) {
-                        $searchInput.autocomplete('disable');
-                    } else {
-                        $searchInput.autocomplete('enable')
-                            .autocomplete('setOptions', {
-                                serviceUrl: url
-                            });
-                    };
-                });
-
-                // 排行榜
-                $(document).off('.indexsort').on('click.indexsort', '[ data-indexsort]', function () {
-                    var $this = $(this);
-
-                    var index = $this.data('indexsort') - 1;
-
-                    $this.addClass('active').siblings().removeClass('active');
-
-                    var $list = $this.parents('.index-sort-title').siblings('.index-sort-content').find('.active');
-                    // console.log($list.index())
-                    if ($list.index() != index) {
-                        $list.removeClass('active').siblings().addClass('active');
-                    }
-                })
-                //slider左右箭头的显示隐藏
-                $("#slider-wrap").hover(function () {
-                    $(this).find(".prev-btn,.next-btn").css("opacity", ".8");
-                }, function () {
-                    $(this).find(".prev-btn,.next-btn").css("opacity", "0");
-                });
-                // 背投广告
-                beitou.init({ showing: 20000 });
-            });
-        </script>
+        
         <div data-gotop="1" class="return-top" style="display: none;">
             <i class="font-icons-33"></i>
         </div>

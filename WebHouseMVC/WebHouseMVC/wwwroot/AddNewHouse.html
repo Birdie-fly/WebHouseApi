@@ -8,7 +8,7 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(function () {
-            BandHT();
+            bandHouseType();
         })
         function Upload() {
             var data = new FormData(document.getElementById("formData"));
@@ -41,19 +41,21 @@
                 },
                 error: function (data) {
                     console.log("错误" + data);
-                } 
-            }) 
+                }
+            })
+        }
             //绑定下拉
-            function BandHT() {
+            function bandHouseType() {
                 $.ajax({
                     url: 'https://localhost:44335/api/NewHouse/houseTypes',
                     type: 'get',
                     dataType: 'json',
                     success: function (d) {
+                        console.log(d);
                         var a = '<option id="Sel" value="-1">→请选择房型←</option>';
                         $("#Select1").append(a);
                         $(d).each(function () {
-                            var str = ' <option id="sl" value="' + this.id + '">' + this.hType + '</option>';
+                            var str = ' <option id="sl" value="' + this.tId + '">' + this.hType + '</option>';
                             $("#Select1").append(str);
                         })
                     }

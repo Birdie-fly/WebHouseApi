@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/jquery.min.js"></script>
     <script src="js/qrcode.js"></script>
+    <link href="css/ats.css" rel="stylesheet" />
+    <link href="css/global.css" rel="stylesheet" />
+    <link href="css/im.css" rel="stylesheet" />
+    <script src="js/seajs.js"></script>
+    <script src="js/seajs.cfg.js"></script>
     <title></title>
     <style>
         #qrcode {
@@ -158,32 +163,80 @@
     </style>
 </head>
 <body>
-    <div style="width:inherit; height:40px;background:#808080; clear:both;">
-        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;margin-left:95px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">租房</span></div>
-        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">新房</span></div>
-        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">二手房</span></div>
-        <div class="tou" style="width:100px; display:inline-block; cursor:pointer; line-height:38px;"><span style="color:#ffffff; line-height:38px;margin-left:38px;">商铺</span></div>
-        <div class="tou" style="width:102px; display:inline-block; cursor:pointer; line-height:38px; float:right;"><span style="color:#ffffff; line-height:38px;margin-right:38px;" onclick="Add()">发布房源</span></div>
-    </div>
 
+    <div class="header scrollToFixed clearfix" data-spacer-class="header-spacer">
+        <div class="header-bg"></div>
+        <div class="container">
+            <div class="logo fl">
+                <span class="logocen">
+                    <a href="index.html"><img width="140" height="40" alt="" src="WybImages/logo1.png" /></a>
+                </span>
+            </div>
+            <div class="area fl">
+                <div data-hover="hoverslider" data-obj=".more-area">
+                    <div class="cur-area">上海市</div>
+                </div>
+            </div>
+            <ul class="nav fl" data-tag='zdh'>
+                <li>
+                    <a target="_self" href="index.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        首页
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="NewHouse.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        新房
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="SHouse.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        二手房
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="WUdesHouse.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        出租
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="showPrincipals.html" class='hoverslider act' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        经纪人
+                    </a>
+                </li>
+
+            </ul>
+            <div id="login" class="loginbar" data-login="1">
+                <div class="login-out">
+                    <div class="login-out-btn">
+                        <a href="/Landing/Landing" data-modal=".winlogin" title="登录">
+                            登录
+                        </a>
+                        <a href="/Landing/Reister" title="注册" target="_blank">
+                            注册
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="tb">
     </div>
-    <table style="margin-top:43%;margin-left:25%;">
+    <table style="margin-top:40%;margin-left:40%;">
         <tr>
             <td>总记录<span id="TotalCount"></span>条</td>
             <td>共有<span id="TotalPage"></span>页</td>
             <td>当前<span id="CurrentPage"></span>页</td>
-            <td><input id="Button1" type="button" value="首页" onclick="show(1);"/></td>
-            <td><input id="Button1" type="button" value="上一页" onclick="show(CurrentPage - 1);"/></td>
-            <td><input id="Button1" type="button" value="下一页" onclick="show(CurrentPage + 1);"/></td>
-            <td><input id="Button1" type="button" value="尾页" onclick="show(TotalPage);"/></td>
+            <td><input id="Button1" type="button" value="首页" onclick="show(1);" /></td>
+            <td><input id="Button1" type="button" value="上一页" onclick="show(CurrentPage - 1);" /></td>
+            <td><input id="Button1" type="button" value="下一页" onclick="show(CurrentPage + 1);" /></td>
+            <td><input id="Button1" type="button" value="尾页" onclick="show(TotalPage);" /></td>
         </tr>
     </table>
     <div id="light" class="white_content" style="float:left;">
         <!--<span style="margin-right:0px;"></span><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='block'">点这里关闭本窗口</a>-->
         <span style="float:right;">
-            <input id="Button1" type="image" src="Images/叉号.png" onclick="closeTypes()" style="height:30px;width:30px;outline:none;"/>
+            <input id="Button1" type="image" src="Images/叉号.png" onclick="closeTypes()" style="height:30px;width:30px;outline:none;" />
         </span>
         <div id="types">
 
