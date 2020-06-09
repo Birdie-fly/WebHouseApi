@@ -235,10 +235,12 @@
     </table>
     <div id="light" class="white_content" style="float:left;">
         <!--<span style="margin-right:0px;"></span><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='block'">点这里关闭本窗口</a>-->
+        <span style="float:left;margin-left:38%;">请选择联系方式</span>
         <span style="float:right;">
             <input id="Button1" type="image" src="Images/叉号.png" onclick="closeTypes()" style="height:30px;width:30px;outline:none;" />
         </span>
-        <div id="types">
+        <br />
+        <div id="types" style="margin-top:10px;">
 
         </div>
 
@@ -268,7 +270,7 @@
             url: 'https://localhost:44335/api/Principal/GetPrincipals',
             type: 'get',
             dataType: 'json',
-            data: { CurrentPage: obj.CurrentPage, PageSize: obj.PageSize},
+            data: { CurrentPage: obj.CurrentPage, PageSize: obj.PageSize },
             success: function (d) {
                 //最大页
                 TotalPage = d.totalPage;
@@ -283,7 +285,7 @@
                     console.log(d);
                     var str = '<div class="Show" style="width:1450px; float:left; height:180px;margin-left:30px;margin-top:8px;">'
                         + '<div style="float:left;width:350px ">'
-                        + '<img src="' + this.prImage  + '" alt="" width="130" height="160" style="float:left;margin:5px" />'
+                        + '<img src="' + this.prImage + '" alt="" width="130" height="160" style="float:left;margin:5px" />'
                         + '<p id="name">' + this.principalName + '</p>'
                         + '<p>' + this.commodityName + ' &nbsp; &nbsp;&nbsp;&nbsp;</p>'
                         + '<p>' + this.enter + '</p>'
@@ -292,7 +294,7 @@
                         + '<div style = "float:right;line-height:108px;" >'
                         + '<span>' + '<input id="alert" type="image" src="Images/联系方式.png" style="width:35px;height:35px;outline:none;" onclick="showType(' + this.id + ')"/>' + '</span>'
                         + '</div >'
-                        + '</div >'; 
+                        + '</div >';
                     $("#tb").append(str);
                 })
             }
