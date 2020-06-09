@@ -159,17 +159,18 @@ namespace WebHouseApi.Controllers
                 if (files.Count > 0)
                 {
                     var path = env.ContentRootPath + @"/Images/";//绝对路径
-                    string dirPath = @"C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\images\";//绝对径路 储存文件路径的文件夹
+                    string dirPath = @"C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\wwwroot\WImages\";//绝对径路 储存文件路径的文件夹
                     if (!Directory.Exists(dirPath))//查看文件夹是否存在
                         Directory.CreateDirectory(dirPath);
                     var file = files.Where(x => true).FirstOrDefault();//只取多文件的一个
                     var fileNam = $"{Guid.NewGuid():N}_{file.FileName}";//新文件名
-                    img = "Images/" + fileNam;
+                    img = "WImages/" + fileNam;
                     string snPath = $"{dirPath + fileNam}";//储存文件路径
                     using var stream = new FileStream(snPath, FileMode.Create);
 
-                    AddPrincipal(dto);
                     await file.CopyToAsync(stream);
+
+                    AddPrincipal(dto);
                     //次出还可以进行数据库操作 保存到数据库 
                     ret = new OutPut { Code = 200, Msg = "上传成功", Success = true };
                 }

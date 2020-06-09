@@ -7,7 +7,7 @@
     <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
     <script src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\Js\reqrcode.js"></script>
     <script src="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\Js\emailAutoComplete.js"></script>
-    <link href="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\Js\jq22.css" rel="stylesheet" />
+    <link href="C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\Js\jq22.css" rel="stylesheet"/>
     <style>
         #qrcode {
             width: 160px;
@@ -59,7 +59,6 @@
                 <th>
                     <div class="parentCls">
                         <input id="txtEmail" type="text" class="inputElem">
-                        
                     </div>
                 </th>
             </tr>
@@ -69,7 +68,7 @@
             </tr>
             <tr>
                 <th>微信:</th>
-                <th><input type="file" id="newfile" onchange="changepic(this)"><input id="Hidden1" type="hidden" /></th>
+                <th><input type="file" id="newfile" onchange="changePic(this)"><input id="Hidden1" type="hidden" /></th>
             </tr>  
             <tr>
                 <th><input id="btnSave" type="button" value="添加" onclick="addPrincipal()" /></th>
@@ -161,6 +160,20 @@
         return url;
     }
 
+    //function changePic() {
+    //    var reads = new FileReader();
+    //    f = document.getElementById('newfile').files[0];
+    //    reads.readAsDataURL(f);
+    //    //   console.log(newfile[0]);
+    //    console.log(getObjectURL(this.files[0]));// newfile[0]是通过input file上传的二维码图片文件
+    //    qrcode.decode(getObjectURL(this.files[0]));
+    //    qrcode.callback = function (imgMsg) {
+    //        // 获取地址传给Hidden1
+    //        $("#Hidden1").empty();
+    //        document.getElementById("Hidden1").value = imgMsg;
+    //    }
+    //}
+
     newfile.onchange = function () {
         // 显示图片
         var reads = new FileReader();
@@ -171,6 +184,7 @@
         qrcode.decode(getObjectURL(this.files[0]));
         qrcode.callback = function (imgMsg) {
             // 获取地址传给Hidden1
+            alert(imgMsg);
             $("#Hidden1").empty();
             document.getElementById("Hidden1").value = imgMsg;
         }
