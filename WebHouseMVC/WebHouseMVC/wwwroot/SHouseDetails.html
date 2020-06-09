@@ -1,30 +1,28 @@
 ﻿
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<script src="Scripts/jquery-3.3.1.js"></script>
 <html lang="zh_CN">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <!--必填-->
+    <!--数据类型-->
+    <meta property="og:type" content="product">
+    <!--页面URL地址-->
+    <meta property="og:url" content="https://house.08cms.com/sales/detail?aid=243">
+    <meta property="og:image" content="uploads/house/2020/02/24/9bcff0d392ede1996667ea98bf4f843e03e335d6.png">
+    <!--选填-->
+    <!--标题-->
+    <meta property="og:title" content="富士康将入住增城，盈翠雅筑单价才1万起买旅游景区别墅，你懂的，石碣镇政文路与石单路交汇处二手房5室3厅3卫1厨213M²">
+    <!--价格-->
+    <meta property="og:product:price" content="245万">
 
 
-    <head>
-        <meta charset="UTF-8">
-                <meta name="renderer" content="webkit">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-                <title></title>
-        <!--必填-->
-<!--数据类型-->
-<meta property="og:type" content="product">
-<!--页面URL地址-->
-<meta property="og:url" content="https://house.08cms.com/sales/detail?aid=243">
-<meta property="og:image" content="uploads/house/2020/02/24/9bcff0d392ede1996667ea98bf4f843e03e335d6.png">
-<!--选填-->
-<!--标题-->
-<meta property="og:title" content="富士康将入住增城，盈翠雅筑单价才1万起买旅游景区别墅，你懂的，石碣镇政文路与石单路交汇处二手房5室3厅3卫1厨213M²">
-<!--价格-->
-<meta property="og:product:price" content="245万">
-    
-    
-            <meta name="keywords" content="东莞市二手房出售,富盈公馆二手房,5室3厅3卫1厨二手房">
-                <meta name="description" content="首付1.5成！1.5成！
+    <meta name="keywords" content="东莞市二手房出售,富盈公馆二手房,5室3厅3卫1厨二手房">
+    <meta name="description" content="首付1.5成！1.5成！
 
 带学位！带公办学位！
 
@@ -37,57 +35,56 @@
 家家顺专场独享！
 
 【户型】叠墅  1">
-    
-                    <link rel="icon" sizes="16x16" href="favicon.ico">
-                    
-                                <script>
-                var liveBase = false;
-                var CSRF_TOKEN  = "bfHT3xRv99uNgLWIdXZfQqR-mRz2w7UXsO-M_0Kq0N0";
-                var jsbase      = "/bundles";
-                var BASE_URL    = "/";
-                var BUNDLE_PATH = "house"; // 主bundle路径 `house`
-                var REMOTE_URL  = ""; // 远程图片路径拼接
-                var VERSION     = '8.5.0.0';
-                // 供百度兼容https使用
-               var HOST_TYPE   = 2;
-               var MAPKEY = 'LFxVWrzLtIWBOINDI25iituw7MirSZKk'
-            </script>
-            <link rel="stylesheet" href="css/ats.css">
-            
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/im.css">
-            <link rel="stylesheet" href="css/sale-detail.css">
-                            <script type="text/javascript" src="js/seajs.js"></script>
-                        <script type="text/javascript" src="js/seajs.cfg.js"></script>
-<script type="text/javascript">
-var web = "frontEnd"; //前台
-seajs.use([
-    'jqhoverS',
-    'fixed',
-    'common'
-], function(jqHoverS, fixed, common) {
-    $(function() {
-        // console.log('执行。。。');
-        // 调用统计
-        common.getcounts({
-            url: 'https://house.08cms.com/igetcounts'
+
+    <link rel="icon" sizes="16x16" href="favicon.ico">
+
+    <script>
+        var liveBase = false;
+        var CSRF_TOKEN = "bfHT3xRv99uNgLWIdXZfQqR-mRz2w7UXsO-M_0Kq0N0";
+        var jsbase = "/bundles";
+        var BASE_URL = "/";
+        var BUNDLE_PATH = "house"; // 主bundle路径 `house`
+        var REMOTE_URL = ""; // 远程图片路径拼接
+        var VERSION = '8.5.0.0';
+        // 供百度兼容https使用
+        var HOST_TYPE = 2;
+        var MAPKEY = 'LFxVWrzLtIWBOINDI25iituw7MirSZKk'
+    </script>
+    <link href="css/ats.css" rel="stylesheet" />
+    <link href="css/global.css" rel="stylesheet" />
+    <link href="css/im.css" rel="stylesheet" />
+    <link href="css/sale-detail.css" rel="stylesheet" />
+    <script src="js/seajs.js"></script>
+    <script src="js/seajs.cfg.js"></script>
+    <script type="text/javascript">
+        var web = "frontEnd"; //前台
+        seajs.use([
+            'jqhoverS',
+            'fixed',
+            'common'
+        ], function (jqHoverS, fixed, common) {
+            $(function () {
+                // console.log('执行。。。');
+                // 调用统计
+                common.getcounts({
+                    url: 'https://house.08cms.com/igetcounts'
+                });
+                // 广告统计
+                common.adcount({
+                    saveUrl: 'https://house.08cms.com/viewinter/vote'
+                });
+                // 表单处理
+                common.form({
+                    ajax: {
+                        // 获取表单的默认地址
+                        url: 'https://house.08cms.com/bundlebindforms/ajaxform',
+                    }
+                })
+            })
         });
-        // 广告统计
-        common.adcount({
-            saveUrl : 'https://house.08cms.com/viewinter/vote'
-        });
-        // 表单处理
-        common.form({
-            ajax: {
-                // 获取表单的默认地址
-                url: 'https://house.08cms.com/bundlebindforms/ajaxform',
-            }
-        })
-    })
-});
-</script>
-                            
-    </head>
+    </script>
+
+</head>
     <body>
             <!--header-->
 <div class="header scrollToFixed clearfix" data-spacer-class="header-spacer">
@@ -95,7 +92,7 @@ seajs.use([
     <div class="container">
         <div class="logo fl">
             <span class="logocen">
-                <a href="index.html"><img width="140" height="40" alt="08CMS房产门户系统[东莞]" src="WybImages/logo1.png"></a>
+                <a href="index.html"><img width="140" height="40" alt="" src="WybImages/logo1.png"></a>
             </span>
         </div>
 
@@ -108,25 +105,25 @@ seajs.use([
                 
                     <ul class="nav fl" data-tag="zdh">
                                                             <li>                        
-                            <a target="_self" href="https://house.08cms.com/" class="hoverslider" data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                            <a target="_self" href="index.html" class="hoverslider" data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
                                 首页
                             </a>
                                                     </li>
                                             <li>                        
-                            <a target="_self" href="https://house.08cms.com/xinfang" class="hoverslider" data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                            <a target="_self" href="NewHouse.html" class="hoverslider" data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
                                 新房
                             </a>
                                                         
                                                     </li>
                                             
                                             <li>                        
-                            <a target="_self" href="https://house.08cms.com/esf" class="hoverslider act" data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                            <a target="_self" href="SHouse.html" class="hoverslider act" data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
                                 二手房
                             </a>
                                                         
                                                     </li>
                                             <li>                        
-                            <a target="_self" href="https://house.08cms.com/zu" class="hoverslider" data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                            <a target="_self" href="WUdesHouse.html" class="hoverslider" data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
                                 出租
                             </a>
                                                         
@@ -145,65 +142,35 @@ seajs.use([
     }">
             <div class="login-out">
             <div class="login-out-btn">
-                <a href="https://house.08cms.com/login" data-modal=".winlogin" title="登录">
+                <a href="/Landing/Landing" data-modal=".winlogin" title="登录">
                     登录
                 </a>
-                <a href="https://house.08cms.com/register" title="注册" target="_blank">
+                <a href="/Landing/Reister" title="注册" target="_blank">
                     注册
                 </a>
             </div>
                        
                     </div>
     </div>
-
-
-
             </div>
 </div>
 <!--/header-->
     
-                                        <div class="top-bar ">
-        <div class="container">
-                    <form action="https://house.08cms.com/esf" target="_self" method="get">
-        
-        <div class="search-bar clearfix ">
-                
-        
-    <input type="text" name="name" class="search-input fl" placeholder="请输入二手房名称" data-autocomplete="1">
-
-
-            <button type="submit" class="search-btn fl"><i class="font-icons-17"></i></button>
-        </div>
-    </form>
-
-                                                        <ul class="list clearfix fl" data-tag="salekeyword">
-                                
-            
-            
-                                                                                                                
-                        </ul>
-
-                    </div>
-    </div>
-
-    
-
-
                         <div class="container">
             <div class="blank10"></div>
                     
-                                                                                                     </div>
+              </div>
     
 
                 <div class="container">
             <div class="current-location">
                                     
-<a href="https://house.08cms.com/">首页</a>
+<a href="index.html">首页</a>
 <span>&gt;</span>
 
-                                    <a href="https://house.08cms.com/esf">二手</a>
+                                    <a href="SHouse.html">二手</a>
     <span>&gt;</span>
-            <span>富士康将入住增城，盈翠雅筑单价才1万起买旅游景区别墅，你懂的</span>
+            <span  id="lable">富士康将入住增城，盈翠雅筑单价才1万起买旅游景区别墅，你懂的</span>
                 </div>
         </div>
     
@@ -211,377 +178,104 @@ seajs.use([
                             
     
     
-    <div class="blank20"></div><div class="tit-wrap clearfix"><h1>
-                富士康将入住增城，盈翠雅筑单价才1万起买旅游景区别墅，你懂的
-            </h1><div class="olorg clearfix"><div class="fl c-888">
-                    更新时间:
-                    <span>    2019-11-27</span></div><div class="fl c-888 ml30">
-                    点击: <i data-counts="{models: 'sale', field: 'clicks', id: '243'}"></i>次
-                </div></div><!--<div class="info3"><a href="https://house.08cms.com/agency/loan" target="_blank" class="ico-word info3-btn"><i class="font-lp-57"></i>
-                            服务代办
-                        </a><a href="https://house.08cms.com/tools/index" target="_blank" class="ico-word info3-btn"><i class="font-lp-24"></i>
-                            房贷计算器
-                        </a><span class="bdsharebuttonbox share-btn info3-btn" share-text="富士康将入住增城，盈翠雅筑单价才1万起买旅游景区别墅，你懂的" share-desc="富士康将入住增城，盈翠雅筑单价才1万起买旅游景区别墅，你懂的" share-pic="https://house.08cms.com/uploads/house/2020/02/24/9bcff0d392ede1996667ea98bf4f843e03e335d6.png" share-url="https://house.08cms.com/esf/detail/243.html?_area=247"><a class="bds_more" data-cmd="more"><i class="font-icons-32"></i>分享
-                        </a></span><a class="info3-btn" href="javascript:;" data-collected="0" data-collect="{aid: 243, models: 'sale', uid: 0}" data-url="https://house.08cms.com/collects/save" data-jumpurl="https://house.08cms.com/login"><i class="font-icons-19"></i><span data-after="已收藏">收藏</span></a><script type="text/javascript">
-    seajs.use(['collect'], function(collect) {
-        collect.init()
-    })
-</script><a href="#yy" data-opt class="form-bdrs btn-yy info3-btn btn-jqModal-ex"><i class="font-icons-18"></i>预约
-    </a><div id="yy" style="display: none;" class data-form-config="{
-        modal: {
-            head: '<i class=\' mr5 fz18 c-e43\'></i><span class=\'jqmodal-title\'>预约</span>',
-            mclass: 'modal-bg',
-            overlay: .6,
-            css: {
-                width: 450
-            }
-        },
-        type: 'click',
-        ajax: {'data':{'formflag':'view_sale_intent','aid':243,'models':'sale','cate_pushs':'syixiang','type':'sale','formcls':'common-form-lg common-form-control'}}
-    }"></div><a href="#jbao" data-opt class="form-bdrs btn-jb info3-btn btn-jqModal-ex"><i class="font-icons-27"></i>举报
-    </a><div id="jbao" style="display: none;" class data-form-config="{
-        modal: {
-            head: '<i class=\' mr5 fz18 c-e43\'></i><span class=\'jqmodal-title\'>举报</span>',
-            mclass: 'modal-bg',
-            overlay: .6,
-            css: {
-                width: 450
-            }
-        },
-        type: 'click',
-        ajax: {'data':{'formflag':'view_sale_report','aid':243,'models':'sale','cate_pushs':'sreport','type':'sale','formcls':'common-form-lg common-form-control'}}
-    }"></div></div>--><script type="text/javascript">
-                    seajs.use(['share'], function (share) {})
-                </script></div>
-
-        <div class="blank20"></div>
-
-                                            <div class="preview fl jqDuang" data-trigger="click" data-obj=".item" data-cell=".s-item ul" data-prevbtn=".b-left" data-nextbtn=".b-right" data-autoplay="0" data-lazyload="src"><!--<div class="look-phone"><div class="look-close"><i class="font-modal-close"></i></div><div data-qrcode="1" data-logo="https://house.08cms.com/bundles\house\images\defaultlog\6.png" data-text="https://house.08cms.com/esf/detail/243.html?_area=247" data-size="100"></div><em>扫描到手机</em></div>--><div class="preview-big"><div class="item show-big" data-index="0"><img width="690" height="440" src="images/96e548c25d4172ef196caf8540a89003.jpg"><div class="play"></div><div class="videobox"><iframe frameborder="0" src="player.html" allowFullScreen="true" width="100%"></iframe></div></div><div class="item show-big" style="display: none;" data-index="1"><img width="690" height="440" data-src="images/1a78fc0e76537593a0fe6f1bc2b1313c.jpg" src="images/nopic.gif"></div><div class="item show-big" style="display: none;" data-index="2"><img width="690" height="440" data-src="images/7bf3f0570e85287326d88427a5992b58.jpg" src="images/nopic.gif"></div><div class="item show-big" style="display: none;" data-index="3"><img width="690" height="440" data-src="images/6115e7e3e9c06f790a798cc02fdc9df7.jpg" src="images/nopic.gif"></div><div class="item show-big" style="display: none;" data-index="4"><img width="690" height="440" data-src="images/d4285cd60942986df44bf8f911b38dd9.jpg" src="images/nopic.gif"></div><div class="item show-big" style="display: none;" data-index="5"><img width="690" height="440" data-src="images/66462d706990ae2bb91a69054d005882.jpg" src="images/nopic.gif"></div></div><!--<div class="preview-s jqDuang" data-obj="li" data-prevbtn=".s-left" data-nextbtn=".s-right" data-autoplay="0" data-visible="5" data-steps="5" data-effect="left"><div class="s-item"><ul><li><div class="img"><img width="106" height="74" src="images/f0131ca5db0c9060ead8c71a3ca5dd10.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/3c48cf908af40d6c3178993780047972.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/c4105b7fd38bc47d9bd84074041ab064.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/37391921ab2d4bf08f4b9e11727aaa6e.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/43522e92266d3b14e8ed27ee64e318d0.jpg"></div></li><li><div class="img"><img width="106" height="74" src="images/15ed072f9b44594cafa36520a04b77af.jpg"></div></li></ul></div></div>--><div class="b-left"></div><div class="b-right"></div></div><div class="showbig-container"><div class="showbig-swiper"><div class="lg"><div class="item show-big"><div class="item-img"><img src="images/660fe5de34d0d3854b94f15f73e237b2f71908b3.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/eceb6eac623021f8808ab8dc6719d8319c6024f1.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/c491236348890e1fb1b7fe54189d18c087681e98.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/17fed9e4ca4bef84115dee07a87cf4c28fadf53e.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/b9d7c561272775b50a73355311f7dd84af9fb54b.jpg"></div></div><div class="item show-big"><div class="item-img"><img src="images/a39eed458d9ebdd57211e63e4800335b71292b24.jpg"></div></div></div><div class="b-left showbig-btn"></div><div class="b-right showbig-btn"></div></div></div><script type="text/javascript">
-            seajs.use(['jqduang', 'jqmodal'], function (jqduang, jqmodal) {
-                $('.preview-big .show-big').click(function () {
-                    var index = $(this).data('index')
-                    $('.showbig-swiper').jqDuang(index);
-                    showBig()
-                })
-                $('.showbig-swiper').jqDuang({
-                    obj: '.item',
-                    trigger: 'mouseover',
-                    effect: 'fade',
-                    speed: 400,
-                    index: 0,
-                    autoplay: 0,
-                    prevbtn: '.b-left',
-                    nextbtn: '.b-right',
-                    easing: 'swing',
-                    btnloop: false
-                })
-                function showBig(){
-                    $('.showbig-container').jqModal({
-                        mclass : 'lay' ,
-                        fixed  : 1 ,
-                        overlay: .3 ,
-                        drag   : 1 ,
-                        lock   : 1 ,
-                        animate: 'showbig-wrap'
-                    })
-                }
-            })
-        </script><script type="text/javascript">
-            seajs.use(['jqduang'], function (jqduang) {
-                var $ykvideo = $('.videobox').find('iframe') || '';
-                var $videobox = $('.videobox');
-                var $vhtml = $videobox.html();
-                $('.play').on('click',function(){
-                    $videobox.show().html($vhtml);
-                    $(this).hide();
-                    $videobox.find('iframe').attr('height', $videobox.height());
-                    return false
-                })
-                $('.s-item li').on('click',function(){
-                    if ( !$videobox.is(':hidden')) {
-                        $videobox.hide()
-                        $('.play').show();
-                        $videobox.html('');
-                    };
-                })
-                $('.look-close').click(function () {
-                    $(this).parent('.look-phone').hide()
-                });
-            })
-        </script>
-
-                 <div class="detail-info fr">
-
-                     <div class="info-price">
-                         <span class="price">245</span>万
-                         <span class="tips">
-                             首付预算约<span id="cksf">-</span>万元&nbsp;&nbsp;月供<span id="ckyg">-</span>元
-                         </span>
-                     </div>
-
-                     <!--<div class="line-dj clearfix">
-                <span>一键咨询最低报价、首付及税费等优惠！</span>
-                <a href="#lprice" class="btn-dj btn-jqModal-ex">询底价</a>
-
-    <div id="lprice" style="display: none;" class data-form-config="{
-        modal: {
-            head: '<i class=\' mr5 fz18 c-e43\'></i><span class=\'jqmodal-title\'>询底价</span>',
-            mclass: 'modal-bg',
-            overlay: .6,
-            css: {
-                width: 450
-            }
-        },
-        type: 'click',
-        ajax: {'data':{'formflag':'view_sale_lprice','aid':243,'models':'sale','formcls':'common-form-lg common-form-control'}}
-    }">
-    </div>
-            </div>-->
-
-                     <div class="info-line clearfix">
-                         <div class="info-line-item">
-                             <div class="item-value">5室3厅3卫</div>
-                             <div class="item-title">
-                                 户型
-                             </div>
-                         </div>
-                         <div class="info-line-item">
-                             <div class="item-value">
-                                 <span>213</span>m&sup2;
-                             </div>
-                             <div class="item-title">
-                                 建筑面积
-                             </div>
-                         </div>
-                         <div class="info-line-item">
-                             <div class="item-value">
-                                 11502元/m&sup2;
-                             </div>
-                             <div class="item-title">
-                                 单价
-                             </div>
-                         </div>
-                     </div>
-                     <div class="info-line clearfix">
-                         <div class="info-line-item">
-                             <div class="item-value">
-                                 南北通透
-                             </div>
-                             <div class="item-title">
-                                 朝向
-                             </div>
-                         </div>
-                         <div class="info-line-item">
-                             <div class="item-value">    小高层</div>
-                             <div class="item-title">
-                                 楼层(共46层)
-                             </div>
-                         </div>
-                         <div class="info-line-item">
-                             <div class="item-value">
-                                 毛坯
-                             </div>
-                             <div class="item-title">
-                                 装修
-                             </div>
-                         </div>
-                     </div>
-                     <div class="info-line">
-                         <div class="info-line-item2">
-                             <span class="item2-title">
-                                 小区
-                             </span>
-                             <span class="item2-value">
-                                 <a href="https://house.08cms.com/xiaoqu/qdetail/60.html">富盈公馆</a>
-                                 (厚街镇)
-                             </span>
-                         </div>
-                         <div class="info-line-item2">
-                             <span class="item2-title">
-                                 地址
-                             </span>
-                             <span class="item2-value">
-                                 石碣镇政文路与石单路交汇处
-                             </span>
-                         </div>
-                     </div>
-
-
-                     <div class="info-jjr clearfix">
-                         <div class="jjr-img fl">
-                             <img alt="王琴" width="66" height="85" src="images/c9b9e9e6f416b853da18fb8dd0c3da55.jpg">
-
-                         </div>
-                         <div class="jjr-info fl">
-                             <div class="jjr-name">
-                                 王琴
-                                 <span>
-                                     烟花三月下扬州有限公司
-                                 </span>
-                             </div>
-                             <div class="jjr-renzheng">
-
-                                 <img src="images/ico_5.gif" title="五级">
-
-                                 <img src="images/phone.gif" style="height: 20px; width: 40px;" title="手机认证">
-
-                                 <img src="images/idcard.gif" style="height: 20px; width: 40px;" title="身份证认证">
-
-                                 <img src="images/license.gif" style="height: 20px; width: 40px;" title="营业执照认证">
-
-                             </div>
-                             <div class="jjr-dec clearfix">
-                                 <span class="jjr-tel">13532585698</span>
-                                 <div class="jjr-im-btn" data-im="addfriend" data-opt="{ accid: 'f04951b2d236d5e02498d009ee1a5e0e', ps: { nick: '08cmsbroker' } }" data-fy="{" models":"sale","url":"https:\ /\/house.08cms.com\/esf\/detail\/243.html","name":"\u5bcc\u58eb\u5eb7\u5c06\u5165\u4f4f\u589e\u57ce\uff0c\u76c8\u7fe0\u96c5\u7b51\u5355\u4ef7\u624d1\u4e07\u8d77\u4e70\u65c5\u6e38\u666f\u533a\u522b\u5885\uff0c\u4f60\u61c2\u7684","thumb":"https:\/\/house.08cms.com\/uploads\/house\/2020\/02\/24\/9bcff0d392ede1996667ea98bf4f843e03e335d6.png","mj":"213m&sup2;","zj":"245\u4e07","huxing":"5\u5ba43\u53853\u536b","cx":"\u5357\u5317\u901a\u900f"}"><i class="font-icons-42"></i>在线咨询</div>
-                             </div>
-                             <div class="people-weixin">
-                                 <img width="76" height="76" src="images/d6aca38ff428fa016608536257f51fcc.jpg">
-
-                                 <em>经纪人微信</em>
-                             </div>
-                         </div>
-                     </div>
-
-                 </div>
-
-        <div class="blank20"></div>
-
-        <div class="d-left fl">
-
-                        
-            <!--住宅概况-->
-            <div class="panel" id="fy">
-                <!--title-->
-                                                                    
-                
-                <div class="panel-hd"><div class="fy-fixed jqScrollspy clearfix" data-offset="25" data-obj=".scroll-item"><a href="#fy" class="scroll-item act">住宅概况</a><a href="#fwpt" class="scroll-item ">房屋配套</a><a href="#yg" class="scroll-item ">参考月供</a><a href="#zbpt" class="scroll-item ">地图</a><a href="#jgzs" class="scroll-item ">价格趋势</a><a href="#ssxq" class="scroll-item ">小区简介</a><div class="fixed-lxfs1"><em>已失效</em></div></div></div><script type="text/javascript">
-            seajs.use(['jqscrollspy', 'fixed'], function (jqscrollspy, fixed) {
-                var $fylxfs = $('.fixed-lxfs');
-                $(".fy-fixed").scrollToFixed({
-                    marginTop: 60,
-                    fixed: function () {
-                        $fylxfs.show();
-                    },
-                    preUnfixed: function () {
-                        $fylxfs.hide();
-                    }
-                });
-            })
-        </script>
-                <!--/title-->
-                <!--body-->
-                <div class="panel-hd">
-                    <h2>
-                        房源基本信息
-                    </h2>
+    <div class="blank20"></div>
+    <div class="container" id="data">
+        <div class="tit-wrap clearfix">
+            <h1 id="title">富士康将入住增城，盈翠雅筑单价才1万起买旅游景区别墅，你懂的</h1>
+            <div class="olorg clearfix">
+                <div class="fl c-888">
+                    更新时间:<span id="time"></span>
+                </div><div class="fl c-888 ml30">
+                    点击: <span id="accessCount"></span>次
                 </div>
-                <div class="newwrap baseinform panel-bd bd-gray">
-                    <div class="house_infor">
-                        <div class="introContent">
-                            <div class="base infor2-list clearfix">
-                                <div class="name">基本属性</div>
-                                <div class="content">
-                                    <ul>
-                                        
-                                                                                <li><span class="label">建筑年代</span>2年以下</li>
-                                        <li><span class="label">建筑类型</span>塔楼</li>
-                                        <li><span class="label">房屋类型</span>别墅</li>
-                                        <li><span class="label">梯户比例</span>两梯四户</li>
-                                        <li><span class="label">配备电梯</span>否</li>
-                                        <li><span class="label">土地使用年限</span><span class>70</span>年</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="transaction infor2-list clearfix">
-                                <div class="name">交易属性</div>
-                                <div class="content">
-                                    <ul>
-                                        <li>
-                                            <span class="label">看房时间</span>
-                                           提前预约随时可看
-                                        </li>
-                                         <li>
-                                            <span class="label">交易权属</span>
-                                            商品房 &nbsp;
-                                        </li>
-                                        <li>
-                                            <span class="label">抵押信息</span>
-                                            无抵押
-                                        </li>
-                                        <li>
-                                            <span class="label">房本备件</span>
-                                                                                                    未上传房本照片
-                                                                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="transaction infor2-list clearfix">
-                                <div class="name">房源特色</div>
-                                <div class="content">
-                                    <p> 近地铁 </p> &nbsp;<p> 随时看房    </p> &nbsp;<p> 满五年    </p> &nbsp;<p>满两年  </p> &nbsp;
-                                </div>
+            </div>
+        </div>
 
-                            </div>
-                            <div class="disclaimer" style="padding-top: 10px;">注：房源所示“房屋用途、交易权属、建成年代、土地使用年限、建筑结构”仅供参考，购房时请以房本信息为准。</div>
-                        </div>
-                                                                            <dl class="content-detail clearfix">
-                                <dt>
-                                    <i class="font-fwpt-a"></i>核心卖点
-                                </dt>
-                                <dd>
-                                    1. 地段好
-2. 交通便利
-3. 周围基础设施完善
-                                </dd>
-                            </dl>
-                                                                            <dl class="content-detail clearfix">
-                                <dt>
-                                    <i class="font-fwpt-b"></i>业主心态
-                                </dt>
-                                <dd>
-                                    1. 业主更换工作地点需要换置<br>
-2. 如果真心想买，价钱还可商量
-                                </dd>
-                            </dl>
-                                                                            <dl class="content-detail clearfix">
-                                <dt>
-                                    <i class="font-fwpt-c"></i>税费分析
-                                </dt>
-                                <dd>
-                                    很荣幸可以让您看到我的房源信息  以上发布房源均属于开发商一手新房  无任何税，个人所得税。
-无任何评估费过户费，此房为开发商一手房不收取您任何中介费，
-                                </dd>
-                            </dl>
-                                                                            <dl class="content-detail clearfix">
-                                <dt>
-                                    <i class="font-fwpt-d"></i>小区配套
-                                </dt>
-                                <dd>
-                                    周边景观：潮白河、大运河森林公园等；
-周边医疗：燕达医院、京东中美医院、燕郊人民医院、潞河医院、、胸科医院、263医院、东直门医院东区、通州妇幼保健院、骨伤医院等；
-周边商业：九棵树家乐福、乐天玛特、物美超市、新世纪华联、苏宁电器等；
-周边：燕郊幼幼、冶金、开发区、华电、京东双语、天使宝贝、红黄蓝、瑞丁国际、三河市第学、开发区、燕郊中心、大柳店中心、冯家府、汇福共六家、北京通州、史家胡同、潞河、后南仓、三河市第学、三河第学、三河第学、燕郊开发区、北京通州、
-                                </dd>
-                            </dl>
-                                                                            <dl class="content-detail clearfix">
-                                <dt>
-                                    <i class="font-fwpt-e"></i>服务介绍
-                                </dt>
-                                <dd>
-                                    1. 本人从业本行业已经5个年头，拥有丰富的经验
-2. 保证让您拥有上帝一般的服务
-                                </dd>
-                            </dl>
-                                                <!-- 特色与描述 ok -->
-                        <div class="describe">
-                                                            
-                                                                                                                                                                                                                            
-    
-    <div class="content-container"><p>首付1.5成！1.5成！</p><p>带学位！带公办学位！</p><p>物业性质是别墅！均价1万的别墅！</p><p>首付16万买景区别墅！</p><p>团购10万抵30万！</p><p>家家顺专场独享！</p><p>【户型】叠墅&nbsp;&nbsp;112平米&nbsp;&nbsp;141平米&nbsp;188平米&nbsp;&nbsp;200平米联排&nbsp;&nbsp;&nbsp;198平米&nbsp;&nbsp;209平米双拼&nbsp;&nbsp;202平米&nbsp;&nbsp;&nbsp;213平米</p><p>【项目优势】</p><p>1、七大景点环绕，原生态氧吧，拒绝工业污染，居家养老，物尽其极。&nbsp;2、高拓展高赠送：赠送率高达50%到200%，更有1：1大花园&nbsp;3、自带300亩原生态农业园，原生态农产品自产自给，闹中取静，农药是什么？我不知道噢！&nbsp;4、配套齐全：高档住宅区，富人聚集区，万达广场、挂绿广场、东汇城、四所及各大银行。&nbsp;5、立体化交通，广河高速，增从高速，从莞深高速都可达项目，8直达口&nbsp;6、低价格：中国一线城市别墅得意均价仅13000，低至10000元。&nbsp;7、本项目带有广州增城小楼镇小学学位。</p><p>洋房价1万买景区别墅&nbsp;</p><p>免费看房热线：李经理（135-3258-5698 <span&nbsp;style=0line-height:&nbsp;2em;0>微信同步） &nbsp; &nbsp;</span&nbsp;style=0line-height:&nbsp;2em;0></p></div>
-                        </div>
+        <div class="blank20"></div>
+        <div class="preview fl jqDuang" data-trigger="click" data-obj=".item" data-cell=".s-item ul" data-prevbtn=".b-left" data-nextbtn=".b-right" data-autoplay="0" data-lazyload="src">
+            <div class="item show-big" data-index="0">
+                <img id="houseImage" width="690" height="440" src="images/96e548c25d4172ef196caf8540a89003.jpg">
+            </div>
+        </div>
+        <div class="detail-info fr">
+
+            <div class="info-price">
+                <span class="price" id="housePrice">245</span>万
+                <span class="tips">
+                    首付预算约<span id="cksf">-</span>万元
+                </span>
+            </div>
+            <div class="info-line clearfix">
+                <div class="info-line-item">
+                    <div class="item-value" id="houseType">5室3厅3卫</div>
+                    <div class="item-title">
+                        户型
+                    </div>
+                </div>
+                <div class="info-line-item">
+                    <div class="item-value">
+                        <span id="houseSize">213</span>m&sup2;
+                    </div>
+                    <div class="item-title">
+                        建筑面积
+                    </div>
+                </div>
+                <div class="info-line-item">
+                    <div class="item-value">
+                        <span id="price">11502元</span> /m&sup2;
+                    </div>
+                    <div class="item-title">
+                        单价
                     </div>
                 </div>
             </div>
+            <div class="info-line clearfix">
+                <div class="info-line-item">
+                    <div class="item-value">
+                        南北通透
+                    </div>
+                    <div class="item-title">
+                        朝向
+                    </div>
+                </div>
+                <div class="info-line-item">
+                    <div class="item-value"><span id="houseGradation"></span>层</div>
+                    <div class="item-title">
+                        楼层(共<span id="houseSum">46</span>层)
+                    </div>
+                </div>
+                <div class="info-line-item">
+                    <div class="item-value">
+                        毛坯
+                    </div>
+                    <div class="item-title">
+                        装修
+                    </div>
+                </div>
+            </div>
+            <div class="info-line">
+                <div class="info-line-item2">
+                    <span class="item2-title">
+                        小区
+                    </span>
+                    <span class="item2-value">
+                        <a href="#" id="houseName">富盈公馆</a>
+                    </span>
+                </div>
+                <div class="info-line-item2">
+                    <span class="item2-title">
+                        地址
+                    </span>
+                    <span class="item2-value" id="houseAddress">
+                        石碣镇政文路与石单路交汇处
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--<div class="blank20"></div>-->
+
+        <div class="d-left fl">
             <!--房屋配套-->
              <div class="panel" id="fwpt">
                 <!--title-->
@@ -590,440 +284,16 @@ seajs.use([
                         房屋配套
                     </h2>
                 </div>
-                <!--/title-->
-                <!--body-->
                 <div class="panel-bd bd-gray p10">
-                                        <ul class="fwpt-li clearfix"><li><i class="font-fwpt-13"></i>煤气</li><li><i class="font-fwpt-3"></i>家具</li><li><i class="font-fwpt-1"></i>厨房</li></ul>
+                                        <ul class="fwpt-li clearfix">
+                    <li><i class="font-fwpt-13"></i>煤气</li>
+                    <li><i class="font-fwpt-3"></i>家具</li>
+                    <li><i class="font-fwpt-1"></i>厨房</li>
+                                        </ul>
                                     </div>
-                <!--/body-->
             </div>
             <!--/房屋配套-->
-			
-						<div class="panel" id="pano">
-			    <div class="panel-hd">
-			        <h2>VR看房</h2>
-			    </div>
-			    <div class="bd-gray">
-			        <iframe src="fbgljxt5u7r.html" width="930" height="450" frameborder="0"></iframe>
-			    </div>
-			</div>
-			
-            <!--参考月供-->
-            <div class="panel" id="yg">
-                <!--title-->
-                <div class="panel-hd">
-                    <h2>参考月供</h2>
-                </div>
-                <!--/title-->
-                <!--body-->
-                <div class="panel-bd bd-gray clearfix">
-                    <div class="house_yuegong_input">
-                        <dl>
-                            <dd>
-                                <label>估计总价</label>
-                                <b><span id="total_p" class="c-f50">245</span>
-                                    万元</b>
-                            </dd>
-                            <dd>
-                                <label>购房记录</label>
-                                <div class="input-model">
-                                    <span>首次购房</span>
-                                    <i class="font-lp-11"></i>
-                                    <input type="hidden" tabindex="999" id="guofang" value="0" name="guofang">
-                                    <ol class="slt slt_long" sname="guofang">
-                                        <li val="0" class="on">首次购房</li>
-                                        <li val="1" class>二次购房</li>
-                                        <li val="2" class>三套及以上</li>
-                                    </ol>
-                                </div>
-                                <a class="ico-tip img-sale-detail-20 btn-jqModal" data-type="popover" data-placement="right" data-content="以家庭为单位,在这个城市的房产交易中心查询不到这个家庭成员的名下有房子,就可以算是首次购房"></a>
-                            </dd>
-                            <dd>
-                                <label>按揭成数</label>
-                                <div class="input-model">
-                                    <span>7成</span>
-                                    <i class="font-lp-11"></i>
-                                    <input type="hidden" tabindex="999" id="percent_p" value="7" name="percent_p">
-                                    <ol class="slt slt_long" sname="percent_p">
-                                        <li class="dis" val="0">0成</li>
-                                        <li class val="2">2成</li>
-                                        <li class val="3">3成</li>
-                                        <li class val="4">4成</li>
-                                        <li class val="5">5成</li>
-                                        <li class val="6">6成</li>
-                                        <li class val="7">7成</li>
-                                    </ol>
-                                </div>
-                                <a class="ico-tip img-sale-detail-20 btn-jqModal" data-type="popover" data-placement="right" data-content="是指所贷款的额度总额占房款总额的比例。按揭成数=贷款的额度/房款总额"></a>
-                            </dd>
-                            <dd>
-                                <label>贷款类别</label>
-                                <div class="input-model">
-                                    <span>商业贷款</span>
-                                    <i class="font-lp-11"></i>
-                                    <input type="hidden" tabindex="999" id="yg_type" value="0" name="yg_type">
-                                    <ol class="slt slt_long" sname="yg_type">
-                                        <li class="on" val="0">商业贷款</li>
-                                        <li val="1">公积金贷款</li>
-                                        <li val="2">组合贷款</li>
-                                    </ol>
-                                </div>
-                                <small class="mix">
-                                    &nbsp;&nbsp;(贷款总额
-                                    <i id="daikuan_z" class="c-f50">88.80</i>
-                                    万)
-                                </small>
-                                <div class="zhdk mix">
-                                    <label>公积金</label>
-                                    <input type="text" class="ipt_d" autocomplete="off" id="yg_gjj" maxlength="10">
-                                    <b>万元</b>
-                                    <div class="blank2"></div>
-                                    <label>商业性</label>
-                                    <input type="text" class="ipt_d" autocomplete="off" id="yg_syx" maxlength="10">
-                                    <b>万元</b>
-                                </div>
-                            </dd>
-                            <dd>
-                                <label>贷款时间</label>
-                                <div class="input-model">
-                                    <span>20年(240期)</span>
-                                    <i class="font-lp-11"></i>
-                                    <input type="hidden" tabindex="999" id="year_p" value="240" name="year_p">
-                                    <ol class="slt slt_long" sname="year_p">
-                                        <li class="dis" val="0">不分期</li>
-                                        <li class val="12">1年(12期)</li>
-                                        <li class val="24">2年(24期)</li>
-                                        <li class val="36">3年(36期)</li>
-                                        <li class val="48">4年(48期)</li>
-                                        <li class val="60">5年(60期)</li>
-                                        <li class val="72">6年(72期)</li>
-                                        <li class val="84">7年(84期)</li>
-                                        <li class val="96">8年(96期)</li>
-                                        <li class val="108">9年(108期)</li>
-                                        <li class val="120">10年(120期)</li>
-                                        <li class val="132">11年(132期)</li>
-                                        <li class val="144">12年(144期)</li>
-                                        <li class val="156">13年(156期)</li>
-                                        <li class val="168">14年(168期)</li>
-                                        <li class val="180">15年(180期)</li>
-                                        <li class val="192">16年(192期)</li>
-                                        <li class val="204">17年(204期)</li>
-                                        <li class val="216">18年(216期)</li>
-                                        <li class val="228">19年(228期)</li>
-                                        <li class="on" val="240">20年(240期)</li>
-                                        <li class val="252">21年(252期)</li>
-                                        <li class val="264">22年(264期)</li>
-                                        <li class val="276">23年(276期)</li>
-                                        <li class val="288">24年(288期)</li>
-                                        <li class val="300">25年(300期)</li>
-                                        <li class val="312">26年(312期)</li>
-                                        <li class val="324">27年(324期)</li>
-                                        <li class val="336">28年(336期)</li>
-                                        <li class val="348">29年(348期)</li>
-                                        <li class val="360">30年(360期)</li>
-                                    </ol>
-                                </div>
-                            </dd>
-                        </dl>
-                        <a id="ygbtn" class="btn_start pie btn">开始计算</a><a href="https://house.08cms.com/tools/index" class="btn more-btn" target="_blank">更多</a>
-                        <div class="house_yuegong_result house_yuegong_result_left mt20">
-                            <p id="lilv_txt">
-                                (
-                                <span>利率商业性4.90%</span>
-                                )
-                            </p>
-                            <p>备注：以等额本息计算结果，数据仅供参考</p>
-                        </div>
-                    </div>
-                    <div class="house_yuegong_show">
-                        <div id="bingtu" style="min-width:480px; height:400px;"></div>
-                        <div class="house_yuegong_result">
-                            <div>
-                                参考首付
-                                <span id="cksf2" class="C2487e4"></span>
-                                万元
-                            </div>
-                            <div>
-                                月均还款
-                                <span id="ckyg2" class="Cff802b"></span>
-                                元
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/参考月供-->
-            <div id="zbpt">
-                    <div class="big-map-wrap">
-        <div class="map-wrap">
-            <div class="lp-coltit clearfix">
-                <h3>地图</h3>
-                                    <div class="map-label map-label01">
-                        <ul js="clearSonAttr">
-                            <li class="mLabel-li label-li active" data-map-reset="1">
-                                <div class="icon-text">
-                                    <span class="round">
-                                        <i class="font-lp-48"></i>
-                                    </span>
-                                    <i search-flag="school">原点</i>
-                                </div>
-                            </li>
-                            <li class="mLabel-li label-li">
-                                <div class="icon-text" data-btn-panorama="1">
-                                    <span class="round">
-                                        <i class="font-lp-52 tu"></i>
-                                    </span>
-                                    <i class="txt">街景地图</i>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                            </div>
-                                                        <div class="map-label">
-                    <ul>
-
-                                                <li class="mLabel-li label-li" data-map-local-search="{name: '学校'}">
-                            <div class="icon-text">
-                                <span class="round">
-                                    <i class="font-lp-42 tu"></i>
-                                </span>
-                                <i class="txt">学校</i>
-                            </div>
-                        </li>
-                                                <li class="mLabel-li label-li" data-map-local-search="{name: '医院'}">
-                            <div class="icon-text">
-                                <span class="round">
-                                    <i class="font-lp-43 tu"></i>
-                                </span>
-                                <i class="txt">医院</i>
-                            </div>
-                        </li>
-                                                <li class="mLabel-li label-li" data-map-local-search="{name: '银行'}">
-                            <div class="icon-text">
-                                <span class="round">
-                                    <i class="font-lp-44 tu"></i>
-                                </span>
-                                <i class="txt">银行</i>
-                            </div>
-                        </li>
-                                                <li class="mLabel-li label-li" data-map-local-search="{name: '餐饮'}">
-                            <div class="icon-text">
-                                <span class="round">
-                                    <i class="font-lp-45 tu"></i>
-                                </span>
-                                <i class="txt">餐饮</i>
-                            </div>
-                        </li>
-                                                <li class="mLabel-li label-li" data-map-local-search="{name: '购物'}">
-                            <div class="icon-text">
-                                <span class="round">
-                                    <i class="font-lp-46 tu"></i>
-                                </span>
-                                <i class="txt">购物</i>
-                            </div>
-                        </li>
-                        
-                        <li class="mLabel-li mLabel-more" style="margin-bottom: 0px; border-bottom: 0px; border-right: 0px; background: none;">
-                            更多
-                            <i class="img-lp-11"></i>
-                            <i class="img-lp-10"></i>
-
-                            <ul>
-                                                                    <li class="mLabel-li label-li" data-map-local-search="{name: '公园'}">
-                                        <div class="icon-text">
-                                            <span class="round">
-                                                <i class="font-lp-49 tu"></i>
-                                            </span>
-                                            <i search-flag="school" class="txt">公园</i>
-                                        </div>
-                                    </li>
-                                                                    <li class="mLabel-li label-li" data-map-local-search="{name: '机场'}">
-                                        <div class="icon-text">
-                                            <span class="round">
-                                                <i class="font-lp-50 tu"></i>
-                                            </span>
-                                            <i search-flag="school" class="txt">机场</i>
-                                        </div>
-                                    </li>
-                                                                    <li class="mLabel-li label-li" data-map-local-search="{name: '加油站'}">
-                                        <div class="icon-text">
-                                            <span class="round">
-                                                <i class="font-lp-51 tu"></i>
-                                            </span>
-                                            <i search-flag="school" class="txt">加油站</i>
-                                        </div>
-                                    </li>
-                                                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                
-                                <div class="assort-distance">
-                    <i class="img-lp-9" data-close-btn="1" data-closeex="{target: '.assort-distance', showTarget: '.assort-distance-btn'}"></i>
-                    <div data-map-list-title="1"></div>
-                    <div id="map-list" data-map-list="1"></div>
-                </div>
-                <div class="assort-distance-btn"><i class="font-lp-52"></i>显示列表</div>
-                                    <div class="show" data-map="{
-                    redraw: false,
-                    point: {
-                        lng: 113.806696,
-                        lat: 23.038504
-                    },
-                    minZoom: 14,
-                    zoom: 13
-                }" data-marker-lists="{
-                        tpl:  '#tpl-14',
-                        data:  [                                    {
-                                        disableMassClear: 1,
-                                        name: '富士康将入住增城，盈翠雅筑单价才1万起买旅游景区别墅，你懂的',
-                                        id: '243',
-                                        polyline: '',
-                                        models: 'sale',
-                                        dj: '11502',
-                                        czj: '',
-                                        point: {
-                                            lng: 113.806696,
-                                            lat: 23.038504
-                                        }
-                                    }
-                                ]
-                    }">
-            </div>
-            <div class="vista-wrap">
-                <div data-panorama="1" class="vista"></div>
-            </div>
-        </div>
-    </div>
-        <script id="tpl-14" type="text/html">
-        <div class="marker-item" data-item="<%= id %>" data-map-item="<%= id %>" data-polyline="<%= polyline %>">
-            <span data-name="1" class="name"><%= name %></span>
-                <% if (models == 'rent'){ %>
-                    <span data-name-sub="1" class="name-sub"><%= czj * 1 ? czj + '元/月': name %></span>
-                <%} else { %>
-                    <span data-name-sub="1" class="name-sub"><%= dj * 1 ? dj + '元/m&sup2;': name %></span>
-                <% } %>
-            <span class="arrow"></span>
-        </div>
-    </script>
-                <script type="text/javascript">
-        seajs.use(['mapSimple'], function(mapSimple) {
-                            // 没有街景实例时初始化
-                mapSimple.panoInit($('[data-panorama]')[0], function(data) {
-                    // 街景信息不存在表示没有街景
-                    if (!data) {
-                        $('[data-btn-panorama="1"]').hide();
-                    }
-                });
-                // 街景按钮
-                $('[data-btn-panorama="1"]').on('click', function() {
-                    // 街景外框vista-wrap
-                    $('.vista-wrap').show();
-                    mapSimple.panoAction('show');
-                });
-
-                                        $('[data-map-reset]').on('click', function() {
-                    if ($('.vista-wrap').is(':visible')) {
-                        $('.vista-wrap').hide();
-                        mapSimple.panoAction('hide');
-                    }
-                })
-                // 周边按钮
-                var $labelLi = $('.label-li');
-                $labelLi.on('click', function() {
-                    $labelLi.removeClass('active');
-                    $(this).addClass('active');
-                    $('.assort-distance-btn').click();
-                });
-                    });
-        </script>
-    
-            </div>
-            <div class="laybox mt40 clearfix">
-                <div class="allbigtit">富盈公馆成交记录</div>
-                <div class="hxtit"><span class="ws6">房源信息</span><span class="ws5">房源面积</span><span class="ws5">成交时间</span><span class="ws5">成交总价</span><span class="ws5">成交均价</span><span class="ws5">信息来源</span></div>
-                <div class="cjlist">
-                    <ul>
-                                                    <li>
-                                <div class="img">
-                                    <a href="https://house.08cms.com/esf/detail/210.html" target="__blank">            <img alt="富盈公馆，配套成熟。交通便利。轻轨旁。有学位" width="150" height="100" src="images/9dab1c5421c2406fa6f2b9cf247c4d47.jpg">
-    </a>
-                                </div>
-                                <div class="txt">
-                                    <div class="s1">
-                                        <h3>3室2厅1卫</h3>
-                                            <p>高层</p>
-                                        <p>南北通透</p>
-                                    </div>
-                                    <span class="ws5">99m&sup2;
-                                    </span>
-                                    <span class="ws5">-</span>
-                                    <span class="ws5">108万</span>
-                                    <span class="ws5">                    10909元/m&sup2;</span>
-                                    <span class="ws5">08CMS房产门户系统[东莞]</span>
-                                </div>
-                            </li>
-                                            </ul>
-                                                                <div class="moretr"><a href="https://house.08cms.com/sale/saledeal?id=60" target="_blank" class="gray9">查看全部成交记录&gt;</a></div>
-                                    </div>
-            </div>
-
-                        <!--价格趋势-->
-            <div class="panel" id="jgzs">
-                <!--title-->
-                <div class="panel-hd">
-                    <h2>价格趋势</h2>
-                </div>
-                <!--/title-->
-                <!--body-->
-                                                <div class="panel-bd bd-gray">
-                    <div class="average_price">
-                        <p>
-                            <b>本月均价：</b>
-                            <span id="coavg">7000</span>
-                            元/㎡
-                        </p>
-                        <p>
-                            <b>环比上月：</b>
-                                                            <i id="cotremark">
-                                                                            <i class="price_0"></i>
-                                                                    </i>
-                                <i id="cotre">0</i>%
-                                                    </p>
-                    </div>
-                            <div id="zst"></div><script type="text/javascript">
-                                                            var zstMouth = [                                                                                "2017-01",
-                                                                                                            "2017-01",
-                                                                                                            "2017-01",
-                                                                        ];
-                                        var dzstDta = [
-                                                                                                    ["2017-01-06", 7000],
-                                                                                                            ["2017-01-06", 7000],
-                                                                                                            ["2017-01-06", 7000],
-                                                                        ];
-
-                    var jsonData = {
-                        "title": "",
-                        "series": [
-                        {
-                            "name": "富盈公馆",
-                            "datatype": "house",
-                            "data": dzstDta.reverse()
-                        }
-                        ],
-                        "color": ["#ee4433", "#F8CE5D", "#339966"],
-                        "month_s": zstMouth.reverse()
-                    };
-                    seajs.use(['zst'], function (zst) {})
-                </script>
-                </div>
-            </div>
             
-                            <div class="panel" id="ssxq"><!--title--><div class="panel-hd"><h2>小区信息</h2></div><!--/title--><!--body--><div class="panel-bd bd-gray"><ul class="unity_data clearfix"><li><b>小区名称: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><a target="_blank" href="https://house.08cms.com/xiaoqu/qdetail/60.html"><span class="Cf50">富盈公馆</span></a></li><li><b>所属区域: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><span>中堂镇</span></li><li><b>小区地址: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><span>
-                                 [ 中堂镇 ] 中堂北王西路东侧（江南农批斜对面)
-                            </span></li><li><b>学区所属: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><span>东莞外国语学校</span></li><li><b>物业公司: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><span>北京华野家园物业管理公司</span></li><li><b>建筑面积: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><span class>80</span>m&sup2;
-                        </li><li><b>竣工日期: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><span></span></li><li><b>绿化率: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><span>33%</span></li><li><b>在售房源: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><span>2套</span></li><li><b>在租房源: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><span>-</span></li></ul></div><!--/body--></div>
-
                                             <script type="text/javascript">
             seajs.use(['jqduang'], function (jqduang) {})
         </script>
@@ -1035,87 +305,7 @@ seajs.use([
             seajs.use(['jqduang'], function (jqduang) {})
         </script>
         </div>
-
-                                        <!--aside-->
-    <div class="side">
-                <!-- 最近浏览过的房子 -->
-        <div data-browser-recored="1" data-config="{models: 'sale', tpl: '#record', field: 'name,mj,zj'}">
-                    </div>
-        <script id="record" type="text/html">
-            <h2 class="s-title">最近浏览过的房子</h2>
-            <div class="s-look">
-                <ul>
-                <% for(var i = 0; i < data.length; i++){ %>
-                    <li>
-                        <i></i>
-                        <a class="left" href="<%= data[i].url%>" target="_blank" title="<%= data[i].name%>"><%= data[i].name%></a>
-                        <span class="middle"><%= data[i].mj%><b>m&sup2;</b></span>
-                        <span class="right"><%= data[i].zj%><b>万</b></span>
-                    </li>
-                    <% } %>
-                </ul>
-            </div>
-        </script>
-        <script type="text/javascript">
-            seajs.use(['browserRecord'], function (browserRecord){
-                browserRecord.init({
-                    url: 'https://house.08cms.com/viewinter/record'
-                });
-            });
-        </script>
-
-                
-                                                                             
-
-                <!-- 最新二手房 -->
-                <h2 class="s-title">最新二手房</h2>
-        <div class="s-new">
-            <ul>
-                                                            <li>
-                            <a class="name" href="/esf/detail/226.html" target="_blank">            <img alt="合盛盈翠雅筑团购10万抵30万，低首付买景区叠加别墅 送农田" width="210" height="158" src="images/ae5a1816cb34b9d075b55299905414dd.jpg">
-    </a>
-                            <p>
-                                <a class="name" title="合盛盈翠雅筑团购10万抵30万，低首付买景区叠加别墅 送农田" href="/esf/detail/226.html" target="_blank">合盛盈翠雅筑团购10┈</a>
-                                <span class="money"><span class>135</span>万</span>
-                            </p>
-                            <p>
-                                <span class="left"><span class>146</span>m&sup2;</span>
-                                <span class="right">
-                                    4室2厅5卫                                </span>
-                            </p>
-                        </li>
-                                            <li>
-                            <a class="name" href="/esf/detail/224.html" target="_blank">            <img alt="急急急鼎峰源著520万6室2厅6卫双车位大花园业主低价出售" width="210" height="158" src="images/1929341da3dc6ebee9c578a84a8d14bd.jpg">
-    </a>
-                            <p>
-                                <a class="name" title="急急急鼎峰源著520万6室2厅6卫双车位大花园业主低价出售" href="/esf/detail/224.html" target="_blank">急急急鼎峰源著520┈</a>
-                                <span class="money"><span class>520</span>万</span>
-                            </p>
-                            <p>
-                                <span class="left"><span class>273</span>m&sup2;</span>
-                                <span class="right">
-                                    6室2厅5卫                                </span>
-                            </p>
-                        </li>
-                                            <li>
-                            <a class="name" href="/esf/detail/222.html" target="_blank">            <img alt="钜隆碧水湾，带精装修高性价比公寓，享小区成熟配套，快点进来" width="210" height="158" src="images/7bc5d269ceb208382bd4e1f70a64865d.jpg">
-    </a>
-                            <p>
-                                <a class="name" title="钜隆碧水湾，带精装修高性价比公寓，享小区成熟配套，快点进来" href="/esf/detail/222.html" target="_blank">钜隆碧水湾，带精装修┈</a>
-                                <span class="money"><span class>36</span>万</span>
-                            </p>
-                            <p>
-                                <span class="left"><span class>41</span>m&sup2;</span>
-                                <span class="right">
-                                    1室1厅1卫                                </span>
-                            </p>
-                        </li>
-                                                </ul>
-        </div>
-
-        <!-- 同楼盘二手房推荐 -->
-            </div>
-    <!--/aside-->
+      
     </div>
     <div class="blank20"></div>
 
@@ -1130,114 +320,18 @@ seajs.use([
 <!--footer-->
 <div class="footer">
     <div class="container">
-        <div data-tag="dblp,dbes,dbsy,dbzx,dbgj,dbewm" class="footer-nav clearfix">
-                                <dl><dt>楼盘</dt><dd><a href="http://www.126.com" target="_blank">
-                            区域价值逐步落地 南城未来已来！
-                        </a><a href="https://house.08cms.com/news/detail/917_1.html" target="_blank">
-                            田禾卢浮公馆均
-                        </a><a href="https://house.08cms.com/news/detail/925_1.html" target="_blank">
-                            南部湾万科城在售四期3#洋房
-                        </a><a href="https://house.08cms.com/news/detail/923_1.html" target="_blank">
-                            大道松山湖已开盘
-                        </a><a href="https://house.08cms.com/news/detail/922_1.html" target="_blank">
-                            碧桂园天誉在售95-145㎡洋房
-                        </a></dd></dl>
-                                <dl><dt>二手</dt><dd><a href="https://house.08cms.com/news/detail/791_1.html" target="_blank">
-                            二手房买卖流程
-                        </a><a href="https://house.08cms.com/news/detail/1114_1.html" target="_blank">
-                            虎门国际公馆小区 复
-                        </a><a href="https://house.08cms.com/news/detail/1113_1.html" target="_blank">
-                            准备好钱
-                        </a><a href="https://house.08cms.com/news/detail/1112_1.html" target="_blank">
-                            推送测试
-                        </a><a href="https://house.08cms.com/news/detail/1004_1.html" target="_blank">
-                            2月全国房地产开发景气指数比去年同期高1...
-                        </a></dd></dl>
-                                <dl><dt>商业</dt><dd><a href="https://house.08cms.com/news/detail/921_1.html" target="_blank">
-                            光明国际预计2019年6月交房
-                        </a><a href="https://house.08cms.com/news/detail/918_1.html" target="_blank">
-                            汇龙湾·天樾购房可享99折优惠
-                        </a><a href="https://house.08cms.com/news/detail/917_1.html" target="_blank">
-                            aa田禾卢浮公馆均价14000元/㎡
-                        </a><a href="https://house.08cms.com/news/detail/910_1.html" target="_blank">
-                            各地保障房建设进度不乐观
-                        </a><a href="https://house.08cms.com/news/detail/888_1.html" target="_blank">
-                            北京城建•世华泊郡优惠活动季之披萨DIY
-                        </a></dd></dl>
-                                <dl><dt>资讯</dt><dd><a href="https://house.08cms.com/news/detail/763_1.html" target="_blank">
-                            合同陷阱
-                        </a><a href="https://house.08cms.com/news/detail/767_1.html" target="_blank">
-                            付款方式
-                        </a><a href="https://house.08cms.com/news/detail/768_1.html" target="_blank">
-                            收房流程
-                        </a><a href="https://house.08cms.com/news/detail/769_1.html" target="_blank">
-                            如何验收房屋
-                        </a><a href="https://house.08cms.com/news/detail/770_1.html" target="_blank">
-                            收房验房知识四步走
-                        </a></dd></dl>
-                                <dl><dt>工具</dt><dd><a href="https://house.08cms.com/news/detail/502_1.html" target="_blank">
-                            农地两权抵押试点探索多层风控机制
-                        </a><a href="https://house.08cms.com/news/detail/787_1.html" target="_blank">
-                            物业纠纷
-                        </a><a href="https://house.08cms.com/news/detail/1004_1.html" target="_blank">
-                            2月全国房地产开发景气指数比去年同期高1...
-                        </a></dd></dl>
-            <dl class="download-mobile">
-                <dt>扫一扫</dt>
-                <dd>
-                                            <p>
-                            <span data-qrcode="1" data-text="https://house.08cms.com/download" data-logo="https://house.08cms.com/bundles\house\images\defaultlog\6.png" data-size="100"></span><br>
-                            Android下载
-                        </p>
-                                                            <p>
-                            <span><img src="https://open.weixin.qq.com/qr/code?username=house08cms" alt="house08cms" style="height: 100px; width: 100px; display: inline-block;"></span><br>扫一扫，关注微信
-                    </p>
-                </dd>
-            </dl>
-        </div>
-        
-
-<div class="blank20"></div>
 <div class="container">
-    <div class="web-info">
-        <a target="_blank" href="https://house.08cms.com/map/list">网站地图</a> |
-                                                                                                                                                                    <a target="_blank" href="https://house.08cms.com/service/detail/135.html">联系我们</a>
-                        |
-                                            <a target="_blank" href="https://house.08cms.com/service/detail/136.html">关于我们</a>
-                        |
-                                            <a target="_blank" href="https://house.08cms.com/service/detail/137.html">免责声明</a>
-                        |
-                                                                                                                                                                        <a target="_blank" href="https://house.08cms.com/service/ask/12">在线提问</a>
-                    |
-                                                                                                                                                    <a target="_blank" href="https://house.08cms.com/service/list/8">帮助指南</a>
-                    |
-                                                                                                                                                    <a target="_blank" href="https://house.08cms.com/service/list/11">网站公告</a>
-                    |
-                                                                                                                                                    <a target="_blank" href="https://house.08cms.com/service/list/10">广告服务</a>
-                    |
-                                            <a target="_blank" href="https://house.08cms.com/download">手机版</a>
-
-    </div>
     <div class="copy-right">
-        <p class="copy">Copyright &copy; 2010-2020 <a href="http://www.08cms.com">08cms.com</a> All rights reserved.</p>
-        
+        <p class="copy">Copyright &copy; 2010-2020 <a href="index.html">516安居天下</a> All rights reserved.</p>
     </div>
 </div>
     </div>
-</div>
-
-<div class="floatLeftLink">
-    <a href="https://house.08cms.com/yushouzheng" target="_blank ">
-                    <img src="images/yusz.png">
-    
-    </a>
 </div>
 <!--/footer-->
-    
             <script type="text/javascript">
             seajs.use(['common'], function() {});
         </script>
-        
+                                                                                                  
     <script type="text/javascript">
     seajs.use(['gftools', 'browserRecord'], function (gftools, browserRecord) {
         $.yg_func();
@@ -1254,4 +348,122 @@ seajs.use([
         <i class="font-icons-33"></i>
     </div>
                     </body>
+
+
 </html>
+
+<script>
+    var id;
+    $(function () {
+        details();
+    })
+
+    function details() {
+        
+        var path = this.location.href;
+        var index = path.indexOf("=");
+        id = path.substr(index + 1);
+        var time = new Date();
+        var year = time.getFullYear();
+        var month = time.getMonth() + 1;
+        var day = time.getDate();
+        if (id == null || id == "") {
+            alert("请选择房源进行查看！");
+            location.href = '/SHouse.html';
+        }
+        $.ajax({
+            url: 'https://localhost:44335/api/SecondHouse/GetSecondHouseById?id=' + id,
+            type: 'get',
+            dataType:'json',
+            success: function (d) {
+                console.log(d);
+                $("#data").empty();
+                $(d).each(function () {
+                    $("#lable").empty();
+                    $("#lable").text(this.houseInfo);
+                    var line = '<div class="tit-wrap clearfix">'
+                        + '<h1 id="title">' + this.houseInfo + '</h1>'
+                        + ' <div class="olorg clearfix">'
+                        + '   <div class="fl c-888">'
+                        + '     更新时间:<span id="time">' + year + '-' + month + '-' + day + '</span>'
+                        + ' </div><div class="fl c-888 ml30">'
+                        + '    点击: <span id="accessCount">' + this.houseNumber + '</span>次'
+                        + ' </div>'
+                        + ' </div>'
+                        + ' </div>'
+                        + ' <div class="blank20"></div>'
+                        + ' <div class="preview fl jqDuang" data-trigger="click" data-obj=".item" data-cell=".s-item ul" data-prevbtn=".b-left" data-nextbtn=".b-right" data-autoplay="0" data-lazyload="src">'
+                        + '<div class="item show-big" data-index="0">'
+                        + '  <img id="houseImage" width="690" height="440" src="' + this.houseImage + '">'
+                        + ' </div>'
+                        + '</div>'
+                        + '<div class="detail-info fr">'
+                        + '  <div class="info-price">'
+                        + ' <span class="price" id="housePrice">' + parseInt(this.housePrice * this.houseArea / 10000) + '</span>万'
+                        + '<span class="tips">'
+                        + ' 首付预算约<span id="cksf">' + (parseFloat(this.housePrice * this.houseArea / 10000 * 0.3)).toFixed(2) + '</span>万元'
+                        + '</span>'
+                        + ' </div>'
+                        + ' <div class="info-line clearfix">'
+                        + ' <div class="info-line-item">'
+                        + ' <div class="item-value" id="houseType">' + this.hType + '</div>'
+                        + '<div class="item-title">户型'
+                        + '</div>'
+                        + '  </div>'
+                        + '  <div class="info-line-item">'
+                        + '    <div class="item-value">'
+                        + '   <span id="houseSize">' + this.houseArea + '</span>m&sup2;'
+                        + ' </div>'
+                        + ' <div class="item-title"> 建筑面积'
+                        + '</div>'
+                        + ' </div>'
+                        + ' <div class="info-line-item">'
+                        + '   <div class="item-value">'
+                        + '   <span id="price">' + this.housePrice + '元</span> /m&sup2;'
+                        + '  </div>'
+                        + '<div class="item-title">   单价'
+                        + ' </div>'
+                        + ' </div>'
+                        + '   </div>'
+                        + ' <div class="info-line clearfix">'
+                        + ' <div class="info-line-item">'
+                        + ' <div class="item-value"> 南北通透'
+                        + '  </div>'
+                        + ' <div class="item-title">朝向'
+                        + ' </div>'
+                        + '  </div>'
+                        + '<div class="info-line-item">'
+                        + '  <div class="item-value"><span id="houseGradation">' + this.houseGradation + '</span>层</div>'
+                        + '   <div class="item-title">'
+                        + '     楼层(共<span id="houseSum">' + this.houseSum + '</span>层)'
+                        + ' </div>'
+                        + '   </div>'
+                        + '   <div class="info-line-item">'
+                        + '     <div class="item-value"> 精装修'
+                        + ' </div>'
+                        + ' <div class="item-title"> 装修'
+                        + ' </div>'
+                        + '  </div>'
+                        + ' </div>'
+                        + ' <div class="info-line">'
+                        + '  <div class="info-line-item2">'
+                        + '     <span class="item2-title"> 小区'
+                        + '</span>'
+                        + ' <span class="item2-value">'
+                        + '  <a href="#" id="houseName">' + this.houseName + '</a>'
+                        + '   </span>'
+                        + '  </div>'
+                        + '  <div class="info-line-item2">'
+                        + '   <span class="item2-title">地址'
+                        + '  </span>'
+                        + ' <span class="item2-value" id="houseAddress">' + this.houseSite
+                        + ' </span>'
+                        + ' </div>'
+                        + '  </div>'
+                        + '</div>'
+                    $("#data").append(line);
+                })
+            }
+        })
+    }
+</script>

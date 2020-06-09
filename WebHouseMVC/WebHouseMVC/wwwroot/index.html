@@ -5,63 +5,62 @@
 
 
 
-    <head>
-        <meta charset="UTF-8">
-                <meta name="renderer" content="webkit">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-                <title>516安居天下</title>
-        <meta name="keywords" content="">
-<meta name="description" content="。">
-                    <link rel="icon" sizes="16x16" href="favicon.ico">
-                    
-                                <script>
-                var liveBase = false;
-                var CSRF_TOKEN  = "KtMvfmDew-gfIUcsNeMeQJZmxA2MCGbWmykZpueoSj4";
-                var jsbase      = "/bundles";
-                var BASE_URL    = "/";
-                var BUNDLE_PATH = "house"; // 主bundle路径 `house`
-                var REMOTE_URL  = ""; // 远程图片路径拼接
-                var VERSION     = '8.5.0.0';
-                // 供百度兼容https使用
-               var HOST_TYPE   = 2;
-               var MAPKEY = 'LFxVWrzLtIWBOINDI25iituw7MirSZKk'
-            </script>
-            <link rel="stylesheet" href="css/ats.css">
-            
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/im.css">
-            <link rel="stylesheet" href="css/index.css">
-                            <script type="text/javascript" src="js/seajs.js"></script>
-                        <script type="text/javascript" src="js/seajs.cfg.js"></script>
-<script type="text/javascript">
-var web = "frontEnd"; //前台
-seajs.use([
-    'jqhoverS',
-    'fixed',
-    'common'
-], function(jqHoverS, fixed, common) {
-    $(function() {
-        // console.log('执行。。。');
-        // 调用统计
-        common.getcounts({
-            url: 'https://house.08cms.com/igetcounts'
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>516安居天下</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="。">
+    <link rel="icon" sizes="16x16" href="favicon.ico">
+
+    <script>
+        var liveBase = false;
+        var CSRF_TOKEN = "KtMvfmDew-gfIUcsNeMeQJZmxA2MCGbWmykZpueoSj4";
+        var jsbase = "/bundles";
+        var BASE_URL = "/";
+        var BUNDLE_PATH = "house"; // 主bundle路径 `house`
+        var REMOTE_URL = ""; // 远程图片路径拼接
+        var VERSION = '8.5.0.0';
+        // 供百度兼容https使用
+        var HOST_TYPE = 2;
+        var MAPKEY = 'LFxVWrzLtIWBOINDI25iituw7MirSZKk'
+    </script>
+    <link href="css/ats.css" rel="stylesheet" />
+    <link href="css/global.css" rel="stylesheet" />
+    <link href="css/im.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <script src="js/seajs.js"></script>
+    <script src="js/seajs.cfg.js"></script>
+    <script type="text/javascript">
+        var web = "frontEnd"; //前台
+        seajs.use([
+            'jqhoverS',
+            'fixed',
+            'common'
+        ], function (jqHoverS, fixed, common) {
+            $(function () {
+                // console.log('执行。。。');
+                // 调用统计
+                common.getcounts({
+                    url: 'https://house.08cms.com/igetcounts'
+                });
+                // 广告统计
+                common.adcount({
+                    saveUrl: 'https://house.08cms.com/viewinter/vote'
+                });
+                // 表单处理
+                common.form({
+                    ajax: {
+                        // 获取表单的默认地址
+                        url: 'https://house.08cms.com/bundlebindforms/ajaxform',
+                    }
+                })
+            })
         });
-        // 广告统计
-        common.adcount({
-            saveUrl : 'https://house.08cms.com/viewinter/vote'
-        });
-        // 表单处理
-        common.form({
-            ajax: {
-                // 获取表单的默认地址
-                url: 'https://house.08cms.com/bundlebindforms/ajaxform',
-            }
-        })
-    })
-});
-</script>
-                            
-    </head>
+    </script>
+
+</head>
     <body>
         <!--header-->
         <div class="header scrollToFixed clearfix" data-spacer-class="header-spacer">
@@ -142,111 +141,14 @@ seajs.use([
                     });
                 </script>
 
-                <script id="logintpl" type="text/html">
-                    <% if (data.loginstate == 1) { %>
-                    <div class="login-in">
-                        <div class="login-info">
-                            <a href="https://house.08cms.com/main" target="_blank">
-                                <i class="font-icons-2"></i> <span><%= data.name %></span> <i class="font-icons-1"></i>
-                            </a>
-                        </div>
-                        <ul class="login-operate login-btn">
-                            <% if(data.type == 'MemberBundle') { %>
-                            <li>
-                                <a href="https://house.08cms.com/main#/guanzhufangyuan" title="我的收藏" target="_blank">
-                                    <i class="font-icons-3"></i>
-                                    我的收藏
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://house.08cms.com/main#/usersale" title="我要发布" target="_blank">
-                                    <i class="font-icons-5"></i>
-                                    我要发布
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://house.08cms.com/member_main" title="会员中心" target="_blank">
-                                    <i class="font-icons-6"></i>
-                                    会员中心
-                                </a>
-                            </li>
-                            <% } else { %>
-                            <li>
-                                <a href="https://house.08cms.com/main" title="后台管理" target="_blank">
-                                    <i class="font-icons-6"></i>
-
-                                    后台管理
-                                </a>
-                            </li>
-                            <% } %>
-                            <li>
-                                <a data-logout="1" href="javascript:;" title="安全退出">
-                                    <i class="font-icons-7"></i>
-                                    安全退出
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <% } else { %>
-                    <div class="login-out">
-                        <div class="login-out-btn">
-                            <a href="https://house.08cms.com/login" data-modal=".winlogin" title="登录">
-                                <i class="font-icons-2"></i>登录
-                            </a>
-                            <a href="https://house.08cms.com/register" title="注册" target="_blank">
-                                <i class="font-icons-30"></i>注册
-                            </a>
-                        </div>
-                        <ul class="login-quick login-btn">
-                            <li>
-                                <a href="https://house.08cms.com/connect/qq">
-                                    <i class="font-icons-38 qq"></i>
-                                    QQ登录
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <% } %>
-                </script>
+                
             </div>
         </div>
         <!--/header-->
         <!-- img slide -->
 
         <div id="slider-wrap" class="slider-wrap2" data-tag="jdt">
-            <!-- 表单2 start -->
-            <!--<div class="index-search">
-                <div class="commcent">
-                    <div class="common-search">
-                        <form action="https://house.08cms.com/xinfang" target="_blank">
-                            <div class="s-cate">
-                                <span><i>新房</i><em class="font-icons-26"></em></span>
-                                <div>
-                                    <p>
-                                        <span data-href="https://house.08cms.com/xinfang" data-left="102" data-pama="{" searchword":"请输入楼盘名称 /地址/拼音"}">新房</span>
-                                        <span data-href="https://house.08cms.com/esf" data-left="40" data-pama="{" searchword":"请输入二手 /小区"}">二手房</span>
-                                        <span data-href="https://house.08cms.com/zu" data-left="150" data-pama="{" searchword":"请输入出租 /小区"}">租房</span>
-                                        <span data-href="https://house.08cms.com/news/list" data-pama="{" searchword":"请输入资讯关键字", "autocomplete" : 0}">资讯</span>
-                                        <span data-href="https://house.08cms.com/xiaoqu" data-pama="{" searchword":"请输入小区关键字", "autocomplete" : 0}">查小区</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="s-txt">
-
-
-                                <input type="text" name="name" class="search-input fl" placeholder="请输入楼盘名称/地址/拼音" data-autocomplete="1" data-placeholder="1">
-
-
-                            </div>
-                            <div class="s-btn">
-                                <input type="submit" value="&#xEA0F;" class="search-btn fl font-service-search">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>-->
-            <!-- 表单2 End -->
+            
 
             <div class="jqDuang ma" data-duang="1" data-cell=".small-btn" data-nextbtn=".next-btn" data-prevbtn=".prev-btn" data-obj=".slider">
                 <div class="slider-content">

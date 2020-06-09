@@ -23,13 +23,12 @@
         var HOST_TYPE = 2;
         var MAPKEY = 'LFxVWrzLtIWBOINDI25iituw7MirSZKk'
     </script>
-    <link rel="stylesheet" href="css/ats.css">
-
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/im.css">
-    <link rel="stylesheet" href="css/salecss.css">
-    <script type="text/javascript" src="js/seajs.js"></script>
-    <script type="text/javascript" src="js/seajs.cfg.js"></script>
+    <link href="css/ats.css" rel="stylesheet" />
+    <link href="css/global.css" rel="stylesheet" />
+    <link href="css/im.css" rel="stylesheet" />
+    <link href="css/salecss.css" rel="stylesheet" />
+    <script src="js/seajs.js"></script>
+    <script src="js/seajs.cfg.js"></script>
     <script type="text/javascript">
         var web = "frontEnd"; //前台
         seajs.use([
@@ -1487,11 +1486,11 @@
                     var line = '<div class="sale-list-item sale-list-ex">' +
                         '<div class="sale-item-l">' +
                         '<div class="sale-item-img">' +
-                        '<a href="" target="_blank">' +
+                        '<a href="/SHouseDetails.html?id=' + this.id + '" target="_blank">' +
                         '<img alt="" width="180" height="135" class="lazy" data-original="images/c672d3c0410bc4ab9752930cc91c4e80.png" src="/' + this.houseImage + '"></a></div>' +
                         '<div class="sale-item-text">' +
                         '<h3>' +
-                        '<a href="" target="_blank">' + this.houseInfo + '</a>' +
+                        '<a href="/SHouseDetails.html?id=' + this.id + '" target="_blank">' + this.houseInfo + '</a>' +
                         '</h3>' +
                         '<p>' +
                         '<a class="mr5 c-e43" href="" target="_blank">' + this.houseName + '</a>' +
