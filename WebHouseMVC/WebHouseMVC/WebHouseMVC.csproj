@@ -5,7 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Hxlimage\" />
+    <Compile Remove="wwwroot\Hxlimage\**" />
+    <Content Remove="wwwroot\Hxlimage\**" />
+    <EmbeddedResource Remove="wwwroot\Hxlimage\**" />
+    <None Remove="wwwroot\Hxlimage\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -13,25 +16,13 @@
     <None Include="wwwroot\images\8bda255e37814d1fad70e54a1df2d192_erweima.png" />
     <None Include="wwwroot\images\t011c2153df45254adc.jpg" />
     <None Include="wwwroot\images\特色三.jpg" />
+    <None Include="wwwroot\css\jq22.css" />
+    <None Include="wwwroot\js\emailAutoComplete.js" />
     <None Include="wwwroot\js\jquery.min.js" />
-    <None Include="wwwroot\js\qrcodes.js" />
+    <None Include="wwwroot\js\reqrcode.js" />
     <None Include="wwwroot\NewHouse.html" />
     <None Include="wwwroot\ShowHouse.html" />
-    <Content Remove="wwwroot\boot\bootstrap-datetimepicker.min.css" />
-    <Content Remove="wwwroot\boot\bootstrap-datetimepicker.min.js" />
-    <Content Remove="wwwroot\boot\bootstrap-table-pagejump.css" />
-    <Content Remove="wwwroot\boot\bootstrap-table-pagejump.js" />
-    <Content Remove="wwwroot\boot\bootstrap-table-resizable.js" />
-    <Content Remove="wwwroot\boot\bootstrap-table-zh-CN.min.js" />
-    <Content Remove="wwwroot\boot\bootstrap-table.min.css" />
-    <Content Remove="wwwroot\boot\bootstrap-table.min.js" />
-    <Content Remove="wwwroot\boot\bootstrap.min.css" />
-    <Content Remove="wwwroot\boot\bootstrap.min.js" />
-    <Content Remove="wwwroot\boot\colResizable-1.6.min.js" />
-    <Content Remove="wwwroot\boot\jquery-3.2.1.min.js" />
-    <Content Remove="wwwroot\boot\moment.js" />
     <Content Remove="wwwroot\css\ats.css" />
-    <Content Remove="wwwroot\css\dragverify.css" />
     <Content Remove="wwwroot\css\global.css" />
     <Content Remove="wwwroot\css\im.css" />
     <Content Remove="wwwroot\css\index.css" />
@@ -54,9 +45,10 @@
     <Content Remove="wwwroot\imgVer\jquery.min.js" />
     <Content Remove="wwwroot\imgVer\sprite.3.2.0.png" />
     <Content Remove="wwwroot\imgVer\style.css" />
-    <Content Remove="wwwroot\js\dragverify.js" />
+    <Content Remove="wwwroot\js\emailAutoComplete.js" />
+    <Content Remove="wwwroot\js\jq22.css" />
     <Content Remove="wwwroot\js\jquery.min.js" />
-    <Content Remove="wwwroot\js\qrcodes.js" />
+    <Content Remove="wwwroot\js\reqrcode.js" />
     <Content Remove="wwwroot\js\seajs.cfg.js" />
     <Content Remove="wwwroot\js\seajs.js" />
 	 <Content Remove="wwwroot\favicon.ico" />
@@ -68,7 +60,6 @@
     <Folder Include="images\" />
     <Folder Include="Images\" />
 	  <Content Include="Images\微信.png" />
-    <Content Include="Images\批注 2020-05-08 211017.png" />
     <Content Include="Models\LandingModel.cs" />
   </ItemGroup>
 

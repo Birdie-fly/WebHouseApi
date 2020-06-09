@@ -65,7 +65,49 @@ namespace WebHouseApi.Controllers
             p.CurrentPage = CurrentPage;
             return p;
         }
+        //后台经纪人显示
+        public PageInfo GetPrincipal(int CurrentPage = 1, int PageSize = 4, string PriName = "",Nullable<int> ComId=0)
+        {
+            var list = bll.GetPrincipal();
+            if (!string.IsNullOrEmpty(PriName))
+            {
+                list = list.Where(s => s.PrincipalName.Contains(PriName)).ToList();
+            }
+            if (ComId!=0&&ComId!=null)
+            {
+                list = list.Where(s => s.CommodityId == ComId);
+            }
+            //实例化分页类
+            var p = new PageInfo();
+            //总记录数
+            p.TotalCount = list.Count();
+            //计算总页数
+            if (p.TotalCount == 0)
+            {
+                p.TotalPage = 1;
+            }
+            else if (p.TotalCount % PageSize == 0)
+            {
+                p.TotalPage = p.TotalCount / PageSize;
+            }
+            else
+            {
+                p.TotalPage = (p.TotalCount / PageSize) + 1;
+            }
+            //纠正当前页不正确的值
+            if (CurrentPage < 1)
+            {
+                CurrentPage = 1;
+            }
+            if (CurrentPage > p.TotalPage)
+            {
+                CurrentPage = p.TotalPage;
+            }
+            p.PrincipalModels = list.Skip(PageSize * (CurrentPage - 1)).Take(PageSize).ToList();
 
+            p.CurrentPage = CurrentPage;
+            return p;
+        }
 
         /// <summary>
         /// 获取经纪人信息
@@ -117,17 +159,18 @@ namespace WebHouseApi.Controllers
                 if (files.Count > 0)
                 {
                     var path = env.ContentRootPath + @"/Images/";//绝对路径
-                    string dirPath = @"C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\images\";//绝对径路 储存文件路径的文件夹
+                    string dirPath = @"C:\Users\王勇彪\Desktop\HouseAPI\WebHouseMVC\WebHouseMVC\wwwroot\WImages\";//绝对径路 储存文件路径的文件夹
                     if (!Directory.Exists(dirPath))//查看文件夹是否存在
                         Directory.CreateDirectory(dirPath);
                     var file = files.Where(x => true).FirstOrDefault();//只取多文件的一个
                     var fileNam = $"{Guid.NewGuid():N}_{file.FileName}";//新文件名
-                    img = "Images/" + fileNam;
+                    img = "WImages/" + fileNam;
                     string snPath = $"{dirPath + fileNam}";//储存文件路径
                     using var stream = new FileStream(snPath, FileMode.Create);
 
-                    AddPrincipal(dto);
                     await file.CopyToAsync(stream);
+
+                    AddPrincipal(dto);
                     //次出还可以进行数据库操作 保存到数据库 
                     ret = new OutPut { Code = 200, Msg = "上传成功", Success = true };
                 }

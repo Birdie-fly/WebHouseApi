@@ -18,7 +18,10 @@ namespace HouseBLL
         {
             return dal.GetPrincipals();
         }
-
+        public IEnumerable<PrincipalModel> GetPrincipal()
+        {
+            return dal.GetPrincipal();
+        }
         /// <summary>
         /// 获取经纪人信息
         /// </summary>

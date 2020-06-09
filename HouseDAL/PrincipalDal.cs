@@ -16,7 +16,11 @@ namespace HouseDAL
             string sql = "SELECT Principal.Id,PrincipalName,PrincipalPhone,CommodityName,Enter,PrImage,Email,QQ,WeChat,CommodityPhone,CommoditySite,CommodityState,CommodityArgot FROM Principal INNER JOIN Commodity ON Principal.CommodityId = Commodity.Id";
             return DapperHelper<PrincipalModel>.Query(sql, null);
         }
-
+        public IEnumerable<PrincipalModel> GetPrincipal()
+        {
+            string sql = "SELECT Principal.Id,PrincipalName,PrincipalPhone,CommodityName,Enter,CommodityId,PrImage,Email,QQ,WeChat,CommodityPhone,CommoditySite,CommodityState,CommodityArgot FROM Principal INNER JOIN Commodity ON Principal.CommodityId = Commodity.Id";
+            return DapperHelper<PrincipalModel>.Query(sql, null);
+        }
         /// <summary>
         /// 获取经纪人信息
         /// </summary>
