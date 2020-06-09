@@ -23,7 +23,7 @@ namespace HouseBLL
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public HouseCollectModel GetSecondHouseById(int id)
+        public List<HouseCollectModel> GetSecondHouseById(int id)
         {
             return secondHouseDal.GetSecondHouseById(id);
         }

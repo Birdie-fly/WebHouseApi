@@ -9,7 +9,7 @@ namespace HouseModel
     /// </summary>
     public class HouseTypeModel
     {
-        public int Id { get; set; }
+        public int TId { get; set; }
         /// <summary>
         /// 户型
         /// </summary>

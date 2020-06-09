@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="wwwroot\lib\jquery\dist\jquery.js"></script>
+    <link href="wwwroot\lib\bootstrap\dist\css\bootstrap.css" rel="stylesheet" />
+    <style>
+        p {
+            font-size: 1px;
+            color:#808080;
+            margin-bottom:0;
+            margin-top:14px;
+        }
+        div:hover{
+            color:#ff0000;
+            background:#d8cfcf;
+        }
+    </style>
+</head>
+<body>
+    <span id="">房型:</span>
+    <div id="boy"></div>
+</body>
+</html>
+<script>
+    $(function () {
+       // Show();
+        BandHT();
+        Show1();
+    })
+    function Show() {
+        $.ajax({
+            url: 'https://localhost:44335/api/WUsed/get',
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                for (var i = 0; i < d.length; i++) {
+                    var str = '<tr>'
+                        + '<td>' + d[i].houseName		+ '</td>'
+                        + '<td>' + d[i].houseSite		+ '</td>'
+                        + '<td>' + d[i].houseInfo		+ '</td>'
+                        + '<td>' + d[i].houseType		+ '</td>'
+                        + '<td>' + d[i].houseGradation	+ '</td>'
+                        + '<td>' + d[i].houseSum		+ '</td>'
+                        + '<td>' + d[i].housePrice		+ '</td>'
+                        + '<td>' + d[i].houseArea		+ '</td>'
+                        + '<td>' + d[i].houseImage		+ '</td>'
+                        + '<td>' + d[i].houseIntro	    + '</td>'
+                        + '<td>' + d[i].houseTenement+ '</td>';
+                    + '</tr>';
+                    $("#boy").append(str);
+                }
+            }
+        })
+    } 
+    function Show1() {
+        $.ajax({
+            url: 'https://localhost:44335/api/WUsed/get',
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                for (var i = 0; i < d.length; i++) {
+                    var str = '<div style="width:1300px; float:left; height:110px;">'
+                        + '<div style="float:left;width:350px ">'
+                        + '<img src="Wimages/1.jpg" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                        + '<span>' + d[i].houseName + '</span>'
+                        + '<p>' + d[i].hTyp +'   '+ d[i].houseArea + '</p>'
+                        + '<p>' + d[i].houseInfo + '</p>'
+                        + '<p>临界 可餐饮 上水 下水</p>'
+                        +'</div >'
+                        +'<div style = "float:right;line-height:108px;" >'
+                        +'<span>1900元/月</span>'
+                        +'</div >'
+                    +'</div >';
+                    $("#boy").append(str);
+                }
+            }
+        })
+    }
+    //房型
+    function BandHT() {
+        $.ajax({
+            url: 'https://localhost:44335/api/WUsed/get',
+            type: 'get',
+            dataType: 'json', 
+            success: function (d) {
+                for (var i = 0; i < d.length; i++) {
+                    var str = '< a href = "JavaScript" > ' + d[0].hType+'</a>';
+                    $("#boy").append(str);
+                }
+            }
+        })
+    }
+</script>

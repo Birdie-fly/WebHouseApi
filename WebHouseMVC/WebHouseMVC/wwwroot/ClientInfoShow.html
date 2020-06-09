@@ -23,6 +23,8 @@
     <script src="Scripts/jquery-3.3.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <link href="css/common.css" rel="stylesheet" />
+
+    <link href="css/style.css" rel="stylesheet" />
     <script type="text/javascript">
         var w, h, className;
         function getSrceenWH() {
@@ -147,6 +149,41 @@
     </script>
 </head>
 <body>
+    <div class="Top">
+        <div class="NavMenu">
+            <div class="SubMenu">
+                <ul>
+                    <li><a href="DaoHang.html">安居天下</a></li>
+                    <li><a href="ClientInfoShow.html">客户管理</a></li>
+                    <li><a href="CommoidityShow.html">商家管理</a></li>
+                    <li><a href="PrincipalShow.html">经纪人管理</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="Logo"></div>
+        <div class="UserInfo ShowMenu">
+            <a class="Face" href="#"><img src="images/zqz.png" alt="zhangqzh" />小豪豪</a>
+            <div class="MenuSelect">
+                <a href="#">我的班务</a>
+                <a href="#">工作数据</a>
+                <a href="#">系统设置</a>
+                <div class="Line"></div>
+                <a href="#">退出系统</a>
+            </div>
+        </div>
+        <div class="fright">
+            <input class="TopIco TopSearch" type="text" placeholder="请输入关键字搜索" />
+            <a class="TopIco icoRing" href="#"></a>
+            <a class="TopIco icoFullScreen" href="#"></a>
+            <div class="TopIco icoSkin ShowMenu">
+                <div class="MenuSelect">
+                    <a href="#">冰海深蓝</a>
+                    <a href="#">深夜模式</a>
+                    <a href="#">诞愿成真</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <table>
         <tr>
             <td style="font-size:large">&nbsp;客户名称：</td>
@@ -154,10 +191,6 @@
             <td>&nbsp;</td>
             <td align="center">
                 <input id="Button1" type="button" value="搜索" onclick="clientshow(1)" style="padding:2px 8px ;border-radius:5px;font-size:large" class="btn-info" />
-            </td>
-            <td>&nbsp;</td>
-            <td align="center">
-                <input id="Button2" type="button" value="进入商家信息" onclick="location.href='CommoidityShow.html'" style="padding:2px 10px ;border-radius:5px;font-size:large" class="btn-info" />
             </td>
             <td>
                 <div id="wrapper">
@@ -169,21 +202,20 @@
                             <div class="dialogTop"><a href="javascript:;" class="claseDialogBtn">关闭</a></div>
                             <form action="" method="post" id="editForm">
                                 <ul class="editInfos">
-                                    <li><label><font color="#ff0000">* </font>客户姓名：<input id="clientNames" type="text" name="" required value="" class="ipt" /></label></li>
-                                    <li><label><font color="#ff0000">* </font>客户电话：<input id="clientPhone" type="text" name="" required value="" class="ipt" /></label></li>
-                                    <li><label><font color="#ff0000">* </font>客户性别：<input id="clientSex" type="text" name="" required value="" class="ipt" /></label></li>
+                                    <li><label><font color="#ff0000">* </font>客户姓名：<input id="clientNames" type="text" name="" required value="" class="ipt" style="width:150px" /></label></li>
+                                    <li><label><font color="#ff0000">* </font>客户电话：<input id="clientPhone" type="text" name="" required value="" class="ipt" style="width:150px"/></label></li>
+                                    <li><label><font color="#ff0000">* </font>客户性别：<input id="clientSex" type="text" name="" required value="" class="ipt" style="width:150px" /></label></li>
                                     <li><input type="button" value="确认提交" class="submitBtn" onclick="Addclient()" /></li>
                                 </ul>
                             </form>
                         </div>
                     </div>
-
                 </div>
             </td>
         </tr>
     </table>
     <table><tr><td>&nbsp;</td></tr></table>
-    <table class="table table-hover  gysz-table-head table-bordered" style="width: 1535px; text-align:center;font-size:large;background-color:azure">
+    <table class="table table-hover  gysz-table-head table-bordered" style="width: 1535px; text-align:center;font-size:large;background-color:cornsilk">
         <thead style="color:cornflowerblue">
             <tr>
                 <th style="width: 200px;text-align:center" data-field="Id"><div class="th-inner">序号</div><div class="fht-cell"></div></th>
@@ -196,7 +228,7 @@
         </thead>
         <tbody id="body"></tbody>
     </table>
-    <table class="table-bordered table" style="text-align:center;font-size:large;background-color:azure">
+    <table class="table-bordered table" style="text-align:center;font-size:large;background-color:antiquewhite">
         <tr style="color:cadetblue">
             <td>总记录<span id="TotalCount"></span>条</td>
             <td>共有<span id="TotalPage"></span>页</td>
