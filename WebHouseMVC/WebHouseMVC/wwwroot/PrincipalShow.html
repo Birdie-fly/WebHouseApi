@@ -23,10 +23,12 @@
     <link href="css/jq22.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <meta content="telephone=no" name="format-detection">
-    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="boot/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="js/qrcode.js"></script>
+    <link href="boot/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
     <link href="css/common.css" rel="stylesheet" />
-
-
     <style>
         #qrcode {
             width: 30px;
@@ -306,7 +308,7 @@
             obj.CurrentPage = page;
             obj.PageSize = PageSize;
             $.ajax({
-                url: "https://localhost:44335/api/Principal/GetPrincipals",
+                url: "https://localhost:44335/api/Principal/GetPrincipal",
                 type: "get",
                 data: { CurrentPage: obj.CurrentPage, PageSize: obj.PageSize, PriName: $("#priName").val(), ComId: $("#comId").val() },
                 dataType: "json",
@@ -333,7 +335,7 @@
                             + '<td>' + this.principalPhone + '</td>'
                             + '<td>' + this.commodityName + '</td>'
                             + '<td>' + this.enter + '</td>'
-                            + '<td><img src="' + this.prImage + '" alt="" style="height:40px;width:40px;"/></td>'
+                            + '<td><img src="' + this.prImage + '" alt="" width="70"height="70"/></td>'
                             + '<td>' + this.email + '</td>'
                             + '<td>' + this.qq + '</td>'
                             + '<td>' + '<input id="url" type="image" src="Images/微信.png" onclick="showUrl(' + this.id + ')" style="height:40px;width:40px;"/>' + '</td>'

@@ -23,7 +23,6 @@
     <None Include="wwwroot\NewHouse.html" />
     <None Include="wwwroot\ShowHouse.html" />
     <Content Remove="wwwroot\css\ats.css" />
-    <Content Remove="wwwroot\css\dragverify.css" />
     <Content Remove="wwwroot\css\global.css" />
     <Content Remove="wwwroot\css\im.css" />
     <Content Remove="wwwroot\css\index.css" />

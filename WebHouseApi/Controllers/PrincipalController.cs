@@ -65,7 +65,49 @@ namespace WebHouseApi.Controllers
             p.CurrentPage = CurrentPage;
             return p;
         }
+        //后台经纪人显示
+        public PageInfo GetPrincipal(int CurrentPage = 1, int PageSize = 4, string PriName = "",Nullable<int> ComId=0)
+        {
+            var list = bll.GetPrincipal();
+            if (!string.IsNullOrEmpty(PriName))
+            {
+                list = list.Where(s => s.PrincipalName.Contains(PriName)).ToList();
+            }
+            if (ComId!=0&&ComId!=null)
+            {
+                list = list.Where(s => s.CommodityId == ComId);
+            }
+            //实例化分页类
+            var p = new PageInfo();
+            //总记录数
+            p.TotalCount = list.Count();
+            //计算总页数
+            if (p.TotalCount == 0)
+            {
+                p.TotalPage = 1;
+            }
+            else if (p.TotalCount % PageSize == 0)
+            {
+                p.TotalPage = p.TotalCount / PageSize;
+            }
+            else
+            {
+                p.TotalPage = (p.TotalCount / PageSize) + 1;
+            }
+            //纠正当前页不正确的值
+            if (CurrentPage < 1)
+            {
+                CurrentPage = 1;
+            }
+            if (CurrentPage > p.TotalPage)
+            {
+                CurrentPage = p.TotalPage;
+            }
+            p.PrincipalModels = list.Skip(PageSize * (CurrentPage - 1)).Take(PageSize).ToList();
 
+            p.CurrentPage = CurrentPage;
+            return p;
+        }
 
         /// <summary>
         /// 获取经纪人信息

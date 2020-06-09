@@ -97,7 +97,7 @@
                         出租
                     </a>
                 </li>
-                
+
             </ul>
             <div id="login" class="loginbar" data-login="1" data-config="{
         tpl: '#logintpl',
@@ -116,7 +116,7 @@
                             注册
                         </a>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -180,8 +180,33 @@
         </div>
     </div>
 
-
-
+    <div class="container">
+        
+            <p>
+                <span id="HT" style="font-size:15px;font-weight:700; display:inline-block;float:left;">房型:</span>
+                <div style="display:inline-block;width:200px;"><a href="#">一室一厅一卫</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#">二室一厅一卫</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#">三室一厅一卫</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#">三室一厅二卫</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#">三室二厅二卫</a></div>
+            </p>
+            <p>
+                <span style="margin-left:-35px; font-size:15px; font-weight:700; display:inline-block;float:left;">面积:</span>
+                <div style="display:inline-block;width:200px;"><a href="#">50平以下</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#">50-70平</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#">70-90平</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#">90-110平</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#">110以上</a></div>
+            </p>
+            <p>
+                <span style="margin-left:-35px;font-size:15px; font-weight:700;display:inline-block;float:left;">价格:</span>
+                <div style="display:inline-block;width:200px;"><a href="#">1000-2000</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#">2000-3000</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#">3000-4000</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#">4000-5000</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#">5000以上</a></div>
+            </p>
+    </div>
 
     <!--<div class="container">
                         <div class="head-search">
@@ -198,9 +223,7 @@
                        </div>
                    </div>
                                         <div class="filter-wrap">
-            body
             <div class="filter-bd">
-                筛选条件
                                                     <div class="filter-item">
                                                                      <div data-filter-item-list="1" class="filter-item-list clearfix">
                                                                                                 <dl class="clearfix region">
@@ -1394,19 +1417,7 @@
                     })
                 </script>
 
-                <!--<div id="yx-enroll" style="display: none;"  data-form-config="{
-                    modal: {
-                        head: '<i class='\mr5 fz18 c-e43\'></i><span class='\jqmodal-title\'>标题</span>',
-                        mclass: 'modal-bg',
-                        overlay: .6,
-                        css: {
-                            width: 450
-                        }
-                    },
-                    type: 'click',
-                    ajax: {'data':{'formflag':'view_sale_intent','aid':0,'models':'sale','cate_pushs':'syixiang','type':'sale','formcls':'common-form-lg common-form-control'}}
-                }">
-                </div>-->
+                
                 <script type="text/javascript">
                     // 懒加载
                     seajs.use(['lazyload'], function (lazyload) {
@@ -1420,302 +1431,24 @@
                 </script>
             </div>
         </div>
-        <!--aside-->
-        <!--<div class="side">
-                    <div class="s-info">
-                                                    <a href="https://house.08cms.com/release/usale?models=sale&amp;esflx=194" target="_blank">免费发布信息</a>
-                        <div class="blank10"></div>
-                        <a href="https://house.08cms.com/release/wtbuy?models=sale" target="_blank">免费委托信息</a>
-                                        </div>
-                     最近浏览过的房子
-            <div data-browser-recored="1" data-config="{models: 'sale', tpl: '#record', field: 'name,mj,zj'}">
-                        </div>
-            <script id="record" type="text/html">
-                <h2 class="s-title">最近浏览过的房子</h2>
-                <div class="s-look">
-                    <ul>
-                    <% for(var i = 0; i < data.length; i++){ %>
-                        <li>
-                            <i></i>
-                            <a class="left" href="<%= data[i].url%>" target="_blank" title="<%= data[i].name%>"><%= data[i].name%></a>
-                            <span class="middle"><%= data[i].mj%><b>m&sup2;</b></span>
-                            <span class="right"><%= data[i].zj%><b>万</b></span>
-                        </li>
-                        <% } %>
-                    </ul>
-                </div>
-            </script>
-            <script type="text/javascript">
-                seajs.use(['browserRecord'], function (browserRecord){
-                    browserRecord.init({
-                        url: 'https://house.08cms.com/viewinter/record'
-                    });
-                });
-            </script>
-
-
-
-
-
-
-                                                                                                                                            <h2 class="s-title">推荐经纪人</h2>
-            <div class="s-agent" data-tag="esfasidejjr">
-                <ul>
-                                                                                                                                                                    <li class="clearfix">
-                                <a href="https://house.08cms.com/member/j_detail/182" target="_blank">            <img alt="青草" width="80" height="100" src="images/9e86873d230e7c1c3e9b1082dc56f358.jpg">
-        </a>
-                                <div class="s-a-info">
-                                    <h3>
-                                        <a href="https://house.08cms.com/member/j_detail/182" target="_blank">
-                                            青草
-                                        </a>
-                                    </h3>
-                                    <p>
-                                        <i class="shou">售</i><span>&nbsp;0套</span>
-                                        <i class="zu">租</i><span>&nbsp;0套</span>
-                                    </p>
-                                    <p class="phone mt5">13365487458</p>
-                                </div>
-                            </li>
-                                                                                                                                                    <li class="clearfix">
-                                <a href="https://house.08cms.com/member/j_detail/181" target="_blank">            <img alt="星语心愿" width="80" height="100" src="images/2fe50a58cb14d7450c736b9a75580b71.jpg">
-        </a>
-                                <div class="s-a-info">
-                                    <h3>
-                                        <a href="https://house.08cms.com/member/j_detail/181" target="_blank">
-                                            星语心愿
-                                        </a>
-                                    </h3>
-                                    <p>
-                                        <i class="shou">售</i><span>&nbsp;0套</span>
-                                        <i class="zu">租</i><span>&nbsp;0套</span>
-                                    </p>
-                                    <p class="phone mt5">12587459685</p>
-                                </div>
-                            </li>
-                                                                                                                                                    <li class="clearfix">
-                                <a href="https://house.08cms.com/member/j_detail/178" target="_blank">            <img alt="梦里水乡" width="80" height="100" src="images/5c0a06d5c1fc9664b169b9e231144105.jpg">
-        </a>
-                                <div class="s-a-info">
-                                    <h3>
-                                        <a href="https://house.08cms.com/member/j_detail/178" target="_blank">
-                                            梦里水乡
-                                        </a>
-                                    </h3>
-                                    <p>
-                                        <i class="shou">售</i><span>&nbsp;0套</span>
-                                        <i class="zu">租</i><span>&nbsp;0套</span>
-                                    </p>
-                                    <p class="phone mt5">18826869865</p>
-                                </div>
-                            </li>
-                                                                                                                                                    <li class="clearfix">
-                                <a href="https://house.08cms.com/member/j_detail/175" target="_blank">            <img alt="快乐经纪人" width="80" height="100" src="images/65d63744166646b50c074a560ec3a755.jpg">
-        </a>
-                                <div class="s-a-info">
-                                    <h3>
-                                        <a href="https://house.08cms.com/member/j_detail/175" target="_blank">
-                                            快乐经纪人
-                                        </a>
-                                    </h3>
-                                    <p>
-                                        <i class="shou">售</i><span>&nbsp;0套</span>
-                                        <i class="zu">租</i><span>&nbsp;0套</span>
-                                    </p>
-                                    <p class="phone mt5">158745874125</p>
-                                </div>
-                            </li>
-                                                                                                                                                    <li class="clearfix">
-                                <a href="https://house.08cms.com/member/j_detail/156" target="_blank">            <img alt="贴心房管家" width="80" height="100" src="images/ff99e0b7c474bb83b9f8e13f9fd07a3f.jpg">
-        </a>
-                                <div class="s-a-info">
-                                    <h3>
-                                        <a href="https://house.08cms.com/member/j_detail/156" target="_blank">
-                                            贴心房管家
-                                        </a>
-                                    </h3>
-                                    <p>
-                                        <i class="shou">售</i><span>&nbsp;0套</span>
-                                        <i class="zu">租</i><span>&nbsp;1套</span>
-                                    </p>
-                                    <p class="phone mt5">18265487459</p>
-                                </div>
-                            </li>
-                                                                                                                                                    <li class="clearfix">
-                                <a href="https://house.08cms.com/member/j_detail/396" target="_blank">            <img alt="wang" width="80" height="100" src="images/nopic.gif">
-        </a>
-                                <div class="s-a-info">
-                                    <h3>
-                                        <a href="https://house.08cms.com/member/j_detail/396" target="_blank">
-                                            wang
-                                        </a>
-                                    </h3>
-                                    <p>
-                                        <i class="shou">售</i><span>&nbsp;0套</span>
-                                        <i class="zu">租</i><span>&nbsp;0套</span>
-                                    </p>
-                                    <p class="phone mt5"></p>
-                                </div>
-                            </li>
-                                                    </ul>
-            </div>
-                    最新二手房
-                    <h2 class="s-title">最新二手房</h2>
-            <div class="s-new">
-                <ul>
-                                                                <li>
-                                <a class="name" href="/esf/detail/226.html" target="_blank">            <img alt="合盛盈翠雅筑团购10万抵30万，低首付买景区叠加别墅 送农田" width="210" height="158" src="images/ae5a1816cb34b9d075b55299905414dd.jpg">
-        </a>
-                                <p>
-                                    <a class="name" title="合盛盈翠雅筑团购10万抵30万，低首付买景区叠加别墅 送农田" href="/esf/detail/226.html" target="_blank">合盛盈翠雅筑团购10┈</a>
-                                    <span class="money"><span class>135</span>万</span>
-                                </p>
-                                <p>
-                                    <span class="left"><span class>146</span>m&sup2;</span>
-                                    <span class="right">
-                                        4室2厅5卫                                </span>
-                                </p>
-                            </li>
-                                                <li>
-                                <a class="name" href="/esf/detail/224.html" target="_blank">            <img alt="急急急鼎峰源著520万6室2厅6卫双车位大花园业主低价出售" width="210" height="158" src="images/1929341da3dc6ebee9c578a84a8d14bd.jpg">
-        </a>
-                                <p>
-                                    <a class="name" title="急急急鼎峰源著520万6室2厅6卫双车位大花园业主低价出售" href="/esf/detail/224.html" target="_blank">急急急鼎峰源著520┈</a>
-                                    <span class="money"><span class>520</span>万</span>
-                                </p>
-                                <p>
-                                    <span class="left"><span class>273</span>m&sup2;</span>
-                                    <span class="right">
-                                        6室2厅5卫                                </span>
-                                </p>
-                            </li>
-                                                <li>
-                                <a class="name" href="/esf/detail/222.html" target="_blank">            <img alt="钜隆碧水湾，带精装修高性价比公寓，享小区成熟配套，快点进来" width="210" height="158" src="images/7bc5d269ceb208382bd4e1f70a64865d.jpg">
-        </a>
-                                <p>
-                                    <a class="name" title="钜隆碧水湾，带精装修高性价比公寓，享小区成熟配套，快点进来" href="/esf/detail/222.html" target="_blank">钜隆碧水湾，带精装修┈</a>
-                                    <span class="money"><span class>36</span>万</span>
-                                </p>
-                                <p>
-                                    <span class="left"><span class>41</span>m&sup2;</span>
-                                    <span class="right">
-                                        1室1厅1卫                                </span>
-                                </p>
-                            </li>
-                                                    </ul>
-            </div>
-
-             同楼盘二手房推荐
-                </div>-->
-        <!--/aside-->
     </div>
 
 
     <!--footer-->
     <div class="footer">
         <div class="container">
-            <!--<div data-tag="dblp,dbes,dbsy,dbzx,dbgj,dbewm" class="footer-nav clearfix">
-                                    <dl><dt>楼盘</dt><dd><a href="http://www.126.com" target="_blank">
-                                区域价值逐步落地 南城未来已来！
-                            </a><a href="https://house.08cms.com/news/detail/917_1.html" target="_blank">
-                                田禾卢浮公馆均
-                            </a><a href="https://house.08cms.com/news/detail/925_1.html" target="_blank">
-                                南部湾万科城在售四期3#洋房
-                            </a><a href="https://house.08cms.com/news/detail/923_1.html" target="_blank">
-                                大道松山湖已开盘
-                            </a><a href="https://house.08cms.com/news/detail/922_1.html" target="_blank">
-                                碧桂园天誉在售95-145㎡洋房
-                            </a></dd></dl>
-                                    <dl><dt>二手</dt><dd><a href="https://house.08cms.com/news/detail/791_1.html" target="_blank">
-                                二手房买卖流程
-                            </a><a href="https://house.08cms.com/news/detail/1114_1.html" target="_blank">
-                                虎门国际公馆小区 复
-                            </a><a href="https://house.08cms.com/news/detail/1113_1.html" target="_blank">
-                                准备好钱
-                            </a><a href="https://house.08cms.com/news/detail/1112_1.html" target="_blank">
-                                推送测试
-                            </a><a href="https://house.08cms.com/news/detail/1004_1.html" target="_blank">
-                                2月全国房地产开发景气指数比去年同期高1...
-                            </a></dd></dl>
-                                    <dl><dt>商业</dt><dd><a href="https://house.08cms.com/news/detail/921_1.html" target="_blank">
-                                光明国际预计2019年6月交房
-                            </a><a href="https://house.08cms.com/news/detail/918_1.html" target="_blank">
-                                汇龙湾·天樾购房可享99折优惠
-                            </a><a href="https://house.08cms.com/news/detail/917_1.html" target="_blank">
-                                aa田禾卢浮公馆均价14000元/㎡
-                            </a><a href="https://house.08cms.com/news/detail/910_1.html" target="_blank">
-                                各地保障房建设进度不乐观
-                            </a><a href="https://house.08cms.com/news/detail/888_1.html" target="_blank">
-                                北京城建•世华泊郡优惠活动季之披萨DIY
-                            </a></dd></dl>
-                                    <dl><dt>资讯</dt><dd><a href="https://house.08cms.com/news/detail/763_1.html" target="_blank">
-                                合同陷阱
-                            </a><a href="https://house.08cms.com/news/detail/767_1.html" target="_blank">
-                                付款方式
-                            </a><a href="https://house.08cms.com/news/detail/768_1.html" target="_blank">
-                                收房流程
-                            </a><a href="https://house.08cms.com/news/detail/769_1.html" target="_blank">
-                                如何验收房屋
-                            </a><a href="https://house.08cms.com/news/detail/770_1.html" target="_blank">
-                                收房验房知识四步走
-                            </a></dd></dl>
-                                    <dl><dt>工具</dt><dd><a href="https://house.08cms.com/news/detail/502_1.html" target="_blank">
-                                农地两权抵押试点探索多层风控机制
-                            </a><a href="https://house.08cms.com/news/detail/787_1.html" target="_blank">
-                                物业纠纷
-                            </a><a href="https://house.08cms.com/news/detail/1004_1.html" target="_blank">
-                                2月全国房地产开发景气指数比去年同期高1...
-                            </a></dd></dl>
-                <dl class="download-mobile">
-                    <dt>扫一扫</dt>
-                    <dd>
-                                                <p>
-                                <span data-qrcode="1" data-text="https://house.08cms.com/download" data-logo="https://house.08cms.com/bundles\house\images\defaultlog\6.png" data-size="100"></span><br>
-                                Android下载
-                            </p>
-                                                                <p>
-                                <span><img src="https://open.weixin.qq.com/qr/code?username=house08cms" alt="house08cms" style="height: 100px; width: 100px; display: inline-block;"></span><br>扫一扫，关注微信
-                        </p>
-                    </dd>
-                </dl>
-            </div>-->
-
-
+            
             <div class="blank20"></div>
             <div class="container">
-                <!--<div class="web-info">
-                    <a target="_blank" href="https://house.08cms.com/map/list">网站地图</a> |
-                                                                                                                                                                                <a target="_blank" href="https://house.08cms.com/service/detail/135.html">联系我们</a>
-                                    |
-                                                        <a target="_blank" href="https://house.08cms.com/service/detail/136.html">关于我们</a>
-                                    |
-                                                        <a target="_blank" href="https://house.08cms.com/service/detail/137.html">免责声明</a>
-                                    |
-                                                                                                                                                                                    <a target="_blank" href="https://house.08cms.com/service/ask/12">在线提问</a>
-                                |
-                                                                                                                                                                <a target="_blank" href="https://house.08cms.com/service/list/8">帮助指南</a>
-                                |
-                                                                                                                                                                <a target="_blank" href="https://house.08cms.com/service/list/11">网站公告</a>
-                                |
-                                                                                                                                                                <a target="_blank" href="https://house.08cms.com/service/list/10">广告服务</a>
-                                |
-                                                        <a target="_blank" href="https://house.08cms.com/download">手机版</a>
-
-                </div>-->
+               
                 <div class="copy-right">
-                    <p class="copy">Copyright &copy; 2010-2020 <a href="http://www.08cms.com">08cms.com</a> All rights reserved.</p>
+                    <p class="copy">Copyright &copy; 2010-2020 <a href="index.html">516安居天下</a> All rights reserved.</p>
 
                 </div>
             </div>
         </div>
     </div>
 
-    <!--<div class="floatLeftLink">
-        <a href="https://house.08cms.com/yushouzheng" target="_blank ">
-                        <img src="images/yusz.png">
-
-        </a>
-    </div>-->
     <!--/footer-->
 
     <script type="text/javascript">
@@ -1735,53 +1468,6 @@
 </body>
 </html>
 
-
-<!--<div class="sale-list-item sale-list-ex">
-
-    <div class="sale-item-l">
-        <div class="sale-item-img">
-            <a href="https://house.08cms.com/esf/detail/243.html" target="_blank">
-                <img alt="富士康将入住增城，盈翠雅筑单价才1万起买旅游景区别墅，你懂的" width="180" height="135" class="lazy" data-original="images/c672d3c0410bc4ab9752930cc91c4e80.png" src="images/nopic.gif">
-            </a>
-            <span>6图</span>
-        </div>
-
-        <div class="sale-item-text">
-            <h3>
-                <a href="https://house.08cms.com/esf/detail/243.html" target="_blank">富士康将入住增城，盈翠雅筑单价才1万起买旅游景区别墅，你懂的</a>
-            </h3>
-            <p>
-                <a class="mr5 c-e43" href="https://house.08cms.com/xiaoqu/qdetail/60.html" target="_blank">
-                    富盈公馆
-                </a>
-                [ 厚街镇 ] 石碣镇政文路与石单路交汇处
-            </p>
-            <p class="fang">
-                <span>5室3厅3卫</span>/ <span>房龄: 2年以下</span> /    <span>小高层/共46层</span>&nbsp;/ <span>毛坯</span>
-
-                &nbsp;/ <span>南北通透</span>
-            </p>
-            <p>
-                <a href="https://house.08cms.com/member/detail/279" target="_blank" class="ps mr5">烟花三月下扬州有限公司</a><a href="https://house.08cms.com/member/j_detail/155" target="_blank" class="ps c-e43"><i class="font-icons-2 mr5" style="vertical-align: -1px;"></i>王琴</a><span class="new mr10">(经纪人)</span>
-                <span class="new">  6个月前</span>
-            </p>
-        </div>
-    </div>
-
-    <div class="sale-item-r">
-        <p>
-            <span class="big">245</span>万
-        </p><p>面积&nbsp;:&nbsp;<span>213</span>m&sup2;</p><p>
-            单价&nbsp;:&nbsp;                    <span class="l p-red">11502</span>元/m&sup2;
-        </p>
-        <p class="buy">
-            <a href="#yx-enroll" data-opt="{name: &#039;富士康将入住增城，盈翠雅筑单价才1万起买┈&#039;, aid: &#039;243&#039;}" class="form-bdrs btn-jqModal-ex" data-yx-btn="1">
-                <i class="font-lp-29"></i>我有意向
-            </a>
-        </p>
-
-    </div>
-</div>-->
 
 <script>
 
