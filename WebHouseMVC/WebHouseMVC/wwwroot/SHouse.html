@@ -105,10 +105,10 @@
             <div id="login" class="loginbar" data-login="1" >
                 <div class="login-out">
                     <div class="login-out-btn">
-                        <a href="https://house.08cms.com/login" data-modal=".winlogin" title="登录">
+                        <a href="/Landing/Landing" data-modal=".winlogin" title="登录">
                             登录
                         </a>
-                        <a href="https://house.08cms.com/register" title="注册" target="_blank">
+                        <a href="/Landing/Reister" title="注册" target="_blank">
                             注册
                         </a>
                     </div>
@@ -131,7 +131,7 @@
                     <input type="text" id="sHouseName" name="name" class="search-input fl" placeholder="请输入二手房所在小区" data-autocomplete="1">
 
 
-                    <button type="button" class="search-btn fl" onclick="selSHouse()">查询</button>
+                    <button type="button" class="search-btn fl" onclick="selSHouse()">搜索</button>
                 </div>
             </form>
 
@@ -164,27 +164,27 @@
         
             <p>
                 <span id="HT" style="font-size:15px;font-weight:700; display:inline-block;float:left;">房型:</span>
-                <div style="display:inline-block;width:200px;"><a href="#">一室一厅一卫</a></div>
-                <div style="display:inline-block;width:200px;"><a href="#">二室一厅一卫</a></div>
-                <div style="display:inline-block;width:200px;"><a href="#">三室一厅一卫</a></div>
-                <div style="display:inline-block;width:200px;"><a href="#">三室一厅二卫</a></div>
-                <div style="display:inline-block;width:200px;"><a href="#">三室二厅二卫</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByType(1)">一室一厅一卫</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByType(2)">二室一厅一卫</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByType(3)">三室一厅一卫</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByType(4)">三室一厅二卫</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByType(5)">三室二厅二卫</a></div>
             </p>
             <p>
                 <span style="margin-left:-35px; font-size:15px; font-weight:700; display:inline-block;float:left;">面积:</span>
-                <div style="display:inline-block;width:200px;"><a href="#">50平以下</a></div>
-                <div style="display:inline-block;width:200px;"><a href="#">50-70平</a></div>
-                <div style="display:inline-block;width:200px;"><a href="#">70-90平</a></div>
-                <div style="display:inline-block;width:200px;"><a href="#">90-110平</a></div>
-                <div style="display:inline-block;width:200px;"><a href="#">110以上</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByArea(0,50)">50平以下</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByArea(50,70)">50-70平</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByArea(10,90)">70-90平</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByArea(90,110)">90-110平</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByArea(110,999)">110以上</a></div>
             </p>
             <p>
                 <span style="margin-left:-35px;font-size:15px; font-weight:700;display:inline-block;float:left;">价格:</span>
-                <div style="display:inline-block;width:200px;"><a href="#">1000-2000</a></div>
-                <div style="display:inline-block;width:200px;"><a href="#">2000-3000</a></div>
-                <div style="display:inline-block;width:200px;"><a href="#">3000-4000</a></div>
-                <div style="display:inline-block;width:200px;"><a href="#">4000-5000</a></div>
-                <div style="display:inline-block;width:200px;"><a href="#">5000以上</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByPrice(0,600000)">60万以下</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByPrice(600000,1000000)">60万-100万</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByPrice(1000000,1500000)">100万-150万</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByPrice(1500000,2000000)">150万-200万</a></div>
+                <div style="display:inline-block;width:200px;"><a href="#" onclick="selHouseByPrice(2000000,99999999)">200万以上</a></div>
             </p>
     </div>
 
@@ -1372,7 +1372,7 @@
                 </script>
 
                 
-                <script type="text/javascript">
+                <!--<script type="text/javascript">
                     // 懒加载
                     seajs.use(['lazyload'], function (lazyload) {
                         var lazyOpt = {
@@ -1382,7 +1382,7 @@
                         };
                         $(document).find('.lazy').lazyload(lazyOpt);
                     });
-                </script>
+                </script>-->
             </div>
         </div>
     </div>
@@ -1453,7 +1453,7 @@
                         '<p class="fang">' +
                         ' <span>' + this.hType + '</span> / <span>房龄: 2年以下</span> / <span>' + this.houseGradation + '/共' + this.houseSum + '层</span> &nbsp; / <span>毛坯</span >&nbsp; / <span>南北通透</span ></p>' +
                         '<p>' +
-                        '<a href="" target="_blank" class="ps mr5"></a><a href="" target="_blank" class="ps c-e43"><i class="font-icons-2 mr5" style="vertical-align: -1px;"></i>王琴</a><span class="new mr10">(经纪人)</span>' +
+                        '<a href="" target="_blank" class="ps mr5"></a><a href="" target="_blank" class="ps c-e43">王琴</a><span class="new mr10">(经纪人)</span>' +
                         '<span class="new">  6个月前</span>' +
                         ' </p>' +
                         '</div>' +
@@ -1465,8 +1465,8 @@
                         '</p><p>面积&nbsp;:&nbsp;<span>' + this.houseArea + '</span>m&sup2;</p>' +
                         '<p>单价&nbsp;:&nbsp;<span class="l p-red">' + this.housePrice + '</span>元/m&sup2;</p>' +
                         '<p class="buy">' +
-                        '<a href="#yx-enroll" data-opt="{name: &#039;富士康将入住增城，盈翠雅筑单价才1万起买┈&#039;, aid: &#039;243&#039;}" class="form-bdrs btn-jqModal-ex" data-yx-btn="1">' +
-                        '<i class="font-lp-29"></i>我有意向</a>' +
+                        //'<a href="#yx-enroll" data-opt="{name: &#039;富士康将入住增城，盈翠雅筑单价才1万起买┈&#039;, aid: &#039;243&#039;}" class="form-bdrs btn-jqModal-ex" data-yx-btn="1">' +
+                        //'<i class="font-lp-29"></i>我有意向</a>' +
                         ' </p>' +
                         '</div>' +
                         '</div>'
@@ -1484,7 +1484,6 @@
             data: { name: $("#sHouseName").val() },
             contentType: 'application/json',
             success: function (d) {
-                console.log(d);
                 $("#data").empty();
                 $(d).each(function () {
                     var line = '<div class="sale-list-item sale-list-ex">' +
@@ -1503,7 +1502,7 @@
                         '<p class="fang">' +
                         ' <span>' + this.hType + '</span> / <span>房龄: 2年以下</span> / <span>' + this.houseGradation + '/共' + this.houseSum + '层</span> &nbsp; / <span>毛坯</span >&nbsp; / <span>南北通透</span ></p>' +
                         '<p>' +
-                        '<a href="" target="_blank" class="ps mr5"></a><a href="" target="_blank" class="ps c-e43"><i class="font-icons-2 mr5" style="vertical-align: -1px;"></i>王琴</a><span class="new mr10">(经纪人)</span>' +
+                        '<a href="" target="_blank" class="ps mr5"></a><a href="" target="_blank" class="ps c-e43">王琴</a><span class="new mr10">(经纪人)</span>' +
                         '<span class="new">  6个月前</span>' +
                         ' </p>' +
                         '</div>' +
@@ -1515,8 +1514,156 @@
                         '</p><p>面积&nbsp;:&nbsp;<span>' + this.houseArea + '</span>m&sup2;</p>' +
                         '<p>单价&nbsp;:&nbsp;<span class="l p-red">' + this.housePrice + '</span>元/m&sup2;</p>' +
                         '<p class="buy">' +
-                        '<a href="#yx-enroll" data-opt="{name: &#039;富士康将入住增城，盈翠雅筑单价才1万起买┈&#039;, aid: &#039;243&#039;}" class="form-bdrs btn-jqModal-ex" data-yx-btn="1">' +
-                        '<i class="font-lp-29"></i>我有意向</a>' +
+                        //'<a href="#yx-enroll" data-opt="{name: &#039;富士康将入住增城，盈翠雅筑单价才1万起买┈&#039;, aid: &#039;243&#039;}" class="form-bdrs btn-jqModal-ex" data-yx-btn="1">' +
+                        //'<i class="font-lp-29"></i>我有意向</a>' +
+                        ' </p>' +
+                        '</div>' +
+                        '</div>'
+                    $("#data").append(line);
+                })
+
+            }
+        })
+    }
+
+    function selHouseByType(type) {
+        $.ajax({
+            url: 'https://localhost:44335/api/SecondHouse/GetSecondHouse',
+            type: 'get',
+            data: { type: type },
+            contentType: 'application/json',
+            success: function (d) {
+                $("#data").empty();
+                $(d).each(function () {
+                    var line = '<div class="sale-list-item sale-list-ex">' +
+                        '<div class="sale-item-l">' +
+                        '<div class="sale-item-img">' +
+                        '<a href="" target="_blank">' +
+                        '<img alt="" width="180" height="135" class="lazy" data-original="images/c672d3c0410bc4ab9752930cc91c4e80.png" src="/' + this.houseImage + '"></a></div>' +
+                        '<div class="sale-item-text">' +
+                        '<h3>' +
+                        '<a href="" target="_blank">' + this.houseInfo + '</a>' +
+                        '</h3>' +
+                        '<p>' +
+                        '<a class="mr5 c-e43" href="" target="_blank">' + this.houseName + '</a>' +
+                        this.houseSite + '</p>' +
+
+                        '<p class="fang">' +
+                        ' <span>' + this.hType + '</span> / <span>房龄: 2年以下</span> / <span>' + this.houseGradation + '/共' + this.houseSum + '层</span> &nbsp; / <span>毛坯</span >&nbsp; / <span>南北通透</span ></p>' +
+                        '<p>' +
+                        '<a href="" target="_blank" class="ps mr5"></a><a href="" target="_blank" class="ps c-e43">王琴</a><span class="new mr10">(经纪人)</span>' +
+                        '<span class="new">  6个月前</span>' +
+                        ' </p>' +
+                        '</div>' +
+                        '</div>' +
+
+                        '<div class="sale-item-r">' +
+                        '<p>约' +
+                        '<span class="big">' + parseInt(this.houseArea * this.housePrice / 10000) + '</span>万' +
+                        '</p><p>面积&nbsp;:&nbsp;<span>' + this.houseArea + '</span>m&sup2;</p>' +
+                        '<p>单价&nbsp;:&nbsp;<span class="l p-red">' + this.housePrice + '</span>元/m&sup2;</p>' +
+                        '<p class="buy">' +
+                        //'<a href="#yx-enroll" data-opt="{name: &#039;富士康将入住增城，盈翠雅筑单价才1万起买┈&#039;, aid: &#039;243&#039;}" class="form-bdrs btn-jqModal-ex" data-yx-btn="1">' +
+                        //'<i class="font-lp-29"></i>我有意向</a>' +
+                        ' </p>' +
+                        '</div>' +
+                        '</div>'
+                    $("#data").append(line);
+                })
+
+            }
+        })
+    }
+
+    function selHouseByArea(minArea,maxArea) {
+        $.ajax({
+            url: 'https://localhost:44335/api/SecondHouse/GetSecondHouse',
+            type: 'get',
+            data: { minArea: minArea, maxArea: maxArea },
+            contentType: 'application/json',
+            success: function (d) {
+                
+                $("#data").empty();
+                $(d).each(function () {
+                    var line = '<div class="sale-list-item sale-list-ex">' +
+                        '<div class="sale-item-l">' +
+                        '<div class="sale-item-img">' +
+                        '<a href="" target="_blank">' +
+                        '<img alt="" width="180" height="135" class="lazy" data-original="images/c672d3c0410bc4ab9752930cc91c4e80.png" src="/' + this.houseImage + '"></a></div>' +
+                        '<div class="sale-item-text">' +
+                        '<h3>' +
+                        '<a href="" target="_blank">' + this.houseInfo + '</a>' +
+                        '</h3>' +
+                        '<p>' +
+                        '<a class="mr5 c-e43" href="" target="_blank">' + this.houseName + '</a>' +
+                        this.houseSite + '</p>' +
+
+                        '<p class="fang">' +
+                        ' <span>' + this.hType + '</span> / <span>房龄: 2年以下</span> / <span>' + this.houseGradation + '/共' + this.houseSum + '层</span> &nbsp; / <span>毛坯</span >&nbsp; / <span>南北通透</span ></p>' +
+                        '<p>' +
+                        '<a href="" target="_blank" class="ps mr5"></a><a href="" target="_blank" class="ps c-e43"><王琴</a><span class="new mr10">(经纪人)</span>' +
+                        '<span class="new">  6个月前</span>' +
+                        ' </p>' +
+                        '</div>' +
+                        '</div>' +
+
+                        '<div class="sale-item-r">' +
+                        '<p>约' +
+                        '<span class="big">' + parseInt(this.houseArea * this.housePrice / 10000) + '</span>万' +
+                        '</p><p>面积&nbsp;:&nbsp;<span>' + this.houseArea + '</span>m&sup2;</p>' +
+                        '<p>单价&nbsp;:&nbsp;<span class="l p-red">' + this.housePrice + '</span>元/m&sup2;</p>' +
+                        '<p class="buy">' +
+                        //'<a href="#yx-enroll" data-opt="{name: &#039;富士康将入住增城，盈翠雅筑单价才1万起买┈&#039;, aid: &#039;243&#039;}" class="form-bdrs btn-jqModal-ex" data-yx-btn="1">' +
+                        //'<i class="font-lp-29"></i>我有意向</a>' +
+                        ' </p>' +
+                        '</div>' +
+                        '</div>'
+                    $("#data").append(line);
+                })
+
+            }
+        })
+    }
+
+    function selHouseByPrice(minPrice,maxPrice) {
+        $.ajax({
+            url: 'https://localhost:44335/api/SecondHouse/GetSecondHouse',
+            type: 'get',
+            data: { minPrice: minPrice, maxPrice: maxPrice },
+            contentType: 'application/json',
+            success: function (d) {
+                $("#data").empty();
+                $(d).each(function () {
+                    var line = '<div class="sale-list-item sale-list-ex">' +
+                        '<div class="sale-item-l">' +
+                        '<div class="sale-item-img">' +
+                        '<a href="" target="_blank">' +
+                        '<img alt="" width="180" height="135" class="lazy" data-original="images/c672d3c0410bc4ab9752930cc91c4e80.png" src="/' + this.houseImage + '"></a></div>' +
+                        '<div class="sale-item-text">' +
+                        '<h3>' +
+                        '<a href="" target="_blank">' + this.houseInfo + '</a>' +
+                        '</h3>' +
+                        '<p>' +
+                        '<a class="mr5 c-e43" href="" target="_blank">' + this.houseName + '</a>' +
+                        this.houseSite + '</p>' +
+
+                        '<p class="fang">' +
+                        ' <span>' + this.hType + '</span> / <span>房龄: 2年以下</span> / <span>' + this.houseGradation + '/共' + this.houseSum + '层</span> &nbsp; / <span>毛坯</span >&nbsp; / <span>南北通透</span ></p>' +
+                        '<p>' +
+                        '<a href="" target="_blank" class="ps mr5"></a><a href="" target="_blank" class="ps c-e43">王琴</a><span class="new mr10">(经纪人)</span>' +
+                        '<span class="new">  6个月前</span>' +
+                        ' </p>' +
+                        '</div>' +
+                        '</div>' +
+
+                        '<div class="sale-item-r">' +
+                        '<p>约' +
+                        '<span class="big">' + parseInt(this.houseArea * this.housePrice / 10000) + '</span>万' +
+                        '</p><p>面积&nbsp;:&nbsp;<span>' + this.houseArea + '</span>m&sup2;</p>' +
+                        '<p>单价&nbsp;:&nbsp;<span class="l p-red">' + this.housePrice + '</span>元/m&sup2;</p>' +
+                        '<p class="buy">' +
+                        //'<a href="#yx-enroll" data-opt="{name: &#039;富士康将入住增城，盈翠雅筑单价才1万起买┈&#039;, aid: &#039;243&#039;}" class="form-bdrs btn-jqModal-ex" data-yx-btn="1">' +
+                        //'<i class="font-lp-29"></i>我有意向</a>' +
                         ' </p>' +
                         '</div>' +
                         '</div>'
