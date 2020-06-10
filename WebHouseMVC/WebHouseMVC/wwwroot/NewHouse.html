@@ -10,7 +10,7 @@
     <link href="css/im.css" rel="stylesheet" />
     <script src="js/seajs.js"></script>
     <script src="js/seajs.cfg.js"></script>
-    <title></title>
+    <title>新房</title>
     <script>
         $(function () {
             Show();
@@ -33,17 +33,21 @@
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '平米'+'</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
                             + '<p>临界 可餐饮 上水 下水</p>'
-                            + '</div >'
+                            + '</div>'
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
                             + '</div>'
-                            + '</div >'
-                            + '</div >'
+                            + '</div>'
+                            + '</div>'
                             + '</a>'
                         $("#body").append(str);
                     }
                     $("#HouseNum").html(d.length);
+
+                    if ((d.length) > 20) {
+                        alert('请注意对房源数量的控制');
+                    }
                 }
             })
         }
@@ -67,13 +71,13 @@
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '平米' +'</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
                             + '<p>临界 可餐饮 上水 下水</p>'
-                            + '</div >'
+                            + '</div>'
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
                             + '</div>'
-                            + '</div >'
-                            + '</div >'
+                            + '</div>'
+                            + '</div>'
                             + '</a>'
                         $("#body").append(str);
                     }
@@ -95,22 +99,23 @@
                     for (var i = 0; i < d.length; i++) {
                         var str = '<a onclick="She(' + d[i].id + ')">'
                             + '<div id="show" style="width:1300px; float:left; height:110px;">'
-                            + '<div style="float:left;width:350px ">'
+                            + '<div style="float:left;width:450px ">'
                             + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
                             + '<a>' + d[i].houseName + '</a>'
-                            + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '平米' +'</p>'
+                            + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '平米' + '</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
                             + '<p>临界 可餐饮 上水 下水</p>'
-                            + '</div >'
+                            + '</div>'
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
                             + '</div>'
-                            + '</div >'
-                            + '</div >'
+                            + '</div>'
+                            + '</div>'
                             + '</a>'
                         $("#body").append(str);
                     }
+                    $("#HouseNum").html(d.length);
                 }
             })
         }
@@ -130,16 +135,17 @@
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '平米' +'</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
                             + '<p>临界 可餐饮 上水 下水</p>'
-                            + '</div >'
+                            + '</div>'
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
                             + '</div>'
-                            + '</div >'
-                            + '</div >'
+                            + '</div>'
+                            + '</div>'
                             + '</a>'
                         $("#body").append(str);
                     }
+                    $("#HouseNum").html(d.length);
                 }
             })
         }
@@ -159,16 +165,17 @@
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '平米' +'</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
                             + '<p>临界 可餐饮 上水 下水</p>'
-                            + '</div >'
+                            + '</div>'
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
                             + '</div>'
-                            + '</div >'
-                            + '</div >'
+                            + '</div>'
+                            + '</div>'
                             + '</a>'
                         $("#body").append(str);
                     }
+                    $("#HouseNum").html(d.length);
                 }
             })
         }
@@ -188,16 +195,17 @@
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '平米' +'</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
                             + '<p>临界 可餐饮 上水 下水</p>'
-                            + '</div >'
+                            + '</div>'
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
                             + '</div>'
-                            + '</div >'
-                            + '</div >'
+                            + '</div>'
+                            + '</div>'
                             + '</a>'
                         $("#body").append(str);
                     }
+                    $("#HouseNum").html(d.length);
                 }
             })
         }
@@ -217,16 +225,17 @@
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '平米' +'</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
                             + '<p>临界 可餐饮 上水 下水</p>'
-                            + '</div >'
+                            + '</div>'
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
                             + '</div>'
-                            + '</div >'
-                            + '</div >'
+                            + '</div>'
+                            + '</div>'
                             + '</a>'
                         $("#body").append(str);
                     }
+                    $("#HouseNum").html(d.length);
                 }
             })
         }
@@ -249,17 +258,17 @@
                             + '<p>' + d[i].houseIntro + '   ' + d[i].houseArea + '平米' +'</p>'
                             + '<p>' + d[i].houseInfo + '</p>'
                             + '<p>临界 可餐饮 上水 下水</p>'
-                            + '</div >'
+                            + '</div>'
                             + '<div style = "float:right;line-height:108px;" >'
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
                             + '</div>'
-                            + '</div >'
-                            + '</div >'
+                            + '</div>'
+                            + '</div>'
                             + '</a>'
                         $("#body").append(str);
                     }
-
+                    $("#HouseNum").html(d.length);
                 }
             })
         }
@@ -284,12 +293,12 @@
                             + '<span>' + d[i].housePrice + '/平米</span>'
                             + '<div style="float:right">'
                             + '</div>'
-                            + '</div >'
-                            + '</div >'
+                            + '</div>'
+                            + '</div>'
                             + '</a>'
                         $("#body").append(str);
                     }
-
+                    $("#HouseNum").html(d.length);
                 }
             })
         }
@@ -321,8 +330,8 @@
         }
 
         #div2 {
-            margin-left: 200px;
-            margin-top: 50px;
+            margin-left: 100px;
+            margin-top: 60px;
         }
 
         #div3 {
@@ -366,6 +375,9 @@
         #wz {
             margin-top: 70px;
             margin-left: 200px;
+            background-color:aliceblue;
+            width:1300px;
+            height:250px;
         }
 
         #sp1 {
@@ -375,6 +387,7 @@
 
         #sd {
             margin-top: 20px;
+            margin-left: 100px;
         }
 
         #a {
@@ -396,13 +409,16 @@
         }
         #Num{
             margin-left:200px;
-            height:25px;
+            height:55px;
             width:1300px;
-            background-color:#808080;
+            background-color:#ff6a00;
             margin-top:30px;
-            font-size:larger;
+            font-size:25px;
             color:brown;
             font-weight:bolder;
+        }
+        #He {
+            background-color: #ff6a00;
         }
     </style>
 </head>
@@ -446,6 +462,11 @@
                         经纪人
                     </a>
                 </li>
+                <li>
+                    <a target="_self" href="AddNewHouse.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                       发布房源
+                    </a>
+                </li>
             </ul>
 
 
@@ -465,16 +486,15 @@
         </div>
     </div>
 
-    <div id="div2">
-        <div id="ss"></div>
-        <input id="HName" type="text" placeholder="请输入小区名称/区域" style="width:500px" />
-        <input id="Button1" type="button" value="搜索" class="btn btn-danger" onclick="ReHouse()" />
-    </div>
+   
     <div id="wz">
-
+        <div id="div2">
+            <input id="HName" type="text" placeholder="请输入小区名称/区域" style="width:500px" />
+            <input id="Button1" type="button" value="搜索" class="btn btn-danger" onclick="ReHouse()" />
+        </div>
         <div id="sd">
             <span id="sp1">位置</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><a id="a">按区域查询</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">按地铁查询</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">按学校查询</a></span>
-        </div>
+        </div>-->
         <div id="sd">
             <span id="sp1">价格</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><a id="a">150万以下</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">150-200万</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">200-250万</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">250-300万</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a">350万以上</a></span>
         </div>
@@ -485,7 +505,7 @@
             <span id="sp1">户型</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><a id="a" onclick="OneH()">一室一厅</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="TwoH()">两室一厅</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="ThreeH()">三室一厅</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="FourH()">四室一厅</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="a" onclick="FiveH()">五室两厅</a></span>
         </div>
     </div>
-    <div id="Num"><span>在线房源:<a id="HouseNum"></a></span></div>
+    <div id="Num"><span>在线房源:<a id="HouseNum"></a><a>套</a></span></div>
     <div id="div5">
         <div id="body">
 

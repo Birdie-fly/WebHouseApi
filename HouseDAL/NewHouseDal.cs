@@ -108,7 +108,7 @@ namespace HouseDAL
         /// <returns></returns>
         public IEnumerable<HouseCollectModel> GetHouses()
         {
-            string sql = $" select * from HouseCollect where HouseArea<110 and HouseModel=1";
+            string sql = $" select * from HouseCollect where HouseArea>90and HouseModel=1";
             return DapperHelper<HouseCollectModel>.Query(sql, null);
         }
         public IEnumerable<HouseCollectModel> GetHousesd()
