@@ -137,7 +137,7 @@
         }
 
         .content input {
-            padding: 5px 10px;
+            padding: 5px 0px;
             width: 200px;
         }
 
@@ -158,7 +158,7 @@
             }
 
         .lilight {
-            background-color: #fafafa;
+            background-color: #bfbfbf;
         }
     </style>
 
@@ -166,15 +166,20 @@
 
         $(function () {
             //声明所有的电子邮件变量
-            var mail = new Array("sina.com.cn", /*"126.com",*/ "163.com", "gmail.com", "qq.com",/* "vip.qq.com", "hotmail.com",*/ "sohu.com", "139.com"/*, "vip.sina.com", "cuiqingcai.com"*/);
+            var mail = new Array(/*"sina.com.cn", "126.com", */"163.com", "gmail.com", "qq.com",/* "vip.qq.com", "hotmail.com",*/ "sohu.com", "139.com"/*, "vip.sina.com", "cuiqingcai.com"*/);
             //生成一个个li，并加入到ul中
             for (var i = 0; i < mail.length; i++) {
-                var liElement = $("<li class=\"autoli\"><span class=\"ex\"></span><span class=\"at\">@</span><span class=\"tail\">" + mail[i] + "</span></li>");
+                var liElement = $("<li class=\"autoli\"><span class=\"ex\" style=\"margin-left:-28px;\"></span><span class=\"at\">@</span><span class=\"tail\">" + mail[i] + "</span></li>");
                 liElement.appendTo("ul.list");
             }
             //首先让list隐藏起来
             $("ul.list").hide();
 
+            //邮箱格式验证
+            //var reEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+            //if (reEmail.test($("#txtEmail").val())) {
+            //    $("ul.list").hide();
+            //}
             $("#txtEmail").keyup(function (event) {
                 //键入的内容不是上下箭头和回车
                 if (event.keyCode != 38 && event.keyCode != 40 && event.keyCode != 13) {
@@ -438,7 +443,7 @@
             //邮箱格式验证
             var reEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
             //QQ正则验证
-            var reQq = /^[1-9][0-9]{4,11}$/; 
+            var reQq = /^[1-9][0-9]{4,11}$/;
 
 
             if (imgHas == "") {
@@ -469,7 +474,7 @@
                 alert("请正确输入经纪人QQ！");
                 return;
             }
-            if (obj.WeChat =="error decoding QR Code"||obj.WeChat=="") {
+            if (obj.WeChat == "error decoding QR Code" || obj.WeChat == "") {
                 alert("请正确选择微信二维码名片！");
                 return;
             }
@@ -622,11 +627,11 @@
                                 <li>
                                     <div class="content">
                                         <label><font color="#ff0000">* </font><span style="font-size:12px;">邮箱：</span><input type="text" name="email" id="txtEmail" placeholder="请输入经纪人的邮箱" class="ipt" style="width:130px;" /></label>
-                                        <ul class="list"></ul>
+                                        <ul class="list" style="position:absolute;margin-left:34%;width:140px;background-color:#fafafa;"></ul>
                                     </div>
                                 </li>
                                 <li><label><font color="#ff0000">* </font><span style="font-size:12px;">QQ：</span><input id="txtQQ" type="text" class="ipt" /></label></li>
-                                <li><label style="float:left;margin-left:16%;"><font color="#ff0000">* </font><span style="font-size:12px;">微信名片二维码：</span><input type="file" id="newfile" onchange="changePic()" style="float:right;width:150px;"></label></li>
+                                <li><label style="float:left;margin-left:16%;"><font color="#ff0000">* </font><span style="font-size:12px;">微信名片二维码：</span><input type="file" id="newfile" onchange="changePic()" style="float:right;width:130px;"></label></li>
                                 <li><input type="button" value="添加" class="submitBtn" onclick="addPrincipal()" /><input id="Hidden1" type="hidden" /></li>
                             </ul>
                         </div>
