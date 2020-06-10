@@ -73,33 +73,33 @@ namespace HouseDAL
         /// <returns></returns>
         public IEnumerable<HouseCollectModel> houses(int id)
         {
-            string sql = $"select * from HouseCollect join HouseType on HouseCollect.HouseType=HouseType.Id  where HouseCollect.Id={id}";
+            string sql = $"select * from HouseCollect join HouseType on HouseCollect.HouseType=HouseType.Tid  where HouseCollect.Id={id}";
             return DapperHelper<HouseCollectModel>.Query(sql, null);
         }
 
         public IEnumerable<HouseCollectModel> GetHouseCollects()
         {
-            string sql = $"select * from HouseCollect where HouseType=1";
+            string sql = $"select * from HouseCollect where HouseType=1 and HouseModel=1";
             return DapperHelper<HouseCollectModel>.Query(sql, null);
         }
         public IEnumerable<HouseCollectModel> GetHouseCollect()
         {
-            string sql = $"select * from HouseCollect where HouseType=5";
+            string sql = $"select * from HouseCollect where HouseType=7  and HouseModel=1";
             return DapperHelper<HouseCollectModel>.Query(sql, null);
         }
         public IEnumerable<HouseCollectModel> GetHouseCollec()
         {
-            string sql = $"select * from HouseCollect where HouseType=2";
+            string sql = $"select * from HouseCollect where HouseType=2  and HouseModel=1";
             return DapperHelper<HouseCollectModel>.Query(sql, null);
         }
         public IEnumerable<HouseCollectModel> GetHouseColle()
         {
-            string sql = $"select * from HouseCollect where HouseType=3";
+            string sql = $"select * from HouseCollect where HouseType=3  and HouseModel=1";
             return DapperHelper<HouseCollectModel>.Query(sql, null);
         }
         public IEnumerable<HouseCollectModel> GetHouseColl()
         {
-            string sql = $"select * from HouseCollect where HouseType=4";
+            string sql = $"select * from HouseCollect where HouseType=6  and HouseModel=1";
             return DapperHelper<HouseCollectModel>.Query(sql, null);
         }
         /// <summary>
