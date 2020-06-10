@@ -127,13 +127,13 @@
         <div class="Logo">
         </div>
         <div class="UserInfo ShowMenu">
-            <a class="Face" href="#"><img src="images/zqz.png" alt="zhangqzh" />小豪豪</a>
+            <a class="Face" href="#" id="loginName"><img src="images/zqz.png" alt="zhangqzh" />小豪豪</a>
             <div class="MenuSelect">
                 <a href="#">我的班务</a>
                 <a href="#">工作数据</a>
                 <a href="#">系统设置</a>
                 <div class="Line"></div>
-                <a href="#">退出系统</a>
+                <a href="/Landing/Landing">退出系统</a>
             </div>
         </div>
         <div class="fright">
@@ -151,3 +151,26 @@
     </div>
 </body>
 </html>
+
+<script>
+    $(function () {
+        getLoginName();
+    })
+
+    function getLoginName() {
+       
+        $.ajax({
+            url: '/Landing/RemberName',
+            type: 'get',
+            contentType: 'application/json',
+            success: function (d) {
+                if (d != "" && d != null) {
+                    $("#loginName").text(d);
+                }
+                else {
+                    $("#loginName").text("登录");
+                }
+            }
+        })
+    }
+</script>

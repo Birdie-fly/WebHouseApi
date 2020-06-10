@@ -73,7 +73,7 @@ namespace HouseDAL
         /// <returns></returns>
         public IEnumerable<HouseCollectModel> houses(int id)
         {
-            string sql = $"select * from HouseCollect join HouseType on HouseCollect.HouseType=HouseType.Id  where HouseCollect.Id={id}";
+            string sql = $"select * from HouseCollect join HouseType on HouseCollect.HouseType=HouseType.TId  where HouseCollect.Id={id}";
             return DapperHelper<HouseCollectModel>.Query(sql, null);
         }
 
