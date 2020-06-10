@@ -2,26 +2,33 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>经纪人信息</title>
-    <link rel="stylesheet" href="boot/bootstrap.min.css" />
-    <link rel="stylesheet" href="boot/bootstrap-table.min.css">
-    <link rel="stylesheet" href="boot/bootstrap-table-pagejump.css" />
-    <link rel="stylesheet" href="commonUnit/layui/css/layui.css" />
-    <link rel="stylesheet" href="commonUnit/laydate/need/laydate.css" />
-    <link rel="stylesheet" href="commonUnit/laydate/skins/yahui/laydate.css" />
 
-    <link href="css/sys.css" rel="stylesheet" />
-    <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <title>经纪人信息</title>
+    <link href="boot/bootstrap.min.css" rel="stylesheet" />
+    <link href="boot/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="boot/bootstrap-table-pagejump.css" rel="stylesheet" />
+    <link href="commonUnit/layui/css/layui.css" rel="stylesheet" />
+    <link href="commonUnit/laydate/need/laydate.css" rel="stylesheet" />
+    <link href="commonUnit/laydate/skins/yahui/laydate.css" rel="stylesheet" />
     <script src="boot/bootstrap.min.js"></script>
     <script src="boot/bootstrap-table.min.js"></script>
     <script src="boot/bootstrap-table-zh-CN.min.js"></script>
-    <script src="boot/bootstrap-table-pagejump.js" type="text/javascript" charset="utf-8"></script>
+    <script src="boot/bootstrap-table-pagejump.js"></script>
     <script src="commonUnit/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
     <script src="commonUnit/laydate/laydate.dev.js" type="text/javascript" charset="utf-8"></script>
-    
-    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="js/reqrcode.js"></script>
+    <script src="js/qrcode.js"></script>
+    <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <link href="css/jq22.css" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta content="telephone=no" name="format-detection">
+    <script src="boot/jquery-3.2.1.min.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="js/qrcode.js"></script>
+    <link href="boot/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
     <style>
         #qrcode {
             width: 30px;
@@ -128,8 +135,170 @@
             z-index: 1002;
             overflow: auto;
         }
+
+        .content input {
+            padding: 5px 0px;
+            width: 200px;
+        }
+
+        ul.list {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+            ul.list li {
+                border: 1px solid #EEE;
+                width: 180px;
+                padding: 5px 10px;
+                margin: 0px;
+                text-overflow: ellipsis;
+                /*溢出时变为省略 overflow:hidden;*/
+            }
+
+        .lilight {
+            background-color: #bfbfbf;
+        }
     </style>
-    <script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            //声明所有的电子邮件变量
+            var mail = new Array(/*"sina.com.cn", "126.com", */"163.com", "gmail.com", "qq.com",/* "vip.qq.com", "hotmail.com",*/ "sohu.com", "139.com"/*, "vip.sina.com", "cuiqingcai.com"*/);
+            //生成一个个li，并加入到ul中
+            for (var i = 0; i < mail.length; i++) {
+                var liElement = $("<li class=\"autoli\"><span class=\"ex\" style=\"margin-left:-28px;\"></span><span class=\"at\">@</span><span class=\"tail\">" + mail[i] + "</span></li>");
+                liElement.appendTo("ul.list");
+            }
+            //首先让list隐藏起来
+            $("ul.list").hide();
+
+            //邮箱格式验证
+            //var reEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+            //if (reEmail.test($("#txtEmail").val())) {
+            //    $("ul.list").hide();
+            //}
+            $("#txtEmail").keyup(function (event) {
+                //键入的内容不是上下箭头和回车
+                if (event.keyCode != 38 && event.keyCode != 40 && event.keyCode != 13) {
+                    //如果输入的值不是空或者不以空格开头
+                    if ($.trim($(this).val()) != "" && $.trim($(this).val()).match(/^@/) == null) {
+                        $("ul.list").show();
+                        //如果当前有已经高亮的下拉选项卡，那么将其移除
+                        if ($("ul.list li:visible").hasClass("lilight")) {
+                            $("ul.list li").removeClass("lilight");
+                        }
+                        //如果还存在下拉选项卡，那么将其高亮
+                        if ($("ul.list li:visible")) {
+                            $("ul.list li:visible:eq(0)").addClass("lilight");
+                        }
+                    } else {
+                        //否则不进行显示
+                        $("ul.list").hide();
+                        $("ul.list li").removeClass("lilight");
+                    }
+                    //输入的内容还没有包括@符号
+                    if ($.trim($(this).val()).match(/.*@/) == null) {
+                        $(".list li .ex").text($(this).val());
+                    } else {
+                        //输入的符号已经包含了@
+                        var str = $(this).val();
+                        var strs = str.split("@");
+                        $(".list li .ex").text(strs[0]);
+                        if ($(this).val().length >= strs[0].length + 1) {
+                            tail = str.substr(strs[0].length + 1);
+                            $(".list li .tail").each(function () {
+                                //如果数组中的元素是以文本中的后缀开头，那么就显示，否则不显示
+                                if (!($(this).text().match(tail) != null && $(this).text().indexOf(tail) == 0)) {
+                                    //隐藏其他的li
+                                    $(this).parent().hide();
+                                } else {
+                                    //显示所在的li
+                                    $(this).parent().show();
+                                }
+                            });
+                        }
+                    }
+                }
+                //按了回车时，将当前选中的元素写入到文本框中
+                if (event.keyCode == 13) {
+                    $("#txtEmail").val($("ul.list li.lilight:visible").text());
+                    $("ul.list").hide();
+                }
+            });
+
+            //监听上下方向键
+            $("#txtEmail").keydown(function (event) {
+                //下方向键按下了
+                if (event.keyCode == 40) {
+                    if ($("ul.list li").is(".lilight")) {
+                        if ($("ul.list li.lilight").nextAll().is("li:visible")) {
+                            $("ul.list li.lilight").removeClass("lilight").next("li").addClass("lilight");
+                        }
+                    }
+                }
+                //下方向键按下了
+                if (event.keyCode == 38) {
+                    if ($("ul.list li").is(".lilight")) {
+                        if ($("ul.list li.lilight").prevAll().is("li:visible")) {
+                            $("ul.list li.lilight").removeClass("lilight").prev("li").addClass("lilight");
+                        }
+                    }
+                }
+            });
+
+            //当鼠标点击某个下拉项时，选中该项，下拉列表隐藏
+            $("ul.list li").click(function () {
+                $("#txtEmail").val($(this).text());
+                $("ul.list").hide();
+            });
+
+            //当鼠标划过某个下拉项时，选中该项，下拉列表隐藏
+            $("ul.list li").hover(function () {
+                $("ul.list li").removeClass("lilight");
+                $(this).addClass("lilight");
+            });
+
+            //当鼠标点击其他位置，下拉列表隐藏
+            $(document).click(function () {
+                $("ul.list").hide();
+            });
+        });
+
+
+
+        var w, h, className;
+        function getSrceenWH() {
+            w = $(window).width();
+            h = $(window).height();
+            $('#dialogBg').width(w).height(h);
+        }
+
+        window.onresize = function () {
+            getSrceenWH();
+        }
+        $(window).resize();
+
+        $(function () {
+            getSrceenWH();
+
+            //显示弹框
+            $('.box a').click(function () {
+                className = $(this).attr('class');
+                $('#dialogBg').fadeIn(300);
+                $('#dialog').removeAttr('class').addClass('animated ' + className + '').fadeIn();
+                bangSel();
+            });
+
+            //关闭弹窗
+            $('.claseDialogBtn').click(function () {
+                $('#dialogBg').fadeOut(300, function () {
+                    $('#dialog').addClass('bounceOutUp').fadeOut();
+                });
+            });
+        });
 
         var PageSize = 4;
         var CurrentPage = 1;
@@ -144,7 +313,7 @@
             obj.CurrentPage = page;
             obj.PageSize = PageSize;
             $.ajax({
-                url: "https://localhost:44335/api/Principal/GetPrincipals",
+                url: "https://localhost:44335/api/Principal/GetPrincipal",
                 type: "get",
                 data: { CurrentPage: obj.CurrentPage, PageSize: obj.PageSize, PriName: $("#priName").val(), ComId: $("#comId").val() },
                 dataType: "json",
@@ -171,7 +340,7 @@
                             + '<td>' + this.principalPhone + '</td>'
                             + '<td>' + this.commodityName + '</td>'
                             + '<td>' + this.enter + '</td>'
-                            + '<td><img src="' + this.prImage + '" alt="" width="70,"height="70"/></td>'
+                            + '<td><img src="' + this.prImage + '"style="height:60px;width:60px;"/></td>'
                             + '<td>' + this.email + '</td>'
                             + '<td>' + this.qq + '</td>'
                             + '<td>' + '<input id="url" type="image" src="Images/微信.png" onclick="showUrl(' + this.id + ')" style="height:40px;width:40px;"/>' + '</td>'
@@ -239,30 +408,241 @@
                 }
             })
         }
+
+        var imgHas = "";
+
+        //选择照片
+        function xuanImage() {
+            //$("#filesp").click(); 隐藏了input:file样式后，点击头像就可以本地上传
+            $("#filesp").on("change", function () {
+                var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
+                imgHas = objUrl;
+                if (objUrl) {
+                    $("#pic").attr("src", objUrl); //将图片路径存入src中，显示出图片
+                }
+            });
+        }
+
+
+        function addPrincipal() {
+            var data = new FormData(document.getElementById("formData"));
+            var obj = {};
+            obj.PrincipalName = $("#txtName").val();
+            obj.PrincipalPhone = $("#txtPhone").val();
+            obj.CommodityId = $("#Select1").val();
+            obj.Enter = $("#txtEnter").val();
+            obj.Email = $("#txtEmail").val();
+            obj.QQ = $("#txtQQ").val();
+            obj.WeChat = $("#Hidden1").val();
+            data.append("ImageModelInfo", JSON.stringify(obj));
+
+            //经纪人姓名正则验证
+            var regName = /^[\u4E00-\u9FA5]{2,4}$/;
+            //手机号正则验证
+            var reTel = /^1\d{10}$/;
+            //邮箱格式验证
+            var reEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+            //QQ正则验证
+            var reQq = /^[1-9][0-9]{4,11}$/;
+
+
+            if (imgHas == "") {
+                alert("请正确选择经纪人照片！");
+                return;
+            }
+            if (!regName.test(obj.PrincipalName)) {
+                alert("请正确输入经纪人姓名！");
+                return;
+            }
+            if (!reTel.test(obj.PrincipalPhone)) {
+                alert("请正确输入经纪人手机号！");
+                return;
+            }
+            if (obj.CommodityId == -1) {
+                alert("请正确选择经纪人所属公司！");
+                return;
+            }
+            if (obj.Enter == "") {
+                alert("请正确输入经纪人经验介绍！");
+                return;
+            }
+            if (!reEmail.test(obj.Email)) {
+                alert("请正确输入经纪人邮箱！");
+                return;
+            }
+            if (!reQq.test(obj.QQ)) {
+                alert("请正确输入经纪人QQ！");
+                return;
+            }
+            if (obj.WeChat == "error decoding QR Code" || obj.WeChat == "") {
+                alert("请正确选择微信二维码名片！");
+                return;
+            }
+
+            //参数
+            $.ajax({
+                type: "post",
+                url: "https://localhost:44335/api/Principal/FileUp",
+                dataType: "json",
+                async: true,
+                data: data,
+                contentType: false,//实体头部用于指示资源的MIME类型 media type 。这里要为false
+                processData: false,//processData 默认为true，当设置为true的时候,jquery ajax 提交的时候不会序列化 data，而是直接使用data
+                success: function (data) {
+                    console.log(data);
+                    alert("添加成功！");
+                    location.href = "PrincipalShow.html"
+                },
+                error: function (data) {
+                    console.log("错误" + data);
+                }
+            });
+        }
+
+        //绑定所属公司下拉
+        function bangSel() {
+            $.ajax({
+                url: 'https://localhost:44335/api/Principal/GetCommodities',
+                type: 'get',
+                dataType: 'json',
+                success: function (d) {
+                    $("#Select1").empty();
+                    $("#Select1").append('<option value="-1">---请选择您的所属公司---</option>')
+                    $(d).each(function () {
+                        var opt = "<option value=" + this.id + "> " + this.commodityName + "</option>";
+                        $("#Select1").append(opt);
+                    })
+                }
+            })
+        }
+
+        function changePic() {
+            var reads = new FileReader();
+            f = document.getElementById('newfile').files[0];
+            reads.readAsDataURL(f);
+            //   console.log(newfile[0]);
+            console.log(getObjectURL(document.getElementById('newfile').files[0]));// newfile[0]是通过input file上传的二维码图片文件
+            qrcode.decode(getObjectURL(document.getElementById('newfile').files[0]));
+            qrcode.callback = function (imgMsg) {
+                //alert(imgMsg);
+                // 获取地址传给Hidden1
+                $("#Hidden1").empty();
+                document.getElementById("Hidden1").value = imgMsg;
+            }
+        }
+
+
+        // 解析
+        var newfile = document.getElementById('newfile');
+        var getObjectURL = function (file) {
+            var url = null;
+            if (window.createObjectURL != undefined) { // basic
+                url = window.createObjectURL(file);
+            } else if (window.URL != undefined) { // mozilla(firefox)
+                url = window.URL.createObjectURL(file);
+            } else if (window.webkitURL != undefined) { // webkit or chrome
+                url = window.webkitURL.createObjectURL(file);
+            }
+            return url;
+        }
+
+
+
     </script>
+
 </head>
 <body>
+    <div class="Top">
+        <div class="NavMenu">
+            <div class="SubMenu">
+                <ul>
+                    <li><a href="DaoHang.html">安居天下</a></li>
+                    <li><a href="ClientInfoShow.html">客户管理</a></li>
+                    <li><a href="CommoidityShow.html">商家管理</a></li>
+                    <li><a href="PrincipalShow.html">经纪人管理</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="Logo"></div>
+        <div class="UserInfo ShowMenu">
+            <a class="Face" href="#"><img src="images/zqz.png" alt="zhangqzh" />小豪豪</a>
+            <div class="MenuSelect">
+                <a href="#">我的班务</a>
+                <a href="#">工作数据</a>
+                <a href="#">系统设置</a>
+                <div class="Line"></div>
+                <a href="#">退出系统</a>
+            </div>
+        </div>
+        <div class="fright">
+            <input class="TopIco TopSearch" type="text" placeholder="请输入关键字搜索" />
+            <a class="TopIco icoRing" href="#"></a>
+            <a class="TopIco icoFullScreen" href="#"></a>
+            <div class="TopIco icoSkin ShowMenu">
+                <div class="MenuSelect">
+                    <a href="#">冰海深蓝</a>
+                    <a href="#">深夜模式</a>
+                    <a href="#">诞愿成真</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="light" class="white_content">
         <span style="margin-right:0px;"></span><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='block'">点这里关闭本窗口</a>
-        <div id="qrcode">
+        <div id="qrcode" style="height:100px;width:100px;">
 
         </div>
     </div>
     <table>
         <tr>
             <td>&nbsp;</td>
-            <td  style="font-size:large">经纪人姓名：</td>
-            <td><input id="priName" type="text" class="fenlei-chaxun-input" placeholder="请输入经纪人名称" /></td>&nbsp;&nbsp;
-            <td  style="font-size:large">&nbsp;公司：</td>
-            <td><select id="comId" style="border-radius:5px"></select>&nbsp;</td>&nbsp;&nbsp;
+            <td style="font-size:large">经纪人姓名：</td>
+            <td><input id="priName" style="font-size:large" type="text" class="fenlei-chaxun-input" placeholder="请输入经纪人名称" /></td>&nbsp;&nbsp;
+            <td style="font-size:large">&nbsp;公司：</td>
+            <td><select id="comId" style="border-radius:5px;height:28px;font-size:large"></select>&nbsp;</td>&nbsp;&nbsp;
             <td align="center">
-                <input id="Button1" type="button" value="搜索" onclick="prishow(1)" style="padding:2px 8px ;border-radius:5px;font-size:large" class="btn-info" />
+                <input id="Button1" type="button" value="搜索" onclick="prishow(1)" style="padding:2px 8px;border-radius:5px;font-size:large" class="btn-info" />
+            </td>
+            <td>
+                <div id="wrapper">
+                    <div class="box">
+                        <div class="demo"><a href="javascript:;" class="bounceIn"><input id="Button1" type="button" value="添加" style="padding:2px 8px ;border-radius:5px;font-size:large;" class="btn-info" /></a></div>
+                        <div id="dialogBg"></div>
+                        <div id="dialog" class="animated" style="width:400px;height:520px;">
+                            <img class="dialogIco" width="50" height="50" src="images/ico.png" alt="" />
+                            <div class="dialogTop"><a href="javascript:;" class="claseDialogBtn">关闭</a></div>
+                            <ul class="editInfos">
+                                <li>
+                                    <form enctype="multipart/form-data" id="formData">
+                                        <label>
+                                            <img id="pic" style="width:100px;height:100px;border-radius:50%;" src="\images\用户.png" onclick="xuanImage()">
+                                            <input id="filesp" name="file" accept="image/*" type="file" style="display: none">
+                                        </label>
+                                    </form>
+                                </li>
+                                <li><label><font color="#ff0000">* </font><span style="font-size:12px;">经纪人姓名：</span><input id="txtName" type="text" class="ipt" /></label></li>
+                                <li><label><font color="#ff0000">* </font><span style="font-size:12px;">联系电话：</span><input id="txtPhone" type="text" class="ipt" /></label></li>
+                                <li><label><font color="#ff0000">* </font><span style="font-size:12px;">所属公司：</span><select id="Select1" class="ipt"></select></label></li>
+                                <li><label><font color="#ff0000">* </font><span style="font-size:12px;">工作经验：</span><input id="txtEnter" type="text" placeholder="请输入经纪人的经验介绍" class="ipt"></label></li>
+                                <li>
+                                    <div class="content">
+                                        <label><font color="#ff0000">* </font><span style="font-size:12px;">邮箱：</span><input type="text" name="email" id="txtEmail" placeholder="请输入经纪人的邮箱" class="ipt" style="width:130px;" /></label>
+                                        <ul class="list" style="position:absolute;margin-left:34%;width:140px;background-color:#fafafa;"></ul>
+                                    </div>
+                                </li>
+                                <li><label><font color="#ff0000">* </font><span style="font-size:12px;">QQ：</span><input id="txtQQ" type="text" class="ipt" /></label></li>
+                                <li><label style="float:left;margin-left:16%;"><font color="#ff0000">* </font><span style="font-size:12px;">微信名片二维码：</span><input type="file" id="newfile" onchange="changePic()" style="float:right;width:130px;"></label></li>
+                                <li><input type="button" value="添加" class="submitBtn" onclick="addPrincipal()" /><input id="Hidden1" type="hidden" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </td>
         </tr>
     </table>
     <table><tr><td>&nbsp;</td></tr></table>
     <table class="table table-hover  gysz-table-head table-bordered" style="width: 1535px;text-align:center;background-color:azure">
-        <thead  style="font-size:large;color:cornflowerblue">
+        <thead style="font-size:large;color:cornflowerblue">
             <tr>
                 <th style="width: 40px;text-align:center" data-field="Id"><div class="th-inner">序号</div><div class="fht-cell"></div></th>
                 <th style="width: 60px;text-align:center " data-field="PrincipalName"><div class="th-inner">姓名</div><div class="fht-cell"></div></th>
@@ -277,10 +657,10 @@
             </tr>
 
         </thead>
-        <tbody id="body"></tbody>
+        <tbody id="body" style="font-size:large"></tbody>
     </table>
     <table class="table-bordered table" style="text-align:center;background-color:azure">
-        <tr style="color:cadetblue">
+        <tr style="color:cadetblue;font-size:large">
             <td>总记录数<span id="TotalCount"></span>条</td>
             <td>总共<span id="TotalPage"></span>页</td>
             <td>当前第<span id="CurrentPage"></span>页</td>

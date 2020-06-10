@@ -14,12 +14,12 @@ namespace WebHouseMVC
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        //public Startup(IConfiguration configuration)
+        //{
+        //    Configuration = configuration;
+        //}
 
-        public IConfiguration Configuration { get; }
+        //public IConfiguration Configuration { get; }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         //public void ConfigureServices( IServiceCollection services )
@@ -76,7 +76,7 @@ namespace WebHouseMVC
 
             DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
             defaultFilesOptions.DefaultFileNames.Clear();
-            defaultFilesOptions.DefaultFileNames.Add("WUdesHouse.html");
+            defaultFilesOptions.DefaultFileNames.Add("Index.html");
             app.UseDefaultFiles(defaultFilesOptions);
 
 

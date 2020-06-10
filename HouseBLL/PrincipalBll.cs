@@ -14,9 +14,21 @@ namespace HouseBLL
         /// 获取经纪人信息
         /// </summary>
         /// <returns></returns>
-        public List<PrincipalModel> GetPrincipals()
+        public IEnumerable<PrincipalModel> GetPrincipals()
         {
             return dal.GetPrincipals();
+        }
+        public IEnumerable<PrincipalModel> GetPrincipal()
+        {
+            return dal.GetPrincipal();
+        }
+        /// <summary>
+        /// 获取经纪人信息
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<PrincipalModel> GetPrincipalById(int id)
+        {
+            return dal.GetPrincipalById(id);
         }
 
         /// <summary>
@@ -28,6 +40,7 @@ namespace HouseBLL
         {
             return dal.AddPrincipal(principalModel);
         }
+
         //删除经纪人信息
         public int DelPrincipal(int id)
         {
@@ -36,6 +49,15 @@ namespace HouseBLL
         public string GetUrl(int id)
         {
             return dal.GetUrl(id);
+        }
+
+        /// <summary>
+        /// 获取商家信息
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<CommodityModel> GetCommodities()
+        {
+            return dal.GetCommodities();
         }
     }
 }

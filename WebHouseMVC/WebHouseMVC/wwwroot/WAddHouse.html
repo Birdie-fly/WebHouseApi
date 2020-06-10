@@ -115,7 +115,7 @@
             contentType: false,//实体头部用于指示资源的MIME类型 media type 。这里要为false
             processData: false,//processData 默认为true，当设置为true的时候,jquery ajax 提交的时候不会序列化 data，而是直接使用data
             success: function (data) {
-                alert(data);
+                alert(data.Msg);
                 location.href = "http://localhost:49946/WUdesHouse.html"
             },
             error: function (data) {
@@ -134,7 +134,7 @@
                 var a = '<option id="Sel" value="-1">→请选择房型←</option>';
                 $("#Select1").append(a);
                 $(d).each(function () {
-                    var str = ' <option id="sl" value="' + this.id + '">' + this.hType + '</option>';
+                    var str = ' <option id="sl" value="' + this.tId + '">' + this.hType + '</option>';
                     $("#Select1").append(str);
                 })
                 //for (var i = 0; i < d.length; i++) {
