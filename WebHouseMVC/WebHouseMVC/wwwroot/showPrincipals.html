@@ -370,6 +370,8 @@
         var email = "";
         //var web = "";
         //var desc = "";
+        //var qq = "";
+        //var photo="";
         var info = "";
         $.ajax({
             url: 'https://localhost:44335/api/Principal/GetPrincipalById?id=' + id,
@@ -382,8 +384,9 @@
                     title = "TITLE:" + "经纪人" + "\n";
                     mobile = "TEL:" + this.principalPhone + "\n";
                     email = "EMAIL:" + this.email + "\n";
-
-                    info = "BEGIN:VCARD\n" + name + company + title /*+ address */+ mobile + email /*+ web + desc */+ "END:VCARD";
+                    //photo = "PHOTO; ENCODING = b;";
+                    //qq = "X-QQ:" + this.qq + "\n";
+                    info = "BEGIN:VCARD\n" + name + company + title /*+ address */+ mobile + email/*web + desc +qq+*/+"END:VCARD";
                     //生成二维码
                     var qrcodes = new QRCode("qrcodes");
                     qrcodes.makeCode(info);
