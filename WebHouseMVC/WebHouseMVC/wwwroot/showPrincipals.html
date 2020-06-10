@@ -365,11 +365,11 @@
         var name = "";
         var company = "";
         var title = "";
-        var address = "";
+        //var address = "";
         var mobile = "";
         var email = "";
-        var web = "";
-        var desc = "";
+        //var web = "";
+        //var desc = "";
         var info = "";
         $.ajax({
             url: 'https://localhost:44335/api/Principal/GetPrincipalById?id=' + id,
@@ -380,13 +380,10 @@
                     name = "FN:" + this.principalName + "\n";
                     company = "ORG:" + this.commodityName + "\n";
                     title = "TITLE:" + "经纪人" + "\n";
-                    address = "WORK:" + "" + "\n";
                     mobile = "TEL:" + this.principalPhone + "\n";
                     email = "EMAIL:" + this.email + "\n";
-                    web = "URL:" + "" + "\n";
-                    desc = "NOTE:" + "" + "\n";
 
-                    info = "BEGIN:VCARD\n" + name + company + title + address + mobile + email + web + desc + "END:VCARD";
+                    info = "BEGIN:VCARD\n" + name + company + title /*+ address */+ mobile + email /*+ web + desc */+ "END:VCARD";
                     //生成二维码
                     var qrcodes = new QRCode("qrcodes");
                     qrcodes.makeCode(info);
