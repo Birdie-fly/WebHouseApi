@@ -27,6 +27,7 @@
     <Content Remove="wwwroot\css\im.css" />
     <Content Remove="wwwroot\css\index.css" />
     <Content Remove="wwwroot\css\salecss.css" />
+    <Content Remove="wwwroot\h1.mp3" />
     <Content Remove="wwwroot\imgVer\images\login-err.png" />
     <Content Remove="wwwroot\imgVer\images\logo.jpg" />
     <Content Remove="wwwroot\imgVer\images\null-password.jpg" />
@@ -133,6 +134,7 @@
     <None Include="wwwroot\fonts\service.woff" />
     <None Include="wwwroot\fonts\validate.eot" />
     <None Include="wwwroot\fonts\validate.woff" />
+    <None Include="wwwroot\h1.mp3" />
     <None Include="wwwroot\images\00e826fc8b217f964624614d1a17a42f.jpg" />
     <None Include="wwwroot\images\0347ee393b8b7c249f23c1639ca3c726.jpg" />
     <None Include="wwwroot\images\07dcc9a25af4f552d2c94b7274dfbaef.jpg" />
