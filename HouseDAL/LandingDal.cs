@@ -33,6 +33,6 @@ namespace HouseDAL
             return DapperHelper<ReisterModel>.Execute(sql, null);
         }
 
-
+     
     }
 }
