@@ -226,6 +226,10 @@
             type: 'get',
             dataType: 'json',
             success: function (d) {
+                if (d.length == 0) {
+                    alert('暂时没有此房型!请选择别的看看吧~');
+                    return;
+                }
                 $("#boy").empty();
                 for (var i = 0; i < d.length; i++) {
                     var str = '<div class="Show" style="width:1300px; float:left; height:120px;" onclick="Seel(' + d[i].id + ')">'
@@ -256,6 +260,10 @@
             type: 'get',
             dataType: 'json',
             success: function (d) {
+                if (d.length == 0) {
+                    alert('暂时没有此房型!请选择别的看看吧~');
+                    return;
+                }
                 $("#boy").empty();
                 for (var i = 0; i < d.length; i++) {
                     var str = '<div class="Show" style="width:1300px; float:left; height:120px;" onclick="Seel(' + d[i].id + ')">'
@@ -286,6 +294,10 @@
             type: 'get',
             dataType: 'json',
             success: function (d) {
+                if (d.length == 0) {
+                    alert('暂时没有此房型!请选择别的看看吧~');
+                    return;
+                }
                 $("#boy").empty();
                 for (var i = 0; i < d.length; i++) {
                     var str = '<div class="Show" style="width:1300px; float:left; height:120px;" onclick="Seel(' + d[i].id + ')">'
