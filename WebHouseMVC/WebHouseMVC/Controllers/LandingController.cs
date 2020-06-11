@@ -25,10 +25,6 @@ namespace WebHouseMVC.Controllers
 
         public IActionResult Index()
         {
-            using (FileStream image = new FileStream("c:\\FakePhoto2.jpg", FileMode.Open))
-            {
-                //var  image = Image.FromStream(image);
-            }
             return View();
         }
 
