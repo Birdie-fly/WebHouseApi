@@ -2,70 +2,84 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title id="txtTitle"></title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/ats.css" rel="stylesheet" />
+    <link href="css/global.css" rel="stylesheet" />
+    <link href="css/im.css" rel="stylesheet" />
+    <script src="js/seajs.js"></script>
+    <script src="js/seajs.cfg.js"></script>
     <script>
         var path = location.href;
         var list = path.split("?id=");
         var str = list[1];
-            $.ajax({
-                url: 'https://localhost:44335/api/NewHouse/houses?id=' + str,
-                type: 'get',
-                dataType: 'json',
-                success: function (d) {
-                    $("#body").empty();
-                    for (var i = 0; i < d.length; i++) {
-                        var str = '<div id="show" style="width:1300px; float:left; height:500px;margin-top:150px">'
-                            + '<div style="float:left;width:350px;margin-left:30px;margin-top:70px">'
-                            + '<img src="' + d[i].houseImage + '" alt="" width="560" height="360" style="float:left;margin:12px" />'
-                            + '</div >'
-                            //+'<div style="width:860px;margin-top:8px">'
-                            + '<div style="font-size:45px;font-weight:bolder;margin-top:10px">' + d[i].houseName + '</div>'
-                            //+ '</div >'
-                            //+ '<div style="float:right;margin-right:460px;margin-top:50px">'
-                            + '<div style="float:right;margin-right:40px;font-size:25px;margin-bottom:245px">'
-                            +'<div style="color:red;font-weight:bolder;font-size:35px;border-top:1px solid gray">'
-                            + '<div style="float:left">' + d[i].hType + '</div>'
-                            + '<div style="float:left;margin-left:100px">'+ d[i].houseArea + '平米' + '</div > '
-                            + '<div style="float:right;margin-left:35px">' + d[i].housePrice + '/平米</div>'
-                            + '</div>'
-                            +'</hr>'
-                            + '<div style="margin-top:65px;border-top:1px solid gray">'
-                            +'<div style="float:left">'+'首期首付84万'+'</div>'
-                            + '<div style="float:left;margin-left:35px">' + '所在楼层:'+ d[i].houseGradation+ '</div>'
-                            + '<div style="float:right;margin-left:35px">' + '楼层总层数:' + d[i].houseSum + '</div>'
-                            + '</div>'
-                            + '<div style="float:left;margin-top:45px">'
-                            + '<div style="float:left">' + d[i].houseSite + '</div>'
-                            + '<div style="float:left;margin-left:55px">' +'类型:'+ d[i].houseModel + '</div>'
-                            + '<div style="margin-top:80px;">' + '房屋简介:' + d[i].houseIntro + '</div>'
-                            +'<div style="margin-top:40px">'+'装修:' +'中装'+'</div>'
-                            + '<div style="margin-top:35px">' + '物业费:' + d[i].houseTenement + '/平米(月)</div>'
-                            +'</div>'
-                            +'</div>'
-                            + '<div>'
-                            + '<div >'
-                            + '<input type="button" style="width: 300px; height: 45px; margin-left: 290px; margin-top:10px; background-color:gray;" onclick="Info()" value="免费咨询" />'
-                            + '</div >'
-                            + '<div>'
-                            + '<img src="images/特色三.jpg" alt=""style="float:left;margin-top:320px;margin-right:200px;" />'
-                            + '</div>'
-                            + '<div style="float:left;margin-top:320px;margin-right:200px;font-weight:bolder;font-size:20px">'+'核心卖点'+'</div>'
-                            + '<div style="float:right;margin-top:-350px;margin-right:750px">' + '黄金楼层，繁华地段，近商圈，房型正气' + '</div>'
-                            + '<div style="float:left;margin-top:-250px;margin-left:300px;font-weight:bolder;font-size:20px">' + '基本信息' + '</div>'
-                            + '<div style="float:right;margin-top:-220px;margin-right:100px">' + '该房产位于大连西路157号，属于虹口四平路板块，房屋总建筑面积40.17平米，一室一厅，实用型房屋。房屋朝向南。位于中层(总楼层数是6楼)。' + '</div>'
-                            + '<div style="float:left;margin-top:-95px;margin-left:300px;font-weight:bolder;font-size:20px">' + '房源特色' + '</div>'
-                            + '<div style="float:left;margin-top:-65px;margin-left:300px">' + '本房为中装，买下本房您可以省下不少时间，免去装修烦恼，拎包即可入住。房型正气，布局合理，值得一看。' + '</div>'
-                            +'</div>'
-                            //+ '</div >' 
-                            //+ '</div >'
-                        $("#body").append(str);
-                    }
+        $.ajax({
+            url: 'https://localhost:44335/api/NewHouse/houses?id=' + str,
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                $("#body").empty();
+                for (var i = 0; i < d.length; i++) {
 
+                    var str = '<div id="show" style="width:1300px; float:left; height:500px;margin-top:150px">'
+                        + '<div style="float:left;width:350px;margin-left:30px;margin-top:70px">'
+                        + '<img src="' + d[i].houseImage + '" alt="" width="560" height="360" style="float:left;margin:12px" />'
+                        + '</div >'
+
+                    $("#txtTitle").text(d[0].houseInfo);
+                    var str = '<div id="show" style="width:1300px; float:left; height:500px;margin-top:50px">'
+                        + '<div style="float:left;width:350px;margin-left:30px;margin-top:70px">'
+                        + '<img src="' + d[i].houseImage + '" alt="" width="560" height="360" style="float:left;margin:12px" />'
+                        + '</div>'
+                        //+'<div style="width:860px;margin-top:8px">'
+                        + '<div style="font-size:45px;font-weight:bolder;margin-top:10px">' + d[i].houseName + '</div>'
+                        //+ '</div >'
+                        //+ '<div style="float:right;margin-right:460px;margin-top:50px">'
+                        + '<div style="float:right;margin-right:40px;font-size:25px;margin-bottom:245px">'
+                        + '<div style="color:red;font-weight:bolder;font-size:35px;border-top:1px solid gray">'
+                        + '<div style="float:left">' + d[i].hType + '</div>'
+                        + '<div style="float:left;margin-left:100px">' + d[i].houseArea + '平米' + '</div > '
+                        + '<div style="float:right;margin-left:35px">' + d[i].housePrice + '/平米</div>'
+                        + '</div>'
+                        + '</hr>'
+                        + '<div style="margin-top:65px;border-top:1px solid gray">'
+                        + '<div style="float:left">' + '首期首付84万' + '</div>'
+                        + '<div style="float:left;margin-left:35px">' + '所在楼层:' + d[i].houseGradation + '</div>'
+                        + '<div style="float:right;margin-left:35px">' + '楼层总层数:' + d[i].houseSum + '</div>'
+                        + '</div>'
+                        + '<div style="float:left;margin-top:45px">'
+                        + '<div style="float:left">' + d[i].houseSite + '</div>'
+                        + '<div style="float:left;margin-left:55px">' + '等级:' + d[i].houseModel + '</div>'
+
+                        + '<div style="margin-top:80px;">' + '房屋简介:' + d[i].houseIntro + '</div>'
+                        + '<div style="margin-top:40px">' + '装修:' + '中装' + '</div>'
+                        + '<div style="margin-top:35px">' + '物业费:' + d[i].houseTenement + '/平米(月)</div>'
+                        + '</div>'
+                        + '</div>'
+                        + '<div>'
+                        + '<div id="sd">'
+                        + '<input type="button" style="width: 300px; height: 45px; margin-left: 290px; margin-top:10px; background-color:gray;" onclick="Info()" value="打电话咨询" />'
+                        + '<input type="button" style="width: 300px; height: 45px; margin-left: 290px; margin-top:10px; background-color:gray;" onclick="Infor()" value="加微信详细咨询" />'
+                        + '</div >'
+                        + '<div>'
+                        + '<img src="images/特色三.jpg" alt=""style="float:left;margin-top:320px;margin-right:200px;" />'
+                        + '</div>'
+                        + '<div style="float:left;margin-top:320px;margin-right:200px;font-weight:bolder;font-size:20px">' + '核心卖点' + '</div>'
+                        + '<div style="float:right;margin-top:-350px;margin-right:750px">' + '黄金楼层，繁华地段，近商圈，房型正气' + '</div>'
+                        + '<div style="float:left;margin-top:-250px;margin-left:300px;font-weight:bolder;font-size:20px">' + '基本信息' + '</div>'
+                        + '<div style="float:right;margin-top:-220px;margin-right:100px">' + '该房产位于大连西路157号，属于虹口四平路板块，房屋总建筑面积40.17平米，一室一厅，实用型房屋。房屋朝向南。位于中层(总楼层数是6楼)。' + '</div>'
+                        + '<div style="float:left;margin-top:-95px;margin-left:300px;font-weight:bolder;font-size:20px">' + '房源特色' + '</div>'
+                        + '<div style="float:left;margin-top:-65px;margin-left:300px">' + '本房为中装，买下本房您可以省下不少时间，免去装修烦恼，拎包即可入住。房型正气，布局合理，值得一看。' + '</div>'
+                        + '</div>'
+                    //+ '</div >'
+                    //+ '</div >'
+                    $("#body").append(str);
                 }
-            })
+
+            }
+        })
         // 弹窗
         function showWindow(showmsg) {
             $('#showdiv').show();   //显示弹窗
@@ -73,7 +87,19 @@
             $('#cover').css('display', 'block'); //显示遮罩层
 
         }
+        // 弹窗
+        function showWindows(showmsg) {
+            $('#showdivs').show();   //显示弹窗
+            $('.content').append(showmsg);    //追加内容
+            $('#cover').css('display', 'block'); //显示遮罩层
 
+        }
+        // 关闭弹窗
+        function closeWindows() {
+            $('#showdivs').hide();   //隐藏弹窗
+            $('#cover').css('display', 'none');     //显示遮罩层
+            $('#showdivs .content').html("");    //清空追加的内容
+        }
         // 关闭弹窗
         function closeWindow() {
             $('#showdiv').hide();   //隐藏弹窗
@@ -84,6 +110,9 @@
 
         function Info() {
             showWindow();
+        }
+        function Infor() {
+            showWindows();
         }
     </script>
     <style>
@@ -98,6 +127,7 @@
             color: red;
             font-size: xx-large;
         }
+
         #div3 {
             float: right;
             font-size: large;
@@ -105,19 +135,71 @@
             margin-top: 10px;
             margin-right: 130px;
         }
+        #sd{
+            margin-left:750px;
+            margin-top:-120px;
+        }
     </style>
 </head>
 <body>
-    <div id="div0">
-        <div id="div1">
-            &nbsp&nbsp&nbsp<span>516安居天下</span>
-            <div id="div3">
-                <span>
-                    <a>首页</a>&nbsp<a onclick="NewH()">新房</a>&nbsp<a>二手房</a>&nbsp<a>租房</a>&nbsp<a>写字楼</a>
+    <div class="header scrollToFixed clearfix" data-spacer-class="header-spacer">
+        <div class="header-bg"></div>
+        <div class="container">
+            <div class="logo fl">
+                <span class="logocen">
+                    <a href="index.html"><img width="140" height="40" alt="" src="WybImages/logo1.png" /></a>
                 </span>
             </div>
-        </div>
+            <div class="area fl">
+                <div data-hover="hoverslider" data-obj=".more-area">
+                    <div class="cur-area">上海市</div>
+                </div>
+            </div>
+            <ul class="nav fl" data-tag='zdh'>
+                <li>
+                    <a target="_self" href="index.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        首页
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="NewHouse.html" class='hoverslider act' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        新房
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="SHouse.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        二手房
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="WUdesHouse.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        出租
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="showPrincipals.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                        经纪人
+                    </a>
+                </li>
+            </ul>
 
+
+
+
+
+            <div id="login" class="loginbar" data-login="1">
+                <div class="login-out">
+                    <div class="login-out-btn">
+                        <a href="/Landing/Landing" data-modal=".winlogin" title="登录">
+                            登录
+                        </a>
+                        <a href="/Landing/Reister" title="注册" target="_blank">
+                            注册
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="body">
 
@@ -127,7 +209,6 @@
 
     </div>
     <!-- 弹窗 -->
-    <img src="WybImages/8bda255e37814d1fad70e54a1df2d192_erweima.png" />
     <div id="showdiv" style="width: 200px;background:rgba(0, 0, 0, 0.00); margin-left:500px;margin-top:200px; height:233px; display: none; position: absolute; left: 10%; z-index: 3; background: #fff">
         <!-- 标题 -->
         <div style="background: rgba(0, 0, 0, 0.00); width: 100%; height: 2rem; font-size: 0.65rem; line-height: 2rem; border: 1px solid #999; text-align: center;">
@@ -136,7 +217,22 @@
         <!-- 内容 -->
         <div style="text-indent: 50px;background:rgba(0, 0, 0, 0.00); height: 4rem; font-size: 0.5rem; padding: 0.5rem; line-height: 1rem; "></div>
         <!-- 按钮 -->
-        <div style="background: #418BCA; width: 200px;  height: 30px; line-height: 1.5rem; text-align: center;color: #fff;margin-top: 90px; -moz-border-radius: .128rem; -webkit-border-radius: .128rem; border-radius: .128rem;font-size: .59733rem;" onclick="closeWindow()">
+        <div style="background: #418BCA; width: 200px;  height: 30px; line-height: 1.5rem; text-align: center;color: #fff;margin-top:140px; -moz-border-radius: .128rem; -webkit-border-radius: .128rem; border-radius: .128rem;font-size: .59733rem;" onclick="closeWindow()">
+
+            确 定
+        </div>
+    </div>
+    <!-- 弹窗 -->
+    <div id="showdivs" style="width: 200px;background:rgba(0, 0, 0, 0.00); margin-left:500px;margin-top:200px; height:233px; display: none; position: absolute; left: 10%; z-index: 3; background: #fff">
+        <!-- 标题 -->
+        <div style="background: rgba(0, 0, 0, 0.00); width: 100%; height: 2rem; font-size: 0.65rem; line-height: 2rem; border: 1px solid #999; text-align: center;">
+            <img src="images/个人微信.png" style="width:200px;height:200px;display:block;" />
+        </div>
+        <!-- 内容 -->
+        <div style="text-indent: 50px;background:rgba(0, 0, 0, 0.00); height: 4rem; font-size: 0.5rem; padding: 0.5rem; line-height: 1rem; "></div>
+        <!-- 按钮 -->
+        <div style="background: #418BCA; width: 200px;  height: 30px; line-height: 1.5rem; text-align: center;color: #fff;margin-top:140px; -moz-border-radius: .128rem; -webkit-border-radius: .128rem; border-radius: .128rem;font-size: .59733rem;" onclick="closeWindows()">
+
             确 定
         </div>
     </div>

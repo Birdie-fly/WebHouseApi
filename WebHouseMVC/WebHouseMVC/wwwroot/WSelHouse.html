@@ -1,4 +1,9 @@
 ﻿<script src="lib/jquery/dist/jquery.js"></script>
+<link href="css/ats.css" rel="stylesheet" />
+<link href="css/global.css" rel="stylesheet" />
+<link href="css/im.css" rel="stylesheet" />
+<script src="js/seajs.js"></script>
+<script src="js/seajs.cfg.js"></script>
 <style>
     #BiaoQian {
         border: 1px solid #6ab9f9;
@@ -40,6 +45,60 @@
         margin-left: auto;
     }
 </style>
+<div class="header scrollToFixed clearfix" data-spacer-class="header-spacer">
+    <div class="header-bg"></div>
+    <div class="container">
+        <div class="logo fl">
+            <span class="logocen">
+                <a href="index.html"><img width="140" height="40" alt="" src="WybImages/logo1.png" /></a>
+            </span>
+        </div>
+        <div class="area fl">
+            <div data-hover="hoverslider" data-obj=".more-area">
+                <div class="cur-area">上海市</div>
+            </div>
+        </div>
+        <ul class="nav fl" data-tag='zdh'>
+            <li>
+                <a target="_self" href="index.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                    首页
+                </a>
+            </li>
+            <li>
+                <a target="_self" href="NewHouse.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                    新房
+                </a>
+            </li>
+            <li>
+                <a target="_self" href="SHouse.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                    二手房
+                </a>
+            </li>
+            <li>
+                <a target="_self" href="WUdesHouse.html" class='hoverslider act' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                    出租
+                </a>
+            </li>
+            <li>
+                <a target="_self" href="showPrincipals.html" class='hoverslider' data-obj=".nav-more" data-direction="bottom" data-offsetx="50%">
+                    经纪人
+                </a>
+            </li>
+        </ul>
+        <div id="login" class="loginbar" data-login="1">
+            <div class="login-out">
+                <div class="login-out-btn">
+                    <a href="/Landing/Landing" data-modal=".winlogin" title="登录">
+                        登录
+                    </a>
+                    <a href="/Landing/Reister" title="注册" target="_blank">
+                        注册
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div id="boy" style="width:1300px;height:650px;">
 
