@@ -11,5 +11,22 @@
 <html>
 <body>
     <object height="50" width="100" data="`/h1.mp3"></object>
-</body>
+    <input id="Button1" type="button" value="button" onclick="clickme()"/>
+    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=337675941&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:337675941:42" alt="点击这里给我发消息" title="点击这里给我发消息"></a></body>
+<a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=aa8d191b701ec3dabec3b71691b749a93e7178e59dad9bdeb02ed1339c1b6558"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="学校里的那种事" title="学校里的那种事"></a>
+<a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=0e2c1be0b15e0e3f346a15c61f602c7ec39e315a5da6efc557631badf31d1242"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="添加qq好友" title="添加好友"></a>
+<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1255863656&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1255863656:51" alt="QQ发信息" title="QQ发信息" /></a>
+<a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=bf67ae1db22ae2f84133ccb30a847ce7892994b8978c07a9ddc52d13dc5394fe"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="90后的+办公室+军子" title="90后的+办公室+军子"></a>
 </html>
+<script>
+    function weixinShareWeibo(title, link) {
+        WeixinJSBridge.invoke('shareWeibo', {
+            "content": title + link,
+            "url": link
+        });
+    }
+    function clickme() {
+        window.open("tencent://message/?uin=1720934884");
+    }
+
+</script>

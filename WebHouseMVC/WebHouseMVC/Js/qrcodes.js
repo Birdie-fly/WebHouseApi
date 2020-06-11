@@ -276,7 +276,7 @@ var QRCodess;
 		function _onMakeImage() {
 			this._elImage.src = this._elCanvas.toDataURL("image/png");
 			this._elImage.style.display = "block";
-			this._elCanvas.style.display = "none";			
+			this._elCanvas.style.display = "none";	
 		}
 		
 		// Android 2.1 bug workaround
@@ -534,8 +534,8 @@ var QRCodess;
 	 */
 	QRCodes = function (el, vOption) {
 		this._htOption = {
-			width : 100, 
-			height : 100,
+			width : 256, 
+			height : 256,
 			typeNumber : 4,
 			colorDark : "#000000",
 			colorLight : "#ffffff",

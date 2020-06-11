@@ -29,10 +29,10 @@ namespace HouseDAL
         public int Reister(LandingModel reister)
         {
             string pwd = EncryptionHelper.Sha1(reister.Pwd);
-            string sql = $"insert into Landing values({reister.Name},'{pwd}') ";
+            string sql = $"insert into Landing values('{reister.Name}','{pwd}') ";
             return DapperHelper<ReisterModel>.Execute(sql, null);
         }
 
-
+     
     }
 }

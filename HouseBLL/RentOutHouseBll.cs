@@ -6,9 +6,9 @@ using System.Text;
 
 namespace HouseBLL
 {
-    public class WBll
+    public class RentOutHouseBll
     {
-        WDAL dal = new WDAL();
+        RentOutHouse dal = new RentOutHouse();
         /// <summary>
         /// 租房列表
         /// </summary>

@@ -108,14 +108,14 @@
 
         $.ajax({
             type: "post",
-            url: "https://localhost:44335/api/WUsed/FileUp",
+            url: "https://localhost:44335/api/RentOutHouse/FileUp",
             dataType: "json",
             data: data,
             async: true,
             contentType: false,//实体头部用于指示资源的MIME类型 media type 。这里要为false
             processData: false,//processData 默认为true，当设置为true的时候,jquery ajax 提交的时候不会序列化 data，而是直接使用data
             success: function (data) {
-                alert(data.Msg);
+                alert('添加成功!');
                 location.href = "http://localhost:49946/WUdesHouse.html"
             },
             error: function (data) {
@@ -127,7 +127,7 @@
     //绑定下拉
     function BandHT() {
         $.ajax({
-            url: 'https://localhost:44335/api/WUsed/GetHT',
+            url: 'https://localhost:44335/api/RentOutHouse/GetHT',
             type: 'get',
             dataType: 'json',
             success: function (d) {

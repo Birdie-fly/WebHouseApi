@@ -1,4 +1,5 @@
 ﻿<script src="lib/jquery/dist/jquery.js"></script>
+<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
 <link href="css/ats.css" rel="stylesheet" />
 <link href="css/global.css" rel="stylesheet" />
 <link href="css/im.css" rel="stylesheet" />
@@ -101,7 +102,7 @@
 
 <div style="background:#d8cfcf">
     <div style="margin-left:155px;float:left; height:100px;">
-        <img src="Wybimages/logo1.png" alt="" style="width:400px; height:100px;" />
+        <!--<img src="Wybimages/logo1.png" alt="" style="width:400px; height:100px;" />-->
         <input id="txtnams" type="text" style="line-height:30px; margin: 27px;margin-right:-7px;margin-bottom:5px; height: 40px; width: 440px; float:right;" placeholder="请输入小区名称/学校/区域" />
         <!--<input id="Button1" type="button" style="background:#ff0000;color:#ffffff" width="50" height="50" value="搜索" />-->
     </div>
@@ -125,53 +126,110 @@
 <div style="clear: both;" id="type">
     <p>
         <span id="HT" style="margin-left:95px; font-size:15px;font-weight:700; display:inline-block;float:left;">房型:</span>
-        <div style="display:inline-block;width:200px;"><a href="#">一室一厅一卫</a></div>
-        <div style="display:inline-block;width:200px;"><a href="#">二室一厅一卫</a></div>
-        <div style="display:inline-block;width:200px;"><a href="#">三室一厅一卫</a></div>
-        <div style="display:inline-block;width:200px;"><a href="#">三室一厅二卫</a></div>
-        <div style="display:inline-block;width:200px;"><a href="#">三室二厅二卫</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetType('一室一厅一卫')">一室一厅一卫</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetType('二室一厅一卫')">二室一厅一卫</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetType('三室一厅一卫')">三室一厅一卫</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetType('三室一厅二卫')">三室一厅二卫</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetType('三室二厅二卫')">三室二厅二卫</a></div>
     </p>
     <p>
         <span style="margin-left:95px;font-size: 15px; font-weight:700; display:inline-block;float:left;">面积:</span>
-        <div style="display:inline-block;width:200px;"><a href="#">50平以下</a></div>
-        <div style="display:inline-block;width:200px;"><a href="#">50-70平</a></div>
-        <div style="display:inline-block;width:200px;"><a href="#">70-90平</a></div>
-        <div style="display:inline-block;width:200px;"><a href="#">90-110平</a></div>
-        <div style="display:inline-block;width:200px;"><a href="#">110以上</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetArea('p1')">50平以下</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetArea('p2')">50-70平</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetArea('p3')">70-90平</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetArea('p4')">90-110平</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetArea('p5')">110以上</a></div>
     </p>
     <p>
         <span style="margin-left:95px;font-size: 15px; font-weight:700;display:inline-block;float:left;">价格:</span>
-        <div style="display:inline-block;width:200px;"><a href="#">1000-2000</a></div>
-        <div style="display:inline-block;width:200px;"><a href="#">2000-3000</a></div>
-        <div style="display:inline-block;width:200px;"><a href="#">3000-4000</a></div>
-        <div style="display:inline-block;width:200px;"><a href="#">4000-5000</a></div>
-        <div style="display:inline-block;width:200px;"><a href="#">5000以上</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetPrice('j1')">1000-2000</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetPrice('j2')">2000-3000</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetPrice('j3')">3000-4000</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetPrice('j4')">4000-5000</a></div>
+        <div style="display:inline-block;width:200px;"><a href="#" onclick="HousetPrice('j5')">5000以上</a></div>
     </p>
 </div>
 <div style="width:1300px;margin-left:95px; height:30px;background:#f3f4f8;clear:both;">
-    <p style="font-size:15px;color:#000000;margin-left: 50px;line-height: 2">上海 <span style="margin-left: 470px;">参考均价3500/月</span> <span style="margin-left: 460px;">在售房源量:23套</span> </p>
+    <p style="font-size:15px;color:#000000;margin-left: 50px;line-height: 2">上海 <span style="margin-left: 470px;">参考均价 <span id="Mean"></span> /月</span> <span style="margin-left: 375px;">在售房源量: <span id="HouseSum"></span> 套</span> </p>
 </div>
 
-<div id="boy" style="margin-left:95px;" onclick="Seel()"></div>
+<div id="boy" style="margin-left:95px;"></div>
 
 
 <script>
     $(function () {
-        // Show();
-        //BandHT();
-        Show1();
+        Show();
     })
     function Add() {
         location.href = "http://localhost:49946/WAddHouse.html"
         //location.href = "/CommoidityShow.html";
     }
-    function Show1() {
+    function Show() {
         var Mean = 0;
         $.ajax({
-            url: 'https://localhost:44335/api/WUsed/get?Nams=' + $("#txtnams").val(),
+            url: 'https://localhost:44335/api/RentOutHouse/get?Nams=' + $("#txtnams").val(),
             type: 'get',
             dataType: 'json',
             success: function (d) {
+                $("#boy").empty();
+                for (var i = 0; i < d.length; i++) {
+                    var str =
+                        '<div class="Show" style="width:1300px; float:left; height:120px;" onclick="Seel(' + d[i].id + ')">'
+                        + '<div style="float:left;width:350px ">'
+                        + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                        + '<span>' + d[i].houseName + '</span>'
+                        + '<p>' + d[i].hType + ' &nbsp; &nbsp;&nbsp;&nbsp; ' + d[i].houseArea + 'm²</p>'
+                        + '<p>' + d[i].houseInfo + '</p>'
+                        + '<p>临界 可餐饮 上水 下水</p>'
+                        + '</div >'
+                        + '<div style = "float:right;line-height:108px;" >'
+                        + '<span>' + d[i].hprice + '/月</span>'
+                        + '</div >'
+                        + '</div >';
+                    $("#boy").append(str);
+                    Mean = Mean + d[i].hprice;
+                }
+                $("#Mean").html(Mean / d.length);
+                $("#HouseSum").html(d.length);
+            }
+        })
+    }
+    function BandHT() {
+        $.ajax({
+            url: 'https://localhost:44335/api/RentOutHouse/get',
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                for (var i = 0; i < d.length; i++) {
+                    var str = '< a href = "JavaScript" > ' + d[0].hType + '</a>';
+                    $("#boy").append(str);
+                }
+            }
+        })
+    }
+    //查看详情
+    function Seel(d) {
+        location.href = 'http://localhost:49946/WSelHouse.html?id=' + d.toString();
+        //$.ajax({
+        //    url: 'https://localhost:44335/api/RentOutHouse/SelHouse?id='+d;
+        //    type: 'get',
+        //    dataType: 'json',
+        //    success: function () {
+        //        location.href = 'http://localhost:49946/WSelHouse.html';
+        //    }
+        //})
+    }
+    //房型查询
+    function HousetType(id) {
+        $.ajax({
+            url: 'https://localhost:44335/api/RentOutHouse/get?Typ=' + id.toString(),
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                if (d.length == 0) {
+                    alert('暂时没有此房型!请选择别的看看吧~');
+                    return;
+                }
                 $("#boy").empty();
                 for (var i = 0; i < d.length; i++) {
                     var str = '<div class="Show" style="width:1300px; float:left; height:120px;" onclick="Seel(' + d[i].id + ')">'
@@ -195,29 +253,72 @@
             }
         })
     }
-    function BandHT() {
+    //面积查询
+    function HousetArea(id) {
         $.ajax({
-            url: 'https://localhost:44335/api/WUsed/get',
+            url: 'https://localhost:44335/api/RentOutHouse/get?Area=' + id.toString(),
             type: 'get',
             dataType: 'json',
             success: function (d) {
-                for (var i = 0; i < d.length; i++) {
-                    var str = '< a href = "JavaScript" > ' + d[0].hType + '</a>';
-                    $("#boy").append(str);
+                if (d.length == 0) {
+                    alert('暂时没有此房型!请选择别的看看吧~');
+                    return;
                 }
+                $("#boy").empty();
+                for (var i = 0; i < d.length; i++) {
+                    var str = '<div class="Show" style="width:1300px; float:left; height:120px;" onclick="Seel(' + d[i].id + ')">'
+                        + '<div style="float:left;width:350px ">'
+                        //+'<input id="Hidden1" type="hidden" value="'+d[i].id+'"/>'
+                        + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                        + '<span>' + d[i].houseName + '</span>'
+                        + '<p>' + d[i].hType + ' &nbsp; &nbsp;&nbsp;&nbsp; ' + d[i].houseArea + 'm²</p>'
+                        + '<p>' + d[i].houseInfo + '</p>'
+                        + '<p>临界 可餐饮 上水 下水</p>'
+                        + '</div >'
+                        + '<div style = "float:right;line-height:108px;" >'
+                        + '<span>' + d[i].hprice + '/月</span>'
+                        + '</div >'
+                        + '</div >';
+                    $("#boy").append(str);
+                    Mean = Mean + d[i].hprice;
+                }
+                $("#Mean").html(Mean / d.length);
+                $("#HouseSum").html(d.length);
             }
         })
     }
-    //查看详情
-    function Seel(d) {
-        location.href = 'http://localhost:49946/WSelHouse.html?id=' + d.toString();
-        //$.ajax({
-        //    url: 'https://localhost:44335/api/WUsed/SelHouse?id='+d;
-        //    type: 'get',
-        //    dataType: 'json',
-        //    success: function () {
-        //        location.href = 'http://localhost:49946/WSelHouse.html';
-        //    }
-        //})
+    //价格查询
+    function HousetPrice(id) {
+        $.ajax({
+            url: 'https://localhost:44335/api/RentOutHouse/get?Price=' + id.toString(),
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                if (d.length == 0) {
+                    alert('暂时没有此房型!请选择别的看看吧~');
+                    return;
+                }
+                $("#boy").empty();
+                for (var i = 0; i < d.length; i++) {
+                    var str = '<div class="Show" style="width:1300px; float:left; height:120px;" onclick="Seel(' + d[i].id + ')">'
+                        + '<div style="float:left;width:350px ">'
+                        //+'<input id="Hidden1" type="hidden" value="'+d[i].id+'"/>'
+                        + '<img src="' + d[i].houseImage + '" alt="" width="130" height="90" style="float:left;margin:12px" />'
+                        + '<span>' + d[i].houseName + '</span>'
+                        + '<p>' + d[i].hType + ' &nbsp; &nbsp;&nbsp;&nbsp; ' + d[i].houseArea + 'm²</p>'
+                        + '<p>' + d[i].houseInfo + '</p>'
+                        + '<p>临界 可餐饮 上水 下水</p>'
+                        + '</div >'
+                        + '<div style = "float:right;line-height:108px;margin-right: 134px;" >'
+                        + '<span>' + d[i].hprice + '/月</span>'
+                        + '</div >'
+                        + '</div >';
+                    $("#boy").append(str);
+                    Mean = Mean + d[i].hprice;
+                }
+                $("#Mean").html(Mean / d.length);
+                $("#HouseSum").html(d.length);
+            }
+        })
     }
 </script>

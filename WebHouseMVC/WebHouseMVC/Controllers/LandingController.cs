@@ -11,6 +11,8 @@ using Abp.Authorization.Users;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
 using WebHouseMVC.Models;
+using System.Drawing;
+using System.IO;
 
 namespace WebHouseMVC.Controllers
 {

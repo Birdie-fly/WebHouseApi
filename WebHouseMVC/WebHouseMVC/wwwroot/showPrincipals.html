@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/jquery.min.js"></script>
-    <script src="js/qrcode.js"></script>
     <link href="css/ats.css" rel="stylesheet" />
+    <script src="js/qrcode.js"></script>
     <link href="css/global.css" rel="stylesheet" />
     <link href="css/im.css" rel="stylesheet" />
     <script src="js/seajs.js"></script>
@@ -115,9 +115,9 @@
             display: none;
             position: absolute;
             top: 25%;
-            left: 35%;
-            width: 35%;
-            height: 35%;
+            left: 30%;
+            width: 40%;
+            height: 42%;
             padding: 20px;
             border: 5px solid black;
             background-color: white;
@@ -314,18 +314,18 @@
 
                 $(d).each(function () {
                     var str = '<ul style="list-style:none;">' +
-                        '<li style="float:left;margin-left:8%">' +
+                        '<li style="float:left;margin-left:10%">' +
                         '<input id="Button1" type="image" src="Images/电话.png" style="width:100px;height:100px;outline:none;" onclick="toTel(' + this.principalPhone + ')"/>' +
                         '</li>' +
-                        '<li style="float:left;margin-left:2%">' +
+                        '<li style="float:left;margin-left:5%">' +
                         '<input id="Button1" type="image" src="Images/QQ.png" style="width:100px;height:100px;outline:none;" onclick="toQQ(' + this.qq + ')" />' +
                         '</li>' +
-                        '<li style="float:left;margin-left:2%">' +
+                        '<li style="float:left;margin-left:5%">' +
                         '<input id="Button1" type="image" src="Images/微信.png" style="width:100px;height:100px;outline:none;" onclick="toWeChat()"/>' +
                         '<input id="url" type="hidden" value="' + this.weChat + '"/>' +
                         '<div id="qrcode"></div>' +
                         ' </li>' +
-                        '<li style="float:left;margin-left:2%">' +
+                        '<li style="float:left;margin-left:5%">' +
                         '<input id="Button1" type="image" src="Images/联系人.png" style="width:100px;height:100px;outline:none;" onclick="totxLu(' + id + ')"/>' +
                         '<div id="qrcodes" style="margin-top:15px;"></div>' +
                         '</li>' +
@@ -365,11 +365,13 @@
         var name = "";
         var company = "";
         var title = "";
-        var address = "";
+        //var address = "";
         var mobile = "";
         var email = "";
-        var web = "";
-        var desc = "";
+        //var web = "";
+        //var desc = "";
+        //var qq = "";
+        //var photo="";
         var info = "";
         $.ajax({
             url: 'https://localhost:44335/api/Principal/GetPrincipalById?id=' + id,
@@ -380,13 +382,11 @@
                     name = "FN:" + this.principalName + "\n";
                     company = "ORG:" + this.commodityName + "\n";
                     title = "TITLE:" + "经纪人" + "\n";
-                    address = "WORK:" + "" + "\n";
                     mobile = "TEL:" + this.principalPhone + "\n";
                     email = "EMAIL:" + this.email + "\n";
-                    web = "URL:" + "" + "\n";
-                    desc = "NOTE:" + "" + "\n";
-
-                    info = "BEGIN:VCARD\n" + name + company + title + address + mobile + email + web + desc + "END:VCARD";
+                    //photo = "PHOTO; ENCODING = b;";
+                    //qq = "X-QQ:" + this.qq + "\n";
+                    info = "BEGIN:VCARD\n" + name + company + title /*+ address */+ mobile + email/*web + desc +qq+*/+"END:VCARD";
                     //生成二维码
                     var qrcodes = new QRCode("qrcodes");
                     qrcodes.makeCode(info);
