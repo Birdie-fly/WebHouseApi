@@ -11,6 +11,8 @@ using Abp.Authorization.Users;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
 using WebHouseMVC.Models;
+using System.Drawing;
+using System.IO;
 
 namespace WebHouseMVC.Controllers
 {
@@ -23,6 +25,10 @@ namespace WebHouseMVC.Controllers
 
         public IActionResult Index()
         {
+            using (FileStream image = new FileStream("c:\\FakePhoto2.jpg", FileMode.Open))
+            {
+                //var  image = Image.FromStream(image);
+            }
             return View();
         }
 

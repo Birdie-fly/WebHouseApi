@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace HouseDAL
 {
-    public  class WDAL
+    public  class RentOutHouse
     {
         ////自己创建个类写  这样分开好做 别写我这里面了!!!!!!!!!!!!
 

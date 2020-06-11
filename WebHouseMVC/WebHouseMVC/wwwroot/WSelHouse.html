@@ -127,7 +127,7 @@
             id = url.substring(url.indexOf("=") + 1, url.length)
         }
         $.ajax({
-            url: 'https://localhost:44335/api/WUsed/SelHouse?id=' + id,
+            url: 'https://localhost:44335/api/RentOutHouse/SelHouse?id=' + id,
             type: 'get',
             dataType: 'json',
             success: function (d) {
