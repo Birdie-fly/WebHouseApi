@@ -534,8 +534,8 @@ var QRCode;
 	 */
 	QRCode = function (el, vOption) {
 		this._htOption = {
-			width : 130, //256  设置二维码大小
-			height : 130,//256
+			width : 135, //256  设置二维码大小
+			height : 135,//256
 			typeNumber : 4,
 			colorDark : "#000000",
 			colorLight : "#ffffff",
